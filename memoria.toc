@@ -1,48 +1,48 @@
 \select@language {catalan}
 \contentsline {paragraph}{}{2}{section*.1}
 \contentsline {section}{Resum}{1}{section*.1}
-\contentsline {section}{\numberline {1}Prefaci}{7}{section.1}
-\contentsline {subsection}{\numberline {1.1}Motivaci\IeC {\'o}}{7}{subsection.1.1}
-\contentsline {subsection}{\numberline {1.2}Requeriments previs}{7}{subsection.1.2}
-\contentsline {section}{\numberline {2}Introducci\IeC {\'o}}{7}{section.2}
-\contentsline {subsection}{\numberline {2.1}Estat de l'art}{7}{subsection.2.1}
-\contentsline {subsubsection}{\numberline {2.1.1}Rob\IeC {\`o}tica}{8}{subsubsection.2.1.1}
-\contentsline {subsubsection}{\numberline {2.1.2}Rob\IeC {\`o}tica en l'educaci\IeC {\'o}}{9}{subsubsection.2.1.2}
-\contentsline {subsubsection}{\numberline {2.1.3}L'AIBO}{10}{subsubsection.2.1.3}
-\contentsline {subsection}{\numberline {2.2}Objectius del projecte}{11}{subsection.2.2}
-\contentsline {subsection}{\numberline {2.3}Abast del projecte}{11}{subsection.2.3}
-\contentsline {section}{\numberline {3}AIBO ERS-7}{11}{section.3}
-\contentsline {subsection}{\numberline {3.1}Hardware}{11}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}El software}{13}{subsection.3.2}
-\contentsline {subsubsection}{\numberline {3.2.1}OPEN-R}{13}{subsubsection.3.2.1}
-\contentsline {subsubsection}{\numberline {3.2.2}Tekkotsu}{15}{subsubsection.3.2.2}
-\contentsline {subsubsection}{\numberline {3.2.3}URBI}{16}{subsubsection.3.2.3}
-\contentsline {section}{\numberline {4}Comparaci\IeC {\'o} d'alternatives per a la programaci\IeC {\'o}}{19}{section.4}
-\contentsline {subsection}{\numberline {4.1}Lectura de dades}{20}{subsection.4.1}
-\contentsline {subsubsection}{\numberline {4.1.1}Metode amb liburbi i C++}{20}{subsubsection.4.1.1}
-\contentsline {subsubsection}{\numberline {4.1.2}Metode amb telnet i python}{21}{subsubsection.4.1.2}
-\contentsline {subsubsection}{\numberline {4.1.3}Comparac\IeC {\'o}}{22}{subsubsection.4.1.3}
-\contentsline {subsection}{\numberline {4.2}enviament de dades}{25}{subsection.4.2}
-\contentsline {subsection}{\numberline {4.3}Elecci\IeC {\'o} del m\IeC {\`e}tode}{25}{subsection.4.3}
-\contentsline {subsection}{\numberline {4.4}Possibles millores}{25}{subsection.4.4}
-\contentsline {section}{\numberline {5}Implementaci\IeC {\'o} del paquet de ROS}{25}{section.5}
-\contentsline {subsection}{\numberline {5.1}ROS}{25}{subsection.5.1}
-\contentsline {subsection}{\numberline {5.2}Paquet AiboServer }{25}{subsection.5.2}
-\contentsline {subsection}{\numberline {5.3}Paquet AiboMimic}{25}{subsection.5.3}
-\contentsline {section}{\numberline {6}Cooperaci\IeC {\'o} i Sincronitzaci\IeC {\'o}}{25}{section.6}
-\contentsline {section}{Conclusions}{25}{section*.29}
-\contentsline {section}{Refer\IeC {\`e}ncies}{29}{section*.29}
-\contentsline {section}{Annexos}{31}{section*.31}
-\contentsline {section}{\numberline {A}Configuraci\IeC {\'o} dels marcs de treball }{31}{appendix.A}
-\contentsline {subsection}{\numberline {A.1}URBI}{31}{subsection.A.1}
-\contentsline {subsection}{\numberline {A.2}Tekkotsu}{31}{subsection.A.2}
-\contentsline {subsection}{\numberline {A.3}OPEN-R SDK}{31}{subsection.A.3}
-\contentsline {subsection}{\numberline {A.4}Configuraci\IeC {\'o} wifi}{31}{subsection.A.4}
-\contentsline {section}{\numberline {B}URBI}{31}{appendix.B}
-\contentsline {section}{\numberline {C}Scripts i programes}{31}{appendix.C}
-\contentsline {subsection}{\numberline {C.1}Obtenci\IeC {\'o} dels valors d'una variable usant liburbi per C++}{31}{subsection.C.1}
-\contentsline {subsection}{\numberline {C.2}Obtenci\IeC {\'o} dels valors d'una variable usant una conexi\IeC {\'o} telnet i python}{33}{subsection.C.2}
-\contentsline {subsection}{\numberline {C.3}Obtenci\IeC {\'o} dels valors de totes les articulacions usant liburbi per C++}{34}{subsection.C.3}
-\contentsline {subsection}{\numberline {C.4}Obtenci\IeC {\'o} dels valors de totes les articulacions usant una conexi\IeC {\'o} telnet i python}{34}{subsection.C.4}
-\contentsline {subsection}{\numberline {C.5}Moviment d'una articulaci\IeC {\'o} de forma sinuso\IeC {\@umlaut \i }dal usant liburbi per C++}{34}{subsection.C.5}
-\contentsline {subsection}{\numberline {C.6}Moviment d'una articulaci\IeC {\'o} de forma sinuso\IeC {\@umlaut \i }dal usant una conecci\IeC {\'o} telnet i python}{34}{subsection.C.6}
+\contentsline {section}{\numberline {1}Prefaci}{8}{section.1}
+\contentsline {subsection}{\numberline {1.1}Motivaci\IeC {\'o}}{8}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Requeriments previs}{8}{subsection.1.2}
+\contentsline {section}{\numberline {2}Introducci\IeC {\'o}}{8}{section.2}
+\contentsline {subsection}{\numberline {2.1}Estat de l'art}{8}{subsection.2.1}
+\contentsline {subsubsection}{\numberline {2.1.1}Rob\IeC {\`o}tica}{9}{subsubsection.2.1.1}
+\contentsline {subsubsection}{\numberline {2.1.2}Rob\IeC {\`o}tica en l'educaci\IeC {\'o}}{10}{subsubsection.2.1.2}
+\contentsline {subsubsection}{\numberline {2.1.3}L'AIBO}{11}{subsubsection.2.1.3}
+\contentsline {subsection}{\numberline {2.2}Objectius del projecte}{12}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Abast del projecte}{12}{subsection.2.3}
+\contentsline {section}{\numberline {3}AIBO ERS-7}{12}{section.3}
+\contentsline {subsection}{\numberline {3.1}Hardware}{12}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}El software}{14}{subsection.3.2}
+\contentsline {subsubsection}{\numberline {3.2.1}OPEN-R}{14}{subsubsection.3.2.1}
+\contentsline {subsubsection}{\numberline {3.2.2}Tekkotsu}{16}{subsubsection.3.2.2}
+\contentsline {subsubsection}{\numberline {3.2.3}URBI}{17}{subsubsection.3.2.3}
+\contentsline {section}{\numberline {4}Comparaci\IeC {\'o} d'alternatives per a la programaci\IeC {\'o}}{20}{section.4}
+\contentsline {subsection}{\numberline {4.1}Lectura de dades}{21}{subsection.4.1}
+\contentsline {subsubsection}{\numberline {4.1.1}Metode amb liburbi i C++}{21}{subsubsection.4.1.1}
+\contentsline {subsubsection}{\numberline {4.1.2}Metode amb telnet i python}{22}{subsubsection.4.1.2}
+\contentsline {subsubsection}{\numberline {4.1.3}Comparac\IeC {\'o}}{23}{subsubsection.4.1.3}
+\contentsline {subsection}{\numberline {4.2}Enviament de dades}{28}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Elecci\IeC {\'o} del m\IeC {\`e}tode}{33}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}Possibles millores}{34}{subsection.4.4}
+\contentsline {section}{\numberline {5}Implementaci\IeC {\'o} del paquet de ROS}{34}{section.5}
+\contentsline {subsection}{\numberline {5.1}ROS}{34}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}Paquet AiboServer }{35}{subsection.5.2}
+\contentsline {subsection}{\numberline {5.3}Paquet AiboMimic}{35}{subsection.5.3}
+\contentsline {section}{\numberline {6}Cooperaci\IeC {\'o} i Sincronitzaci\IeC {\'o}}{35}{section.6}
+\contentsline {section}{Conclusions}{35}{section*.33}
+\contentsline {section}{Refer\IeC {\`e}ncies}{36}{section*.33}
+\contentsline {section}{Annexos}{38}{section*.35}
+\contentsline {section}{\numberline {A}Configuraci\IeC {\'o} dels marcs de treball }{38}{appendix.A}
+\contentsline {subsection}{\numberline {A.1}URBI}{38}{subsection.A.1}
+\contentsline {subsection}{\numberline {A.2}Tekkotsu}{38}{subsection.A.2}
+\contentsline {subsection}{\numberline {A.3}OPEN-R SDK}{38}{subsection.A.3}
+\contentsline {subsection}{\numberline {A.4}Configuraci\IeC {\'o} wifi}{38}{subsection.A.4}
+\contentsline {section}{\numberline {B}URBI}{38}{appendix.B}
+\contentsline {section}{\numberline {C}Scripts i programes}{38}{appendix.C}
+\contentsline {subsection}{\numberline {C.1}Obtenci\IeC {\'o} dels valors d'una variable usant liburbi per C++}{38}{subsection.C.1}
+\contentsline {subsection}{\numberline {C.2}Obtenci\IeC {\'o} dels valors d'una variable usant una conexi\IeC {\'o} telnet i python}{40}{subsection.C.2}
+\contentsline {subsection}{\numberline {C.3}Obtenci\IeC {\'o} dels valors de totes les articulacions usant liburbi per C++}{41}{subsection.C.3}
+\contentsline {subsection}{\numberline {C.4}Obtenci\IeC {\'o} dels valors de totes les articulacions usant una conexi\IeC {\'o} telnet i python}{41}{subsection.C.4}
+\contentsline {subsection}{\numberline {C.5}Moviment d'una articulaci\IeC {\'o} de forma sinuso\IeC {\@umlaut \i }dal usant liburbi per C++}{41}{subsection.C.5}
+\contentsline {subsection}{\numberline {C.6}Moviment d'una articulaci\IeC {\'o} de forma sinuso\IeC {\@umlaut \i }dal usant una conecci\IeC {\'o} telnet i python}{41}{subsection.C.6}

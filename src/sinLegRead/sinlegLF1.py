@@ -11,7 +11,7 @@ def move():
 	A=50
 	offsetl=85
 	
-	paso=7
+	paso=15
 	
 	
 	legLF1=A*math.sin(math.radians(angle)) + offsetl

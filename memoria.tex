@@ -12,7 +12,7 @@
 \usepackage{subcaption}
 \usepackage{framed}
 
-\usepackage[ampersand]{easylist}
+\usepackage[ampersand]{easylist} 
 \usepackage{epstopdf}
 \usepackage{array}
 \usepackage{tabulary}
@@ -117,9 +117,7 @@ Aquest projecte va partir de una idea de tornar aprofitar els AIBOS per realitza
 Això va portar a voler recuperar els AIBO d'una forma nova amb un del sistemes operatius actualment més usats en la robòtica, ROS\footnote{\textit{Robotics Operational System}\ref{ros}}. 
 
 La integració de l'AIBO amb ROS facilitarà enormement la programació donant la possibilitat d'usar el gran ventall de paquets existents per aquest sistema operatiu. Per altra banda incrementara les seves capacitats de processament en front a altres mètodes donat que es controlara remotament, exprimint així les capacitats del hardware.
-
-El fet de participar en un projecte que permeti al món de la robòtica educativa recuperar una plataforma tan emblemàtica com l'AIBO és un incentiu suficient per a la realització d'aquest. 
-A més a més el propi aprenentatge intrínsec al projecte com és la oportunitat de conèixer ROS des de baix nivell i implementar els propis paquets necessaris és quelcom útil per a un estudiant apassionat per la robòtica. 
+El fet de participar en un projecte que permeti al món de la robòtica educativa recuperar una plataforma tan emblemàtica com l'AIBO és un incentiu suficient per a la realització d'aquest. A més a més el propi aprenentatge intrínsec al projecte com és la oportunitat de conèixer ROS des de baix nivell i implementar els propis paquets necessaris és quelcom útil per a un estudiant apassionat per la robòtica. 
 
  
 
@@ -365,7 +363,7 @@ URBI permet i facilita l'accés a cada una de les articulacions i sensors de l'A
 
 Tenint en conte que el que és preten és buscar una forma senzilla i rapida de enviar l'estat dels sensors i articulacions de l'AIBO a un PC remot i enviar a l'AIBO les posicions desitjades de les articulacions per tal de poder treballar posteriorment amb ROS s'han tingut en conte certes consideracions qualitatives un trobades durant la recerca que es troben resumides a la Taula \ref{complleng}.
 
-En els tres casos és necessari programar amb el llenguatge corresponent per al client del PC. A excepció de Urbi seria necessari desenvolupar un programa per a l'AIBO de manera que permetés enviar i rebre les dades necessaries. Amb Urbi no és necessari ja que la llibreria liburbi permet accedir a totes les dades necessaries i també ho permet fer per telnet. Tekkotsu en canvi permet obtenir els valors de sensors i actuadors per telnet però no actuar sobre ells caldria doncs un comportament que implementés aquest fet. De totes formes Tekkotsu hi han hagut problemes per tal de trobar documentació ja que s'ha trobat per a la versió més nova Tekkotsu 5.1 i tot i que Tekkotsu va neixer arrel de l'AIBO aquesta versió sembala no ser compatible amb el ultim OPEN-R SDK. La unica versió que s'ha conseguit compilar i la única trobada apart de la 5.1 és la 4.0.1 de la qual no s'ha trobat cap mena de documentació i d'una a l'altre canvia el mètode de programació.
+En els tres casos és necessari programar amb el llenguatge corresponent per al client del PC. A excepció de Urbi seria necessari desenvolupar un programa per a l'AIBO de manera que permetés enviar i rebre les dades necessaries. Amb Urbi no és necessari ja que la llibreria liburbi permet accedir a totes les dades necessaries i també ho permet fer per telnet. Tekkotsu, en canvi, permet obtenir els valors de sensors i actuadors per telnet però no actuar sobre ells, caldria doncs un comportament que implementés aquest fet. De totes formes amb Tekkotsu hi han hagut problemes per tal de trobar documentació ja que s'ha trobat per a la versió més nova Tekkotsu 5.1 i tot i que Tekkotsu va neixer arrel de l'AIBO aquesta versió sembla no ser compatible amb el ultim OPEN-R SDK. La unica versió que s'ha conseguit compilar i la única trobada apart de la 5.1 és la 4.0.1 de la qual no s'ha trobat cap mena de documentació i d'una a l'altre canvia el mètode de programació.
 Pel que respecte a R-CODE seria una bona opció ja que es parteix de més baix nivell i per a l'objectiu d'aquest projecte això és un incentiu, però cal invertir molt de temps en l'aprenentatge del llenguatge. 
 
 
@@ -410,7 +408,7 @@ Plataforma del PC
 \caption{Comparació entre llenguatges usats en l'AIBO\label{complleng}}
 \end{table}
 
-Per aquests motius s'ha decidit partir de dos opcions de per a desenvolupar el paquet de ROS que permetrà controlar l'AIBO.
+Per aquests motius s'ha decidit partir de dos opcions per a desenvolupar el paquet de ROS que permetrà controlar l'AIBO.
 
 La primera s'usara liburbi en un programa C++ i la segona es provarà de fer la comunicació amb un script de python usant una connexió telnet.
 
@@ -451,10 +449,10 @@ Aquest serà cridat cada cop que es rebi una dada per a l'etiqueta assignada.
 \begin{itemize}
 \item Es pren el valor de la variable (tot i que per aquest experiment no es necessiti.).
 \item Es consulta el temps en que ha estat rebuda aquesta dada.
-\item Es guarda la dada i el temps amb precisió de centenars de nanosegons.
+\item Es guarda la dada i el temps.
 \end{itemize}
 \item Demanda del bucle i assignació a una etiqueta.
-\item inicialització del archiu on es guradaràn les dades.
+\item Inicialització del archiu on es guradaràn les dades.
 \item  Execució del bucle de urbi. 
 \end{itemize}
 
@@ -466,7 +464,7 @@ La idea d'aquest script\footnote{Es pot cunsultar el script a lannexe \ref{getDa
 \begin{figure}[h!]
 	\centering
     \includegraphics[scale=0.65]{images/telnet.pdf}
-	 \caption{terminal de telnet consultant dades.}
+	 \caption{terminal de Urbi consultant dades.}
   \label{fig:telnet}
 \end{figure}
 Així doncs l'estructura serà semblant al script de C++:
@@ -496,61 +494,60 @@ Així doncs l'estructura serà semblant al script de C++:
 
 Dels programes anteriorment explicats s'obtenen les 15 repliques de 10 segons cada una. Dels temps extrets s'obté l'invers de les diferències de temps entre dades rebudes, doncs és més intuïtiu i per analitzar el trafic i la velocitats de dades es preferible treballar amb Hertz que amb el seu invers.
 
-De les dades obtingudes se n'extreuen els grafics de les Figures \ref{fig:OneLegC++Box} i \ref{fig:OneLegPythonBox}. D'aquests es pot extreure com la variabilitat dels resultats, dins de cada rèplica, del cas en que s'usa liburbi és més alta, però també els valors semblen ser considerablement més alts. 
+Graficant les dades a les Figures \ref{fig:OneLegC++Box} i \ref{fig:OneLegPythonBox} s'observa com la variabilitat dels resultats, dins de cada rèplica, del cas en que s'usa liburbi és més alta, però també els valors semblen ser considerablement més alts. 
 
-\begin{figure}[h!]
+\begin{figure}[H]
 	\centering
     \includegraphics[scale=0.5]{images/OnelegC++Box.pdf}
 	 \caption{Diagrama de caixa de la freqüència de dades per a les 15 repliques de l'experiment amb liburbi.}
   \label{fig:OneLegC++Box}
 \end{figure}
 
-\begin{figure}[h!]
+\begin{figure}[H]
 	\centering
     \includegraphics[scale=0.5]{images/OneLegPythonBox.pdf}
 	 \caption{Diagrama de caixa de la freqüència de dades per a les 15 repliques de l'experiment amb telnet.}
   \label{fig:OneLegPythonBox}
 \end{figure}
 
-Per corroborar aquests dos fets s'ha pres una serie de variables caràcteristiques de cada mostra.Les Figures \ref{fig:DevOneLeg} i \ref{fig:MitOneLeg} mostres de forma més visual aquest fet i permeten afirmar que el primer cas  te una velocitat de transmissió de dades mitja més elevat, però la seva variabilitat també és significativament major.
+Per corroborar aquests dos fets s'ha pres una serie de variables característiques de cada mostra. Les Figures \ref{fig:DevOneLeg} i \ref{fig:MitOneLeg} mostren de forma més visual aquest fet i permeten afirmar que el primer cas  te una velocitat de transmissió de dades mitja més elevat, però la seva variabilitat també és significativament major.
 
-\begin{figure}[h!]
+\begin{figure}[H]
 	\centering
     \includegraphics[scale=1]{images/mitjanesOneLeg.pdf}
 	 \caption{Freqüència mitjana en Hz de les 15 repliques de cada mètode.}
   \label{fig:MitOneLeg}
 \end{figure}
-\begin{figure}[h!]
+\begin{figure}[H]
 	\centering
     \includegraphics[scale=1]{images/DevOneLeg.pdf}
 	 \caption{Desviacions estàndard de la freqüència en les 15 repliques dels dos mètodes.}
   \label{fig:DevOneLeg}
 \end{figure}
 
-Tanmateix no és sols la velocitat mitja el que interessa sinó que sigui suficientment constant i sobre tot que no hi hagi els temps de congelació en el refresc d'una variable siguin el mes petit possible.
+Tanmateix no és sols la velocitat mitja el que interessa sinó que sigui suficientment constant i sobre tot que els temps de congelació en el refresc d'una variable siguin el mes petit possible.
 Observant doncs les freqüències mínimes Figura\ref{fig:MinOneLeg} no sembla que en algun dels dos casos aquestes siguin inferiors altres. Si bé es cert que els buits més grans es donen amb liburbi realitzant un anàlisi sobre la variança (ANOVA) no es pot afirmar que en aquest aspecte siguin poblacions diferents. 
 
-\begin{figure}[h!]
+\begin{figure}[H]
 	\centering
     \includegraphics[scale=1]{images/MinOneLeg.pdf}
 	 \caption{Mínims de la freqüència en les 15 repliques dels dos mètodes.}
   \label{fig:MinOneLeg}
 \end{figure}
 
-En vista dels resultats obtinguts s'ha volgut comprovar com afecta el nombre de dades en la recepció de les variables. Per això s'ha realitzat el mateix experiment però en comptes de llegir únicament el valor d'una articulació, s'envien els valors de totes les articulacions.
+En vista dels resultats obtinguts s'ha volgut comprovar com afecta el nombre de dades en els temps de recepció de les variables. Per això s'ha realitzat el mateix experiment però en comptes de llegir únicament el valor d'una articulació, s'envien els valors de totes les articulacions.
 
 Els resultats obtinguts en diagrames de caixes Figures \ref{fig:JointsC++Box} i \ref{fig:JointsPythonBox} mostren com les dos mostres son més semblants entre els dos casos. El temps maxim d'adquisició de dades del metode amb telnet ha incrementat fins a igualarse amb el de liburbi. La diferència pot ser que amb aquest mètode es rep una trama que es tracta en paral·lel a la recepció de dades mentre que el cas de liburbi es un sol callback que es va disparant per a cada valor i per tant el cas de telnet li costarà el mateix rebre totes les dades que una mentre que amb liburbi no.
 
 
 
-\begin{figure}[h!]
+\begin{figure}[H]
 	\centering
     \includegraphics[scale=0.5]{images/JointC++Box.pdf}
 	 \caption{Diagrama de caixa de la freqüència de dades per a les 15 repliques de l'experiment amb liburbi.}
   \label{fig:JointsC++Box}
-\end{figure} 
-
-\begin{figure}[h!]
+\end{figure}
+\begin{figure}[H]
 	\centering
     \includegraphics[scale=0.5]{images/JointsPythonBox.pdf}
 	 \caption{Diagrama de caixa de la freqüència de dades per a les 15 repliques de l'experiment amb telnet.}
@@ -559,81 +556,175 @@ Els resultats obtinguts en diagrames de caixes Figures \ref{fig:JointsC++Box} i 
 
 Les mitjanes semblen lleugerament més altes les del programa de liburbi Figura\ref{fig:MitJoint} tot i que no hi ha les diferències de l'experiment anterior i pel que fa a les desviacions seblen força semblants.
 
-\begin{figure}[h!]
+
+\begin{figure}[H]
 	\centering
     \includegraphics[scale=1]{images/MitJoint.pdf}
 	 \caption{Freqüència mitjana en Hz de les 15 repliques de cada mètode.}
   \label{fig:MitJoint}
 \end{figure}
-\begin{figure}[h!]
+\begin{figure}[H]
 	\centering
     \includegraphics[scale=1]{images/DevJoint.pdf}
 	 \caption{Desviacions estàndard de la freqüència en les 15 repliques dels dos mètodes.}
   \label{fig:DevJoint}
 \end{figure}
+Fixants en les frequencies mínimes sembla que els dos tenen un comportament semblant. Comparant aquests valors amb una ANOVA es pot veure que efecitivament no es poden considerar poblacions diferents.
 \begin{figure}[h!]
 	\centering
     \includegraphics[scale=1]{images/MinJoint.pdf}
 	 \caption{Mínims de la freqüència en les 15 repliques dels dos mètodes.}
   \label{fig:MinJoint}
 \end{figure}
-\begin{table}[h]
-\begin{center}
-\begin{tabulary}{\textwidth}{|c|c|c|c|c|}
-\hline
+%
+%\begin{table}[h]
+%\begin{center}
+%\begin{tabulary}{\textwidth}{|c|c|c|c|c|}
+%\hline
+%
+%\textbf{Replica} & \textbf{Mitjana} & \textbf{Desviació estàndard} & \textbf{Màxim} & \textbf{Minim} \\ \hline
+%1 & 17220.69 & 18868.55 & 99864.38 & 0.8  \\ \hline
+%2 & 18751.08 & 11781.05 & 33554.43 & 0.07  \\ \hline
+%3 & 5478.21 & 6845.21 & 33554.43 & 0.9  \\ \hline
+%4 & 20500.1 & 12917.91 & 33554.43 & 0.23\\ \hline
+%5 & 26177.68 & 8864.36 & 33554.43 & 0.16\\ \hline
+%6 & 25822.19 & 8260.97 & 33554.43 & 0.06\\ \hline
+%7 & 15288.78 & 15038.49 & 50533.78 & 0.88 \\ \hline
+%8 & 1826.91 & 4198.85 & 16710.37& 4.24 \\ \hline
+%9 & 11732.41 & 13836.05 & 99864.38 & 1.2\\ \hline
+%10 & 11941.76 & 13410.92 & 33554.43 & 1.2\\ \hline
+%11 & 20545.05 & 29980.55 & 102300.1 & 0.8\\ \hline
+%12 & 4640.01 & 8933.51 & 33554.432& 0.93 \\ \hline
+%13 & 4520.6 & 10376.95 & 99864.38 & 1.13 \\ \hline
+%14 & 10729.39 & 22888.43 & 102300.1 & 1.66\\ \hline
+%15 & 8989.98 & 12864.7 & 33554.43 & 1.64 \\ \hline
+%\end{tabulary}
+%\end{center}
+%\caption{dades de C++\label{onelegC++}}
+%\end{table}
+%\begin{table}[h]
+%\begin{center}
+%\begin{tabulary}{\textwidth}{|c|c|c|c|c|}
+%\hline
+%
+%\textbf{Replica} & \textbf{Mitjana} & \textbf{Desviació estàndard} & \textbf{Màxim} & \textbf{Minim} \\ \hline
+%1 & 17220.69 & 18868.55 & 99864.38 & 0.8  \\ \hline
+%2 & 18751.08 & 11781.05 & 33554.43 & 0.07  \\ \hline
+%3 & 5478.21 & 6845.21 & 33554.43 & 0.9  \\ \hline
+%4 & 20500.1 & 12917.91 & 33554.43 & 0.23\\ \hline
+%5 & 26177.68 & 8864.36 & 33554.43 & 0.16\\ \hline
+%6 & 25822.19 & 8260.97 & 33554.43 & 0.06\\ \hline
+%7 & 15288.78 & 15038.49 & 50533.78 & 0.88 \\ \hline
+%8 & 1826.91 & 4198.85 & 16710.37& 4.24 \\ \hline
+%9 & 11732.41 & 13836.05 & 99864.38 & 1.2\\ \hline
+%10 & 11941.76 & 13410.92 & 33554.43 & 1.2\\ \hline
+%11 & 20545.05 & 29980.55 & 102300.1 & 0.8\\ \hline
+%12 & 4640.01 & 8933.51 & 33554.432& 0.93 \\ \hline
+%13 & 4520.6 & 10376.95 & 99864.38 & 1.13 \\ \hline
+%14 & 10729.39 & 22888.43 & 102300.1 & 1.66\\ \hline
+%15 & 8989.98 & 12864.7 & 33554.43 & 1.64 \\ \hline
+%\end{tabulary}
+%\end{center}
+%\caption{dades de C++\label{onelegPython}}
+%\end{table}
 
-\textbf{Replica} & \textbf{Mitjana} & \textbf{Desviació estàndard} & \textbf{Màxim} & \textbf{Minim} \\ \hline
-1 & 17220.69 & 18868.55 & 99864.38 & 0.8  \\ \hline
-2 & 18751.08 & 11781.05 & 33554.43 & 0.07  \\ \hline
-3 & 5478.21 & 6845.21 & 33554.43 & 0.9  \\ \hline
-4 & 20500.1 & 12917.91 & 33554.43 & 0.23\\ \hline
-5 & 26177.68 & 8864.36 & 33554.43 & 0.16\\ \hline
-6 & 25822.19 & 8260.97 & 33554.43 & 0.06\\ \hline
-7 & 15288.78 & 15038.49 & 50533.78 & 0.88 \\ \hline
-8 & 1826.91 & 4198.85 & 16710.37& 4.24 \\ \hline
-9 & 11732.41 & 13836.05 & 99864.38 & 1.2\\ \hline
-10 & 11941.76 & 13410.92 & 33554.43 & 1.2\\ \hline
-11 & 20545.05 & 29980.55 & 102300.1 & 0.8\\ \hline
-12 & 4640.01 & 8933.51 & 33554.432& 0.93 \\ \hline
-13 & 4520.6 & 10376.95 & 99864.38 & 1.13 \\ \hline
-14 & 10729.39 & 22888.43 & 102300.1 & 1.66\\ \hline
-15 & 8989.98 & 12864.7 & 33554.43 & 1.64 \\ \hline
+\subsection{Enviament de dades}
+Part de la comunicació te a veure amb l'enviament de ordres a les articulacions del AIBO, amb aquest motiu s'ha realitzat un altre experiment. 
+Aquest consistirà en enviar variar de forma sinusoïdal el valor d'una articulació mentre es llegeixen els valors de les articulacions com a l'apartat anterior. 
+En aquest cas tenim 3 opcions de programació: liburbi usant solament un client, liburbi usant un client per llegir i laltre per escriure i finalment per telnet.
+En els tres casos ha sigut necessària la creació d'un altre fil d'execució per poder dur a terme la lectura i la escriptura en paral·lel\footnote{Els codis es poden trobar a l'annex \ref{sinC} i \ref{sinP}}.
+L'experiment s'ha realitzat a diverses freqüències a la que s'enviaven els punts de la sinusoide. S'ha realitzat per a 1, 2, 5 i 10 Hz no s'ha enviat a més freqüència degut a que el moviment resultant a 10 Hz començava a ser poc suau i inconstant. A més s'ha pogut comprovar que a més freqüència el buffer d'entrada d'ordres de l'AIBO sembla que es bloqueja.  
+\begin{figure}[H]
+	\centering
+    \includegraphics[scale=0.33]{images/sin1H.pdf}
+	 \caption{En blau està graficat les posicions enviades a una freqüència d'1Hz i en vermell les lectures realitzades. En columnes es troben les repliques del mateix experiment i per files els tres mètodes usats, començant per liburbi amb un client, liburbi amb dos clients i telnet.}
+  \label{fig:sin1H}
+\end{figure}
+\begin{figure}[H]
+	\centering
+    \includegraphics[scale=0.3]{images/sin2H.pdf}
+	 \caption{En blau està graficat les posicions enviades a una freqüència d'2Hz i en vermell les lectures realitzades. En columnes es troben les repliques del mateix experiment i per files els tres mètodes usats, començant per liburbi amb un client, liburbi amb dos clients i telnet.}
+  \label{fig:sin2H}
+\end{figure}
+\begin{figure}[H]
+	\centering
+    \includegraphics[scale=0.3]{images/sin5H.pdf}
+	 \caption{En blau està graficat les posicions enviades a una freqüència d'5Hz i en vermell les lectures realitzades. En columnes es troben les repliques del mateix experiment i per files els tres mètodes usats, començant per liburbi amb un client, liburbi amb dos clients i telnet.}
+  \label{fig:sin5H}
+\end{figure}
+\begin{figure}[H]
+	\centering
+    \includegraphics[scale=0.3]{images/sin10H.pdf}
+	 \caption{En blau està graficat les posicions enviades a una freqüència d'10Hz i en vermell les lectures realitzades. En columnes es troben les repliques del mateix experiment i per files els tres mètodes usats, començant per liburbi amb un client, liburbi amb dos clients i telnet.}
+  \label{fig:sin10H}
+\end{figure}
+En aquest experiment es poden trobar dos tipus d'errors que no permeten el seguiment d'una trajectoria:
+\begin{itemize}
+\item L'articulació no es mou: Això queda reflexat com una recta horitzontal durant un cert temps dels valors recollits en els gràfics anteriors.
+\item No es rep la posició: Queda reflexat amb un període sense dades de recepció. En aquest cas no es pot saber si l'articulació es movia o no\footnote{Per inspecció visual s'ha pogut comprovar que els dos errors eren ocmpletament independents.}
+\end{itemize}
+El cas en que s'utilitza liburbi amb un sol client te grans buits en la recepció de dades i es el sistema en que l'articulació es mou pitjor. Pel que fa als altres programes No es pot concluir quin metode es milló amb les figures \ref{fig:sin1H} \ref{fig:sin2H} \ref{fig:sin5H} \ref{fig:sin10H}, però s'ha mirat el temps de resposta com un altre criteri d'avaluació.
+ 
+S'agafen les diferencies dels temps en que s'envia l'ordre dels pics de la sinusoide fins al moment en que l'articulació hi arriba. La comparació es fa sobre la freqüència de 10 Hz. Realitzant una ANOVA sobre les dades obtingudes es pot dir que amb un interval de confiança del 0.95 es pot dir que el temps de retras del programa en C++ és major.
+\begin{table}[H]
+\begin{center}
+\begin{tabulary}{\textwidth}{|p{4cm}|p{3cm}|p{3cm}|p{3cm}|}
+\hline
+\textbf{Python} & \textbf{C++}  \\ \hline
+0.2645001411438 &	0.89370012283325  \\ \hline
+0.53448987007141&	1.97295999526978 \\ \hline
+1.00108003616333&	0.57231998443604 \\ \hline
+0.53938007354736&	0.86796998977661 \\ \hline
+0.56873989105225&	1.23644995689392 \\ \hline
+0.36583995819092&	0.88230991363525 \\ \hline
+0.43079996109009&	1.08385014533997 \\ \hline
+0.49660015106201&	0.34201002120972 \\ \hline
+0.44481992721558&	1.24258995056152 \\ \hline
+0.67379021644592&	0.53582000732422 \\ \hline
+0.4376699924469	&0.32669997215271 \\ \hline
+0.38997006416321&	0.35342001914978 \\ \hline
+1.02151989936829&	0.28936004638672 \\ \hline
+0.39364004135132&	0.61238980293274 \\ \hline
+0.4789400100708&	0.56062984466553 \\ \hline
+0.33033013343811&	0.46492981910706 \\ \hline
+0.38224005699158&	0.58044004440308 \\ \hline
+0.50603008270264&	0.8042299747467 \\ \hline
+0.45465016365051&	0.37677979469299  \\ \hline
+
 \end{tabulary}
 \end{center}
-\caption{dades de C++\label{onelegC++}}
-\end{table}
-\begin{table}[h]
-\begin{center}
-\begin{tabulary}{\textwidth}{|c|c|c|c|c|}
-\hline
-
-\textbf{Replica} & \textbf{Mitjana} & \textbf{Desviació estàndard} & \textbf{Màxim} & \textbf{Minim} \\ \hline
-1 & 17220.69 & 18868.55 & 99864.38 & 0.8  \\ \hline
-2 & 18751.08 & 11781.05 & 33554.43 & 0.07  \\ \hline
-3 & 5478.21 & 6845.21 & 33554.43 & 0.9  \\ \hline
-4 & 20500.1 & 12917.91 & 33554.43 & 0.23\\ \hline
-5 & 26177.68 & 8864.36 & 33554.43 & 0.16\\ \hline
-6 & 25822.19 & 8260.97 & 33554.43 & 0.06\\ \hline
-7 & 15288.78 & 15038.49 & 50533.78 & 0.88 \\ \hline
-8 & 1826.91 & 4198.85 & 16710.37& 4.24 \\ \hline
-9 & 11732.41 & 13836.05 & 99864.38 & 1.2\\ \hline
-10 & 11941.76 & 13410.92 & 33554.43 & 1.2\\ \hline
-11 & 20545.05 & 29980.55 & 102300.1 & 0.8\\ \hline
-12 & 4640.01 & 8933.51 & 33554.432& 0.93 \\ \hline
-13 & 4520.6 & 10376.95 & 99864.38 & 1.13 \\ \hline
-14 & 10729.39 & 22888.43 & 102300.1 & 1.66\\ \hline
-15 & 8989.98 & 12864.7 & 33554.43 & 1.64 \\ \hline
-\end{tabulary}
-\end{center}
-\caption{dades de C++\label{onelegPython}}
+\caption{Retrà.\label{delay}}
 \end{table}
 
-\subsection{enviament de dades}
 \subsection{Elecció del mètode}
+Amb els resulats anteriors es pot escollir ja el mètode més adequat per establir la comunicació am l'AIBO i es pot garantir que el seu correcte funcionament. La Taula \ref{comp} es troben resumits els resultats dels experiments realitzats.
+
+\begin{table}[H]
+\begin{center}
+\begin{tabulary}{\textwidth}{|p{4cm}|p{3cm}|p{3cm}|p{3cm}|}
+\hline
+
+&\textbf{Python amb Telnet} & \textbf{C++ amb liburbi i 1 client} & \textbf{C++ amb liburbi i 2 clients} \\ \hline
+Freqüencial màxima de lectura & - & + & + \\ \hline
+Freqüencial mitjana de lectura & - & + & +  \\ \hline
+Congelacions de les dades & = & = &= \\ \hline
+Freqüencial de enviament de dades & = & = & = \\ \hline
+Seguiment de trajectòries & + & - & + \\ \hline
+Efecte negatiu de l'enviament sobre la lectura& - & + & - \\ \hline
+Retràs de la resposta & - & + & \\ \hline
+\end{tabulary}
+\end{center}
+\caption{Comparació dels mètodes usats i els seus resultats en els experiments.\label{comp}}
+\end{table}
+Els millors resultats es donen amb liburbi i dos clients a excepció del temps de resposta, que el script de python dona uns temps millors
 \subsection{Possibles millores}
 \section{Implementació del paquet de ROS}
 \subsection{ROS}
 \label{ros}
+ROS és un marc de treball que proporciona eines i llibreries per ajudar als desenvolupadors de software a crear aplicacions per a robots. Proporciona entre altres abstraccions de hardware,controladors per a dispositius, eines de visualització, comunicació per missatges, administració de paquets i tot es troba sota llicencia de open source.
+
+
+
 \subsection{Paquet AiboServer }
 \subsection{Paquet AiboMimic}
 \section{Cooperació i Sincronització}
@@ -756,6 +847,6 @@ Les mitjanes semblen lleugerament més altes les del programa de liburbi Figura\
 \lstinputlisting[language=Python]{src/getDataOneLeg/getDataPython/getData.py}
 \subsection{Obtenció dels valors de totes les articulacions usant liburbi per C++}
 \subsection{Obtenció dels valors de totes les articulacions usant una conexió telnet i python}
-\subsection{Moviment d'una articulació de forma sinusoïdal usant liburbi per C++}
-\subsection{Moviment d'una articulació de forma sinusoïdal usant una conecció telnet i python}
+\subsection{Moviment d'una articulació de forma sinusoïdal usant liburbi per C++}\label{sinC}
+\subsection{Moviment d'una articulació de forma sinusoïdal usant una conecció telnet i python}\label{sinP}
 \end{document}

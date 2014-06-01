@@ -20,7 +20,7 @@
 \BOOKMARK [3][-]{subsubsection.4.1.1}{Metode amb liburbi i C++}{subsection.4.1}
 \BOOKMARK [3][-]{subsubsection.4.1.2}{Metode amb telnet i python}{subsection.4.1}
 \BOOKMARK [3][-]{subsubsection.4.1.3}{Comparac\363}{subsection.4.1}
-\BOOKMARK [2][-]{subsection.4.2}{enviament de dades}{section.4}
+\BOOKMARK [2][-]{subsection.4.2}{Enviament de dades}{section.4}
 \BOOKMARK [2][-]{subsection.4.3}{Elecci\363 del m\350tode}{section.4}
 \BOOKMARK [2][-]{subsection.4.4}{Possibles millores}{section.4}
 \BOOKMARK [1][-]{section.5}{Implementaci\363 del paquet de ROS}{}
@@ -28,9 +28,9 @@
 \BOOKMARK [2][-]{subsection.5.2}{Paquet AiboServer }{section.5}
 \BOOKMARK [2][-]{subsection.5.3}{Paquet AiboMimic}{section.5}
 \BOOKMARK [1][-]{section.6}{Cooperaci\363 i Sincronitzaci\363}{}
-\BOOKMARK [1][-]{section*.29}{Conclusions}{}
-\BOOKMARK [1][-]{section*.29}{Refer\350ncies}{}
-\BOOKMARK [1][-]{section*.31}{Annexos}{}
+\BOOKMARK [1][-]{section*.33}{Conclusions}{}
+\BOOKMARK [1][-]{section*.33}{Refer\350ncies}{}
+\BOOKMARK [1][-]{section*.35}{Annexos}{}
 \BOOKMARK [1][-]{appendix.A}{Configuraci\363 dels marcs de treball }{}
 \BOOKMARK [2][-]{subsection.A.1}{URBI}{appendix.A}
 \BOOKMARK [2][-]{subsection.A.2}{Tekkotsu}{appendix.A}

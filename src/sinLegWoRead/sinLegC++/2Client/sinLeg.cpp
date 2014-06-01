@@ -58,7 +58,7 @@ void *move(void*)
 		char command[100];
 		sprintf (command,"legLF1.val=%f time: 100,",l);
 		client2->send(command);
-		angle+=8;
+		angle+=10;
 		double tim;
 		getTime(tim);
 		
