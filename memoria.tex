@@ -721,11 +721,21 @@ Els millors resultats es donen amb liburbi i dos clients a excepció del temps d
 \section{Implementació del paquet de ROS}
 \subsection{ROS}
 \label{ros}
-ROS és un marc de treball que proporciona eines i llibreries per ajudar als desenvolupadors de software a crear aplicacions per a robots. Proporciona entre altres abstraccions de hardware,controladors per a dispositius, eines de visualització, comunicació per missatges, administració de paquets i tot es troba sota llicencia de open source.
+ROS és un marc de treball que proporciona eines i llibreries per ajudar als desenvolupadors de software a crear aplicacions per a robots. Proporciona entre altres abstraccions de hardware,controladors per a dispositius, eines de visualització, comunicació per missatges, administració de paquets i tot es troba sota llicencia de software lliure.
 
-
+La principal característica sobre la que es basa ROS és la comunicació que proporciona. A baix nivell esta basada en pas de missatges els quals poden ser llegits o enviats per diversos processos. Aquests missatges s'escriuen sobre uns canals de comunicació anomenats \textit{tòpics} als que s'hi pot accedir mitjançant els mètodes de publicació/subscripció. La comunicació es realitza entre objectes anomenats nodes que poden subscriure's i publicar en els diferents tòpics. Tots els nodes sobre els que es vol fer comunicacions s'han de crear sobre el mateix nucli. 
 
 \subsection{Paquet AiboServer }
+L'objectiu que es persegueix amb aquest paques és un paquet que al llençar-se es conecti al AIBO que se li indiqui per direcció IP i crei un node de ROS el cual publiqui sobre uns tòpics els valors de les articulacions i sensors i estigui subscrit a un tòpic on esperi les publicacions per enviar les ordres a l'AIBO.
+
+\begin{figure}[H]
+	\centering
+    \includegraphics[scale=1]{images/aiboserver.pdf}
+	 \caption{Esquema de l'objectiu buscat per a l'aibo server.}
+  \label{fig:aiboserv}
+\end{figure}
+
+
 \subsection{Paquet AiboMimic}
 \section{Cooperació i Sincronització}
 \section*{Conclusions}
@@ -846,6 +856,7 @@ ROS és un marc de treball que proporciona eines i llibreries per ajudar als des
 \label{getDataOneLegPy}
 \lstinputlisting[language=Python]{src/getDataOneLeg/getDataPython/getData.py}
 \subsection{Obtenció dels valors de totes les articulacions usant liburbi per C++}
+
 \subsection{Obtenció dels valors de totes les articulacions usant una conexió telnet i python}
 \subsection{Moviment d'una articulació de forma sinusoïdal usant liburbi per C++}\label{sinC}
 \subsection{Moviment d'una articulació de forma sinusoïdal usant una conecció telnet i python}\label{sinP}
