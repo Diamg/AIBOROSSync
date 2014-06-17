@@ -633,7 +633,7 @@ Fixants en les frequencies mínimes sembla que els dos tenen un comportament sem
 %\caption{dades de C++\label{onelegPython}}
 %\end{table}
 
-\subsection{Enviament de dades}
+\subsection{Enviament de dades}\label{secenvdades}
 Part de la comunicació te a veure amb l'enviament de ordres a les articulacions del AIBO, amb aquest motiu s'ha realitzat un altre experiment. 
 Aquest consistirà en enviar variar de forma sinusoïdal el valor d'una articulació mentre es llegeixen els valors de les articulacions com a l'apartat anterior. 
 En aquest cas tenim 3 opcions de programació: liburbi usant solament un client, liburbi usant un client per llegir i laltre per escriure i finalment per telnet.
@@ -828,13 +828,29 @@ Para la realizacion del test se ha implementado un sencillo programa que crea un
 La estrucura entre los nodos se muestra en la figura \ref{fig:ASSL}.
 \begin{figure}[H]
 	\centering
-    \includegraphics[scale=0.35]{images/Aibo_Server.pdf}
+    \includegraphics[scale=0.35]{images/Aibo_Server.pdf}%cambiar figura
 	 \caption{Estructura de ROS con los nodos Aibo\_ Server y SinLeg.}
   \label{fig:ASSL}
 \end{figure}
 
-\subsection{Paquet AiboMimic}
-\section{Cooperació i Sincronització}
+De lo extraido en varios replicas a diversas frequencias se puede reportar que el seguimiento de de la trayectoria lleva un retraso minimo de unos 0.4 segundos que era el retraso propio obtenido en las experimentaciones de la sección \ref{secenvdades} aunque por lo general como se puede observar en las figuras %FIGURAAAAAAAAAS 
+dicho retraso no es la norma general estando el retraso medio muy por encima de éste.
+
+Valorando el modulo se puede concluir que no funciona de la forma deseada ni requerida para varias aplicaciones en las que se require una lectura y respuesta rapida del sistema.
+
+Los problemas encontrados, tras un proceso de depuración se pueden clasificar de la siguiente forma:
+\begin{itemize}
+\item Cortas congelaciones en la recepción de los valores de los sensores y articulaciones: respeto a ello ya se ha probado que en las experimentaciones anteriores que los resultados no podian mejorar usando liburbi.
+\item Envio de la orden correctamente pero tarda en realizar el movimiento: Este es un problema interno del tratamiento de las ordenes del servidor URBI y que por lo tanto no se puede hacer nada al respeto des de el punto de vista del cliente.
+\item Bloqueo en enviar la orden de movimiento: Como en las experimentaciones de la seccion anterior se producen bloqueos debidos a que la funcion de liburbi que permite enviar ordenes se queda bloqueada. Estos bloqueos hacen que se bloquee todo el nodo durante segundos e incluso minutos.
+\end{itemize}
+
+A raiz del ultimo problema comentado se ha implementado una solución que evita dos de las consecuencias que conyeva el éste.
+
+En primer lugar en caso de que se produzca un bloqueo en el envio de una posición del cliente al servidor, éste no debe afectar a la recepcion de las demas variables. Como solución se propone que el envió y la recepción se produzcan en dos threads distintos e independientes. 
+ Este es el caso de la sincronoización, una de las aplicaciones mas exigentes en cuanto a transmision de datos i tiempos de respuesta se refiere.
+Con este motivo se ha realiza 
+
 \section*{Conclusions}
 \addcontentsline{toc}{section}{Conclusions}
 
