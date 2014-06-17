@@ -1,0 +1,16 @@
+CC= g++
+CFLAGS = -O4 -Wall 
+CFLAGS = -g -Wall
+
+LIBS = -lurbi -ljpeg -lpthread -lrt
+
+ALL: aibo	
+
+sinLeg: aibo.o
+	$(CC) aibo.o -o aibo $(LIBS)
+
+sinLeg.o: aibo.cpp
+	$(CC) $(CFLAGS) -c -o aibo.o aibo.cpp
+
+clean:
+	rm -f aibo.o aibo 

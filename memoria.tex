@@ -35,7 +35,7 @@
 \fancyhead[RO,LE]{\thepage}
 \fancyhead[RE,LO]{Sincronització amb aibo}
 \fancyfoot{}
-\fancyfoot[RO,LE]{\includegraphics[scale=0.3]{images/etseib.jpg}}
+\fancyfoot[RO,LE]{\includegraphics[scale=0.23]{images/etseib.pdf}}
 
 \headheight = 15pt 
 
@@ -111,8 +111,9 @@
 
 \section{Prefaci}
 \subsection{Motivació}
-Fa ja 8 anys que l'empresa Sony va deixar de produir la mascota robòtica per excel·lència, el gos AIBO. Des de la seva desaparició del mercat ha caigut en una espiral de desús fins que avui en dia gran part d'ells estan agafant pols al fons d'un armari.
+Hace ya ocho años que la empresa SONY dejó de producir la mascota robótica por excelencia, el perro robot AIBO. Des de su desaparición del mercado, en 2006, éste ha caido en una espiral de desuso hasta el punto que hoy en dia se pueden encontrar gran cantidad de ellos guardados en armarios de todo el mundo.
 
+Este proyecto partió de la idea de volver a aprobechar los AIBO para realizar tareas de coperación i sincronizacion.
 Aquest projecte va partir de una idea de tornar aprofitar els AIBOS per realitzar tasques de cooperació entre ells partint de la part alta de la programació. En vista de la incomoditat per tal de programar la plataforma en qüestió degut a dos factors el primer: l'us de llenguatges i de APIs poc usades en el mon de la robòtica i que tenen corbes de aprenentatge molt costoses a l'inici. El segon és el mal manteniment d'aquests llenguatges en els últims anys.
 Això va portar a voler recuperar els AIBO d'una forma nova amb un del sistemes operatius actualment més usats en la robòtica, ROS\footnote{\textit{Robotics Operational System}\ref{ros}}. 
 
@@ -359,7 +360,11 @@ Aquesta segona opció obre varies vies per a la programació. Permet, per una ba
 URBI permet i facilita l'accés a cada una de les articulacions i sensors de l'AIBO, per exemple per consultar el valor de la primera articulació de la cama esquerre del devant cal enviar la comanda \texttt{legLF1.val;} i per assignar el seu valor \texttt{legLF1.val=20;}\cite{urbicmd}. A l'apèndix\ref{urbiA} és pot trobar més documentació sobre les comandes d'URBI.
 
 \clearpage
-\section{Comparació d'alternatives per a la programació}
+
+
+
+\section{Comparació d'alternatives per a la programació}\label{seccomp}
+
 
 Tenint en conte que el que és preten és buscar una forma senzilla i rapida de enviar l'estat dels sensors i articulacions de l'AIBO a un PC remot i enviar a l'AIBO les posicions desitjades de les articulacions per tal de poder treballar posteriorment amb ROS s'han tingut en conte certes consideracions qualitatives un trobades durant la recerca que es troben resumides a la Taula \ref{complleng}.
 
@@ -725,16 +730,96 @@ ROS és un marc de treball que proporciona eines i llibreries per ajudar als des
 
 La principal característica sobre la que es basa ROS és la comunicació que proporciona. A baix nivell esta basada en pas de missatges els quals poden ser llegits o enviats per diversos processos. Aquests missatges s'escriuen sobre uns canals de comunicació anomenats \textit{tòpics} als que s'hi pot accedir mitjançant els mètodes de publicació/subscripció. La comunicació es realitza entre objectes anomenats nodes que poden subscriure's i publicar en els diferents tòpics. Tots els nodes sobre els que es vol fer comunicacions s'han de crear sobre el mateix nucli. 
 
+Todo paquete de ROS contiene una serie de archivos necesarios para su compilacion:
+\begin{itemize}
+\item manifest.xml: Se incluye información sobre el nombre del paquete, el autor, tipo de licencia y paquetes externos necesarios.
+\item CMakelists.txt: Se indica el uso de librerias, el uso de mensages propios del paquete y se declaran los ejecutables.
+\item mainpage.dox: Permite hacer un resumen explicativo del paquete.
+\item archivos ejecutables: ROS permite usar su API con C++ i python.
+\item carpeta msg: Contiene los archivos *.msg donde se definen los mensages propios del paquete.
+\item carpeta srv: contiene los archivos *.srv donde se definen los servicios propios del paquete.
+\item Carpeta launch: Contiene los archivos .launch que permiten lanzar varios nodos de diferentes paquetes i tipos con los parametros convenientes.
+
+\end{itemize}
 \subsection{Paquet AiboServer }
-L'objectiu que es persegueix amb aquest paques és un paquet que al llençar-se es conecti al AIBO que se li indiqui per direcció IP i crei un node de ROS el cual publiqui sobre uns tòpics els valors de les articulacions i sensors i estigui subscrit a un tòpic on esperi les publicacions per enviar les ordres a l'AIBO.
+Se pretende implementar una paquete que en lanzarse se conecte al AIBO indicado por la direccion IP. Una vez conectado debe recoger los datos enviados por el servidor URBI del AIBO i publicarlos sobre una serie de topicos. De forma inversa debe tratar los valores de las articulaciones publicados en un topico al que esta suscrito i enviarlos al servidor con el fin de actuar sobre la plataforma.
 
 \begin{figure}[H]
 	\centering
     \includegraphics[scale=1]{images/aiboserver.pdf}
-	 \caption{Esquema de l'objectiu buscat per a l'aibo server.}
+	 \caption{Nodo Aibo\_ Server.}
   \label{fig:aiboserv}
 \end{figure}
 
+Para la realización de este paquete de ROS se han tenido en cuenta las siguientes consideraciones:
+\begin{itemize}
+\item Incluir en el manifest.xml los paquetes de ROS necesarios para su implementacion:
+\begin{itemize}
+\item roscpp: permite utilizar la API ROS para C++.
+\item std\_ msgs: permite el uso de unos mensajes estandard.
+\item sensor\_ msgs: permite el uso de mensajes especialmente destinados a ciertos tipos de sensores.
+\end{itemize}
+\item Implementación de los archivos necesarios para el ejecutable:
+\begin{itemize}
+\item AiboNode.cpp: Archivo aprtir del que se crea el ejecutable del paquete. En el se encuentra toda la estructura del programa.
+\item AiboServer.cpp y AiboServer.h: Se define la clase aibo en la que se basa AiboNode.cpp.
+\item AiboParams.h: se definen las constantes.
+\end{itemize} 
+\item Definición de los mensajes propios:
+\begin{itemize}
+\item Accel.msg: Mensaje destinado al acelerometro.
+\item Bumper.msg y BumperArray.msg: Mensaje destinado a los sensores de contacto de las patas.
+\item IRArray.msg: Mensaje destinado a los tres infrarojos.
+\item Jointes.msg: Mensaje destinado a las articulaciones.
+\item Sound.msg: Mensaje destinado al envio de sonido.
+\item TouchArray.msg: mensaje destinado a los sensores de tacto de la espalda y la cabeza.
+\end{itemize}
+\item Modificación del CMakeList.txt para incluir los mensages y los archivos C++ descritos ademas de la libreria liburbi.
+\end{itemize}
+
+\subsubsection{Estructura del programa}
+Basandose en los resultados de la sección anterior \ref{seccomp} se ha procedido a la implementación del paquete de ros usando liburbi i dos clientes, uno para la recepción  y otro para el envio.
+
+La estructura del programa que se ha implementado se puede ver en la Figura \ref{aiboserver}.
+\begin{figure}[H]
+	\centering
+    \includegraphics[scale=0.35]{images/Aibo_Server.pdf}
+	 \caption{Estructura basica del ejecutable Aibo\_ Server.}
+  \label{fig:aiboserver}
+\end{figure}
+
+\begin{itemize}
+\item Inicializaciones: 
+\begin{itemize}
+\item Inicializacion del nodo de ROS:
+\begin{itemize}
+\item Creación del nodo: Se le otorga un identificador al nodo, en este caso Aibo\_ Server.
+\item Definición de la frecuencia de ejecución del bucle de ROS.
+\item Se inicializa el \textit{Subscriber} que permitira llamar llamara al Callback de ROS.   
+\end{itemize}
+
+\item Inicializacion de la instancia de la clase \textbf{aibo}:
+\begin{itemize}
+\item Inicializacion de los clientes URBI de lectura y escritura.
+\item Creacion de los tópicos e inicialización de los \textit{Publishers} que publicaran en ellos.
+\item Definición del Callback de URBI para cada sensor y articulación.
+\item Demanda del envio de datos desde URBI.
+\item Definición del metodo de tratamiento de ordenes que usará el servidor URBI.
+\end{itemize}
+\end{itemize}
+\item Bucle de URBI:
+\begin{itemize}
+\item Se crea un hilo de ejecución en paralelo donde se lleva acabo el bucle de URBI.
+\item Llamada a los callbacks de URBI: En los callbacks se guardan los valores obtenidos en las variables de clase correspondientes.
+
+\end{itemize}
+\item Bucle de ROS:
+\begin{itemize}
+\item Publicación de las variables de los sensores y articulaciones en los topicos correspondientes.
+\item Llamada al callback de ROS: Éste envia la orden al servidor URBI mediante el cliente de envio.
+\end{itemize}
+\end{itemize}
+\subsubsection{Resultados}
 
 \subsection{Paquet AiboMimic}
 \section{Cooperació i Sincronització}

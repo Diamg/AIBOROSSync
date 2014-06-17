@@ -26,11 +26,13 @@
 \BOOKMARK [1][-]{section.5}{Implementaci\363 del paquet de ROS}{}
 \BOOKMARK [2][-]{subsection.5.1}{ROS}{section.5}
 \BOOKMARK [2][-]{subsection.5.2}{Paquet AiboServer }{section.5}
+\BOOKMARK [3][-]{subsubsection.5.2.1}{Estructura del programa}{subsection.5.2}
+\BOOKMARK [3][-]{subsubsection.5.2.2}{Resultados}{subsection.5.2}
 \BOOKMARK [2][-]{subsection.5.3}{Paquet AiboMimic}{section.5}
 \BOOKMARK [1][-]{section.6}{Cooperaci\363 i Sincronitzaci\363}{}
-\BOOKMARK [1][-]{section*.34}{Conclusions}{}
-\BOOKMARK [1][-]{section*.34}{Refer\350ncies}{}
-\BOOKMARK [1][-]{section*.36}{Annexos}{}
+\BOOKMARK [1][-]{section*.35}{Conclusions}{}
+\BOOKMARK [1][-]{section*.35}{Refer\350ncies}{}
+\BOOKMARK [1][-]{section*.37}{Annexos}{}
 \BOOKMARK [1][-]{appendix.A}{Configuraci\363 dels marcs de treball }{}
 \BOOKMARK [2][-]{subsection.A.1}{URBI}{appendix.A}
 \BOOKMARK [2][-]{subsection.A.2}{Tekkotsu}{appendix.A}

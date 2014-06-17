@@ -111,7 +111,7 @@ int main(int argc, char** argv)
 	client->setCallback (urbi::callback(onJointSensor),"tailPan");
 	client2->send("motors on;");
 	client2->send("legLF1.val->blend = cancel;");
-	client->send("loop legRF1 << legRF1.val, loop legRF2 << legRF2.val, loop legRF3 << legRF3.val, loop legRH1 << legRH1.val, loop legRH2 << legRH2.val, loop legRH3 << legRH3.val, loop legLF1 << legLF1.val, loop legLF2 << legLF2.val, loop legLF3 << legLF3.val, loop legLH1 << legLH1.val, loop legLH2 << legLH2.val, loop legLH3 << legLH3.val, loop neck << neck.val, loop headTilt << headTilt.val, loop headPan << headPan.val, loop tailPan << tailPan.val, loop tailTilt << tailTilt.val, loop mouth << mouth.val,");
+	client->send("loop legRF1 << legRF1.val & loop legRF2 << legRF2.val & loop legRF3 << legRF3.val & loop legRH1 << legRH1.val & loop legRH2 << legRH2.val & loop legRH3 << legRH3.val & loop legLF1 << legLF1.val & loop legLF2 << legLF2.val & loop legLF3 << legLF3.val & loop legLH1 << legLH1.val & loop legLH2 << legLH2.val & loop legLH3 << legLH3.val & loop neck << neck.val & loop headTilt << headTilt.val & loop headPan << headPan.val & loop tailPan << tailPan.val & loop tailTilt << tailTilt.val & loop mouth << mouth.val;");
 	std::cout << "send"<<std::flush;
 	f.open ("DataOut.txt");
 	f.precision(15);

@@ -54,15 +54,17 @@ void *move(void*)
 		//std::cout << "\n" <<std::flush;
 		float l=50*sin(angle*2*M_PI/360) + 85;
 		//std::cout << l <<std::flush;
-
+		
 		char command[100];
 		sprintf (command,"legLF1.val=%f time: 100,",l);
-		client->send(command);
-		angle+= 15;
-		double tim;
-		getTime(tim);
+		//int a=client->send(command);
+		client << "legLF1.val=" << l <<" time: 100,";
 		
-		saveData2(tim,l, "LF1");
+		angle+= 15;
+		//double tim;
+		//getTime(tim);
+		
+		//saveData2(tim,l, "LF1");
 		usleep(100000);
 		
 	}
@@ -90,32 +92,32 @@ int main(int argc, char** argv)
 	//client = new urbi::USyncClient(argv[1], 54000);
 	client = new urbi::UClient(argv[1], 54000);
 	std::cout << "start"<<std::flush;
-	client->setCallback (urbi::callback(onJointSensor),"legRF1");
-	client->setCallback (urbi::callback(onJointSensor),"legRF2");
-	client->setCallback (urbi::callback(onJointSensor),"legRF3");
-	client->setCallback (urbi::callback(onJointSensor),"legRH1");
-	client->setCallback (urbi::callback(onJointSensor),"legRH2");
-	client->setCallback (urbi::callback(onJointSensor),"legRH3");
-	client->setCallback (urbi::callback(onJointSensor),"legLF1");
-	client->setCallback (urbi::callback(onJointSensor),"legLF2");
-	client->setCallback (urbi::callback(onJointSensor),"legLF3");
-	client->setCallback (urbi::callback(onJointSensor),"legLH1");
-	client->setCallback (urbi::callback(onJointSensor),"legLH2");
-	client->setCallback (urbi::callback(onJointSensor),"legLH3");
-	client->setCallback (urbi::callback(onJointSensor),"mouth");
-	client->setCallback (urbi::callback(onJointSensor),"headNeck");
-	client->setCallback (urbi::callback(onJointSensor),"headPan");
-	client->setCallback (urbi::callback(onJointSensor),"headTilt");
-	client->setCallback (urbi::callback(onJointSensor),"tailTilt");
-	client->setCallback (urbi::callback(onJointSensor),"tailPan");
+	//client->setCallback (urbi::callback(onJointSensor),"legRF1");
+	//client->setCallback (urbi::callback(onJointSensor),"legRF2");
+	//client->setCallback (urbi::callback(onJointSensor),"legRF3");
+	//client->setCallback (urbi::callback(onJointSensor),"legRH1");
+	//client->setCallback (urbi::callback(onJointSensor),"legRH2");
+	//client->setCallback (urbi::callback(onJointSensor),"legRH3");
+	//client->setCallback (urbi::callback(onJointSensor),"legLF1");
+	//client->setCallback (urbi::callback(onJointSensor),"legLF2");
+	//client->setCallback (urbi::callback(onJointSensor),"legLF3");
+	//client->setCallback (urbi::callback(onJointSensor),"legLH1");
+	//client->setCallback (urbi::callback(onJointSensor),"legLH2");
+	//client->setCallback (urbi::callback(onJointSensor),"legLH3");
+	//client->setCallback (urbi::callback(onJointSensor),"mouth");
+	//client->setCallback (urbi::callback(onJointSensor),"headNeck");
+	//client->setCallback (urbi::callback(onJointSensor),"headPan");
+	//client->setCallback (urbi::callback(onJointSensor),"headTilt");
+	//client->setCallback (urbi::callback(onJointSensor),"tailTilt");
+	//client->setCallback (urbi::callback(onJointSensor),"tailPan");
 	client->send("motors on;");
-	client->send("legLF1.val->blend = cancel;");
-	client->send("loop legRF1 << legRF1.val, loop legRF2 << legRF2.val, loop legRF3 << legRF3.val, loop legRH1 << legRH1.val, loop legRH2 << legRH2.val, loop legRH3 << legRH3.val, loop legLF1 << legLF1.val, loop legLF2 << legLF2.val, loop legLF3 << legLF3.val, loop legLH1 << legLH1.val, loop legLH2 << legLH2.val, loop legLH3 << legLH3.val, loop neck << neck.val, loop headTilt << headTilt.val, loop headPan << headPan.val, loop tailPan << tailPan.val, loop tailTilt << tailTilt.val, loop mouth << mouth.val,");
+	client->send("legLF1.val->blend = mix;");
+	//client->send("loop legRF1 << legRF1.val, loop legRF2 << legRF2.val, loop legRF3 << legRF3.val, loop legRH1 << legRH1.val, loop legRH2 << legRH2.val, loop legRH3 << legRH3.val, loop legLF1 << legLF1.val, loop legLF2 << legLF2.val, loop legLF3 << legLF3.val, loop legLH1 << legLH1.val, loop legLH2 << legLH2.val, loop legLH3 << legLH3.val, loop neck << neck.val, loop headTilt << headTilt.val, loop headPan << headPan.val, loop tailPan << tailPan.val, loop tailTilt << tailTilt.val, loop mouth << mouth.val,");
 	std::cout << "send"<<std::flush;
-	f.open ("DataOut.txt");
-	f.precision(15);
-	f2.open ("DataIn.txt");
-	f2.precision(15);
+	//f.open ("DataOut.txt");
+	//f.precision(15);
+	//f2.open ("DataIn.txt");
+	//f2.precision(15);
 	// crea thread
 	pthread_t t1;
 	pthread_create(&t1, NULL, &move,NULL);

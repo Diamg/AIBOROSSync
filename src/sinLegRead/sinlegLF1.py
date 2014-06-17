@@ -17,7 +17,7 @@ def move():
 	legLF1=A*math.sin(math.radians(angle)) + offsetl
 			
 	print "telnet send"
-	te1.write("legLF1.val= %1.6f time: 100,\r\n" % legLF1)
+	te1.write("legLF1.val= %1.6f time: 500,\r\n" % legLF1)
 	#print join.val[
 	print "legLF1.val= %1.6f,\r\n" % legLF1
 	angle+=paso
@@ -25,7 +25,7 @@ def move():
 	writeData(f2,sec)
 	t2= str(legLF1) + "\n"
 	writeData(f2,t2)
-	threading.Timer(0.1,move).start()
+	threading.Timer(0.2,move).start()
 	
 class Joints(object):
 	_slots_=['val','tag']
@@ -108,16 +108,17 @@ def writeData(f, text):
 
 
 
-te1=telnetlib.Telnet("192.168.0.125",54000)
+
+
+te1=telnetlib.Telnet("192.168.0.124",54000)
 
 te1.write("motors on;\r\n")
 te1.write("legLF1.val->blend = cancel;\r\n")
 
 
 
-
-te=telnetlib.Telnet("192.168.0.125",54000)
-time.sleep(1)
+te=telnetlib.Telnet("192.168.0.124",54000)
+time.sleep(3)
 data=1
 while data:
 	data=te.read_eager()
