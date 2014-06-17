@@ -30,21 +30,21 @@
 \contentsline {subsection}{\numberline {5.2}Paquet AiboServer }{35}{subsection.5.2}
 \contentsline {subsubsection}{\numberline {5.2.1}Estructura del programa}{36}{subsubsection.5.2.1}
 \contentsline {subsubsection}{\numberline {5.2.2}Resultados}{38}{subsubsection.5.2.2}
-\contentsline {subsection}{\numberline {5.3}Paquet AiboMimic}{38}{subsection.5.3}
-\contentsline {section}{\numberline {6}Cooperaci\IeC {\'o} i Sincronitzaci\IeC {\'o}}{38}{section.6}
-\contentsline {section}{Conclusions}{38}{section*.35}
-\contentsline {section}{Refer\IeC {\`e}ncies}{39}{section*.35}
-\contentsline {section}{Annexos}{41}{section*.37}
-\contentsline {section}{\numberline {A}Configuraci\IeC {\'o} dels marcs de treball }{41}{appendix.A}
-\contentsline {subsection}{\numberline {A.1}URBI}{41}{subsection.A.1}
-\contentsline {subsection}{\numberline {A.2}Tekkotsu}{41}{subsection.A.2}
-\contentsline {subsection}{\numberline {A.3}OPEN-R SDK}{41}{subsection.A.3}
-\contentsline {subsection}{\numberline {A.4}Configuraci\IeC {\'o} wifi}{41}{subsection.A.4}
-\contentsline {section}{\numberline {B}URBI}{41}{appendix.B}
-\contentsline {section}{\numberline {C}Scripts i programes}{41}{appendix.C}
-\contentsline {subsection}{\numberline {C.1}Obtenci\IeC {\'o} dels valors d'una variable usant liburbi per C++}{41}{subsection.C.1}
-\contentsline {subsection}{\numberline {C.2}Obtenci\IeC {\'o} dels valors d'una variable usant una conexi\IeC {\'o} telnet i python}{43}{subsection.C.2}
-\contentsline {subsection}{\numberline {C.3}Obtenci\IeC {\'o} dels valors de totes les articulacions usant liburbi per C++}{44}{subsection.C.3}
-\contentsline {subsection}{\numberline {C.4}Obtenci\IeC {\'o} dels valors de totes les articulacions usant una conexi\IeC {\'o} telnet i python}{44}{subsection.C.4}
-\contentsline {subsection}{\numberline {C.5}Moviment d'una articulaci\IeC {\'o} de forma sinuso\IeC {\@umlaut \i }dal usant liburbi per C++}{44}{subsection.C.5}
-\contentsline {subsection}{\numberline {C.6}Moviment d'una articulaci\IeC {\'o} de forma sinuso\IeC {\@umlaut \i }dal usant una conecci\IeC {\'o} telnet i python}{44}{subsection.C.6}
+\contentsline {subsection}{\numberline {5.3}Paquet AiboMimic}{39}{subsection.5.3}
+\contentsline {section}{\numberline {6}Cooperaci\IeC {\'o} i Sincronitzaci\IeC {\'o}}{39}{section.6}
+\contentsline {section}{Conclusions}{39}{section*.36}
+\contentsline {section}{Refer\IeC {\`e}ncies}{40}{section*.36}
+\contentsline {section}{Annexos}{42}{section*.38}
+\contentsline {section}{\numberline {A}Configuraci\IeC {\'o} dels marcs de treball }{42}{appendix.A}
+\contentsline {subsection}{\numberline {A.1}URBI}{42}{subsection.A.1}
+\contentsline {subsection}{\numberline {A.2}Tekkotsu}{42}{subsection.A.2}
+\contentsline {subsection}{\numberline {A.3}OPEN-R SDK}{42}{subsection.A.3}
+\contentsline {subsection}{\numberline {A.4}Configuraci\IeC {\'o} wifi}{42}{subsection.A.4}
+\contentsline {section}{\numberline {B}URBI}{42}{appendix.B}
+\contentsline {section}{\numberline {C}Scripts i programes}{42}{appendix.C}
+\contentsline {subsection}{\numberline {C.1}Obtenci\IeC {\'o} dels valors d'una variable usant liburbi per C++}{42}{subsection.C.1}
+\contentsline {subsection}{\numberline {C.2}Obtenci\IeC {\'o} dels valors d'una variable usant una conexi\IeC {\'o} telnet i python}{44}{subsection.C.2}
+\contentsline {subsection}{\numberline {C.3}Obtenci\IeC {\'o} dels valors de totes les articulacions usant liburbi per C++}{45}{subsection.C.3}
+\contentsline {subsection}{\numberline {C.4}Obtenci\IeC {\'o} dels valors de totes les articulacions usant una conexi\IeC {\'o} telnet i python}{45}{subsection.C.4}
+\contentsline {subsection}{\numberline {C.5}Moviment d'una articulaci\IeC {\'o} de forma sinuso\IeC {\@umlaut \i }dal usant liburbi per C++}{45}{subsection.C.5}
+\contentsline {subsection}{\numberline {C.6}Moviment d'una articulaci\IeC {\'o} de forma sinuso\IeC {\@umlaut \i }dal usant una conecci\IeC {\'o} telnet i python}{45}{subsection.C.6}

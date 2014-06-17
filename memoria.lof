@@ -24,3 +24,4 @@
 \contentsline {figure}{\numberline {23}{\ignorespaces En blau est\IeC {\`a} graficat les posicions enviades a una freq\IeC {\@umlaut u}\IeC {\`e}ncia d'10Hz i en vermell les lectures realitzades. En columnes es troben les repliques del mateix experiment i per files els tres m\IeC {\`e}todes usats, comen\IeC {\c c}ant per liburbi amb un client, liburbi amb dos clients i telnet.\relax }}{32}{figure.caption.30}
 \contentsline {figure}{\numberline {24}{\ignorespaces Nodo Aibo\_ Server.\relax }}{35}{figure.caption.33}
 \contentsline {figure}{\numberline {25}{\ignorespaces Estructura basica del ejecutable Aibo\_ Server.\relax }}{37}{figure.caption.34}
+\contentsline {figure}{\numberline {26}{\ignorespaces Estructura de ROS con los nodos Aibo\_ Server y SinLeg.\relax }}{39}{figure.caption.35}
