@@ -5,12 +5,6 @@ class Joints(object):
 	_slots_=['val','tag']
 def tractarData(data):
 	
-	#i=0
-	#while (data.find("555555")<0) and (i<5):
-		#data=data+te.read_some()
-		#if (data.find("555555")>0) and (i<4):
-			#data=""
-			#i=i+1
 	while (data.find("555555")<0):
 		data=data+te.read_some()
 	if (data.find("Bat")<0):

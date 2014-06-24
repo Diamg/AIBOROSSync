@@ -1,6 +1,6 @@
 \documentclass[12pt,a4paper,final,twoside]{article}
 \usepackage[utf8]{inputenc}
-\usepackage[catalan]{babel}
+\usepackage[spanish]{babel}
 \usepackage{url}
 \usepackage{graphicx}
 \usepackage{hyperref}
@@ -8,12 +8,19 @@
 \usepackage{setspace}
 \onehalfspacing
 \usepackage{multirow}
+
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{framed}
 
+%plots
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepgfplotslibrary{statistics}
+\usetikzlibrary{patterns}
+
 \usepackage[ampersand]{easylist} 
-\usepackage{epstopdf}
+%\usepackage{epstopdf}
 \usepackage{array}
 \usepackage{tabulary}
 
@@ -22,9 +29,9 @@
 \usepackage[left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm]{geometry}
 
 \usepackage{appendix}
-\renewcommand{\appendixname}{Annexos}
-\renewcommand{\appendixtocname}{Annexos}
-\renewcommand{\appendixpagename}{Annexos}
+\renewcommand{\appendixname}{Anexos}
+\renewcommand{\appendixtocname}{Anexos}
+\renewcommand{\appendixpagename}{Anexos}
 \makeindex
 
 \usepackage{wrapfig}
@@ -33,7 +40,7 @@
 \pagestyle{fancy}
 \fancyhead{}
 \fancyhead[RO,LE]{\thepage}
-\fancyhead[RE,LO]{Sincronització amb aibo}
+\fancyhead[RE,LO]{Integración de la plataforma AIBO con ROS }
 \fancyfoot{}
 \fancyfoot[RO,LE]{\includegraphics[scale=0.23]{images/etseib.pdf}}
 
@@ -78,7 +85,7 @@
   title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
 }
 \bibliographystyle{plainnat} 
-\title{Sincronització amb AIBO}
+\title{Implementación de }
 \author{Diego Muñoz Galan}
 
 \begin{document}
@@ -94,7 +101,19 @@
 \setcounter{page}{1}
 
 \begin{abstract}
-\addcontentsline{toc}{section}{Resum}
+\addcontentsline{toc}{section}{Resumen}
+El proyecto persigue el objetivo de implementar un driver para integrar la plataforma robótica AIBO con el marco de trabajo ROS. A lo largo de esta memoria se narra el procedimiento seguido para llegar a un resultado que cumpla con los requisitos. 
+Se puede dividir el trabajo realizado y documentado en ésta memoria en tres partes.
+
+Consta de una primera parte de documentación e investigación de la plataforma objeto en la que se describe tanto el hardware como los posibles softwares con los que trabajar.
+
+Sigue una segunda parte en la que se comparan varios métodos de programación con los que se podría implementar el modulo de ROS deseado. En ésta se incluye un primer análisis cualitativo en el que se contemplan gran parte de las posibilidades de programación y un segundo análisis más exhaustivo de los métodos que han pasado la primera selección para finalmente decidir el método a usar.
+
+Para concluir se explica como se han implementado los módulos que facilitan la integración con ROS. Por un lado el modulo de control al que se le han aplicado unos criterios de valoración y se ha puesto a prueba y por otro el modulo que facilita la integración de un modelo de visualización 3D.
+
+
+
+
 
 \end{abstract}
 
@@ -109,29 +128,36 @@
 \newpage
 
 
-\section{Prefaci}
-\subsection{Motivació}
-Hace ya ocho años que la empresa SONY dejó de producir la mascota robótica por excelencia, el perro robot AIBO. Des de su desaparición del mercado, en 2006, éste ha caido en una espiral de desuso hasta el punto que hoy en dia se pueden encontrar gran cantidad de ellos guardados en armarios de todo el mundo.
+\section{Prefacio}
+\subsection{Motivación}
+Hace ya ocho años que la empresa SONY dejó de producir la mascota robótica por excelencia, el perro robot AIBO. Des de su desaparición del mercado, en 2006, éste ha caído en una espiral de desuso hasta el punto que hoy en día se pueden encontrar gran cantidad de ellos guardados en armarios de todo el mundo.
 
-Este proyecto partió de la idea de volver a aprobechar los AIBO para realizar tareas de coperación i sincronizacion.
-Aquest projecte va partir de una idea de tornar aprofitar els AIBOS per realitzar tasques de cooperació entre ells partint de la part alta de la programació. En vista de la incomoditat per tal de programar la plataforma en qüestió degut a dos factors el primer: l'us de llenguatges i de APIs poc usades en el mon de la robòtica i que tenen corbes de aprenentatge molt costoses a l'inici. El segon és el mal manteniment d'aquests llenguatges en els últims anys.
-Això va portar a voler recuperar els AIBO d'una forma nova amb un del sistemes operatius actualment més usats en la robòtica, ROS\footnote{\textit{Robotics Operational System}\ref{ros}}. 
+Este proyecto partió de la idea de volver a aprovechar los AIBO para realizar tareas de cooperación y sincronización partiendo de un nivel de programación elevado. Debido a la incomodidad que proporcionaban los actuales lenguajes de programación para dicha plataforma, dado que ya no están siendo mantenidos y sus curvas de aprendizaje son realmente duras,   se planteó la posibilidad de programar al AIBO mediante ROS\ref{ros}.
+Siendo ROS uno de los marcos de trabajo para la robótica que actualmente está teniendo más acogida, su uso sobre AIBO haría posible que volvieran a ser una plataforma a tener en cuenta para la investigación en estos momentos en que la universidad no cuenta con demasiados fondos. Por el otro lado la implementación de un driver para AIBO facilitará enormemente la programación, dando la posibilidad de usar el gran abanico de paquetes y herramientas existentes para ROS.
 
-La integració de l'AIBO amb ROS facilitarà enormement la programació donant la possibilitat d'usar el gran ventall de paquets existents per aquest sistema operatiu. Per altra banda incrementara les seves capacitats de processament en front a altres mètodes donat que es controlara remotament, exprimint així les capacitats del hardware.
-El fet de participar en un projecte que permeti al món de la robòtica educativa recuperar una plataforma tan emblemàtica com l'AIBO és un incentiu suficient per a la realització d'aquest. A més a més el propi aprenentatge intrínsec al projecte com és la oportunitat de conèixer ROS des de baix nivell i implementar els propis paquets necessaris és quelcom útil per a un estudiant apassionat per la robòtica. 
+Por estos motivos participar en la integración del AIBO con ROS es un proyecto que dado su posible utilidad en el futuro lo hace irresistible.
 
+Además el propio aprendizaje intrínseco del proyecto como es la oportunidad de conocer y entender ROS implementando ciertos paquetes resulta algo realmente interesante y útil para cualquier estudiante apasionado por la robótica.
+
+
+\subsection{Requerimientos previos}
+Para la realización de este proyecto es necesario un cierto bagaje y experiencia en programación, concretamente en los lenguajes C++ y python orientados a objetos, además de un conocimiento básico del funcionamiento de ROS y su estructura.
+Son necesarios también conocimientos de estadística y el uso de software de apoyo para la realización de algunos testes estadísticos.
+Por ultimo para la realización del proyecto se ha hecho uso de la herramienta \LaTeX. 
+\newpage
+\clearpage
+
+\section{Introducción}
+En este apartado se definirá tanto el punto de partida del proyecto, el punto final al que se pretende llegar y el camino que se pretende realizar. 
  
+\subsection{Estado del arte}\label{estatdelart}
+Se pretende dar una visión general del estado actual de la robótica y el compromiso entre software y hardware que ésta conlleva para seguidamente ir concretando y acotando sobre este gran universo hacia el punto que ocupa éste proyecto. 
 
-\subsection{Requeriments previs}
-\section{Introducció}
-En aquest apartat es definirà tant el punt de partida del projecte, el punt final on es pretén arribar com el camí recorregut i metodologia emprada. 
-\subsection{Estat de l'art}
-\label{estatdelart}
-Es tractarà de descriure breument la situació actual de la robòtica i el compromis que requereix aquesta entre hardware i software.
-\subsubsection{Robòtica}
-Des de la primera definició de robot o des de la idea de robot que va exportar Isaac Asimov ha passat més de mig segle i tot i així es pot dir que la robòtica encara es troba en el seu bressol. De fet és difícil definir quin és l'origen de la robòtica i quin va ser el primer robot, el que està clar és que aquesta branca de la ciència va fer grans avanços arrel de la revolució industrial de la ma de d'altres tecnologies com l'electrònica, la informàtica o la intel·ligència artificial.
+\subsubsection{Robótica}
 
-En un primer moment els robots van ser maquines automatitzades per tal de realitzar tasques que tinguessin un cert risc, requerissin de més  o eficiència que la ma d'obra humana pogués oferir dins de la industria. En aquest àmbit actualment es poden trobar braços manipuladors en la majoria de fabriques i és un fet que aquests incrementen el grau d'automatització de l'industria i amb aquest la seva eficiència\cite{libroblanco}. Un exemple d'aquest robots són els robots KUKA\footnote{\url{http://www.kuka-robotics.com/en/}} com el de la Figura\ref{fig:kuka}.
+Desde la primera definición de robot o de la idea que exporto Isaac Asimov ha pasado más de medio siglo y aún así se puede decir que la robótica se encuentra dando sus primeros pasos. Si bien no es sencillo ubicar el origen de esta ciencia se puede afirmar con total seguridad que esta rama hizo grandes avances a raíz de la revolución industrial de mano de otras especialidades como la electrónica, la informática o la inteligencia artificial.
+
+En un primer momento los robots fueron máquinas automatizadas o teleoperadas con el fin de realizar tareas dentro de la industria que tuvieran un cierto riesgo, requiriesen de alta precisión o una eficiencia tal que la mano de obra humana no pudiera ofrecer. En este contexto actualmente se encuentran gran variedad de brazos manipuladores en la mayoría de las fabricas que a la vez que aumentan su grado automatización, la eficiencia y rentabilidad económica lo hacen con el\cite{libroblanco}. Un ejemplo de este tipo de robots son los de KUKA\footnote{\url{http://www.kuka-robotics.com/en/}} mostrado en la Figura \ref{fig:kuka}.
  
 \begin{figure}[h!]
 	\centering
@@ -140,239 +166,275 @@ En un primer moment els robots van ser maquines automatitzades per tal de realit
   \label{fig:kuka}
 \end{figure}
 
-Altres sectors apart de la industria han donat un gran impuls a la robòtica i han donat peu a la necessitat de robots mòbils. Aquest és el cas de l'exploració espacial que va tenir els seus primers passos amb el automòbil soviètic tele-operat lunokjod\footnote{\url{http://en.wikipedia.org/wiki/Lunokhod_1}} i que ara mateix té el seu màxim exponent amb el robot Curiosity\footnote{\url{http://www.nasa.gov/mission_pages/msl/}} enviat a mart en la ultima missió de la NASA. Aquests robots tenen la senzillesa de que es mouen mitjançant rodes, tanmateix existeixen robots que utilitzen extremitats per moure's. Tot i dificultar el control de l'estabilitat i complicar la dinàmica del sistema aquests ofereixen la possibilitat de caminar per una gran varietat de terrenys; un exemple és el robot quadrúpede de DARPA\footnote{\url{http://www.darpa.mil}} i Boston Dynamics\footnote{\url{http://www.bostondynamics.com/}} Wildcat mostrat a la Figura\ref{fig:wildcat}, l'altra avantatge és l'acceptació social que comporta un robot amb una morfologia familiar per a l'humà. 
+Otros sectores, aparte de la industria, han impulsado la robótica dando pie a otro tipo de robots, los robots móviles. Éste es el caso de la exploración espacial que dio sus primeros pasos con el automóvil teleoperado lunokjod\footnote{\url{http://en.wikipedia.org/wiki/Lunokhod_1}} y actualmente tiene su máximo exponente con el robot Curiosityenviado a Marte en la última misión de la NASA\footnote{\url{http://www.nasa.gov/mission_pages/msl/}}. Las plataformas anteriormente descritas tienen la sencillez de moverse sobre ruedas, a diferencia de otro tipo de robots móviles que usan varias extremidades, bípedos, cuadrúpedos, hexápedos y otros con gran cantidad de ellas. Si bien el uso de extremidades dificulta el control dinámico, la estabilidad y los algoritmos de  navegación, ofrecen la posibilidad de andar por gran variedad de terrenos y producen una mayor aceptación social debido a su morfología familiar para el hombre . Un ejemplo es el robot cuadrúpedo de DARPA\footnote{\url{http://www.darpa.mil}} y Boston Dynamics \footnote{\url{http://www.bostondynamics.com/}} Wildcat mostrado a en la Figura \ref{fig:wildcat}.
 
 \begin{figure}[h!]
 	\centering
     \includegraphics[scale=0.6]	{images/Wildcat.jpg}
-	 \caption{Robot quadrúpede WildCat.}
+	 \caption{Robot cuadrúpedo WildCat.}
   \label{fig:wildcat}
 \end{figure}
 
-\subsubsection{Robòtica en l'educació}
-Aquesta ultima característica porta a la relació entre humans i robots donant lloc a robots antropomòrfics com el robot de de HONDA ASIMO\footnote{\url{http://asimo.honda.com/}} o robots mascota com és el cas de la plataforma d'estudi d'aquest projecte, l'AIBO de SONY.
+\subsubsection{Robótica en la educación}
 
-Son plataformes com la que s'ha usat en aquest projecte que han permès a universitats i al públic en general interessat en la robòtica investigar a tots els nivells. Altres plataformes que han apropat la robòtica a un public molt ample permetén tant l'investigació com facilitan eines per a l'educació son els descrites a continuació:
+Las plataformas anteriormente descritas forman parte de proyectos millonarios que no forman parte de el grueso de la investigación con robótica.
+Son las plataformas como la usada en este proyecto las que han permitido tanto a universidades como a un público mucho más general investigar y han dado la oportunidad de crear una gran variedad de aplicaciones.
+
+Algunos de los robots que han acercado las herramientas necesarias a un mayor número de usuarios son los siguientes: 
 
 \begin{itemize}
-\item WIFIBOT: Es tracta d'una serie de robots moguts per quatre rodes amb punt d'accés wifi i que permet ser controlat i programat en varis sistemes operatius i llenguatges\footnote{\url{http://www.wifibot.com/}}.
-\item Lego NXT: És un producte modular que permèt una infinitat de combinacions constructives partint sempre d'un modul de processador. Té el seu propi marc de treball\footnote{\url{http://www.lego.com/en-us/mindstorms/?domainredir=mindstorms.lego.com}}.
-\item NAO: És un robot humanoide de dimensions reduïdes amb prestacions d'alta gama comercialitzat per Aldebaran Robotics \footnote{\url{http://www.aldebaran.com/en}}.
-\item ARDrone:
-\item DARwin:
-
-
+\item WIFIBOT: Se trata de una serie de robots movidos por cuatro ruedas, sensores de distancia , camera y punto de acceso WiFi. Permite ser controlado por varios sistemas operativos y lenguajes\footnote{\url{http://www.wifibot.com/}}.
+\item Lego NXT: Es un producto modular que permite una infinidad de combinaciones construcitvas partiendo siempre de un módulo de procesador. Tiene su própio marco de trabajo\footnote{\url{http://www.lego.com/en-us/mindstorms/?domainredir=mindstorms.lego.com}}.
+\item NAO: Es un robot humanoide de dimensiones reducidas y con prestaciones de alta gama comercializado por Aldebaran Robotics \footnote{\url{http://www.aldebaran.com/en}}.
+\item ARDrone: Se trata de un vehículo no tripulado con cuatro hélices, o quadcoptero,  que se respalda tanto la navegación autónoma como el radiocontrol.
 \end{itemize}
 
-Havent parlat d'algunes de les plataformes mes usades cal comentar, degut al compromís entre hardware i software que exigeix la robòtica, els sistemes més usats per crear la intel·ligència artificial.
+Habiendo hablado un poco del hardware se pasa a comentar los sistemas más usados para crear la inteligencia artificial.
 
-La majoria de robots tenen el seu propi marc de treball que permet que aquests siguin programat en alt nivell permetent d'aquesta manera tant accedir de forma senzilla a sensors, actuadors i sistemes de comunicacions com treballar amb mòduls de programació ja elaborats amb funcions que faciliten la navegació,les comunicacions o la visió.
-Tanmateix existeixen serts softwares lliures que s'estan establint com a alternativa als propis de cada plataforma. això facilita enormement la feina del programador ja que no ha d'invertir temps en prepararse per als respectius softwares de cada plataforma amb la que treballi.
-D'aquests plataformes es poden destacar 2:
+La gran mayoría de robots, dado que son comercializados por empresas, proporcionan un marco de trabajo propio e incluso su propio lenguaje algorítmico de alto nivel. Facilitando el acceso de forma sencilla a actuadores, sensores y sistemas de comunicación, permitiendo a un amplio público la iniciación en la robótica.
+Por otra parte existen ciertos softwares libres que se están estableciendo como una alternativa a los propios de cada plataforma.
+Ésto facilita enormemente del trabajo del programador puesto que no tiene que invertir tiempo en el aprendizaje propio de cada software. 
+Cabe destacar dos de ellos:
+
 \begin{itemize}
-\item Urbi: del qual es pot trobar informació a la secció \ref{urbi} o al annex \ref{urbiA}.
-\item ROS: És el sistema operatiu de software lliure més estès actualment. Està en continu desenvolupament i abasta una gran quantitat de plataformes. Consultar la secció \ref{ros} per més informació.
+\item URBI: Del cual se pude encontrar información en la Sección \ref{urbi}.
+\item ROS: Es el marco de trabajo más extendido actualmente y abasta una gran cantidad de plataformas. En la Sección \ref{ros} se puede encontrar más información.
 \end{itemize} 
 
-\subsubsection{L'AIBO}
+Por lo que respeta a la implementación de drivers para pasar de un lenguaje propio a ROS Existen varios ejemplos que se pueden encontrar actualmente en la web de ROS este es el caso de ARDrone o Bioloid. 
 
-Amb la plataforma AIBO secció\ref{secaibo} s'han realitzat molts projectes d'investigació degut a la seva versabilitat. Sobre tot s'han realitzat projectes relacionats amb visió\cite{xavi} o comportaments i intel·ligència artificial\cite{riki}.
-Un punt essencial en el desenvolupament de l'AIBO va ser, en part,que durant el periode comprès entre 1999 i 2008 va ser el robot escollit per a realitzar la competició RoboCup Estandard Plataform League, posteriorment sustituit per la plataforma NAO. La RoboCup una competició internacional destinada a promoure la robòtica i on es realitzen probes com la esmentada anteriorment que forma part de la secció de futbol amb robots autònoms, tanmateix hi han altres probes com la competició de simulacres de rescat on l'AiBO també va ser molt utilitzat\cite{robocup}.
-En aquest context de la Robocup va ser una gran motivació per a molts projectes que es poden classificar en 3 grans grups segons la finalitat: Visió i reconeixement de les marques per a la posterior situació del subjecte dins del camp\cite{morales}, comunicacions i control sobre els moviments\cite{jesus} i rols que ocupa el ròbot dins del camp\cite{metod}.
+\subsubsection{AIBO}
 
-Actualment l'AIBO ja no s'utilitza com es feia avans en part per que ja no és la plataforma estandard de la RoboCup i en part perque va deixar de produir-se al 2006 per SONY i el seu llenguatge base R-CODE va deixar de ser mantingut.
-A mesura que l'AIBO a quedat en desús els softwares han deixat de tenir-lo en conte, és el cas de Urbi Secció\ref{urbi} que apartir de la versió 1.5 la llibreria liburbi no és compatible amb l'Aibo. 
-A més a més la recerca d'aquest projecte i sobretot la manipulació i aprenentatge dels propis llenguatges s'ha vist dificultada per la desaparició de la xarxa de gran part de la seva documentació.
-
-\subsection{Objectius del projecte}
-L'objectiu d'aquest projecte és recuperar l'AIBO com a plataforma educativa aportant-li una capa superior de programació que permeti la integració de la plataforma amb ROS. D'aquesta manera el processament de les dades del robot es farà externament. Amb aquest fi es comparant varis camins per tal de buscar la forma optima de realitzar-ho. Com a objectius concrets i en ordre de necessitat es poden marcar:
+Con la plataforma de estudio AIBO Sección \ref{secaibo} se han realizado diversos proyectos de índoles muy diferentes dada su versatilidad. Sobretodo se han llevado a cabo proyectos relacionados con visión \cite{xavi} o comportamientos e inteligencia artificial \cite{riki}.
+Un punto esencial en el desarrollo del AIBO fue que durante el período comprendido entre 1999 y 2008 fue la plataforma elegida para realizar la competición RoboCup Estandard Plataform League, posteriormente sustituido por la plataforma NAO. La RoboCup es una competición internacional destinada a promover la robótica y donde se realizan pruebas como la comentada anteriormente que forma parte de la sección de fútbol con robots autónomos. La prueba de simulacros de rescate fue otra donde el AIBO tubo una gran acogida y fue muy usado \cite{robocup}.
+La RoboCup fue fuente de inspiración para muchos investigaciones que se pueden clasificar enn tres grupos según su finalidad:
 \begin{itemize}
-\item Buscar la millor opció per tal de comunicació amb l'AIBO, entenent com a millor un equilibri entre senzillesa i qualitat de la comunicació. Això comportarà per una banda un anàlisi qualitatiu sobre els possibles mètodes i un un anàlisi més exhaustiu dels camins que passin la primera selecció. 
-\item La creació d'un paquet de ROS que permeti extreure totes les variables de l'AIBO en forma de tòpics i alhora controlar les posicions de les articulacions de forma senzilla mitjançant la publicació en un altre tòpic. 
-
-\item Demostració i comprovació del grau de control aconseguit mitjançant un petit exemple de sincronització.
+\item Visión i reconocimiento de marcas para la posterior ubicación dentro del campo \cite{morales}.
+\item Comunicaciones y control sobre los movimientos \cite{jesus}.
+\item Definición de roles dentro del campo \cite{metod}.
 \end{itemize}
 
+Actualmente el AIBO no se usa como se hacia antes, en parte porque ya no es la plataforma estándar de la RoboCup y en parte porque des de que en 2006 SONY dejo de producirlo su lenguaje base OPEN-R dejó de ser mantenido.
+A medida que ha caído en desuso los softwares que los soportaban ha dejado hacerlo, incluso aquellos que nacieron especialmente para el AIBO. Es el caso de URBI que des de la version 1.5 de su librería, liburbi, no es compatible.
+Además la recerca de éste proyecto se ha visto dificultada por la desaparición de la red de gran parte de la documentación de estos lenguajes.
 
-\subsection{Abast del projecte}
+Ha habido otros intentos de recuperación de la plataforma AIBO es el caso de de un proyecto que trataba de hacer compatible la version 2.3 de liburbi para AIBO.%referencia
+Otro proyecto del que solo se ha conseguido encontrar un articulo que lo mencione y nada de documentación  trataba de realizar la integración mediante EusLisp de a ROS varias plataformas, entre ellas AIBO.%ref de eusLisp y del proyecto
 
+
+\subsection{Objetivos}
+EL objetivo de este proyecto es recuperar al AIBO como plataforma educativa aportándole una capa superior de programación que permita la integración de la plataforma con ROS.
+Con este fin  se compararan diversos caminos con tal conseguir el mejor resultado.
+
+Como objetivos concretos se marcan:
+\begin{itemize}
+\item Buscar la mejor opción de comunicación, entendiendo como mejor un equilibrio entre sencillez y calidad de la comunicación. Ésto conllevará por un lado  un análisis qualitativo de los possibles métodos y un análisis mas exhaustivo de los posibles caminos que hayan pasado la primera selección.
+
+\item La creación de un paquete de ROS que permita extraer todos los valores de los sensores y articulaciones y a su vez permita controlar al AIBO de forma remota.
+
+\item La creación de los paquetes necesatios para demostrar el buen funcionamiento del paquete anteriormente mencionado.
+
+\item La creacion de un paquete que incluya un modelo del AIBO que pueda ser integrado dentro de los simuladores y visores del marco de trabajo ROS. 
+\end{itemize}
+
+\subsection{Alcance}
+El proyecto incluirá la creación de un paquete que permita extraer los valores de los sensores y articulaciones así como la acción sobre las articulaciones, pero no incluirá la adaptación de la camera, micrófonos ni altavoces.
+El modelo incluirá la cinemática y permitirá el uso del modelo con la herramienta rviz y implementación de un nodo que permita su comunicación con la plataforma real. No incluirá la experimentación con física aplicada al simulador ni la creación de algún mapa.  
+
+\newpage
+\clearpage
 
 \section{AIBO ERS-7}\label{secaibo}
-Al 1999 Sony va llençar al mercat la mascota robòtica AIBO (Artificial Intelligence roBOt, amic en japonès). Aibo és un robot amb forma de gos que va ser ideat per tal d'interaccionar amb el seu amo com una mascota real, és capaç de percebre els estímuls del mon exterior mitjançant una serie de sensors. Aibo porta incorporat un software anomenat AIBO MINT dins d'una targeta de memòria especial per a Aibo, és aquest software el que li permet comportar-se com un gos real, interaccionar amb el seu amo, reconèixer visualment i auditivament i aprendre.
+En 1999 SONY lanzo al mercado la mascota robótica AIBO (Artificial Intelligence roBOt, amigo en japonés). AIBO es un robot conforma de perro 
+que fue ideado para interaccionar con su dueño como una mascota real, es capaz de percibir estímulos del exterior mediante una serie de sensores. Lleva incorporado de serie un software llamad AIBO MIND dentro de una tarjeta de memoria que le permite comportarse como un perro real, reconocer a su dueño, reconocer objetos, jugar con una pelota y aprender, entre muchas otras cosas.
+
+
 \subsection{Hardware}
-Sony ha desenvolupat diversos models i versions d'Aibo i Aibo Mint, millorant tant els actuadors i sensors com el software.
-Entre els diferents models amb el que es treballarà d'ara en endavant és el model ERS-7 que es caracteritza per tenir una càmera de major resolució i un processador més potent.
+Sony ha desarrollado varios modelos y versiones del AIBO como del software AIBO MIND, mejorando tanto actuadores y sensores como la inteligencia.
+
+Entre los diferentes modelos existentes se trabajará con el modelo ERS-7, que se caracteriza por tener una camera de mayor resolución y un procesador más potente.
+
 \begin{figure}[h!]
 	\centering
     \includegraphics[scale=0.1]	{images/ers7lrg}
 	 \caption{AIBO ERS-7.}
   \label{fig:ers7}
 \end{figure}	
- 
-L'Aibo ERS-7 té les següents característiques\cite{morales}:
+
+El AIBO ERS-7 tiene las siguientes características: 
+
 \begin{itemize}
-\item Àudio:
+\item Audio:
 \begin{itemize}
-\item Entrada d'àudio: Micròfon estèreo
-\item Sortida d'àudio: Altaveu de 20.8 mm i 500 mW
+\item Entrada de audio: Micrófono estéreo.
+\item Salida de audio: Altavoces de 20.8 mm i 500 mW.
 \end{itemize}
-\item Sensors integrats:
+\item Sensores integrados:
 \begin{itemize}
-\item Sensors de pressió:
+\item Sensores de presión:
 \begin{itemize}
-\item 1 sobre el cap
-\item 3 a l'esquena
+\item 1 sobre la cabeza.
+\item 3 en la espalda.
 \end{itemize}
-\item 1 sensor de contacte a cada pota 
-\item 1 sensor bolea sota la boca
-\item Acceleròmetres en x,y i z
-\item 2 sensors de proximitat d'infrarojos situats al morro i al pit
-\item Sensor de vibració
+\item 1 sensor de contacto en cada pata. 
+\item 1 sensor booleano bajo la boca.
+\item Acelerometros en x,y i z.
+\item 2 sensores de proximidad de infrarrojos situados en el morro y en el pecho.
+\item Sensor de vibración.
 \end{itemize}
-\item Graus de llibertat
+\item Grados de libertad: Están controlados con motores de continua seguido de una reductora y un encoder absoluto.
 \begin{itemize}
-\item 3 graus de llibertat a cada una de les 4 potes
-\item 3 graus de llibertat al coll
-\item 1 grau de llibertat a cada orella
-\item 1 grau de llibertat a la boca
-\item 2 graus de llibertat a la cua 
+\item 3 grados de libertad a cada una de les 4 potes.
+\item 3 grados de libertad al cuello..
+\item 1 grado de libertad a cada oreja.
+\item 1 grado de libertad a la boca.
+\item 2 grados de libertad a la cola. 
 \end{itemize}
-\item Entrada d'imatge
+\item Entrada de imagen.
 \begin{itemize}
-\item Sensor d'imatge CMOS de 350000 píxels
-\item Angles: 56.9º horitzontal i 45.2º vertical
-\item Resolucions: 208x160, 104x80, 52x40
-\item 30 frames per segon
+\item Sensor de imagen CMOS de 350000 pixels.
+\item Ángulos: 56.9º horizontal i 45.2º vertical.
+\item Resoluciones: 208x160, 104x80, 52x40.
+\item 30 frames por segundo.
 \end{itemize}
-\item Dimensions
+\item Dimensiones:
 \begin{itemize}
-\item Altura: 278 mm
-\item Llarg: 319 mm
-\item Ample: 180 mm
-\item Pes amb bateria: 1.65 Kg 
+\item Altura: 278 mm.
+\item Largo: 319 mm.
+\item Ancho: 180 mm.
+\item Peso con batería: 1.65 Kg. 
 \end{itemize}
 \item CPU:
 \begin{itemize}
-\item Processador: MIPS R7000 @ 576 MHz
-\item RAM: 64 MB
-\item Memòria flaix: 4 MB
+\item Procesador: MIPS R7000 @ 576 MHz.
+\item RAM: 64 MB.
+\item Memoria flash: 4 MB.
 \end{itemize}
 \end{itemize}
 \begin{itemize}
-\item Connectivitat:
+\item Conectividad:
 \begin{itemize}
-\item LAN inalàmbric IEEE 802.11b
-\item Xifrat: WEP
+\item LAN inalámbrico IEEE 802.11b.
+\item Xifrat: WEP.
 \end{itemize}
 \end{itemize}
 
 \subsection{El software}
-APERIOS és el sistema operatiu en temps real que utilitzen els AIBO. APERIOS OS està destinat y dissenyat per poder treballar amb grans fluxos de dades d'àudio y d'imatge simultàniament en temps real.
-En un inici AIBO va ser comercialitzat amb una finalitat purament lúdica, però degut al seu atractiu disseny i la seva robustesa va atreure l'atenció dels desenvolupadors per a convertir-se en una poderosa eina per a l'aprenentatge.Això va portar a Sony a publicar un API del seu sistema operatiu anomenada OPEN-R SDK. Arrel d'aquesta API van sorgir altres llenguatges i interfícies com son \textit{URBI}\footnote{\url{www.urbiforge.org}} o \textit{Tekkotsu}\footnote{\url{tekkotsu.org}} que posen una capa de programació per sobre de OPEN-R i permeten programar a més alt nivell.
+APERIOS es el sistema operativo en tiempo real que usan los AIBO. Está destinado y diseñado para poder trabajar con grandes flujos de datos de audio e imagen simultaneamente en tiempo real.
+En un principio AIBO iba a ser comercializado con una finalidad puramente lúdica, pero debido a su atractivo diseño y su robustez atrajo la atención de programadores que vieron el potencial para convertirse en una herramienta de investigación y aprendizaje. Ésto llevo a SONY a desarrollar un software de desarrollo llamado OPEN-R SDK y que usaba un lenguaje propio, OPEN-R. A raíz de este modulo salieron otros lenguajes e interfaces que trabajaban en una capa superior, sobre OPEN-R y APERIOS, como son \textit{URBI}\footnote{\url{www.urbiforge.org}} o \textit{Tekkotsu}\footnote{\url{tekkotsu.org}}.
 
 \subsubsection{OPEN-R}
-OPEN-R és un API en C++ que corre sobre el sistema APERIOS proporcionada per Sony i l'estructura de la cual és la que es mostra a la figura \ref{fig:openrarch}. OPEN-R diferencia entre dos nivells, la capa de sistema on s'accedeix al hardware del robot i la capa d'aplicació que es tracta dels programes fets per l'usuari.
+OPEN-R es un API en C++ que corre sobre el sistema operativo APERIOS \ref{fig:openrarch}. OPEN-R diferencia entre dos niveles, la capa de sistema por donde se accede al hardware del robot y la capa de aplicación que se trata de los programas hechos por el usuario.
 
 \begin{figure}[h!]
 	\centering
     \includegraphics[scale=1]{images/openrarch.pdf}
-	 \caption{Arquitectura de l'AIBO amb OPEN-R}
+	 \caption{Arquitectura de AIBO con OPEN-R}
   \label{fig:openrarch}
 \end{figure}
 
-
-En tractar-se d'un llenguatge de baix nivell és inherent a l'estructura del sistema operatiu que es basa en objectes que interaccionen entre si mitjançant missatges o meta-objectes.El concepte d'objecte és semblant al utilitzat a \textit{UNIX}\footnote{\url{www.unix.org}} o a \textit{Windows}\footnote{\url{http://windows.microsoft.com/en-us/windows/home}}, amb la diferencia de que són mono-fil i que la comunicació és realitza per missatges que inclouen dades i un identificador que indica el metde en el que s'executarà en arribar a l'objecte destí. Això implica que cada objecte té varis punts d'entrada i sortida que són els mètodes: DoInit(), DoStart(), DoStop(), DoDestroy().
-En el pas de missatges entre dos objectes, un d'ells es defineix com a subjecte(el que envia) i l'altre com observador(el que rep) qui inicia la seva execució després de que el missatge enviat faci saltar l'esdeveniment del mètode corresponent\cite{OPEN-R PG}.
+Al tratarse de un lenguaje de bajo nivel su estructura es inherente al sistema operativo que se basa en objetos que interaccionan entre si mediante mensajes o meta-objetos. El concepro de objeto es parecido al utilizado en los sistemas \textit{UNIX}\footnote{\url{www.unix.org}} y \textit{Windows}\footnote{\url{http://windows.microsoft.com/en-us/windows/home}}, con la diferencia de que son monohilo y que la comunicación se realiza mediante mensajes que y incluyen datos y un identificador el método en el que se ejecutará en el objeto destino.
+Esto implica que cada objetos tiene varios puntos de entrada   y salida que son los métodos:  DoInit(), DoStart(), DoStop(), DoDestroy(). En el paso de mensajes uno se de los objetos se define como sujeto (el que envía) y el otro como observador (el que recibe) que inicia su ejecución después de que el mensaje haga saltar el evento del método correspondiente \cite{OPEN-R PG}.
 
 \begin{table}[h]
 \begin{center}
 \begin{tabulary}{\textwidth}{|C|C|}
 \hline
-\multirow{1}{*}{\textbf{SUBJECTE}}
+\multirow{1}{*}{\textbf{SUJETO}}
 & \textbf{OBSERVADOR} \\ \hline
-\multirow{1}{*}{enviament de dades}
+\multirow{1}{*}{envío de datos}
 & \\ \hline
-\multirow{1}{*}{notificació de l'esdeveniment}
+\multirow{1}{*}{notificación del evento}
 &  \\ \hline
 \multirow{1}{*}{}
-& recepció de dades \\ \hline
+& recepción de datos \\ \hline
 \multirow{1}{*}{}
-& esdeveniment preparat  \\ \hline
+& evento preparado \\ \hline
 \end{tabulary}
 \end{center}
-\caption{Estructura del pas de missatges a OPEN-R\label{msgOR}}
+\caption{Estructura del paso de mensajes en OPEN-R\label{msgOR}}
 \end{table}
 	
 \begin{figure}[h!]
 	\centering
     \includegraphics[scale=0.5]{images/ObjectCom.pdf}
-	 \caption{Comunicació entre objectes.}
+	 \caption{Comunicación entre objetos.}
   \label{fig:objectcom}
 \end{figure}
 
-Una de les majors complicacións alhora de treballar amb OPEN-R és que treballa amb una gran varietat d'arxius que cal modificar per tal de configurar el programa d'aplicacio que es realitzi. Per aixó és important conèixer bé els arxius amb que es treballa, els més importants es troben llistats a continuació:
+Una de las mayores complicaciones que acarrea trabajar con OPEN-R es que usa una gran variedad de archivos que deben ser modificados para poder configurar el programa de aplicación que se realice. Por ello es importante conocer bien los archivos con los que trabaja, los más importantes están listados a continuación: 
+:
 \begin{itemize}
-\item Arxius .h i .cc: són els arxius de programació en C++.
-\item STUB.config: són arxius de configuració on es defineix com l'objecte es comunica amb altres objectes.
-\item Arxius .ocf: defineix el comportament dels objectes en quan a temps d'execució, memòria assignada i prioritat d'execució.
-\item Makefile: és el fitxer per a la configuració global de compilació.
-\item OBJECT.cfg: és el llistat d'objectes que s'executarà.
-\item CONECT.cfg: on es determinen les connexions i comunicacions entre els objectes que s'executaran.
-\item WLANCONFIG.txt\footnote{Aquest ultim archiu cal configurar-lo sigui quin sigui el mètode de programació del AIBO. Veure APENDIX} arxiu on es defineixen les característiques de la connexió inalàmbrica de l'AIBO.
-
-
+\item Archivos .h i .cc: Son los archivos de programación de C++.
+\item STUB.config: Son archivos de configuración donde se define como un objeto se comunica con los demás.
+\item Archivos .ocf: Definen el comportamiento en cuanto a tiempos de ejecución, memória y prioridad de ejecución.
+\item Makefile: Archivo para la configuración global de la compilación.
+\item OBJECT.cfg: Listado de objetos que se ejecutarán.
+\item CONECT.cfg: Se determinan las conexiones entre objetos que se ejecutarán.
+\item WLANCONFIG.txt\footnote{Éste ultimo archivo es necesario configurarlo para cualquier método de programación, URBI, Tekkotsu o OPEN-R. Ver APENDIX}: Donde se definen las características de la conexión inalámbrica del AIBO.
 \end{itemize}
-\subsubsection{Tekkotsu}
-Tekkotsu és una software de desenvolupament per a robots mobils. Originalment va ser creat per al robot AIBO de Sony, però actualment permet programar una amplia gama de robots com són el Chiara\footnote{\url{http://chiara-robot.org}}, iRobot Create\footnote{\url{http://chiara-robot.org/Create/}}, HandEye\footnote{\url{http://chiara-robot.org/HandEye/}} o Lynxmotion Arms\footnote{\url{http://www.lynxmotion.com/}}. Té una arquitectura basada en objectes i pas d'esdeveniments, igual que OPER-R fent un us complet de l'herència de C++. Proporciona una capa de major nivell que OPEN-R, però permet la crida a OPEN-R, el que significa que la capacitat de control sobre el robot és trobi limitada pel propi hardware i no per aquest software, permetent l'accés als sensors, complet control sobre els actuadors i la comunicacio basada en esdeveniments. Per altra banda permet a l'usuari poder treballar a alt nivell ja que el paquet inclou eines de processament visual bàsic, monitorització, models cinemàtica inversa i suport per a la creació de xarxes inalambriques. 
 
+\subsubsection{Tekkotsu}
+Tekkotsu es un software de desarrollo para robots móviles. Orginalmente fue creado para AIBO, pero actualmente permite programar otros plataformas com el Chiara\footnote{\url{http://chiara-robot.org}}, iRobot Create\footnote{\url{http://chiara-robot.org/Create/}}, HandEye\footnote{\url{http://chiara-robot.org/HandEye/}} o Lynxmotion Arms\footnote{\url{http://www.lynxmotion.com/}}.
+
+
+Mantiene la arquitectura semejante a OPEN-R, basada en objetos y paso de eventos y mantiene la herencia de C++. Proporciona una capa de mayor nivel que OPEN-R pero permite llamar a OPEN-R para acceder de forma rápida a sensores, actuadores y sistemas de comunicación, lo que significa que la capacidad de control sobre el robot se encuentre limitada por el propio hardware y no por el Tekkotsu. Por otro lado permite al usuario trabajar en alto nivel con herramientas de procesamiento visual básico, interfaces de monitorización, modelos de cinemática inversa y soporte para la administración de redes inalámbricas.
+ 
 \begin{figure}[h!]
 	\centering
     \includegraphics[scale=1.2]{images/tekk.pdf}
-	 \caption{Arquitectura de l'AIBO amb tekkotsu.}
+	 \caption{Arquitectura del AIBO con Tekkotsu.}
   \label{fig:tekk}
 \end{figure}
 
-A més Tekkotsu proporciona una interficie d'usuari, el ControllerGUI, que permet accedir al AIBO remotament i executar els comportaments que es desitgin i que estiguin programats a la targeta de memoria. Aixo tan es pot fer per la interficie grafica basada en java com per telnet\footnote{\url{http://es.wikipedia.org/wiki/Telnet}} al port 10020\cite{TekkQuickRef}.
+Además Tekkotsu proporciona una interfaz de usuario, ControllerGUI, que permite acceder al AIBO remotamente y ejecutar los comportamientos que estén programados en la targeta de memoria. Estas funciones se pueden realizar mediante la interfaz gráfica basada en Java como por una conexión telnet\footnote{\url{http://es.wikipedia.org/wiki/Telnet}} al puerto 10020 \cite{TekkQuickRef}.
 
-Tekkotsu s'organitza com un conjunt de comportaments o "Behaviors" i classes MotionCommand. Les seves funcions s'executen en dos processos el "Main i el "Motion". En el primer s'encarrega de la percepció i la presa de decisions i el segon fa referencia al control en temps real dels actuadors. Existeix un tercer procés que s'encarrega de la sortida d'àudio\cite{tekkTut}. 
+Tekkots se organiza como un conjunto de comportamientos o \textit{behaviors} y clases llamadas MotionComand. Sus funciones se ejecutan en dos procesos, el \textit{Main} y el \textit{Motion}. El primero se encarga de la percepción i toma de decisiones y el segundo hace referencia al control en tiempo real de los actuadores. Existe un tercer proceso que se encarga de la salida de audio \cite{tekkTut}. 
 
-Igual que en OPEN-R, els comportaments, que son com s'anomena a qualsevol programa amb Tekkotsu, tenen una estructura basada en uns mètodes que cal respectar (doStart(), doStop()) que simplifica'n els 4 mètodes definits a OPEN-R, però que permeten mantenir l'estructura dels objectes i la comunicació entre ells basada en esdeveniments.  
+Los comportamientos, como se llama a todo programa de realizado en Tekkotsu, igual que sus análogos en OPEN-R, tienen una estructura basada en unos métodos que hay que respetar: doStart() y doStop(). Éstos simplifican los cuatro métodos de OPEN-R, pero permiten mantener la estructura y hacen más sencilla y rapida la comunicación.
+  
  
 \begin{figure}[h!]
 	\centering
     \includegraphics[scale=0.3]{images/tekkotsuarch.pdf}
-	 \caption{Procés d'execució d'un programa amb Tekkotsu.}
+	 \caption{Proceso de ejecución de un comportamiento en Tekkotsu.}
   \label{fig:tekkarch}
 \end{figure}
 
 \subsubsection{URBI}
 \label{urbi}
-URBI és l'acrònim de Universal Real-Time Behavior Interface i es tracta d'una plataforma de software lliure per controlar robots i sistemes complexos en general com AIBO, Bioloid\, Mindstorm NXT, Pioneer, Wifibot o ARDrone\cite{urbi}. URBI és un llenguatge basat en scripts d'alt nivell amb l'avantatge de que permet executar comandes en paral·lel. per treballar amb URBI existeixen dos maneres, una es tracta d'utilitzar el script per després incloure un objecte d'OPEN-R a la targeta de memoria de l'AIBO que el propi sistema operatiu APERIOS pot interpretar i executar. La segona manera consisteix en una arquitectura client/servidor on el servidor es tracta com un objecte OPEN-R que va dins del robot i el client envia comandes que son executades per el servidor, Figura \ref{fig:urbiarc}. 
+URBI es el acrónimo de Universal Real-Time Behavior Interface y se trata de una plataforma de software libre para controlar y programar robots y sistemas automatizados en general. Algunos de los robots móviles que soporta URBI son AIBO, Bioloid, Mindstorm NXT, Pioneer, Wifibot o ARDrone \cite{urbi}.
+
+URBI es un lenguaje basado en scripts de alto nivel con la ventaja que permite ejecutar comandos en paralelo. Existen dos formas de trabajar con URBI: La primera  se trata de usar el lenguaje de script con la intención de que este sea interpretado como un objeto de OPEN-R dentro de la tarjeta de memoria. La segunda consiste en una arquitectura cliente/servidor, donde el servidor es el AIBO, que permite enviar los scripts a través del terminal de URBI o bien enviar macros o ordenes concretas usando la libreria liburbi, Figura \ref{fig:urbiarc}. 
 
 \begin{figure}[h!]
 	\centering
     \includegraphics[scale=1.4]{images/urbiarc.pdf}
-	 \caption{Arquitectura de l'AIBO amb URBI.}
+	 \caption{Arquitectura del AIBO con URBI.}
   \label{fig:urbiarc}
 \end{figure}
 
-Aquesta segona opció obre varies vies per a la programació. Permet, per una banda comunicar-se per telnet i enviar les comandes o bé usar la llibreria liburbi que permet treballar amb C++, Java i Matlab o varis llenguatges alhora mitjançant varis clients.
-URBI permet i facilita l'accés a cada una de les articulacions i sensors de l'AIBO, per exemple per consultar el valor de la primera articulació de la cama esquerre del devant cal enviar la comanda \texttt{legLF1.val;} i per assignar el seu valor \texttt{legLF1.val=20;}\cite{urbicmd}. A l'apèndix\ref{urbiA} és pot trobar més documentació sobre les comandes d'URBI.
+La segunda opción abre varias vías de programación. Por un lado permite comunicarse por telnet y enviar comandos y por otro usar la libreria liburbi que permite trabajar con C++, Java y Matlab
+
+URBI permite y facilita el acceso a cada una de las articulaciones y sensores remotamente sin necesidad de implementar un servidor. Por ejemplo para consultar el valor de la articulación superior de la pierna izquierda se puede enviar el comando \texttt{legLF1.val;} y para asignarle un valor \texttt{legLF1.val=20;}\cite{urbicmd}.
 
 \clearpage
 
 
 
-\section{Comparació d'alternatives per a la programació}\label{seccomp}
+\section{Comparación de alternativas para la programación}\label{seccomp}
+Teniendo en cuenta la pretensión y objetivo final es poder programar AIBO con ROS se ha buscado la forma de atacar el problema desde todos los flancos. 
+Una de ellas y completamente diferente a las demás ha sido buscar un punto de acceso al hardware con la intención de poder instalar alguna distribución de linux, lo que permitiría implementar el modulo de ROS de como un sistema embebido. Pero tras desmontar gran parte de las piezas solo se encontró un puerto que no coincidía con ningún estándar y se abandonó dicho camino.  
+
+Solo queda usar una arquitectura cliente/servidor de forma que el modulo de ROS se ejecute en el cliente remoto, pero sea capaz adquirir de forma sencilla y rápida el estado del AIBO y a la vez actuar sobre el.
 
 
-Tenint en conte que el que és preten és buscar una forma senzilla i rapida de enviar l'estat dels sensors i articulacions de l'AIBO a un PC remot i enviar a l'AIBO les posicions desitjades de les articulacions per tal de poder treballar posteriorment amb ROS s'han tingut en conte certes consideracions qualitatives un trobades durant la recerca que es troben resumides a la Taula \ref{complleng}.
+Se plantean tres posibilidades de programación: OPEN-R, Tekkotsu y URBI.
+En los tres casos es imprescindible programar el cliente en el correspondiente lenguaje. Pero respeto al servidor URBI ahorraría tener que desarrollarlo puesto que el sistema operativo nos permite interactuar de forma remota. Tekkotsu permite interactuar de forma remota pero no hay ningun comportamiento que permita enviar ordenes a los actuadores y habría qu implementarlo. Por último con OPEN-R habría que implementar el servidor entero tanto el envió como la recepción. 
+De todos modos se ha probado de instalar y establecer los tres marcos de trabajo, Anexo \ref{marcos}, y probado los tres lenguajes para comprobar su dificultad y su funcionamiento. Respeto a OPEN-R se ha encontrado muy poca documentación y el comienzo de su aprendizaje ha sido realmente duro tanto el lenguaje en si como la configuración de todos los archivos. Tekkotsu parece un lenguaje más sencillo y no necesita apenas configurar archivos pero la única documentación encontrada ha sido para la ultima versión que no se ha conseguido compilar dentro de la tarjeta de memoria. En cambio si se ha logrado con una versión más antigua, la nueva parece no ser compatible con el compilador de OPEN-R, y se han podido hacer algunas pruebas aunque sin documentación de la versión y habiendo cambiado bastante las funciones, ha implicado un gran esfuerzo. 
+Por lo que URBI se refiere su uso es realmente sencillo des del terminal , se ha encontrado bastante documentación para el uso en modo script y algo menos para el uso de liburbi. El único problema que hay que tener en cuenta es que la libreria liburbi 1.5, la más reciente que es compatible con  AIBO, no es compatible con un sistema linux de 64 bits. 
 
-En els tres casos és necessari programar amb el llenguatge corresponent per al client del PC. A excepció de Urbi seria necessari desenvolupar un programa per a l'AIBO de manera que permetés enviar i rebre les dades necessaries. Amb Urbi no és necessari ja que la llibreria liburbi permet accedir a totes les dades necessaries i també ho permet fer per telnet. Tekkotsu, en canvi, permet obtenir els valors de sensors i actuadors per telnet però no actuar sobre ells, caldria doncs un comportament que implementés aquest fet. De totes formes amb Tekkotsu hi han hagut problemes per tal de trobar documentació ja que s'ha trobat per a la versió més nova Tekkotsu 5.1 i tot i que Tekkotsu va neixer arrel de l'AIBO aquesta versió sembla no ser compatible amb el ultim OPEN-R SDK. La unica versió que s'ha conseguit compilar i la única trobada apart de la 5.1 és la 4.0.1 de la qual no s'ha trobat cap mena de documentació i d'una a l'altre canvia el mètode de programació.
-Pel que respecte a R-CODE seria una bona opció ja que es parteix de més baix nivell i per a l'objectiu d'aquest projecte això és un incentiu, però cal invertir molt de temps en l'aprenentatge del llenguatge. 
-
-
-\begin{table}[h]
+\begin{table}[H]
 \begin{center}
 \begin{tabulary}{\textwidth}{|p{5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|}
 \hline
@@ -380,431 +442,1076 @@ Pel que respecte a R-CODE seria una bona opció ja que es parteix de més baix n
 & \textbf{OPEN-R}
 & \textbf{Urbi} 
 & \textbf{Tekkotsu} \\\hline
-Necessitat de un programa a l'AIBO
+Necesidad de programar un servidor.
 & Si
 & No
 & Si \\ \hline
-Necessitat d'un programa al PC
+Necesidad de programar un cliente.
 & Si
 & Si
 & Si\\ \hline
-Permet consultar l'estat per telnet
+Permite la consulta del estado por telnet.
 & No
 & Si
 & Si\\ \hline
-Permet accionar articulacions per telnet
+Permite accionar las articulaciones por telnet.
 & No
 & Si
 & No\\ \hline
-Dificultat de programació (0-5)
+Dificultad de programación (0-5)
 & 5
 & 2 
 & 3\\ \hline
-Documentació (0-5)
+Documentación (0-5)
 & 2
 & 3
 & 1\\ \hline
-Plataforma del PC
+Plataforma del PC.
 & Windows/ Linux/ OS
 & Windows/ Linux 32bits/ OS
 & Linux\\ \hline
 \end{tabulary}
 \end{center}
-\caption{Comparació entre llenguatges usats en l'AIBO\label{complleng}}
+\caption{Comparación entre lenguajes usados sobre AIBO\label{complleng}}
 \end{table}
 
-Per aquests motius s'ha decidit partir de dos opcions per a desenvolupar el paquet de ROS que permetrà controlar l'AIBO.
+En vista de la Tabla \ref{complleng} y de lo anteriormente comentado se descarta usar Tekkotsu por haber encontrado muy poca documentación de la versión que ha podido ser compilada. Si bien seria OPEN-R sería una buena opción ya que es la capa mas baja de programación que se permite tocar su aprendizaje es realmente duro y posiblemente no habría tiempo de implementar el modulo deseado. Por lo tanto se partirá de URBI como lenguaje dado su fácil uso y que proporciona unas buenas herramientas para alcanzar el objetivo.
 
-La primera s'usara liburbi en un programa C++ i la segona es provarà de fer la comunicació amb un script de python usant una connexió telnet.
 
-\subsection{Lectura de dades}
-En un primer experiment per comparar les possibles solucions s'ha realitzat la lectura d'una variable del sistema per tal de valorar quantitativament la velocitat de transmissió. S'ha usat el valor de la posició d'una articulació.
-
-El procediment per a l'adquisició de dades serà el mostrat a la Taula \ref{readleg}.
-\begin{table}[h]
-\begin{center}
-\begin{tabulary}{\textwidth}{|C|C|}
-\hline
-\multirow{1}{*}{\textbf{CLIENT}}
-& \textbf{SERVIDOR} \\ \hline
-\multirow{1}{*}{demanda d'inici del bucle d'enviament}
-& \\ \hline
-\multirow{1}{*}{lectura de les dades}
-& enviament de dades \\ \hline
-\multirow{1}{*}{Escriptura en archiu extern}
-&  enviament de dades \\ \hline
-
-\end{tabulary}
-\end{center}
-\caption{Estructura de la lectura d'una variable\label{readleg}}
-\end{table}
-
-Es consulta el temps en el que es rep cada dada reben aquest temps amb precisió de nanosegons i escribint-lo   en un archiu de text per al seu posterior tractament.
-
-Es realitzen 15 repliques per a cada cas i cada una d'elles tindrà una durada de 10 segons per tal de poder estimar de forma precisa quina és la millor opció per tal de rebre les dades de L'AIBO.
-
-\subsubsection{Metode amb liburbi i C++}
-
-Usant la llibreria liburbi es tracta d'enviar per un client urbi la comanda per tal de rebre les dades de la primera articulació de la cama esquerre. 
-L'estructura del programa és la que segueix\footnote{El script es pot trobar a l'annexe \ref{getDataOneLegC++}}.
+Partiendo del lenguaje URBI se plantean dos opciones de desarrollo:
 \begin{itemize}
-\item Inicialitzacó del client URBI.
-\item Inicialització del callback. 
-Aquest serà cridat cada cop que es rebi una dada per a l'etiqueta assignada.
-\begin{itemize}
-\item Es pren el valor de la variable (tot i que per aquest experiment no es necessiti.).
-\item Es consulta el temps en que ha estat rebuda aquesta dada.
-\item Es guarda la dada i el temps.
-\end{itemize}
-\item Demanda del bucle i assignació a una etiqueta.
-\item Inicialització del archiu on es guradaràn les dades.
-\item  Execució del bucle de urbi. 
+\item Usar liburbi con C++.
+\item Usar un script de python que use la terminal de URBI bajo una conexión telnet.
 \end{itemize}
 
+Con tal de encontrar cual es la mejor opción se realizarán una serie de experimentos antes de implementar el paquete. 
+
+\subsection{Lectura de datos}
+En el primer experimento se valorará la velocidad de lectura de una sola variable del sistema y se cuantificará su frecuencia de refresco. Se ha usado para este experimento el valor de una articulación.
+
+El procedimiento para adquirir los datos será el mostrado en la Figura \ref{fig:readleg}.
 
 
-%\texttt{loop legLF1 << legLF1.val,}
-\subsubsection{Metode amb telnet i python}
-La idea d'aquest script\footnote{Es pot cunsultar el script a lannexe \ref{getDataOneLegPy}} es treballar amb urbi com si fos la una terminal de urbi \ref{fig:telnet} però mitjançant python per tant l'estructura bàsica serà enviar la comanda i llegir la resposta per a que pugui ser tractada. 
+\begin{figure}[h!]
+	\centering
+    \includegraphics[scale=1.4]{images/lectdata.pdf}
+	 \caption{Estructura de la lectura de una variable.}
+  \label{fig:readleg}
+\end{figure}
+
+La escritura de los valores de la articulación y el tiempo se escriben en un archivo de texto para su posterior tratamiento.
+
+El experimento consistirá en realizar la adquisición de datos durante 10 segundos y repetir el experimento 15 veces por método. La velocidad de envío estará limitada por el servidor ya que se le pide que envíe el refresco continuo de la variable.
+
+\subsubsection{Método con liburbi y C++}
+
+La estructura del programa es la que sigue\footnote{El script se puede encontrar en el Anexo \ref{getDataOneLegC++}}. 
+
+\begin{itemize}
+\item Inicialización del cliente URBI.
+\item Inicialización del callback: Éste es llamado cada vez que se reciba un dato con la etiqueta asignada. 
+\begin{itemize}
+\item Se toma el valor de la variable (aunque no se necesaria para este experimento).
+\item Se consulta el tiempo en que ha sido recibido el dato.
+\item Se guarda el dato y el tiempo.
+\end{itemize}
+\item Demanda del bucle y asignación de una etiqueta.
+\item Inicialización del archivo donde se guardarán los datos.
+\item Ejecución del bucle de URBI: Se trata de una función que crea un bucle de comunicación cliente/servidor. 
+\end{itemize}
+
+\subsubsection{Método con telnet y python}
+La idea de este script\footnote{Se puede consultar el scrript en el Anexo \ref{getDataOneLegPy}} es trabajar con la terminal de URBI, Figura \ref{fig:telnet},  mediante una conexión telnet.
+
 \begin{figure}[h!]
 	\centering
     \includegraphics[scale=0.65]{images/telnet.pdf}
-	 \caption{terminal de Urbi consultant dades.}
+	 \caption{Terminal URBI consultando un dato.}
   \label{fig:telnet}
 \end{figure}
-Així doncs l'estructura serà semblant al script de C++:
+
+La estructura del programa será parecida a la anterior:
+
 \begin{itemize}
-\item Inicialització de l'objecte telnet.
-\item Petit retràs per esperar la connexió.
-\item Lectura i eliminació de la capsalera del terminal urbi rebuda pel terminal.
-\item Escriptura de la comanda del bucle d'enviament del valor de l'articulació més una variable concreta per facilitar una marca per al tractament de les dades rebudes.
-\item Bucle de lectura i escriptura.
+\item Inicialización del objeto telnet.
+\item Lectura de la terminal y eliminación de la cabecera de URBI.
+\item Escritura de la comanda para recibir el bucle  de envío. Para facilitar la lectura de los datos y diferenciar entre uno i el anterior se hace enviar una marca después de cada dato.
+\item Bucle de lectura y escritura.
 \begin{itemize}
-\item Tractament de les dades:
+\item Tratamiento de la lectura:
 \begin{itemize}
-\item Lectura fins a trobar la marca.
-\item Eliminació de les cadenes rebudes tallades per la informació de la bateria\footnote{Cada poc temps la terminal de urbi escriu el percentatge de bateria restant.}
-\item Separació de la cadena de caràcters per agafar únicament el valor de l'articulació.
-\
+\item Lectura hasta encontrar la marca la marca.
+\item Eliminación de las cadenas cortadas por el envío de la información de la batería\footnote{Cada vez que la batería baja la carga se escribe el porcentaje restante por la terminal de URBI.}
+\item Segmentación de la cadena para finalmente guardar sólo el valor.
 \end{itemize}
-\item Escriptura de la dada a l'arxiu.
-\item Adquisició del temps.
-\item Escriptura del temps a l'arxiu.
+\item Adquisición del tiempo.
+\item Escritura del tiempo y el valor en el archivo de texto.
 \end{itemize} 
 \end{itemize}
 
-
-
-\subsubsection{Comparacó}
-
-Dels programes anteriorment explicats s'obtenen les 15 repliques de 10 segons cada una. Dels temps extrets s'obté l'invers de les diferències de temps entre dades rebudes, doncs és més intuïtiu i per analitzar el trafic i la velocitats de dades es preferible treballar amb Hertz que amb el seu invers.
-
-Graficant les dades a les Figures \ref{fig:OneLegC++Box} i \ref{fig:OneLegPythonBox} s'observa com la variabilitat dels resultats, dins de cada rèplica, del cas en que s'usa liburbi és més alta, però també els valors semblen ser considerablement més alts. 
-
+\subsubsection{Comparación de los resultados}
+%De los datos obtenidos de las 15 replicas de cada método se han hecho las diferencias de tiempos entre un dato y el siguiente y se ha echo el inverso de este intervalo con tal de obtener la frecuencia entre datos, se prefiere trabajar con el inverso debido a la comodidad de la escala.
+De los datos obtenidos de las 15 replicas de cada método se han hecho las diferencias de tiempos entre un dato y el siguiente y se ha echo el inverso de este intervalo con tal de obtener la frecuencia entre datos.
 \begin{figure}[H]
 	\centering
-    \includegraphics[scale=0.5]{images/OnelegC++Box.pdf}
-	 \caption{Diagrama de caixa de la freqüència de dades per a les 15 repliques de l'experiment amb liburbi.}
-  \label{fig:OneLegC++Box}
+\begin{tikzpicture}
+\pgfplotsset{width=15cm,compat=1.10}
+\begin{axis}[
+enlargelimits=0.02,
+xlabel={$Hz$},
+y=0.6cm,
+ytick={1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30},
+yticklabels={Python 1, Python 2, Python 3,Python 4, Python 5,Python 6, Python 7, Python 8, Python 9, Python 10,Python 11,Python 12,Python 13,Python 14,Python 15,luburbi 1,luburbi 2,luburbi 3,luburbi 4,luburbi 5,luburbi 6,luburbi 7,luburbi 8,luburbi 9,luburbi 10,luburbi 11,luburbi 12,luburbi 13,luburbi 14,luburbi 15},
+boxplot/variable width,
+boxplot/draw direction=x,
+]
+\addplot [blue, mark=*, boxplot prepared={
+lower whisker=0.68, lower quartile=31.34,
+median=223.06,
+upper quartile=3705.215, upper whisker=16710.37,}]
+table[row sep=\\,y index=0] {
+data\\ 2593.6 \\ 
+};
+coordinates {};
+\addplot [blue,mark=*, boxplot prepared={
+lower whisker=1.56, lower quartile=30.4,
+median=33.07, upper quartile=3226.39,
+upper whisker=12483}]
+table[row sep=\\,y index=0] {
+data\\ 1349.34 \\ 
+};
+coordinates {};
+\addplot [blue,mark=*, boxplot prepared={
+lower whisker=0.72, lower quartile=31.17,
+median=78.39, upper quartile=3844.5,
+upper whisker=14266.34}]
+table[row sep=\\,y index=0] {
+data\\ 2049.26 \\ 
+};
+coordinates {};
+\addplot [blue,mark=*, boxplot prepared={
+lower whisker=1.08, lower quartile=31.3,
+median=83.9, upper quartile=3572.7,
+upper whisker=8322}]
+table[row sep=\\,y index=0] {
+data\\ 1813.9 \\ 
+};
+coordinates {};
+\addplot [blue,mark=*, boxplot prepared={
+lower whisker=0.22, lower quartile=32.35,
+median=3844.5, upper quartile=5882.6,
+upper whisker=20068.4}]
+table[row sep=\\,y index=0] {
+data\\ 3371.85 \\ 
+};
+coordinates {};
+\addplot [blue,mark=*, boxplot prepared={
+lower whisker=0.28, lower quartile=31.24,
+median=73.7, upper quartile=5555,
+upper whisker=7145}]
+table[row sep=\\,y index=0] {
+data\\ 2473.14 \\ 
+};
+coordinates {};
+\addplot [blue,mark=*, boxplot prepared={
+lower whisker=1.67, lower quartile=30.46,
+median=31.92, upper quartile=83.4,
+upper whisker=11125.5}]
+table[row sep=\\,y index=0] {
+data\\ 871.16 \\ 
+};
+coordinates {};
+\addplot [blue,mark=*, boxplot prepared={
+lower whisker=0.71, lower quartile=2857.15,
+median=3844.5, upper quartile=4346.5,
+upper whisker=14266}]
+table[row sep=\\,y index=0] {
+data\\ 3253 \\ 
+};
+coordinates {};
+\addplot [blue,mark=*, boxplot prepared={
+lower whisker=1.06, lower quartile=35.83,
+median=3449.3, upper quartile=4213.6,
+upper whisker=16644}]
+table[row sep=\\,y index=0] {
+data\\ 3027 \\ 
+};
+coordinates {};
+\addplot [blue,mark=*, boxplot prepared={
+lower whisker=0.26, lower quartile=3332.1,
+median=4549, upper quartile=9098,
+upper whisker=14266}]
+table[row sep=\\,y index=0] {
+data\\ 5609 \\ 
+};
+coordinates {};
+\addplot [blue,mark=*, boxplot prepared={
+lower whisker=0.69, lower quartile=33,
+median=3332.78, upper quartile=7696,
+upper whisker=24966}]
+table[row sep=\\,y index=0] {
+data\\ 4460 \\ 
+};
+coordinates {};
+\addplot [blue,mark=*, boxplot prepared={
+lower whisker=0.8, lower quartile=31.7,
+median=3334.1, upper quartile=4544.4,
+upper whisker=16710}]
+table[row sep=\\,y index=0] {
+data\\ 3128.23 \\ 
+};
+coordinates {};
+\addplot [blue,mark=*, boxplot prepared={
+lower whisker=1.61, lower quartile=30.85,
+median=32.6, upper quartile=3125,
+upper whisker=14266}]
+table[row sep=\\,y index=0] {
+data\\ 1373.76 \\ 
+};
+coordinates {};
+\addplot [blue,mark=*, boxplot prepared={
+lower whisker=0.7, lower quartile=31.2,
+median=64.25, upper quartile=3449.3,
+upper whisker=14315}]
+table[row sep=\\,y index=0] {
+data\\ 1973.5 \\ 
+};
+coordinates {};
+\addplot [blue,mark=*, boxplot prepared={
+lower whisker=0.14, lower quartile=4346.4,
+median=7695, upper quartile=11096,
+upper whisker=12520.31}]
+table[row sep=\\,y index=0] {
+data\\ 2473.14 \\ 
+};
+coordinates {};
+\addplot [mark=*, boxplot prepared={
+lower whisker=0.8,
+lower quartile=7696,
+median=12520.3,
+upper quartile=24966,
+upper whisker=99864.38}]
+table[row sep=\\,y index=0] {
+data\\ 17220.7 \\ 
+};
+coordinates {};
+\addplot [mark=*, boxplot prepared={
+lower whisker=0.07,
+lower quartile=7696,
+median=24966,
+upper quartile=33288.1,
+upper whisker=33554.4}]
+table[row sep=\\,y index=0] {
+data\\ 19751.08 \\ 
+};
+coordinates {};
+\addplot [mark=*, boxplot prepared={
+lower whisker=0.9,
+lower quartile=31.2,
+median=34.59,
+upper quartile=12492.4,
+upper whisker=33554.4}]
+table[row sep=\\,y index=0] {
+data\\ 5478.22 \\ 
+};
+coordinates {};
+\addplot [mark=*, boxplot prepared={
+lower whisker=0.23,
+lower quartile=9088,
+median=24966,
+upper quartile=12492.4,
+upper whisker=33554.4}]
+table[row sep=\\,y index=0] {
+data\\ 20500 \\ 
+};
+coordinates {};
+\addplot [mark=*, boxplot prepared={
+lower whisker=0.16,
+lower quartile=24966,
+median=25115.6,
+upper quartile=33288.1,
+upper whisker=33554.4}]
+table[row sep=\\,y index=0] {
+data\\ 26177.7 \\ 
+};
+coordinates {};
+\addplot [mark=*, boxplot prepared={
+lower whisker=0.06,
+lower quartile=24966,
+median=24966,
+upper quartile=33288.1,
+upper whisker=33554.4}]
+table[row sep=\\,y index=0] {
+data\\ 25822.2 \\ 
+};
+coordinates {};
+\addplot [mark=*, boxplot prepared={
+lower whisker=0.88,
+lower quartile=32.66,
+median=14266,
+upper quartile=19972.8,
+upper whisker=50533.8}]
+table[row sep=\\,y index=0] {
+data\\ 15288.8 \\ 
+};
+coordinates {};
+\addplot [mark=*, boxplot prepared={
+lower whisker=4.2,
+lower quartile=30.4,
+median=31.7,
+upper quartile=38.77,
+upper whisker=16710.4}]
+table[row sep=\\,y index=0] {
+data\\ 1827 \\ 
+};
+coordinates {};
+\addplot [mark=*, boxplot prepared={
+lower whisker=1.2,
+lower quartile=31.7,
+median=9098.3,
+upper quartile=20068.4,
+upper whisker=99864.38}]
+table[row sep=\\,y index=0] {
+data\\ 11732.4 \\ 
+};
+coordinates {};
+\addplot [mark=*, boxplot prepared={
+lower whisker=1.2,
+lower quartile=31.35,
+median=7413.6,
+upper quartile=24966,
+upper whisker=33554.4}]
+table[row sep=\\,y index=0] {
+data\\ 11941.8 \\ 
+};
+coordinates {};
+\addplot [mark=*, boxplot prepared={
+lower whisker=0.8,
+lower quartile=31.2,
+median=44.9,
+upper quartile=33288,
+upper whisker=102300}]
+table[row sep=\\,y index=0] {
+data\\ 20545 \\ 
+};
+coordinates {};
+\addplot [mark=*, boxplot prepared={
+lower whisker=0.9,
+lower quartile=30.9,
+median=31.86,
+upper quartile=5882.6,
+upper whisker=33554.4}]
+table[row sep=\\,y index=0] {
+data\\ 4640 \\ 
+};
+coordinates {};
+\addplot [mark=*, boxplot prepared={
+lower whisker=1.13,
+lower quartile=30.9,
+median=31.8,
+upper quartile=139.47,
+upper whisker=99864.4}]
+table[row sep=\\,y index=0] {
+data\\ 4520.6 \\ 
+};
+coordinates {};
+\addplot [mark=*, boxplot prepared={
+lower whisker=1.65,
+lower quartile=31.8,
+median=31.94,
+upper quartile=8111.9,
+upper whisker=102300}]
+table[row sep=\\,y index=0] {
+data\\ 10729 \\ 
+};
+coordinates {};
+\addplot [mark=*, boxplot prepared={
+lower whisker=1.64,
+lower quartile=31.11,
+median=33.44,
+upper quartile=24966,
+upper whisker=33554.4}]
+table[row sep=\\,y index=0] {
+data\\ 8990 \\ 
+};
+coordinates {};
+\end{axis}
+\end{tikzpicture}
+ \caption{Diagrama de cajas de la frecuencia de datos para las 15 replicas de cada método.}
+  \label{fig:OneLegBox}
 \end{figure}
 
-\begin{figure}[H]
-	\centering
-    \includegraphics[scale=0.5]{images/OneLegPythonBox.pdf}
-	 \caption{Diagrama de caixa de la freqüència de dades per a les 15 repliques de l'experiment amb telnet.}
-  \label{fig:OneLegPythonBox}
-\end{figure}
 
-Per corroborar aquests dos fets s'ha pres una serie de variables característiques de cada mostra. Les Figures \ref{fig:DevOneLeg} i \ref{fig:MitOneLeg} mostren de forma més visual aquest fet i permeten afirmar que el primer cas  te una velocitat de transmissió de dades mitja més elevat, però la seva variabilitat també és significativament major.
+El gráfico de la Figura \ref{fig:OneLegBox} muestra como claramente al trabajar con liburbi se obtienen medias más altas en la mayoría de replicas y de la misma manera gran parte de los datos se envían más rápido. Aun así los valores mínimos parecen muy similares y la variabilidad es mucho mayor con liburbi, echo que no interesa.
+
+Es interesante observar los mínimos de cada serie en más detalle pues nos indican cuan largos son los bloqueos que se producen y si existe alguna diferencia entre ambos programas, Figura \ref{fig:MinOneLeg}.
+Si bien parece que liburbi tiene una tendencia a tener unos mínimos más bajos se ha realizado un análisis sobre la varianza (ANOVA) de los mínimos. Los resultados han sido que con intervalo de confianza del 95\% no se puede afirmar con un p-valor de 0.4 que los valores provengan de distintas poblaciones.
+ 
 
 \begin{figure}[H]
 	\centering
-    \includegraphics[scale=1]{images/mitjanesOneLeg.pdf}
-	 \caption{Freqüència mitjana en Hz de les 15 repliques de cada mètode.}
-  \label{fig:MitOneLeg}
-\end{figure}
-\begin{figure}[H]
-	\centering
-    \includegraphics[scale=1]{images/DevOneLeg.pdf}
-	 \caption{Desviacions estàndard de la freqüència en les 15 repliques dels dos mètodes.}
-  \label{fig:DevOneLeg}
-\end{figure}
+    \begin{tikzpicture}
+    \usetikzlibrary{patterns}
+    \pgfplotsset{width=15cm,compat=1.10}
 
-Tanmateix no és sols la velocitat mitja el que interessa sinó que sigui suficientment constant i sobre tot que els temps de congelació en el refresc d'una variable siguin el mes petit possible.
-Observant doncs les freqüències mínimes Figura\ref{fig:MinOneLeg} no sembla que en algun dels dos casos aquestes siguin inferiors altres. Si bé es cert que els buits més grans es donen amb liburbi realitzant un anàlisi sobre la variança (ANOVA) no es pot afirmar que en aquest aspecte siguin poblacions diferents. 
-
-\begin{figure}[H]
-	\centering
-    \includegraphics[scale=1]{images/MinOneLeg.pdf}
-	 \caption{Mínims de la freqüència en les 15 repliques dels dos mètodes.}
+\begin{axis}[
+x tick label style={
+/pgf/number format/1000 sep=},
+xlabel=replicas,
+ylabel=Hz,
+enlargelimits=0.08,
+legend style={at={(0.5,-0.15)},
+anchor=north,legend columns=-1},
+ybar=0.1pt,% configures `bar shift'
+bar width=10pt,
+]
+\addplot [draw=black,pattern=horizontal lines dark blue]
+coordinates {(1,0.675) (2,1.561)
+(3,0.72) (4,1.079 ) (5,0.217 ) (6,0.276) (7,1.67) (8,0.714) (9,1.064 ) (10,0.264 ) (11,0.696 ) (12,1.618 ) (13,0.8 ) (14,0.7 ) (15,0.135 ) };
+\addplot [draw=blue,pattern=horizontal lines light blue]
+coordinates {(1,0.8) (2,0.074)
+(3,0.9) (4,0.234 ) (5,0.155 ) (6,0.06 ) (7,0.883 ) (8,4.239 ) (9,1.2 ) (10,1.2 ) (11,0.8 ) (12,1.133 ) (13,1.659 ) (14,1.636 ) (15,0.933 )};
+\legend{python,liburbi}
+\end{axis}
+\end{tikzpicture}
+	 \caption{Mínimos de la frecuencia en les 15 repliques de los dos métodos.}
   \label{fig:MinOneLeg}
 \end{figure}
-
-En vista dels resultats obtinguts s'ha volgut comprovar com afecta el nombre de dades en els temps de recepció de les variables. Per això s'ha realitzat el mateix experiment però en comptes de llegir únicament el valor d'una articulació, s'envien els valors de totes les articulacions.
-
-Els resultats obtinguts en diagrames de caixes Figures \ref{fig:JointsC++Box} i \ref{fig:JointsPythonBox} mostren com les dos mostres son més semblants entre els dos casos. El temps maxim d'adquisició de dades del metode amb telnet ha incrementat fins a igualarse amb el de liburbi. La diferència pot ser que amb aquest mètode es rep una trama que es tracta en paral·lel a la recepció de dades mentre que el cas de liburbi es un sol callback que es va disparant per a cada valor i per tant el cas de telnet li costarà el mateix rebre totes les dades que una mentre que amb liburbi no.
-
-
-
-\begin{figure}[H]
-	\centering
-    \includegraphics[scale=0.5]{images/JointC++Box.pdf}
-	 \caption{Diagrama de caixa de la freqüència de dades per a les 15 repliques de l'experiment amb liburbi.}
-  \label{fig:JointsC++Box}
-\end{figure}
-\begin{figure}[H]
-	\centering
-    \includegraphics[scale=0.5]{images/JointsPythonBox.pdf}
-	 \caption{Diagrama de caixa de la freqüència de dades per a les 15 repliques de l'experiment amb telnet.}
-  \label{fig:JointsPythonBox}
-\end{figure}
-
-Les mitjanes semblen lleugerament més altes les del programa de liburbi Figura\ref{fig:MitJoint} tot i que no hi ha les diferències de l'experiment anterior i pel que fa a les desviacions seblen força semblants.
-
+Por otro lado se ha observado, no la durada de estos pequeños bloqueos sino la cuantos se producen en cada caso. Para ello se ha realizado un gráfico donde se clasifican unos intervalos de frecuencias. 
+\begin{itemize}
+\item Menor que 0.5 Hz: Este intervalos se consideran bloqueos y son los menos deseados.
+\item De 0.5 a 5 Hz: No se consideran bloqueos pero es una frecuencia demasiado baja para trabajar de forma remota con un robot móvil.
+\item De 5 a 10Hz: Se trata de una velocidad aceptable.
+\item Mayor que 10: Se considera la frecuencia de trabajo ideal.
+\end{itemize}
 
 \begin{figure}[H]
 	\centering
-    \includegraphics[scale=1]{images/MitJoint.pdf}
-	 \caption{Freqüència mitjana en Hz de les 15 repliques de cada mètode.}
-  \label{fig:MitJoint}
-\end{figure}
-\begin{figure}[H]
-	\centering
-    \includegraphics[scale=1]{images/DevJoint.pdf}
-	 \caption{Desviacions estàndard de la freqüència en les 15 repliques dels dos mètodes.}
-  \label{fig:DevJoint}
-\end{figure}
-Fixants en les frequencies mínimes sembla que els dos tenen un comportament semblant. Comparant aquests valors amb una ANOVA es pot veure que efecitivament no es poden considerar poblacions diferents.
-\begin{figure}[h!]
-	\centering
-    \includegraphics[scale=1]{images/MinJoint.pdf}
-	 \caption{Mínims de la freqüència en les 15 repliques dels dos mètodes.}
-  \label{fig:MinJoint}
-\end{figure}
-%
-%\begin{table}[h]
-%\begin{center}
-%\begin{tabulary}{\textwidth}{|c|c|c|c|c|}
-%\hline
-%
-%\textbf{Replica} & \textbf{Mitjana} & \textbf{Desviació estàndard} & \textbf{Màxim} & \textbf{Minim} \\ \hline
-%1 & 17220.69 & 18868.55 & 99864.38 & 0.8  \\ \hline
-%2 & 18751.08 & 11781.05 & 33554.43 & 0.07  \\ \hline
-%3 & 5478.21 & 6845.21 & 33554.43 & 0.9  \\ \hline
-%4 & 20500.1 & 12917.91 & 33554.43 & 0.23\\ \hline
-%5 & 26177.68 & 8864.36 & 33554.43 & 0.16\\ \hline
-%6 & 25822.19 & 8260.97 & 33554.43 & 0.06\\ \hline
-%7 & 15288.78 & 15038.49 & 50533.78 & 0.88 \\ \hline
-%8 & 1826.91 & 4198.85 & 16710.37& 4.24 \\ \hline
-%9 & 11732.41 & 13836.05 & 99864.38 & 1.2\\ \hline
-%10 & 11941.76 & 13410.92 & 33554.43 & 1.2\\ \hline
-%11 & 20545.05 & 29980.55 & 102300.1 & 0.8\\ \hline
-%12 & 4640.01 & 8933.51 & 33554.432& 0.93 \\ \hline
-%13 & 4520.6 & 10376.95 & 99864.38 & 1.13 \\ \hline
-%14 & 10729.39 & 22888.43 & 102300.1 & 1.66\\ \hline
-%15 & 8989.98 & 12864.7 & 33554.43 & 1.64 \\ \hline
-%\end{tabulary}
-%\end{center}
-%\caption{dades de C++\label{onelegC++}}
-%\end{table}
-%\begin{table}[h]
-%\begin{center}
-%\begin{tabulary}{\textwidth}{|c|c|c|c|c|}
-%\hline
-%
-%\textbf{Replica} & \textbf{Mitjana} & \textbf{Desviació estàndard} & \textbf{Màxim} & \textbf{Minim} \\ \hline
-%1 & 17220.69 & 18868.55 & 99864.38 & 0.8  \\ \hline
-%2 & 18751.08 & 11781.05 & 33554.43 & 0.07  \\ \hline
-%3 & 5478.21 & 6845.21 & 33554.43 & 0.9  \\ \hline
-%4 & 20500.1 & 12917.91 & 33554.43 & 0.23\\ \hline
-%5 & 26177.68 & 8864.36 & 33554.43 & 0.16\\ \hline
-%6 & 25822.19 & 8260.97 & 33554.43 & 0.06\\ \hline
-%7 & 15288.78 & 15038.49 & 50533.78 & 0.88 \\ \hline
-%8 & 1826.91 & 4198.85 & 16710.37& 4.24 \\ \hline
-%9 & 11732.41 & 13836.05 & 99864.38 & 1.2\\ \hline
-%10 & 11941.76 & 13410.92 & 33554.43 & 1.2\\ \hline
-%11 & 20545.05 & 29980.55 & 102300.1 & 0.8\\ \hline
-%12 & 4640.01 & 8933.51 & 33554.432& 0.93 \\ \hline
-%13 & 4520.6 & 10376.95 & 99864.38 & 1.13 \\ \hline
-%14 & 10729.39 & 22888.43 & 102300.1 & 1.66\\ \hline
-%15 & 8989.98 & 12864.7 & 33554.43 & 1.64 \\ \hline
-%\end{tabulary}
-%\end{center}
-%\caption{dades de C++\label{onelegPython}}
-%\end{table}
+    \begin{tikzpicture}
+    \usetikzlibrary{patterns}
+    \pgfplotsset{width=15cm,compat=1.10}
 
-\subsection{Enviament de dades}\label{secenvdades}
-Part de la comunicació te a veure amb l'enviament de ordres a les articulacions del AIBO, amb aquest motiu s'ha realitzat un altre experiment. 
-Aquest consistirà en enviar variar de forma sinusoïdal el valor d'una articulació mentre es llegeixen els valors de les articulacions com a l'apartat anterior. 
-En aquest cas tenim 3 opcions de programació: liburbi usant solament un client, liburbi usant un client per llegir i laltre per escriure i finalment per telnet.
-En els tres casos ha sigut necessària la creació d'un altre fil d'execució per poder dur a terme la lectura i la escriptura en paral·lel\footnote{Els codis es poden trobar a l'annex \ref{sinC} i \ref{sinP}}.
-L'experiment s'ha realitzat a diverses freqüències a la que s'enviaven els punts de la sinusoide. S'ha realitzat per a 1, 2, 5 i 10 Hz no s'ha enviat a més freqüència degut a que el moviment resultant a 10 Hz començava a ser poc suau i inconstant. A més s'ha pogut comprovar que a més freqüència el buffer d'entrada d'ordres de l'AIBO sembla que es bloqueja.  
+\begin{axis}[
+ybar,
+ylabel=Hz,
+bar width=30pt,
+enlargelimits=0.15,
+legend style={at={(0.5,-0.15)},
+anchor=north,legend columns=-1},
+symbolic x coords={menor que 0.5,entre 0.5 y 5,entre 5 y 10,mayor que 10},
+xtick=data,
+]
+
+\addplot [draw=blue,pattern=horizontal lines light blue] coordinates {(menor que 0.5, 4) (entre 0.5 y 5, 126) (entre 5 y 10, 152) (mayor que 10,4511)};
+\addplot [draw=black,pattern=horizontal lines dark blue] coordinates {(menor que 0.5,5) (entre 0.5 y 5,99) (entre 5 y 10,217) (mayor que 10,4132)};
+\legend{python, liburbi}
+\end{axis}
+\end{tikzpicture}
+	 \caption{Histograma de la frecuencia en les 15 repliques de los dos métodos.}
+  \label{fig:histLeg}
+\end{figure}
+
+La gran mayoría de los datos, según la Figura \ref{fig:histLeg}, se encuentran en la zona de frecuencias deseadas y ambos métodos tienen un comportamiento muy parecido. En la franja considerada como bloqueos, en las 15 replicas que equivaldrían a unos 150 segundos de funcionamiento, se han dado 4 casos en liburbi y 5 en python.   
+
+
+
+A la vista de los resultados obtenidos se a querido comprobar como afecta la cantidad de datos a enviar en el tiempo de recepción. Para ello se a realizado el mismo experimento pero leyendo todas las articulaciones en vez de solo una.
+
 \begin{figure}[H]
 	\centering
-    \includegraphics[scale=0.33]{images/sin1H.pdf}
-	 \caption{En blau està graficat les posicions enviades a una freqüència d'1Hz i en vermell les lectures realitzades. En columnes es troben les repliques del mateix experiment i per files els tres mètodes usats, començant per liburbi amb un client, liburbi amb dos clients i telnet.}
+   	\begin{tikzpicture}
+\pgfplotsset{width=15cm,compat=1.10}
+\begin{axis}[
+enlargelimits=0.02,
+xlabel={$Hz$},
+y=0.6cm,
+ytick={1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30},
+yticklabels={Python 1, Python 2, Python 3,Python 4, Python 5,Python 6, Python 7, Python 8, Python 9, Python 10,Python 11,Python 12,Python 13,Python 14,Python 15,luburbi 1,luburbi 2,luburbi 3,luburbi 4,luburbi 5,luburbi 6,luburbi 7,luburbi 8,luburbi 9,luburbi 10,luburbi 11,luburbi 12,luburbi 13,luburbi 14,luburbi 15},
+boxplot/variable width,
+boxplot/draw direction=x,
+]
+\addplot [blue, mark=*, boxplot prepared={
+lower whisker=8.29, lower quartile=10010.3,
+median=11125,
+upper quartile=12483, upper whisker=50533.8,}]
+table[row sep=\\,y index=0] {
+data\\ 11570.5 \\ 
+};
+coordinates {};
+\addplot [blue,mark=*, boxplot prepared={
+lower whisker=3.88, lower quartile=9986,
+median=11125, upper quartile=12520.3,
+upper whisker=99864.4}]
+table[row sep=\\,y index=0] {
+data\\ 14287.8 \\ 
+};
+coordinates {};
+\addplot [blue,mark=*, boxplot prepared={
+lower whisker=0.8, lower quartile=11096,
+median=12483, upper quartile=25115.6,
+upper whisker=99864.4}]
+table[row sep=\\,y index=0] {
+data\\ 17289.2 \\ 
+};
+coordinates {};
+\addplot [blue,mark=*, boxplot prepared={
+lower whisker=0.74, lower quartile=11096,
+median=11125.5, upper quartile=24966,
+upper whisker=50533.8}]
+table[row sep=\\,y index=0] {
+data\\ 16558.8 \\ 
+};
+coordinates {};
+\addplot [blue,mark=*, boxplot prepared={
+lower whisker=0.48, lower quartile=10010.3,
+median=11125, upper quartile=33288,
+upper whisker=99864}]
+table[row sep=\\,y index=0] {
+data\\ 17471 \\ 
+};
+coordinates {};
+\addplot [blue,mark=*, boxplot prepared={
+lower whisker=0.7, lower quartile=11096,
+median=12520, upper quartile=33288,
+upper whisker=102300}]
+table[row sep=\\,y index=0] {
+data\\ 19609 \\ 
+};
+coordinates {};
+\addplot [blue,mark=*, boxplot prepared={
+lower whisker=0.69, lower quartile=11096,
+median=12520, upper quartile=33288,
+upper whisker=99864}]
+table[row sep=\\,y index=0] {
+data\\ 19857 \\ 
+};
+coordinates {};
+\addplot [blue,mark=*, boxplot prepared={
+lower whisker=0.74, lower quartile=11096,
+median=12483, upper quartile=33288,
+upper whisker=99864}]
+table[row sep=\\,y index=0] {
+data\\ 18635 \\ 
+};
+coordinates {};
+\addplot [blue,mark=*, boxplot prepared={
+lower whisker=7.45, lower quartile=9986,
+median=11125, upper quartile=12520,
+upper whisker=102300}]
+table[row sep=\\,y index=0] {
+data\\ 13574 \\ 
+};
+coordinates {};
+\addplot [blue,mark=*, boxplot prepared={
+lower whisker=0.99, lower quartile=10010,
+median=11125, upper quartile=16644,
+upper whisker=50533}]
+table[row sep=\\,y index=0] {
+data\\ 15703 \\ 
+};
+coordinates {};
+\addplot [blue,mark=*, boxplot prepared={
+lower whisker=0.73, lower quartile=10010,
+median=11125, upper quartile=25115,
+upper whisker=50533}]
+table[row sep=\\,y index=0] {
+data\\ 17033 \\ 
+};
+coordinates {};
+\addplot [blue,mark=*, boxplot prepared={
+lower whisker=0.71, lower quartile=11096,
+median=12483, upper quartile=33288,
+upper whisker=50533}]
+table[row sep=\\,y index=0] {
+data\\ 17844 \\ 
+};
+coordinates {};
+\addplot [blue,mark=*, boxplot prepared={
+lower whisker=0.66, lower quartile=11096,
+median=12483, upper quartile=33288,
+upper whisker=50533}]
+table[row sep=\\,y index=0] {
+data\\ 17976 \\ 
+};
+coordinates {};
+\addplot [blue,mark=*, boxplot prepared={
+lower whisker=0.79, lower quartile=11096,
+median=11125, upper quartile=25115,
+upper whisker=50533}]
+table[row sep=\\,y index=0] {
+data\\ 16835 \\ 
+};
+coordinates {};
+\addplot [blue,mark=*, boxplot prepared={
+lower whisker=0.65, lower quartile=11096,
+median=11125, upper quartile=24966,
+upper whisker=50353}]
+table[row sep=\\,y index=0] {
+data\\ 16723 \\ 
+};
+coordinates {};
+\addplot [mark=*, boxplot prepared={
+lower whisker=0.77,
+lower quartile=16710,
+median=24966,
+upper quartile=33288,
+upper whisker=99864.38}]
+table[row sep=\\,y index=0] {
+data\\ 25651 \\ 
+};
+coordinates {};
+\addplot [mark=*, boxplot prepared={
+lower whisker=0.63,
+lower quartile=19972,
+median=24966,
+upper quartile=33288,
+upper whisker=102300}]
+table[row sep=\\,y index=0] {
+data\\ 31444 \\ 
+};
+coordinates {};
+\addplot [mark=*, boxplot prepared={
+lower whisker=24.9,
+lower quartile=19972,
+median=24966,
+upper quartile=33288,
+upper whisker=33554}]
+table[row sep=\\,y index=0] {
+data\\ 22681 \\ 
+};
+coordinates {};
+\addplot [mark=*, boxplot prepared={
+lower whisker=0.74,
+lower quartile=16644,
+median=24966,
+upper quartile=24966,
+upper whisker=50533}]
+table[row sep=\\,y index=0] {
+data\\ 21260 \\ 
+};
+coordinates {};
+\addplot [mark=*, boxplot prepared={
+lower whisker=0.75,
+lower quartile=16644,
+median=24966,
+upper quartile=33288,
+upper whisker=99864.38}]
+table[row sep=\\,y index=0] {
+data\\ 24103 \\ 
+};
+coordinates {};
+\addplot [mark=*, boxplot prepared={
+lower whisker=0.74,
+lower quartile=16644,
+median=24966,
+upper quartile=25115,
+upper whisker=102300}]
+table[row sep=\\,y index=0] {
+data\\ 23236 \\ 
+};
+coordinates {};
+\addplot [mark=*, boxplot prepared={
+lower whisker=0.74,
+lower quartile=16644,
+median=24966,
+upper quartile=25115,
+upper whisker=50533}]
+table[row sep=\\,y index=0] {
+data\\ 22662 \\ 
+};
+coordinates {};
+\addplot [mark=*, boxplot prepared={
+lower whisker=10.22,
+lower quartile=19972,
+median=24966,
+upper quartile=25115,
+upper whisker=102300}]
+table[row sep=\\,y index=0] {
+data\\ 22105 \\ 
+};
+coordinates {};
+\addplot [mark=*, boxplot prepared={
+lower whisker=3.95,
+lower quartile=19972,
+median=24966,
+upper quartile=25115,
+upper whisker=33554}]
+table[row sep=\\,y index=0] {
+data\\ 22263 \\ 
+};
+%TOCA EL 10
+coordinates {};
+\addplot [mark=*, boxplot prepared={
+lower whisker=0.75,
+lower quartile=19972,
+median=24966,
+upper quartile=25115.6,
+upper whisker=50533.8}]
+table[row sep=\\,y index=0] {
+data\\ 22365 \\ 
+};
+coordinates {};
+\addplot [mark=*, boxplot prepared={
+lower whisker=0.75,
+lower quartile=16710,
+median=24966,
+upper quartile=33288,
+upper whisker=99864}]
+table[row sep=\\,y index=0] {
+data\\ 24890 \\ 
+};
+coordinates {};
+\addplot [mark=*, boxplot prepared={
+lower whisker=0.74,
+lower quartile=16644,
+median=24966,
+upper quartile=25115.6,
+upper whisker=50533}]
+table[row sep=\\,y index=0] {
+data\\ 21865.6 \\ 
+};
+coordinates {};
+\addplot [mark=*, boxplot prepared={
+lower whisker=8.17,
+lower quartile=20068,
+median=24966,
+upper quartile=25115,
+upper whisker=99864.4}]
+table[row sep=\\,y index=0] {
+data\\ 23023.8 \\ 
+};
+coordinates {};
+\addplot [mark=*, boxplot prepared={
+lower whisker=0.78,
+lower quartile=16644,
+median=24966,
+upper quartile=25115.6,
+upper whisker=99864}]
+table[row sep=\\,y index=0] {
+data\\ 21991 \\ 
+};
+coordinates {};
+\addplot [mark=*, boxplot prepared={
+lower whisker=1.16,
+lower quartile=16644,
+median=24966,
+upper quartile=33288,
+upper whisker=102300}]
+table[row sep=\\,y index=0] {
+data\\ 23439 \\ 
+};
+coordinates {};
+\end{axis}
+\end{tikzpicture}
+	 \caption{Diagrama de cajas de la frecuencia de datos para las 15 replicas de cada método con todas las articulaciones.}
+  \label{fig:JointsBox}
+\end{figure}
+
+Bajo este experimento, Figura \ref{fig:JointsBox}, ambas distribuciones son más parecidas aunque se puede distinguir la tendencia a obtener valores más altos del método con liburbi.
+
+\begin{figure}[H]
+	\centering
+\begin{tikzpicture}[baseline]
+\pgfplotsset{width=8cm,compat=1.10}
+\begin{axis}[
+title=Python,
+xlabel={$replicas$},
+ylabel={$Hz$},
+minor y tick num=1,
+legend style={at={(0.5,-0.25)},
+anchor=north,legend columns=-1},
+]
+\addplot[blue, only marks] table {data/mediaPyOne.dat};
+\addplot[black, only marks] table {data/mediaPyAll.dat};
+\addplot[black,sharp plot,update limits=false]
+coordinates {(0,16731.4) (16,16731.4)};
+
+\addplot[blue,sharp plot,update limits=false]
+coordinates {(0,2999.5) (16,2999.5)};
+
+\legend{un valor, todos los valores}
+\end{axis}
+\end{tikzpicture}
+\begin{tikzpicture}[baseline]
+\pgfplotsset{width=8cm,compat=1.10}
+\begin{axis}[
+title=liburbi,
+xlabel={$replicas$},
+ylabel={$Hz$},
+minor y tick num=1,
+]
+\addplot[blue, only marks] table {data/mediaC++One.dat};
+\addplot[black, only marks] table {data/mediaC++All.dat};
+\addplot[black,sharp plot,update limits=false]
+coordinates {(0,23532.4) (16,23532.4)};
+
+\addplot[blue,sharp plot,update limits=false]
+coordinates {(0,13611) (16,13611)};
+
+
+\end{axis}
+\end{tikzpicture}
+	 \caption{Medias de las frecuencias de envío, comparando una el obtener el valor de una articulación con obtener el valor de todas las articulaciones.}
+  \label{fig:compAllOne}
+\end{figure}
+La velocidad de envío es significativamente más alta en ambos casos aunque en el caso de python se muestra mas evidente Figura \ref{fig:compAllOne}. Una explicación es que el conjunto de valores se envíe como un solo paquete, en ese caso se está midiendo la frecuencia a la que las variables están disponibles, que a fin de cuentas es lo que realmente importa dado que se va a trabajar con ellas. Al parecer ante este echo responde mejor la lectura del terminal con python que no la adquisición mediante el callback de liuburbi. De todos modos se ha podido comprobar que la cantidad de variables a enviar no tiene un efecto negativo en las frecuencias medias.
+
+Poniendo la atención en los bloqueos, Figuras \ref{fig:MinAllLeg} y \ref{fig:histAllLeg}, se puede asegurar el mismo comportamiento que en el experimento anterior. 
+
+    \begin{figure}[H]
+	\centering
+    \begin{tikzpicture}
+\usetikzlibrary{patterns}
+\pgfplotsset{width=11cm,compat=1.10}
+
+\begin{axis}[
+x tick label style={
+/pgf/number format/1000 sep=},
+xlabel=replicas,
+ylabel=Hz,
+enlargelimits=0.08,
+legend style={at={(0.5,-0.15)},
+anchor=north,legend columns=-1},
+ybar=0.1pt,% configures `bar shift'
+bar width=6pt,
+]
+\addplot [draw=black,pattern=horizontal lines dark blue]
+coordinates {(1,8.29) (2,3.88)
+(3,0.88) (4,0.74 ) (5,0.46 ) (6,0.69) (7,0.62) (8,0.744) (9,7.455 ) (10,0.995 ) (11,0.738 ) (12,0.713 ) (13,0.66 ) (14,0.792 ) (15,0.658 ) };
+\addplot [draw=blue,pattern=horizontal lines light blue]
+coordinates {(1,0.77) (2,0.63)
+(3,24.98) (4,0.745 ) (5,0.759 ) (6,0.737 ) (7,0.745 ) (8,10.23 ) (9,3.953 ) (10,0.751 ) (11,0.753 ) (12,0.742 ) (13,8.173 ) (14,1.161 ) (15,0.933 )};
+\legend{python,liburbi}
+\end{axis}
+\end{tikzpicture}
+
+	 \caption{Mínimos de la frecuencia en les 15 repliques de los dos métodos.}
+  \label{fig:MinAllLeg}
+\end{figure}
+\begin{figure}[H]
+	\centering
+\begin{tikzpicture}
+    \usetikzlibrary{patterns}
+    \pgfplotsset{width=11cm,compat=1.10}
+
+\begin{axis}[
+ybar,
+ylabel=Hz,
+bar width=30pt,
+enlargelimits=0.15,
+legend style={at={(0.5,-0.15)},
+anchor=north,legend columns=-1},
+symbolic x coords={menor que 0.5,entre 0.5 y 5,entre 5 y 10,mayor que 10},
+xtick=data,
+]
+
+\addplot [draw=blue,pattern=horizontal lines light blue] coordinates {(menor que 0.5, 1) (entre 0.5 y 5, 38) (entre 5 y 10, 157) (mayor que 10,84283)};
+\addplot [draw=black,pattern=horizontal lines dark blue] coordinates {(menor que 0.5,0) (entre 0.5 y 5,35) (entre 5 y 10,37) (mayor que 10,79348)};
+\legend{python, liburbi}
+\end{axis}
+\end{tikzpicture}
+ \caption{Histograma de la frecuencia en les 15 repliques de los dos métodos.}
+  \label{fig:histAllLeg}
+\end{figure}
+
+
+\subsection{Envío de datos}\label{secenvdades}
+Vista una de los sentidos de comunicación el siguiente experimento se va a fijar en el otro, el envió de los valores de las articulaciones del cliente al servidor con tal de controlar al AIBO.
+El experimento consiste en enviar una trayectoria punto a punto a una articulación y comprobar que tal responde. La trayectoria será sinusoidal sin importar el periodo. Para valorar los resultados se leerá la respuesta de la articulación usando los módulos de lectura del experimento anterior, que condicionaran el resultado por sus errores y limitaciones. 
+
+En este caso se ha contado con 3 opciones a comparar. Dado que por la terminal de URBI usando el cliente telnet no se ha permitió hacer la lectura y la escritura a la vez se ha tenido que hacer con dos clientes telnet. Esto ha planteado la duda si en liburbi tenia algún efecto el hecho de escribir y leer a la vez por el mismo cliente aunque este lo permita. Por este motivo se han planteado los siguientes programas:
+\begin{itemize}
+\item Python con un cliente telnet para lectura y otro para escritura.
+\item C++ con un cliente URBI tanto para lectura como para escritura.
+\item C++ con un cliente URBI para lectura y otro para escritura
+\end{itemize}
+
+En el desarrollo de los tres programas ha habido dos hechos a tener en cuenta y de destacada importancia.
+Ha sido necesario la creación de un hilo de ejecución en paralelo con tal de tener dos bucles independientes dentro del cliente, el bucle de URBI y el de envío.
+Por otro lado se ha investigado y experimentado con los modos de tratamiento  de ordenes que tiene URBI:
+\begin{itemize}
+\item \texttt{normal}: Es el modo por defecto. En caso de conflicto la ultima asignación tiene prioridad, pero en caso de que la ultima acabe la anterior toma el relevo.
+\item \texttt{mix}: En caso de conflicto el valor asignado es una media de los valores en conflicto.
+\item \texttt{add}: El valor asignado es la suma de los valores en conflicto.
+\item \texttt{queue}: se forma un cola de entrada que se resuelve con un sistema FIFO (First In First Out).
+\item \texttt{discard}: En caso de conflicto el valor de la variable no se modifica.
+\item \texttt{cancel}: La ultima asignación toma prioridad y las anteriores son canceladas. 
+\end{itemize}
+
+Tras varias pruebas se ha decidido que el modo más conveniente para la implementación del modulo es el modo \texttt{cancel}.
+
+El experimento\footnote{Los codigos se puede encontrar en los Anexos \ref{sinC} y \ref{sinP}} se ha realizado varias veces cambiando la frecuencia a la que se envían los puntos de la trayectoria. Se ha realizado a 1, 2, 5 y 10 Hz, no se ha enviado a mas velocidad ya que el movimiento a una frecuencia de mas de 10 Hz era inconstante y poco suave.
+Se han descartado los experimentos en que se ha producido un bloqueo.
+ 
+\begin{figure}[H]
+	\centering
+    \includegraphics[scale=0.37]{images/sin1H.pdf}
+	 \caption{En azul está graficado las posiciones enviadas a 1Hz y en rojo las lecturas. En columnas se encuentran las replicas del mismo método y por filas los tres métodos usados, en orden descendente son liburbi con un cliente, liburbi con dos cliente y python.}
   \label{fig:sin1H}
 \end{figure}
 \begin{figure}[H]
 	\centering
-    \includegraphics[scale=0.3]{images/sin2H.pdf}
-	 \caption{En blau està graficat les posicions enviades a una freqüència d'2Hz i en vermell les lectures realitzades. En columnes es troben les repliques del mateix experiment i per files els tres mètodes usats, començant per liburbi amb un client, liburbi amb dos clients i telnet.}
+    \includegraphics[scale=0.37]{images/sin2H.pdf}
+	 \caption{En azul está graficado las posiciones enviadas a 2Hz y en rojo las lecturas. En columnas se encuentran las replicas del mismo método y por filas los tres métodos usados, en orden descendente son liburbi con un cliente, liburbi con dos cliente y python.5}
   \label{fig:sin2H}
 \end{figure}
 \begin{figure}[H]
 	\centering
-    \includegraphics[scale=0.3]{images/sin5H.pdf}
-	 \caption{En blau està graficat les posicions enviades a una freqüència d'5Hz i en vermell les lectures realitzades. En columnes es troben les repliques del mateix experiment i per files els tres mètodes usats, començant per liburbi amb un client, liburbi amb dos clients i telnet.}
+    \includegraphics[scale=0.37]{images/sin5H.pdf}
+	 \caption{En azul está graficado las posiciones enviadas a 5Hz y en rojo las lecturas. En columnas se encuentran las replicas del mismo método y por filas los tres métodos usados, en orden descendente son liburbi con un cliente, liburbi con dos cliente y python.}
   \label{fig:sin5H}
 \end{figure}
 \begin{figure}[H]
 	\centering
-    \includegraphics[scale=0.3]{images/sin10H.pdf}
-	 \caption{En blau està graficat les posicions enviades a una freqüència d'10Hz i en vermell les lectures realitzades. En columnes es troben les repliques del mateix experiment i per files els tres mètodes usats, començant per liburbi amb un client, liburbi amb dos clients i telnet.}
+    \includegraphics[scale=0.37]{images/sin10H.pdf}
+	 \caption{En azul está graficado las posiciones enviadas a 10Hz y en rojo las lecturas. En columnas se encuentran las replicas del mismo método y por filas los tres métodos usados, en orden descendente son liburbi con un cliente, liburbi con dos cliente y python.}
   \label{fig:sin10H}
 \end{figure}
-En aquest experiment es poden trobar dos tipus d'errors que no permeten el seguiment d'una trajectoria:
+
+En los gráficos de las Figuras \ref{fig:sin1H}, \ref{fig:sin2H}, \ref{fig:sin5H} y \ref{fig:sin10H} se pueden distinguir  dos tipos de errores por los cuales no se sigue bien la trayectoria:
+
 \begin{itemize}
-\item L'articulació no es mou: Això queda reflexat com una recta horitzontal durant un cert temps dels valors recollits en els gràfics anteriors.
-\item No es rep la posició: Queda reflexat amb un període sense dades de recepció. En aquest cas no es pot saber si l'articulació es movia o no\footnote{Per inspecció visual s'ha pogut comprovar que els dos errors eren ocmpletament independents.}
+\item La articulación no se mueve:Queda reflejado como una recta roja horizontal y el modulo responsable es el de escritura.
+\item No se recibe la posición actual: Queda reflejado como un periodo sin datos. en este caso no se puede saber si la articulación se movía o no\footnote{Por inspección visual se ha comprobado que ambos errores son independientes.}.
 \end{itemize}
-El cas en que s'utilitza liburbi amb un sol client te grans buits en la recepció de dades i es el sistema en que l'articulació es mou pitjor. Pel que fa als altres programes No es pot concluir quin metode es milló amb les figures \ref{fig:sin1H} \ref{fig:sin2H} \ref{fig:sin5H} \ref{fig:sin10H}, però s'ha mirat el temps de resposta com un altre criteri d'avaluació.
+El caso en el que sólo se usa un solo cliente con liburbi tiene grandes bloqueos en la recepción de y muestra un movimiento más brusco e inconstante.
+Entre los dos otros no se puede determinar cual de los dos tiene un mejor seguimiento. Con el fin de marcar la diferencia se ha evaluado bajo otro criterio.
+Se han hecho las diferencias de entre el tiempo en que se envía la orden de los picos de la sinusoide y el momento en que se recibe que ha llegado a tal posición. Para comprobar si existe una diferencia se realiza una ANOVA sobre los datos de la Figura \ref{fig:retras} y resuelve con un intervalo de confianza del 95\% y un p-valor del 0.043 no se acepta la hipótesis nula y que por tanto el retraso con C++ es significativamente mayor. 
  
-S'agafen les diferencies dels temps en que s'envia l'ordre dels pics de la sinusoide fins al moment en que l'articulació hi arriba. La comparació es fa sobre la freqüència de 10 Hz. Realitzant una ANOVA sobre les dades obtingudes es pot dir que amb un interval de confiança del 0.95 es pot dir que el temps de retras del programa en C++ és major.
-\begin{table}[H]
-\begin{center}
-\begin{tabulary}{\textwidth}{|p{4cm}|p{3cm}|p{3cm}|p{3cm}|}
-\hline
-\textbf{Python} & \textbf{C++}  \\ \hline
-0.2645001411438 &	0.89370012283325  \\ \hline
-0.53448987007141&	1.97295999526978 \\ \hline
-1.00108003616333&	0.57231998443604 \\ \hline
-0.53938007354736&	0.86796998977661 \\ \hline
-0.56873989105225&	1.23644995689392 \\ \hline
-0.36583995819092&	0.88230991363525 \\ \hline
-0.43079996109009&	1.08385014533997 \\ \hline
-0.49660015106201&	0.34201002120972 \\ \hline
-0.44481992721558&	1.24258995056152 \\ \hline
-0.67379021644592&	0.53582000732422 \\ \hline
-0.4376699924469	&0.32669997215271 \\ \hline
-0.38997006416321&	0.35342001914978 \\ \hline
-1.02151989936829&	0.28936004638672 \\ \hline
-0.39364004135132&	0.61238980293274 \\ \hline
-0.4789400100708&	0.56062984466553 \\ \hline
-0.33033013343811&	0.46492981910706 \\ \hline
-0.38224005699158&	0.58044004440308 \\ \hline
-0.50603008270264&	0.8042299747467 \\ \hline
-0.45465016365051&	0.37677979469299  \\ \hline
+\begin{figure}[H]
+	\centering
+\begin{tikzpicture}[baseline]
+\pgfplotsset{width=13cm,compat=1.10}
+\begin{axis}[
+xlabel={$replicas$},
+ylabel={$tiempo(s)$},
+minor y tick num=1,
+legend style={at={(0.5,-0.25)},
+anchor=north,legend columns=-1},
+]
+\addplot[blue, only marks] table {data/retrasoPy.dat};
+\addplot[black, only marks] table {data/retrasoC++.dat};
+\addplot[blue,sharp plot,update limits=false]
+coordinates {(0,0.511) (20,0.511)}
+node[above] at (axis cs:9,0.511) {0.511};
+\addplot[black,sharp plot,update limits=false]
+coordinates {(0,0.737) (20,0.737)}
+node[above] at (axis cs:9,0.737) {0.737};
+\legend{python, liburbi}
+\end{axis}
+\end{tikzpicture}
+	 \caption{Retrasos entre la orden enviada y la acción para los métodos liburbi con dos clientes y python.}
+  \label{fig:retras}
+\end{figure}
 
-\end{tabulary}
-\end{center}
-\caption{Retrà.\label{delay}}
-\end{table}
+\subsection{Elección del método}
+A partir de los resultados anteriores se procede a elegir el caso que garantizará un mejor funcionamiento del paquete a implementar. En la Tabla \ref{comp} se encuentran resumidos los criterios de evaluación.
 
-\subsection{Elecció del mètode}
-Amb els resulats anteriors es pot escollir ja el mètode més adequat per establir la comunicació am l'AIBO i es pot garantir que el seu correcte funcionament. La Taula \ref{comp} es troben resumits els resultats dels experiments realitzats.
 
 \begin{table}[H]
 \begin{center}
 \begin{tabulary}{\textwidth}{|p{4cm}|p{3cm}|p{3cm}|p{3cm}|}
 \hline
 
-&\textbf{Python amb Telnet} & \textbf{C++ amb liburbi i 1 client} & \textbf{C++ amb liburbi i 2 clients} \\ \hline
-Freqüencial màxima de lectura & - & + & + \\ \hline
-Freqüencial mitjana de lectura & - & + & +  \\ \hline
-Congelacions de les dades & = & = &= \\ \hline
-Freqüencial de enviament de dades & = & = & = \\ \hline
-Seguiment de trajectòries & + & - & + \\ \hline
-Efecte negatiu de l'enviament sobre la lectura& - & + & - \\ \hline
-Retràs de la resposta & - & + & \\ \hline
+&\textbf{Python con telnet} & \textbf{C++ con liburbi y 1 cliente} & \textbf{C++ con liburbi y 2 clientes} \\ \hline
+Frecuencia máxima de lectura & menor & Mayor & Mayor \\ \hline
+Frecuencia media de lectura & Menor& Mayor & Mayor  \\ \hline
+Congelaciones en la lectura & Si & Si &Si \\ \hline
+Frecuencia de envío& = & = & = \\ \hline
+Seguimiento de trayectorias & Bueno & Malo & Bueno \\ \hline
+Efecto negativo del envío en la lectura& No & Si & No \\ \hline
+Retraso de la respuesta & Menor & Mayor & \\ \hline
+Bloqueos de en el envío & Si & Si & Si \\ \hline
 \end{tabulary}
 \end{center}
-\caption{Comparació dels mètodes usats i els seus resultats en els experiments.\label{comp}}
+\caption{Comparación de los métodos usados y sus resultados en los experimentos.\label{comp}}
 \end{table}
-Els millors resultats es donen amb liburbi i dos clients a excepció del temps de resposta, que el script de python dona uns temps millors
-\subsection{Possibles millores}
-\section{Implementació del paquet de ROS}
+
+En cuanto a recepción de datos se refiere es mas rápido el usando liburbi aunque sufra las mismas congelaciones que usando python y a efectos prácticos para la implementación del paquete es lo mismo que transmita a 10KHz que a 20KHz. Y respecto al envió el seguimiento de la trayectoria és parecido en ambos metodos, python y liburbi con dos clientes, pero parece que tenga un retraso superior el segundo. De todos modos no se considera concluyente el experimento echo pues dada la variabilidad de los resultados es posible que se haya trabajado con pocos datos el análisis sobre el retraso. Finalmente se elige usar la librería liburbi dado que se cree más convincente la ventaja en la adquisición de los datos que el retraso en la respuesta. Por otra parte se ha tenido en consideración que el paquete será más complejo que los experimentos y puede ser útil que la velocidad de ejecución de un programa enn C++ sea mayor que en python.
+
+\newpage
+\section{Implementación del paquete de ROS}
 \subsection{ROS}
 \label{ros}
-ROS és un marc de treball que proporciona eines i llibreries per ajudar als desenvolupadors de software a crear aplicacions per a robots. Proporciona entre altres abstraccions de hardware,controladors per a dispositius, eines de visualització, comunicació per missatges, administració de paquets i tot es troba sota llicencia de software lliure.
+ROS es el acrónimo de Rbot Operating System que lejos de ser un sistema operativo es más bien un marco de trabajo que proporciona unas herramientas y librerias para ayudar a desarrollar software para aplicaciones en robótica. Proporciona entre otros abstracciones de hardware, controladores para dispositivos, herramientas de visualización, comunicación por mensajes, administración de paquetes y todo bajo licencia de software libre.
+La principal característica sobre la que se basa ROS es el sistema de comunicación que proporciona. A bajo nivel está basada en el paso de mensajes que pueden ser leídos por diversos procesos simultaneamente. Dichos mensajes se escriben sobre unos canales de comunicación llamados \textit{tópicos} a los que se puede acceder mediante métodos de publicación y suscripción. Sobre los tópicos se puede publicar o se puede suscribir desde un terminal o bien cualquier objeto de ROS a los que se les llama \textit{nodos}. Todos los nodos que se pretendan tener comunicados entre si deben estar creados sobre el mismo núcleo o \textit{roscore}.
 
-La principal característica sobre la que es basa ROS és la comunicació que proporciona. A baix nivell esta basada en pas de missatges els quals poden ser llegits o enviats per diversos processos. Aquests missatges s'escriuen sobre uns canals de comunicació anomenats \textit{tòpics} als que s'hi pot accedir mitjançant els mètodes de publicació/subscripció. La comunicació es realitza entre objectes anomenats nodes que poden subscriure's i publicar en els diferents tòpics. Tots els nodes sobre els que es vol fer comunicacions s'han de crear sobre el mateix nucli. 
 
-Todo paquete de ROS contiene una serie de archivos necesarios para su compilacion:
+Todos los programas que se pretendan ejecutar sobre ROS son creados dentro de un paquete i todo paquete de ROS contiene una serie de archivos necesarios para su compilación:
 \begin{itemize}
 \item manifest.xml: Se incluye información sobre el nombre del paquete, el autor, tipo de licencia y paquetes externos necesarios.
-\item CMakelists.txt: Se indica el uso de librerias, el uso de mensages propios del paquete y se declaran los ejecutables.
+\item CMakelists.txt: Se indica el uso de librerías, el uso de mensajes propios del paquete y se declaran los ejecutables.
 \item mainpage.dox: Permite hacer un resumen explicativo del paquete.
 \item archivos ejecutables: ROS permite usar su API con C++ i python.
-\item carpeta msg: Contiene los archivos *.msg donde se definen los mensages propios del paquete.
+\item carpeta msg: Contiene los archivos *.msg donde se definen los mensajes propios del paquete.
 \item carpeta srv: contiene los archivos *.srv donde se definen los servicios propios del paquete.
-\item Carpeta launch: Contiene los archivos .launch que permiten lanzar varios nodos de diferentes paquetes i tipos con los parametros convenientes.
+\item Carpeta launch: Contiene los archivos *.launch que permiten lanzar varios nodos de diferentes paquetes y tipos con los parámetros convenientes.
 
 \end{itemize}
-\subsection{Paquet AiboServer }
-Se pretende implementar una paquete que en lanzarse se conecte al AIBO indicado por la direccion IP. Una vez conectado debe recoger los datos enviados por el servidor URBI del AIBO i publicarlos sobre una serie de topicos. De forma inversa debe tratar los valores de las articulaciones publicados en un topico al que esta suscrito i enviarlos al servidor con el fin de actuar sobre la plataforma.
+\subsection{Paquet aibo{\_}server }
+Se pretende implementar una paquete que en lanzarse se conecte al AIBO indicado por la dirección IP. Una vez conectado debe recoger los datos enviados por el servidor URBI del AIBO y publicarlos sobre una serie de tópicos. De forma inversa debe tratar los valores de las articulaciones publicados en un tópico al que esta suscrito y enviarlos al servidor con el fin de actuar sobre la plataforma.
 
 \begin{figure}[H]
 	\centering
-    \includegraphics[scale=1]{images/aiboserver.pdf}
-	 \caption{Nodo Aibo\_ Server.}
+    \includegraphics[scale=0.7]{images/aiboserverNodo.pdf}
+	 \caption{Nodo aibo{\_}server.}
   \label{fig:aiboserv}
 \end{figure}
 
 Para la realización de este paquete de ROS se han tenido en cuenta las siguientes consideraciones:
 \begin{itemize}
-\item Incluir en el manifest.xml los paquetes de ROS necesarios para su implementacion:
+\item Incluir en el manifest.xml los paquetes de ROS necesarios para su implementación:
 \begin{itemize}
 \item roscpp: permite utilizar la API ROS para C++.
-\item std\_ msgs: permite el uso de unos mensajes estandard.
-\item sensor\_ msgs: permite el uso de mensajes especialmente destinados a ciertos tipos de sensores.
+\item std{\_}msgs: permite el uso de unos mensajes estándar.
+\item sensor{\_}msgs: permite el uso de mensajes especialmente destinados a ciertos tipos de sensores.
 \end{itemize}
 \item Implementación de los archivos necesarios para el ejecutable:
 \begin{itemize}
-\item AiboNode.cpp: Archivo aprtir del que se crea el ejecutable del paquete. En el se encuentra toda la estructura del programa.
+\item AiboNode.cpp: Archivo a partir del que se crea el ejecutable del paquete. En el se encuentra toda la estructura del programa.
 \item AiboServer.cpp y AiboServer.h: Se define la clase aibo en la que se basa AiboNode.cpp.
 \item AiboParams.h: se definen las constantes.
 \end{itemize} 
 \item Definición de los mensajes propios:
 \begin{itemize}
-\item Accel.msg: Mensaje destinado al acelerometro.
+\item Accel.msg: Mensaje destinado al acelerómetro.
 \item Bumper.msg y BumperArray.msg: Mensaje destinado a los sensores de contacto de las patas.
 \item IRArray.msg: Mensaje destinado a los tres infrarojos.
 \item Jointes.msg: Mensaje destinado a las articulaciones.
-\item Sound.msg: Mensaje destinado al envio de sonido.
+\item Sound.msg: Mensaje destinado al envío de sonido.
 \item TouchArray.msg: mensaje destinado a los sensores de tacto de la espalda y la cabeza.
 \end{itemize}
-\item Modificación del CMakeList.txt para incluir los mensages y los archivos C++ descritos ademas de la libreria liburbi.
+\item Modificación del CMakeList.txt para incluir los mensajes y los archivos C++ descritos además de la librería liburbi.
 \end{itemize}
 
 \subsubsection{Estructura del programa}
-Basandose en los resultados de la sección anterior \ref{seccomp} se ha procedido a la implementación del paquete de ros usando liburbi i dos clientes, uno para la recepción  y otro para el envio.
+Basándose en los resultados de la sección anterior, Sección \ref{seccomp}, se ha procedido a la implementación del paquete de ros usando liburbi i dos clientes, uno para la recepción  y otro para el envío.
 
-La estructura del programa que se ha implementado se puede ver en la Figura \ref{aiboserver}.
+La estructura del programa que se ha implementado se puede ver en la Figura \ref{fig:aiboserver}.
 \begin{figure}[H]
 	\centering
     \includegraphics[scale=0.35]{images/Aibo_Server.pdf}
-	 \caption{Estructura basica del ejecutable Aibo\_ Server.}
+	 \caption{Estructura básica del ejecutable aibo{\_}server.}
   \label{fig:aiboserver}
 \end{figure}
 
 \begin{itemize}
 \item Inicializaciones: 
 \begin{itemize}
-\item Inicializacion del nodo de ROS:
+\item Inicialización del nodo de ROS:
 \begin{itemize}
-\item Creación del nodo: Se le otorga un identificador al nodo, en este caso Aibo\_ Server.
+\item Creación del nodo: Se le otorga un identificador al nodo, en este caso aibo{\_}server.
 \item Definición de la frecuencia de ejecución del bucle de ROS.
-\item Se inicializa el \textit{Subscriber} que permitira llamar llamara al Callback de ROS.   
+\item Se inicializa el \textit{Subscriber} que permitirá llamar llamara al Callback de ROS.   
 \end{itemize}
 
-\item Inicializacion de la instancia de la clase \textbf{aibo}:
+\item Inicialización de la instancia de la clase \textbf{aibo}:
 \begin{itemize}
-\item Inicializacion de los clientes URBI de lectura y escritura.
-\item Creacion de los tópicos e inicialización de los \textit{Publishers} que publicaran en ellos.
+\item Inicialización de los clientes URBI de lectura y escritura.
+\item Creación de los tópicos e inicialización de los \textit{Publishers} que publicaran en ellos.
 \item Definición del Callback de URBI para cada sensor y articulación.
 \item Demanda del envio de datos desde URBI.
-\item Definición del metodo de tratamiento de ordenes que usará el servidor URBI.
+\item Definición del método de tratamiento de ordenes que usará el servidor URBI.
 \end{itemize}
 \end{itemize}
 \item Bucle de URBI:
@@ -815,90 +1522,186 @@ La estructura del programa que se ha implementado se puede ver en la Figura \ref
 \end{itemize}
 \item Bucle de ROS:
 \begin{itemize}
-\item Publicación de las variables de los sensores y articulaciones en los topicos correspondientes.
-\item Llamada al callback de ROS: Éste envia la orden al servidor URBI mediante el cliente de envio.
+\item Publicación de las variables de los sensores y articulaciones en los tópicos correspondientes.
+\item Llamada al callback de ROS: Éste envía la orden al servidor URBI mediante el cliente de envío.
 \end{itemize}
 \end{itemize}
 \subsubsection{Resultados}
 Con tal de valorar el trabajo realizado se procede a realizar un paquete de ROS que permita cuantificar los resultados.
 
-El primer test realizado és el mismo que con el que se ha valorado las experimentaciones de la sección \ref{seccomp}. Se trata de aplicar una sinusoide al movimiento de una articulación.
+El primer test realizado es el mismo que con el que se ha valorado las experimentaciones de la sección \ref{seccomp}. Se trata de aplicar una sinusoide al movimiento de una articulación.
 
-Para la realizacion del test se ha implementado un sencillo programa que crea un nodo que publica sobre el tópico \textit{/aibo\_ server/aibo/subjoints/jointRF1} 	valores que varian de forma sinusoidal. 
-La estrucura entre los nodos se muestra en la figura \ref{fig:ASSL}.
+Para la realización del test se ha implementado un sencillo programa\footnote{El código se puede encontrar en el Anexo \ref{sinlegROS}} que crea un nodo que publica sobre el tópico \textit{/aibo{\_}server/aibo/subjoints/jointRF1} valores que varían de forma sinusoidal. 
+La estructura entre los nodos se muestra en la figura \ref{fig:ASSL}.
 \begin{figure}[H]
 	\centering
-    \includegraphics[scale=0.35]{images/Aibo_Server.pdf}%cambiar figura
-	 \caption{Estructura de ROS con los nodos Aibo\_ Server y SinLeg.}
+    \includegraphics[scale=0.35]{images/rosgraphASsin.pdf}
+	 \caption{Estructura de ROS con los nodos aibo\_server y SinLeg.}
   \label{fig:ASSL}
 \end{figure}
 
-De lo extraido en varios replicas a diversas frequencias se puede reportar que el seguimiento de de la trayectoria lleva un retraso minimo de unos 0.4 segundos que era el retraso propio obtenido en las experimentaciones de la sección \ref{secenvdades} aunque por lo general como se puede observar en las figuras %FIGURAAAAAAAAAS 
+De lo extraído en varias replicas a diversas frecuencias se puede reportar que el seguimiento de de la trayectoria lleva un retraso mínimo de unos 0.4 segundos que era el retraso propio obtenido en las experimentaciones de la sección \ref{secenvdades} aunque por lo general como se puede observar en la figura \ref{fig:ASsin} 
 dicho retraso no es la norma general estando el retraso medio muy por encima de éste.
+\begin{figure}[H]
+	\centering
+    \includegraphics[scale=0.7]{images/sinlegWR/sinusoides.pdf}
+	 \caption{Entrada y respuesta del sistema ante una señales sinusoidales de diferente frecuencia y muestreo.}
+  \label{fig:ASsin}
+\end{figure}
 
-Valorando el modulo se puede concluir que no funciona de la forma deseada ni requerida para varias aplicaciones en las que se require una lectura y respuesta rapida del sistema.
+Valorando el modulo se puede concluir que no funciona de la forma deseada ni requerida para varias aplicaciones en las que se require una lectura y respuesta rápida del sistema. 
 
+\subsubsection{Mejoras}
 Los problemas encontrados, tras un proceso de depuración se pueden clasificar de la siguiente forma:
 \begin{itemize}
-\item Cortas congelaciones en la recepción de los valores de los sensores y articulaciones: respeto a ello ya se ha probado que en las experimentaciones anteriores que los resultados no podian mejorar usando liburbi.
-\item Envio de la orden correctamente pero tarda en realizar el movimiento: Este es un problema interno del tratamiento de las ordenes del servidor URBI y que por lo tanto no se puede hacer nada al respeto des de el punto de vista del cliente.
-\item Bloqueo en enviar la orden de movimiento: Como en las experimentaciones de la seccion anterior se producen bloqueos debidos a que la funcion de liburbi que permite enviar ordenes se queda bloqueada. Estos bloqueos hacen que se bloquee todo el nodo durante segundos e incluso minutos.
+\item Cortas congelaciones en la recepción de los valores de los sensores y articulaciones: respeto a ello ya se ha probado que en las experimentaciones anteriores que los resultados no podían mejorar usando liburbi.
+\item Envío de la orden correctamente pero tarda en realizar el movimiento: Este es un problema interno del tratamiento de las ordenes del servidor URBI y que por lo tanto no se puede hacer nada al respeto des de el punto de vista del cliente.
+\item Bloqueo en enviar la orden de movimiento: Como en las experimentaciones de la sección anterior se producen bloqueos debidos a que la función de liburbi que permite enviar ordenes se queda bloqueada. Estos bloqueos hacen que se bloquee todo el nodo durante segundos e incluso minutos.
 \end{itemize}
 
-A raiz del ultimo problema comentado se ha implementado una solución que evita dos de las consecuencias que conyeva el éste.
+A raíz del ultimo problema comentado se ha implementado una solución que evita dos de las consecuencias que conlleva éste.
 
-En primer lugar en caso de que se produzca un bloqueo en el envio de una posición del cliente al servidor, éste no debe afectar a la recepcion de las demas variables. Como solución se propone que el envió y la recepción se produzcan en dos threads distintos e independientes. 
- Este es el caso de la sincronoización, una de las aplicaciones mas exigentes en cuanto a transmision de datos i tiempos de respuesta se refiere.
-Con este motivo se ha realiza 
+En primer lugar en caso de que se produzca un bloqueo en el envío de una posición del cliente al servidor, éste no debe afectar a la recepción de las demás variables. Como solución se propone que el envió y la recepción se produzcan en dos threads distintos e independientes. 
+En segundo lugar se desea evitar los bloqueos en el envío. Esto se pretende hacer inicializando un tercer cliente URBI de manera que cuando el cliente de envío se quede bloquee en alguna orden el nuevo cliente lo reemplazara en el envío mientras éste se reinicializa. i en caso de bloqueo del nuevo cliente se espera que el primero, ya reinicializado tome el relevo.
 
-\section*{Conclusions}
-\addcontentsline{toc}{section}{Conclusions}
+Bajo estas ideas se ha reescrito el callback de ROS como muestra el diagrama de la figura \ref{fig:Call}.
+
+\begin{figure}[H]
+	\centering
+    \includegraphics[scale=0.75]{images/esquemaCall.pdf}
+	 \caption{Diagrama del callback de ROS. Los flags \textit{anterior}, \textit{C1activo} y \textit{C2activo} se inicializan con valor 1.}
+  \label{fig:Call}
+\end{figure}
+
+Con esta modificación se ha conseguido que el envío de datos, que de forma natural con liburbi es de forma síncrona, puesto que la función de envío espera una respuesta del servidor, se trate de forma asíncrona. Este modo no garantiza la llegada de todos los paquetes de datos pero gana en velocidad de transmisión y evita los bloqueos.
+
+Volviendo de nuevo a comprobar los resultados tras la modificación se vuelve a aplicar un movimiento sinusoidal al movimiento de una articulación.
+%MASGRAFICOOOOS
+
+\subsubsection{Demostración}
+Con tal de asegurar el funcionamiento del paquete aibo{\_}server se ha realizado un programa demuestra como se pueden sincronizar dos o varios AIBO compartiendo variables de estado los unos con los otros. 
+En esta demostración en particular se pretende que un AIBO imite los movimientos que realice otro. Es uno de las aplicaciones en que el flujo de datos es realmente grande, dado que las posiciones se modificaran dato a dato, y pondrá realmente a prueba la capacidad del modulo implementado.
+Se ha creado un paquete el que incluye un programa\footnote{El código se puede encontrar en el Anexo \ref{mimiccode}.} con un nodo que esta suscrito a el tópico de lectura de las articulaciones de un nodo aibo{\_}server y los publica sobre el tópico de escritura de otro nodo aibo{\_}server. Para crear estos tres nodos se ha hecho un archivo .launch que crea dos nodos del tipo aibo{\_}server con los nombres \texttt{/ai1} y \texttt{/ai2} y un tercer nodo como el descrito. La estructura resultante és la de la Figura \ref{fig:mimic}.
+
+
+\begin{figure}[H]
+	\centering
+    \includegraphics[scale=0.75]{images/mimic.pdf}
+	 \caption{Estructura de los nodos de ROS en la demostración de sincronización.}
+  \label{fig:mimic}
+\end{figure}
+
+En las siguientes Figuras se puede observar como reacciona las una articulación de ambos AIBOs al mover manualmente el de uno de ellos. 
+%MASGRAFICOs
+
+\subsection{Paquete Aibo{\_}description }
+Este paquete pretende ser el vinculo entre el AIBO y una de las herramientas más usadas de ROS para robots móviles, rviz\footnote{http://wiki.ros.org/rviz}. Rviz es un visualizador 3D para aplicaciones de robótica que permite visualizar un modelo, el entorno sensado o un mapa virtual. 
+
+El paquete consta de dos partes diferenciadas, la creación de el modelo de AIBO para que pueda ser representada la imagen 3D y la implementación de un nodo que haga responder el modelo en tiempo real a lo que sucede en el robot real.
+
+\subsubsection{El modelo}
+Para generar un modelo, se debe editar un xml con formato URDF\footnote{http://wiki.ros.org/urdf}(Unified Robots Description Format) donde se especifican las dimensiones del robot, las articulaciones y sus movimientos, la geometría de las extremidades y parámetros físicos como la masa o la inercia.
+Para el modelo del AIBO se han creado 22 partes y 21 articulaciones se han descartado para el modelo la boca y las orejas. En la Figura \ref{fig:aibourdf} Se puede ver un esquema de las articulaciones, las partes y la disposición de los ejes que conforman el modelo implementado en el archivo URDF.
+
+
+\begin{figure}[H]
+	\centering
+    \includegraphics[scale=0.39]{images/Aibo.pdf}
+	 \caption{Estructura del modelo URDF.}
+  \label{fig:aibourdf}
+\end{figure}
+
+En  cada una de las partes se debe definir la geometría y sus dimensiones. Con el fin de darle un aspecto visual atractivo y mas semejante a al AIBO real la geometría ha sido  definida mediante archivos .stl que contienen las figuras de cada una de las partes. Los archivos stl se han obtenido de modificar un archivo stl que incluía un modelo solido de todo el AIBO. Se ha dividido, modificado las piezas usando las softwares de apoyo FreeCAD\footnote{http://freecadweb.org/} y Netfabb\footnote{http://www.netfabb.com/}. Finalmente el resultado es el mostrado en la Figura \ref{fig:aiborviz} donde se ve el modelo desde la ventana de rviz.
+ 
+\begin{figure}[H]
+	\centering
+    \includegraphics[scale=0.32]{images/aiborviz.png}
+	 \caption{Modelo visto des de el framework de rviz.}
+  \label{fig:aiborviz}
+\end{figure}
+\subsubsection{El nodo state{\_}publisher}\label{nodoSP}
+El nodo state{\_}publisher esta creado por un programa escrito en C++ (state{\_}publisher.cpp) y su principal función es estar suscrito al tópico \texttt{/aibo{\_}server/ aibo/joints}, donde se están publicando las posiciones las articulaciones del robot real, y las publica en un tópico llamado \texttt{joint{\_}states} al que ya se podrá comunicar rviz. Además envía la transformada del modelo cinemático.
+La estructura del programa es la siguiente:
+\begin{itemize}
+\item Inicialización:
+\begin{itemize}
+\item Inicialización del nodo state{\_}publisher.
+\item Inicialización del \textit{publisher}.
+\item Inicialización del \textit{subscriber}.
+\item Inicialización del \textit{broadcaster}: Canal de envió de la transformada. 
+\end{itemize}
+\item Declaración de mensajes:
+\begin{itemize}
+\item joint{\_}state: a trabes del que se publica el estado de las articulaciones.
+\item odom{\_}trans: a través del que se enviará la transformada.
+\end{itemize}
+\item Bucle de ROS:
+\begin{itemize}
+\item Actualización del estado de las articulaciones.
+\item Actualización de la transformada.
+\item Envío de las articulaciones.
+\item Envío de la transformada.
+\item Revisión del callback. 
+\end{itemize}
+\item Callback del \textit{subscriber}:
+\begin{itemize}
+\item Adquisición de los valores de las articulaciones.
+\end{itemize}
+\end{itemize}
+\subsubsection{Estructura}
+Para la realización del paquete se han implementado o modificado los siguientes archivos:
+\begin{itemize}
+\item Incluir en el manifest.xml los paquetes de ROS necesarios:
+\begin{itemize}
+\item roscpp: Permite usar el API de ROS para C++.
+\item urdf: Permite leer y parsear archivos urdf.
+\item std{\_}msg: Permite importar mensajes estándar.
+\item tf: Permite la crear el modelo cinemático inverso.
+\item aibo{\_}server: Permite importar los mensajes propios.  
+\end{itemize}
+\item Implementación del archivo state{\_}publisher.cpp, Sección \ref{nodoSP}.
+\item Carpeta urdf: se incluye el archivo Aibo.urdf donde está descrito el modelo.
+\item Carpeta meshes: se incluyen los archivo stl con los modelos 3D de las partes del modelo.
+\item Carpeta launch: incluye el archivo aibomod.launch. En el se definen los nodos y los parámetros a partir de los que será posible la visualización del modelo con rviz.
+\begin{itemize}
+\item Se asigna al parametro robot{\_}description el archivo Aibo.urdf.
+\item Se lanza un nodo del tipo robot{\_}state{\_}publisher del paquete con el mismo nombre. Dicho nodo esta suscrito al tópico joint{\_}states sobre el que publica el nodo implementado, state{\_}publisher, y se encarga de parsear el modelo que haya bajo el parámetro robot{\_}state{\_}publisher y publica sobre el tópico /tf el cual usa rviz para generar el movimiento del modelo.
+\item Se lanza un nodo del tipo state{\_}publisher.
+\item Se lanza un nodo del tipo rviz con la configuración deseada.
+\end{itemize}
+\end{itemize}
+
+En la Figura \ref{fig:aibostack} se puede observar como queda la estructura de los nodos con el visualizador rviz y el nodo aibo{\_}server en funcionamiento.
+
+\begin{figure}[H]
+	\centering
+    \includegraphics[scale=0.26]{images/graphModel.pdf}
+	 \caption{Estructuras de los nodos de ROS con aibo{\_}server y el modelo visualizado con rviz.}
+  \label{fig:aibostack}
+\end{figure}
+
+\newpage
+\section*{Conclusiones}
+\addcontentsline{toc}{section}{Conclusiones}
+
+
+Cuando se trabaja con sistemas reales uno se da cuenta que no todo funciona de forma ideal y que un algoritmo que debería funcionar conlleva a múltiples errores o respuestas no esperadas. En éste caso concreto se ha visto como las comunicaciones que establecía el lenguaje base elegido no eran tan buenas como se esperaba. De todas formas se ha alcanzado el objetivo siguiendo la metodología establecida en primer momento, se a implementado un modulo de ROS que permite integrar la plataforma AIBO, formado por los paquetes \textbf{aibo{\_}server} y \textbf{aibo{\_}description}. Estos paquetes se pueden encontrar en el repositorio (url del github) y están disponibles para su uso o modificación con tal de complementarlos o mejorar los resultados. Además se pretende colgar, fuera del alcance del proyecto, los paquetes y la documentación necesaria para su uso en la pagina de ROS con tal de contribuir y aportar un grano de arena al desarrollo de software libre.
+
+Este proyecto deja un camino abierto a las posibles mejoras y complementos. Entre otros la integración del modulo de visión y audio usando URBI como se ha echo. Por otra parte dado que los resultados han demostrado no ser un modulo demasiado robusto cabria la posibilidad de implementar el mismo modulo partiendo OPEN-R, eliminando de esta manera una capa de programación intermedia, URBI, que posiblemente ralentice y empeore la comunicación entre cliente y servidor. En cuanto al modelo y el nodo que permite su integración con rviz podría completarse añadiendo los sensores del AIBO como los acelerómetros, los infrarrojos, los sensores de presión y contacto y la camera.
+
+A nivel personal y educativo este proyecto ha servido para poner a prueba la capacidad de análisis y de resolución de problemas. Ha ayudado a tener un amplio conocimiento de de uno de los frameworks relacionados con la robótica mas usados del momento. Además a ayudado a mejorar las habilidades de desarrollo de software con los lenguajes C++ y python. 
 
 
 
 
 \newpage
 \clearpage
-\addcontentsline{toc}{section}{Referències}
+\addcontentsline{toc}{section}{Referencias}
 \begin{thebibliography}{99}
-\bibitem{kuka}
-	\emph{KUKA Robotics},
-	\url{http://www.kuka-robotics.com}
-\bibitem{telnet}
-	\emph{Telnet},
-	\url{http://www.telnet.org/}
-\bibitem{nasa}
-	\emph{National Aeronautics and Space Administration},
-	NASA.
-	\url{http://www.nasa.gov/}
-\bibitem{darpa}
-	\emph{Defense Advanced Research Projects Agency},
-	DARPA.
-	\url{http://www.darpa.mil}
-\bibitem{bosdin}
-	\emph{Boston Dinamics},
-	\url{http://www.bostondynamics.com/}
-\bibitem{asimo}
-	\emph{ASIMO}, 
-	The world most advanced Humanoid Robot.
-	HONDA
-	\url{http://asimo.honda.com/}
-\bibitem{wifibot}
-	\emph{Wifibot}, 
-	
-	\url{http://www.wifibot.com/}
-\bibitem{lego}
-	\emph{Lego Mindstorm NXT}, 
-	
-	\url{http://www.lego.com/en-us/mindstorms/?domainredir=mindstorms.lego.com}
-\bibitem{nao}
-	\emph{Adebaran Robotics},
-	NAO
-	\url{http://www.aldebaran.com/en}
 
 \bibitem{libroblanco}
 	CEA, Comité Español de Automàtica,
-	\emph{El libro blanco de la robòtica en España}.
+	\emph{El libro blanco de la robótica en España}.
 	2011.
 \bibitem{OPEN-R PG}
   Sony Corporation,
@@ -952,25 +1755,117 @@ Con este motivo se ha realiza
 \clearpage % o \cleardoublepage
 \addappheadtotoc
 \appendixpage
-\section{Configuració dels marcs de treball }
-
-\subsection{URBI}
-\subsection{Tekkotsu}
+\section{Configuración de los marcos de trabajo }\label{marcos}
 \subsection{OPEN-R SDK}
-\subsection{Configuració wifi}
+\subsection{Configuración wifi}
+Para configurar la conexión wireless del AIBO hay que acceder al archivo WLANDFLT.txt que se encuentra en el directorio /OPEN-R/SYSTEM/CONF de la tarjeta de memoria del AIBO.
 
-\section{URBI}
-\label{urbiA}
-\section{Scripts i programes}
-\subsection{Obtenció dels valors d'una variable usant liburbi per C++}
+El archivo contiene los siguientes variables:
+\begin{itemize}
+\item HOSTNAME: Especifica el nombre de AIBO que se está usando.
+\item ETHER{\_}IP: La IP que usará el AIBO.
+\item ETHER{\_}NETMASK: La mascara de subred.
+\item IP{\_}GATEWAY: La IP a traves de la que el AIBO accederá a la red.
+\item ESSID: Nombre de la red inalámbrica.
+\item WEPENABLE: con valor 1 si existe contraseña en la red o 0 en caso contrario.
+\item WEPKEY: contraseña de la red.
+\item APMODE: Método de conexión del AIBO.
+\begin{itemize}
+\item 0 para conexión punto a punto.
+\item 1 para conexión con ruter.
+\item 2 para conexión automática en el método que primero se lo permita.
+\end{itemize}
+\item CHANEL: especificar el canal para el modo punto a punto.
+\end{itemize}
+La configuración por defecto es:
+
+HOSTNAME = AIBO
+
+ETHER{\_}IP = 10.0.1.100
+
+ETHER{\_}NETMASK = 255.255.255.0
+
+IP{\_}GATEWAY = 10.0.1.1
+
+ESSID = AIBONET
+
+WEPENABLE = 1
+
+WEPKEY = AIBO2
+
+APMODE = 2
+
+CHANNEL = 3 
+\subsection{Tekkotsu}
+\subsection{URBI}
+\subsection{ROS}
+
+\newpage
+
+\section{Manual de usuario}
+\subsection{Requisitos previos}
+Es necesario antes de instalar los paquetes seguir los siguientes pasos.
+\begin{itemize}
+\item Instalar linux de 32bits.
+\item Copiar la Tarjeta de memoria para el AIBO con URBI(url).
+\item Descargar librería liburbi 1.5 para C++(url).
+\item Instalar de ROS(url).
+\item Instalar los paquetes de ROS:
+\begin{itemize}
+\item rviz
+\item urdf
+\item robot{\_}model
+\item tf
+\end{itemize}
+\item Descargar el paquete aibo{\_}server y aibo{\_}description(url).
+\end{itemize}
+\subsection{Instalación}
+\begin{itemize}
+\item Guardar los paquetes en el workspace de ROS.
+\item Ejecutar en un terminal:
+\begin{itemize}
+\item \texttt{rosmake --pre-clean aibo{\_}server} 
+\item \texttt{rosmake --pre-clean aibo{\_}description}
+\end{itemize}
+\end{itemize}
+\subsection{aibo{\_}server}
+Ejecutar en terminal:
+
+\texttt{rosrun aibo{\_}server aibo{\_}server arg[1] arg[2]}
+
+Donde:
+\begin{itemize}
+\item arg[1] es la IP del AIBO.
+\item arg[2] es la frecuencia en numero entero a la que se desea que vaya el bucle de ROS (no se recomienda a más de 10Hz).
+\end{itemize}
+
+\subsection{aibo{\_}description}
+Ejecutar en la terminal:
+\texttt{roslaunch aibo{\_}description aibomod.launch}
+
+Con tal de vincular el modelo con un AIBO se debe lanzar también un nodo aibo{\_}server.
+
+\newpage
+
+\section{Scripts y programas}
+\subsection{Adquisición del valor de una articulación con liburbi.}
 \label{getDataOneLegC++}
 \lstinputlisting[language=c++]{src/getDataOneLeg/getDataC++/getData.cpp}
-\subsection{Obtenció dels valors d'una variable usant una conexió telnet i python}
+
+\subsection{Adquisición del valor de una articulación con Python.}
 \label{getDataOneLegPy}
 \lstinputlisting[language=Python]{src/getDataOneLeg/getDataPython/getData.py}
-\subsection{Obtenció dels valors de totes les articulacions usant liburbi per C++}
 
-\subsection{Obtenció dels valors de totes les articulacions usant una conexió telnet i python}
-\subsection{Moviment d'una articulació de forma sinusoïdal usant liburbi per C++}\label{sinC}
-\subsection{Moviment d'una articulació de forma sinusoïdal usant una conecció telnet i python}\label{sinP}
+\subsection{Envió de trayectoria punto a punto con liburbi.}\label{sinC}
+\lstinputlisting[language=c++]{src/sinLegRead/sinLegC++/2Client/sinLeg.cpp}
+
+\subsection{Envió de trayectoria punto a punto con Python.}\label{sinP}
+\lstinputlisting[language=Python]{src//sinLegRead/sinLegPython/sinlegLF1.py}
+
+\subsection{Envió de trayectoria punto a punto con ROS.}\label{sinlegROS}
+\lstinputlisting[language=c++]{src/ROStests/sinlegROS.cpp}
+
+\subsection{Modulo de imitación entre AIBOs.}\label{mimiccode}
+\lstinputlisting[language=c++]{src/ROStests/mimic.cpp}
+
 \end{document}
