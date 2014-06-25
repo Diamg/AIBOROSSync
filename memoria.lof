@@ -24,9 +24,17 @@
 \contentsline {figure}{\numberline {23}{\ignorespaces Nodo aibo{\_}server.\relax }}{39}{figure.caption.30}
 \contentsline {figure}{\numberline {24}{\ignorespaces Estructura b\IeC {\'a}sica del ejecutable aibo{\_}server.\relax }}{41}{figure.caption.31}
 \contentsline {figure}{\numberline {25}{\ignorespaces Estructura de ROS con los nodos aibo\_server y SinLeg.\relax }}{42}{figure.caption.32}
-\contentsline {figure}{\numberline {26}{\ignorespaces Entrada y respuesta del sistema ante una se\IeC {\~n}ales sinusoidales de diferente frecuencia y muestreo.\relax }}{43}{figure.caption.33}
-\contentsline {figure}{\numberline {27}{\ignorespaces Diagrama del callback de ROS. Los flags \textit {anterior}, \textit {C1activo} y \textit {C2activo} se inicializan con valor 1.\relax }}{45}{figure.caption.34}
-\contentsline {figure}{\numberline {28}{\ignorespaces Estructura de los nodos de ROS en la demostraci\IeC {\'o}n de sincronizaci\IeC {\'o}n.\relax }}{46}{figure.caption.35}
-\contentsline {figure}{\numberline {29}{\ignorespaces Estructura del modelo URDF.\relax }}{47}{figure.caption.36}
-\contentsline {figure}{\numberline {30}{\ignorespaces Modelo visto des de el framework de rviz.\relax }}{48}{figure.caption.37}
-\contentsline {figure}{\numberline {31}{\ignorespaces Estructuras de los nodos de ROS con aibo{\_}server y el modelo visualizado con rviz.\relax }}{50}{figure.caption.38}
+\contentsline {figure}{\numberline {26}{\ignorespaces Entrada y respuesta del sistema ante una se\IeC {\~n}al sinusoidal de enviando puntos a 2Hz.\relax }}{43}{figure.caption.33}
+\contentsline {figure}{\numberline {27}{\ignorespaces Entrada y respuesta del sistema ante una se\IeC {\~n}al sinusoidal de enviando puntos a 7Hz.\relax }}{43}{figure.caption.34}
+\contentsline {figure}{\numberline {28}{\ignorespaces Entrada y respuesta del sistema ante una se\IeC {\~n}al sinusoidal de enviando puntos a 10Hz.\relax }}{44}{figure.caption.35}
+\contentsline {figure}{\numberline {29}{\ignorespaces Diagrama del callback de ROS. Los flags \textit {anterior}, \textit {C1activo} y \textit {C2activo} se inicializan con valor 1.\relax }}{46}{figure.caption.36}
+\contentsline {figure}{\numberline {30}{\ignorespaces Entrada, en rojo, y respuesta, en azul, del sistema ante una se\IeC {\~n}al sinusoidal de enviando puntos a 5Hz. Empiezan a producirse bloqueos.\relax }}{47}{figure.caption.37}
+\contentsline {figure}{\numberline {31}{\ignorespaces Entrada, en rojo, y respuesta, en azul del sistema ante una se\IeC {\~n}al sinusoidal de enviando puntos a 5Hz. Se producen bloqueos que se intentan evitar.\relax }}{48}{figure.caption.38}
+\contentsline {figure}{\numberline {32}{\ignorespaces Entrada, en rojo, y respuesta, en azul, del sistema ante una se\IeC {\~n}al sinusoidal de enviando puntos a 5Hz. Recuperaci\IeC {\'o}n del seguimiento de la trayectoria.\relax }}{48}{figure.caption.39}
+\contentsline {figure}{\numberline {33}{\ignorespaces Entrada,en rojo, y respuesta, en azul, del sistema ante una se\IeC {\~n}al sinusoidal de enviando puntos a 5Hz. Buen seguimiento de la trayectoria.\relax }}{49}{figure.caption.40}
+\contentsline {figure}{\numberline {34}{\ignorespaces Estructura de los nodos de ROS en la demostraci\IeC {\'o}n de sincronizaci\IeC {\'o}n.\relax }}{49}{figure.caption.41}
+\contentsline {figure}{\numberline {35}{\ignorespaces Posici\IeC {\'o}n de la articulaci\IeC {\'o}n del AIBO movido manualmente, en fucsia, y del AIBO que hace la imitaci\IeC {\'o}n, en verde.\relax }}{50}{figure.caption.42}
+\contentsline {figure}{\numberline {36}{\ignorespaces Posici\IeC {\'o}n de la articulaci\IeC {\'o}n del AIBO movido manualmente, en rojo, la enviada al segundo AIBO, en fucsia y la del AIBO que hace la imitaci\IeC {\'o}n, en azul.\relax }}{50}{figure.caption.43}
+\contentsline {figure}{\numberline {37}{\ignorespaces Estructura del modelo URDF.\relax }}{52}{figure.caption.44}
+\contentsline {figure}{\numberline {38}{\ignorespaces Modelo visto des de el framework de rviz.\relax }}{53}{figure.caption.45}
+\contentsline {figure}{\numberline {39}{\ignorespaces Estructuras de los nodos de ROS con aibo{\_}server y el modelo visualizado con rviz.\relax }}{55}{figure.caption.46}

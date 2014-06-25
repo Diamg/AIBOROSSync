@@ -30,29 +30,33 @@
 \contentsline {subsubsection}{\numberline {5.2.1}Estructura del programa}{40}{subsubsection.5.2.1}
 \contentsline {subsubsection}{\numberline {5.2.2}Resultados}{42}{subsubsection.5.2.2}
 \contentsline {subsubsection}{\numberline {5.2.3}Mejoras}{44}{subsubsection.5.2.3}
-\contentsline {subsubsection}{\numberline {5.2.4}Demostraci\IeC {\'o}n}{46}{subsubsection.5.2.4}
-\contentsline {subsection}{\numberline {5.3}Paquete Aibo{\_}description }{46}{subsection.5.3}
-\contentsline {subsubsection}{\numberline {5.3.1}El modelo}{47}{subsubsection.5.3.1}
-\contentsline {subsubsection}{\numberline {5.3.2}El nodo state{\_}publisher}{48}{subsubsection.5.3.2}
-\contentsline {subsubsection}{\numberline {5.3.3}Estructura}{49}{subsubsection.5.3.3}
-\contentsline {section}{Conclusiones}{51}{section*.39}
-\contentsline {section}{Referencias}{52}{section*.39}
-\contentsline {section}{Anexos}{53}{section*.41}
-\contentsline {section}{\numberline {A}Configuraci\IeC {\'o}n de los marcos de trabajo }{53}{appendix.A}
-\contentsline {subsection}{\numberline {A.1}OPEN-R SDK}{53}{subsection.A.1}
-\contentsline {subsection}{\numberline {A.2}Configuraci\IeC {\'o}n wifi}{53}{subsection.A.2}
-\contentsline {subsection}{\numberline {A.3}Tekkotsu}{54}{subsection.A.3}
-\contentsline {subsection}{\numberline {A.4}URBI}{54}{subsection.A.4}
-\contentsline {subsection}{\numberline {A.5}ROS}{54}{subsection.A.5}
-\contentsline {section}{\numberline {B}Manual de usuario}{55}{appendix.B}
-\contentsline {subsection}{\numberline {B.1}Requisitos previos}{55}{subsection.B.1}
-\contentsline {subsection}{\numberline {B.2}Instalaci\IeC {\'o}n}{55}{subsection.B.2}
-\contentsline {subsection}{\numberline {B.3}aibo{\_}server}{55}{subsection.B.3}
-\contentsline {subsection}{\numberline {B.4}aibo{\_}description}{56}{subsection.B.4}
-\contentsline {section}{\numberline {C}Scripts y programas}{57}{appendix.C}
-\contentsline {subsection}{\numberline {C.1}Adquisici\IeC {\'o}n del valor de una articulaci\IeC {\'o}n con liburbi.}{57}{subsection.C.1}
-\contentsline {subsection}{\numberline {C.2}Adquisici\IeC {\'o}n del valor de una articulaci\IeC {\'o}n con Python.}{58}{subsection.C.2}
-\contentsline {subsection}{\numberline {C.3}Envi\IeC {\'o} de trayectoria punto a punto con liburbi.}{59}{subsection.C.3}
-\contentsline {subsection}{\numberline {C.4}Envi\IeC {\'o} de trayectoria punto a punto con Python.}{62}{subsection.C.4}
-\contentsline {subsection}{\numberline {C.5}Envi\IeC {\'o} de trayectoria punto a punto con ROS.}{65}{subsection.C.5}
-\contentsline {subsection}{\numberline {C.6}Modulo de imitaci\IeC {\'o}n entre AIBOs.}{67}{subsection.C.6}
+\contentsline {subsubsection}{\numberline {5.2.4}Demostraci\IeC {\'o}n}{49}{subsubsection.5.2.4}
+\contentsline {subsection}{\numberline {5.3}Paquete Aibo{\_}description }{51}{subsection.5.3}
+\contentsline {subsubsection}{\numberline {5.3.1}El modelo}{51}{subsubsection.5.3.1}
+\contentsline {subsubsection}{\numberline {5.3.2}El nodo state{\_}publisher}{53}{subsubsection.5.3.2}
+\contentsline {subsubsection}{\numberline {5.3.3}Estructura}{54}{subsubsection.5.3.3}
+\contentsline {section}{\numberline {6}Presupuesto}{56}{section.6}
+\contentsline {subsection}{\numberline {6.1}Coste material}{56}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.2}Coste personal}{56}{subsection.6.2}
+\contentsline {section}{\numberline {7}Impacto ambiental}{57}{section.7}
+\contentsline {section}{Conclusiones}{58}{section*.49}
+\contentsline {section}{Referencias}{59}{section*.49}
+\contentsline {section}{Anexos}{60}{section*.51}
+\contentsline {section}{\numberline {A}Configuraci\IeC {\'o}n de los marcos de trabajo }{60}{appendix.A}
+\contentsline {subsection}{\numberline {A.1}OPEN-R SDK}{60}{subsection.A.1}
+\contentsline {subsection}{\numberline {A.2}Configuraci\IeC {\'o}n wifi}{60}{subsection.A.2}
+\contentsline {subsection}{\numberline {A.3}Tekkotsu}{61}{subsection.A.3}
+\contentsline {subsection}{\numberline {A.4}URBI}{61}{subsection.A.4}
+\contentsline {subsection}{\numberline {A.5}ROS}{61}{subsection.A.5}
+\contentsline {section}{\numberline {B}Manual de usuario}{62}{appendix.B}
+\contentsline {subsection}{\numberline {B.1}Requisitos previos}{62}{subsection.B.1}
+\contentsline {subsection}{\numberline {B.2}Instalaci\IeC {\'o}n}{62}{subsection.B.2}
+\contentsline {subsection}{\numberline {B.3}aibo{\_}server}{62}{subsection.B.3}
+\contentsline {subsection}{\numberline {B.4}aibo{\_}description}{63}{subsection.B.4}
+\contentsline {section}{\numberline {C}Scripts y programas}{64}{appendix.C}
+\contentsline {subsection}{\numberline {C.1}Adquisici\IeC {\'o}n del valor de una articulaci\IeC {\'o}n con liburbi.}{64}{subsection.C.1}
+\contentsline {subsection}{\numberline {C.2}Adquisici\IeC {\'o}n del valor de una articulaci\IeC {\'o}n con Python.}{65}{subsection.C.2}
+\contentsline {subsection}{\numberline {C.3}Envi\IeC {\'o} de trayectoria punto a punto con liburbi.}{66}{subsection.C.3}
+\contentsline {subsection}{\numberline {C.4}Envi\IeC {\'o} de trayectoria punto a punto con Python.}{69}{subsection.C.4}
+\contentsline {subsection}{\numberline {C.5}Envi\IeC {\'o} de trayectoria punto a punto con ROS.}{72}{subsection.C.5}
+\contentsline {subsection}{\numberline {C.6}Modulo de imitaci\IeC {\'o}n entre AIBOs.}{74}{subsection.C.6}

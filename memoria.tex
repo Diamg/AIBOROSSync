@@ -9,6 +9,8 @@
 \onehalfspacing
 \usepackage{multirow}
 
+\usepackage{eurosym}
+
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{framed}
@@ -130,9 +132,9 @@ Para concluir se explica como se han implementado los módulos que facilitan la 
 
 \section{Prefacio}
 \subsection{Motivación}
-Hace ya ocho años que la empresa SONY dejó de producir la mascota robótica por excelencia, el perro robot AIBO. Des de su desaparición del mercado, en 2006, éste ha caído en una espiral de desuso hasta el punto que hoy en día se pueden encontrar gran cantidad de ellos guardados en armarios de todo el mundo.
+Hace ya ocho años que la empresa SONY dejó de producir la mascota robótica por excelencia, el perro robot AIBO \cite{aibo}. Des de su desaparición del mercado, en 2006, éste ha caído en una espiral de desuso hasta el punto que hoy en día se pueden encontrar gran cantidad de ellos guardados en armarios de todo el mundo.
 
-Este proyecto partió de la idea de volver a aprovechar los AIBO para realizar tareas de cooperación y sincronización partiendo de un nivel de programación elevado. Debido a la incomodidad que proporcionaban los actuales lenguajes de programación para dicha plataforma, dado que ya no están siendo mantenidos y sus curvas de aprendizaje son realmente duras,   se planteó la posibilidad de programar al AIBO mediante ROS\ref{ros}.
+Este proyecto partió de la idea de volver a aprovechar los AIBO para realizar tareas de cooperación y sincronización partiendo de un nivel de programación elevado. Debido a la incomodidad que proporcionaban los actuales lenguajes de programación para dicha plataforma, dado que ya no están siendo mantenidos y sus curvas de aprendizaje son realmente duras,   se planteó la posibilidad de programar al AIBO mediante ROS\cite{ros}.
 Siendo ROS uno de los marcos de trabajo para la robótica que actualmente está teniendo más acogida, su uso sobre AIBO haría posible que volvieran a ser una plataforma a tener en cuenta para la investigación en estos momentos en que la universidad no cuenta con demasiados fondos. Por el otro lado la implementación de un driver para AIBO facilitará enormemente la programación, dando la posibilidad de usar el gran abanico de paquetes y herramientas existentes para ROS.
 
 Por estos motivos participar en la integración del AIBO con ROS es un proyecto que dado su posible utilidad en el futuro lo hace irresistible.
@@ -197,7 +199,7 @@ Por otra parte existen ciertos softwares libres que se están estableciendo como
 Cabe destacar dos de ellos:
 
 \begin{itemize}
-\item URBI: Del cual se pude encontrar información en la Sección \ref{urbi}.
+\item URBI\cite{urbiref}: Del cual se pude encontrar información en la Sección \ref{urbi}.
 \item ROS: Es el marco de trabajo más extendido actualmente y abasta una gran cantidad de plataformas. En la Sección \ref{ros} se puede encontrar más información.
 \end{itemize} 
 
@@ -207,14 +209,14 @@ Por lo que respeta a la implementación de drivers para pasar de un lenguaje pro
 
 Con la plataforma de estudio AIBO Sección \ref{secaibo} se han realizado diversos proyectos de índoles muy diferentes dada su versatilidad. Sobretodo se han llevado a cabo proyectos relacionados con visión \cite{xavi} o comportamientos e inteligencia artificial \cite{riki}.
 Un punto esencial en el desarrollo del AIBO fue que durante el período comprendido entre 1999 y 2008 fue la plataforma elegida para realizar la competición RoboCup Estandard Plataform League, posteriormente sustituido por la plataforma NAO. La RoboCup es una competición internacional destinada a promover la robótica y donde se realizan pruebas como la comentada anteriormente que forma parte de la sección de fútbol con robots autónomos. La prueba de simulacros de rescate fue otra donde el AIBO tubo una gran acogida y fue muy usado \cite{robocup}.
-La RoboCup fue fuente de inspiración para muchos investigaciones que se pueden clasificar enn tres grupos según su finalidad:
+La RoboCup fue fuente de inspiración para muchos investigaciones que se pueden clasificar en tres grupos según su finalidad:
 \begin{itemize}
 \item Visión i reconocimiento de marcas para la posterior ubicación dentro del campo \cite{morales}.
 \item Comunicaciones y control sobre los movimientos \cite{jesus}.
 \item Definición de roles dentro del campo \cite{metod}.
 \end{itemize}
 
-Actualmente el AIBO no se usa como se hacia antes, en parte porque ya no es la plataforma estándar de la RoboCup y en parte porque des de que en 2006 SONY dejo de producirlo su lenguaje base OPEN-R dejó de ser mantenido.
+Actualmente el AIBO no se usa como se hacia antes, en parte porque ya no es la plataforma estándar de la RoboCup y en parte porque des de que en 2006 SONY dejo de producirlo su lenguaje base OPEN-R\cite{OPEN-R PG} dejó de ser mantenido.
 A medida que ha caído en desuso los softwares que los soportaban ha dejado hacerlo, incluso aquellos que nacieron especialmente para el AIBO. Es el caso de URBI que des de la version 1.5 de su librería, liburbi, no es compatible.
 Además la recerca de éste proyecto se ha visto dificultada por la desaparición de la red de gran parte de la documentación de estos lenguajes.
 
@@ -228,11 +230,11 @@ Con este fin  se compararan diversos caminos con tal conseguir el mejor resultad
 
 Como objetivos concretos se marcan:
 \begin{itemize}
-\item Buscar la mejor opción de comunicación, entendiendo como mejor un equilibrio entre sencillez y calidad de la comunicación. Ésto conllevará por un lado  un análisis qualitativo de los possibles métodos y un análisis mas exhaustivo de los posibles caminos que hayan pasado la primera selección.
+\item Buscar la mejor opción de comunicación, entendiendo como mejor un equilibrio entre sencillez y calidad de la comunicación. Ésto conllevará por un lado  un análisis cualitativo de los posibles métodos y un análisis mas exhaustivo de los posibles caminos que hayan pasado la primera selección.
 
 \item La creación de un paquete de ROS que permita extraer todos los valores de los sensores y articulaciones y a su vez permita controlar al AIBO de forma remota.
 
-\item La creación de los paquetes necesatios para demostrar el buen funcionamiento del paquete anteriormente mencionado.
+\item La creación de los paquetes necesarios para demostrar el buen funcionamiento del paquete anteriormente mencionado.
 
 \item La creacion de un paquete que incluya un modelo del AIBO que pueda ser integrado dentro de los simuladores y visores del marco de trabajo ROS. 
 \end{itemize}
@@ -334,7 +336,7 @@ OPEN-R es un API en C++ que corre sobre el sistema operativo APERIOS \ref{fig:op
 \end{figure}
 
 Al tratarse de un lenguaje de bajo nivel su estructura es inherente al sistema operativo que se basa en objetos que interaccionan entre si mediante mensajes o meta-objetos. El concepro de objeto es parecido al utilizado en los sistemas \textit{UNIX}\footnote{\url{www.unix.org}} y \textit{Windows}\footnote{\url{http://windows.microsoft.com/en-us/windows/home}}, con la diferencia de que son monohilo y que la comunicación se realiza mediante mensajes que y incluyen datos y un identificador el método en el que se ejecutará en el objeto destino.
-Esto implica que cada objetos tiene varios puntos de entrada   y salida que son los métodos:  DoInit(), DoStart(), DoStop(), DoDestroy(). En el paso de mensajes uno se de los objetos se define como sujeto (el que envía) y el otro como observador (el que recibe) que inicia su ejecución después de que el mensaje haga saltar el evento del método correspondiente \cite{OPEN-R PG}.
+Esto implica que cada objetos tiene varios puntos de entrada   y salida que son los métodos:  DoInit(), DoStart(), DoStop(), DoDestroy(). En el paso de mensajes uno se de los objetos se define como sujeto (el que envía) y el otro como observador (el que recibe) que inicia su ejecución después de que el mensaje haga saltar el evento del método correspondiente.
 
 \begin{table}[h]
 \begin{center}
@@ -486,7 +488,7 @@ Partiendo del lenguaje URBI se plantean dos opciones de desarrollo:
 
 Con tal de encontrar cual es la mejor opción se realizarán una serie de experimentos antes de implementar el paquete. 
 
-\subsection{Lectura de datos}
+\subsection{Lectura de datos}\label{compenvio}
 En el primer experimento se valorará la velocidad de lectura de una sola variable del sistema y se cuantificará su frecuencia de refresco. Se ha usado para este experimento el valor de una articulación.
 
 El procedimiento para adquirir los datos será el mostrado en la Figura \ref{fig:readleg}.
@@ -1433,7 +1435,7 @@ En cuanto a recepción de datos se refiere es mas rápido el usando liburbi aunq
 \section{Implementación del paquete de ROS}
 \subsection{ROS}
 \label{ros}
-ROS es el acrónimo de Rbot Operating System que lejos de ser un sistema operativo es más bien un marco de trabajo que proporciona unas herramientas y librerias para ayudar a desarrollar software para aplicaciones en robótica. Proporciona entre otros abstracciones de hardware, controladores para dispositivos, herramientas de visualización, comunicación por mensajes, administración de paquetes y todo bajo licencia de software libre.
+ROS es el acrónimo de Robot Operating System que lejos de ser un sistema operativo es más bien un marco de trabajo que proporciona unas herramientas y librerías para ayudar a desarrollar software para aplicaciones en robótica. Proporciona entre otros abstracciones de hardware, controladores para dispositivos, herramientas de visualización, comunicación por mensajes, administración de paquetes y todo bajo licencia de software libre.
 La principal característica sobre la que se basa ROS es el sistema de comunicación que proporciona. A bajo nivel está basada en el paso de mensajes que pueden ser leídos por diversos procesos simultaneamente. Dichos mensajes se escriben sobre unos canales de comunicación llamados \textit{tópicos} a los que se puede acceder mediante métodos de publicación y suscripción. Sobre los tópicos se puede publicar o se puede suscribir desde un terminal o bien cualquier objeto de ROS a los que se les llama \textit{nodos}. Todos los nodos que se pretendan tener comunicados entre si deben estar creados sobre el mismo núcleo o \textit{roscore}.
 
 
@@ -1540,16 +1542,29 @@ La estructura entre los nodos se muestra en la figura \ref{fig:ASSL}.
   \label{fig:ASSL}
 \end{figure}
 
-De lo extraído en varias replicas a diversas frecuencias se puede reportar que el seguimiento de de la trayectoria lleva un retraso mínimo de unos 0.4 segundos que era el retraso propio obtenido en las experimentaciones de la sección \ref{secenvdades} aunque por lo general como se puede observar en la figura \ref{fig:ASsin} 
+De lo extraído en varias replicas a diversas frecuencias se puede reportar que el seguimiento de de la trayectoria lleva un retraso mínimo entorno a los 0.5 segundos que era el retraso propio obtenido en las experimentaciones de la sección \ref{secenvdades} aunque por lo general como se puede observar en las Figuras \ref{fig:ASsin2Hz}, \ref{fig:ASsin7Hz} y \ref{fig:ASsin10Hz} 
 dicho retraso no es la norma general estando el retraso medio muy por encima de éste.
 \begin{figure}[H]
 	\centering
-    \includegraphics[scale=0.7]{images/sinlegWR/sinusoides.pdf}
-	 \caption{Entrada y respuesta del sistema ante una señales sinusoidales de diferente frecuencia y muestreo.}
-  \label{fig:ASsin}
+    \includegraphics[scale=0.66]{images/sinlegWR/10Ry2S.png}
+ 	\caption{Entrada y respuesta del sistema ante una señal sinusoidal de enviando puntos a 2Hz.}
+  \label{fig:ASsin2Hz}
+\end{figure}
+\begin{figure}[H]
+	\centering
+    \includegraphics[scale=0.66]{images/sinlegWR/10Ry7S.png}
+ 	\caption{Entrada y respuesta del sistema ante una señal sinusoidal de enviando puntos a 7Hz.}
+  \label{fig:ASsin7Hz}
+\end{figure}
+   \begin{figure}[H]
+	\centering
+    \includegraphics[scale=0.66]{images/sinlegWR/10Ry10SAll.png}
+ 	\caption{Entrada y respuesta del sistema ante una señal sinusoidal de enviando puntos a 10Hz.}
+  \label{fig:ASsin10Hz}
 \end{figure}
 
-Valorando el modulo se puede concluir que no funciona de la forma deseada ni requerida para varias aplicaciones en las que se require una lectura y respuesta rápida del sistema. 
+Además el modulo sufre bloqueos que pueden durar minutos, igual que en las secciones anteriores.
+Valorando el modulo se puede concluir que no funciona de la forma deseada ni requerida para varias aplicaciones en las que se requiere una lectura y respuesta rápida del sistema. 
 
 \subsubsection{Mejoras}
 Los problemas encontrados, tras un proceso de depuración se pueden clasificar de la siguiente forma:
@@ -1559,11 +1574,9 @@ Los problemas encontrados, tras un proceso de depuración se pueden clasificar d
 \item Bloqueo en enviar la orden de movimiento: Como en las experimentaciones de la sección anterior se producen bloqueos debidos a que la función de liburbi que permite enviar ordenes se queda bloqueada. Estos bloqueos hacen que se bloquee todo el nodo durante segundos e incluso minutos.
 \end{itemize}
 
-A raíz del ultimo problema comentado se ha implementado una solución que evita dos de las consecuencias que conlleva éste.
-
+A raíz del ultimo problema comentado se ha implementado una solución que evita dos de las consecuencias que conlleva.
 En primer lugar en caso de que se produzca un bloqueo en el envío de una posición del cliente al servidor, éste no debe afectar a la recepción de las demás variables. Como solución se propone que el envió y la recepción se produzcan en dos threads distintos e independientes. 
 En segundo lugar se desea evitar los bloqueos en el envío. Esto se pretende hacer inicializando un tercer cliente URBI de manera que cuando el cliente de envío se quede bloquee en alguna orden el nuevo cliente lo reemplazara en el envío mientras éste se reinicializa. i en caso de bloqueo del nuevo cliente se espera que el primero, ya reinicializado tome el relevo.
-
 Bajo estas ideas se ha reescrito el callback de ROS como muestra el diagrama de la figura \ref{fig:Call}.
 
 \begin{figure}[H]
@@ -1576,12 +1589,44 @@ Bajo estas ideas se ha reescrito el callback de ROS como muestra el diagrama de 
 Con esta modificación se ha conseguido que el envío de datos, que de forma natural con liburbi es de forma síncrona, puesto que la función de envío espera una respuesta del servidor, se trate de forma asíncrona. Este modo no garantiza la llegada de todos los paquetes de datos pero gana en velocidad de transmisión y evita los bloqueos.
 
 Volviendo de nuevo a comprobar los resultados tras la modificación se vuelve a aplicar un movimiento sinusoidal al movimiento de una articulación.
-%MASGRAFICOOOOS
+
+En la Figura \ref{fig:ASempiezamala} se ve como tras un primer seguimiento de la trayectoria aceptable empieza una zona donde el seguimiento es mucho peor. Esta zona que continua en la Figura \ref{fig:ASpeor} Es un periodo de tiempo en que la comunicación con el AIBO es realmente mala y donde surgían los bloqueos. Tras implementar el nuevo callback el callback la comunicación no se corta, dado que se turnan los dos clientes de envío, pero no sigue bien la trayectoria pues los bloqueos son sucesivos.
+
+\begin{figure}[H]
+	\centering
+    \includegraphics[scale=0.375]{images/sinlegWR/mejorado/empiezamala.png}
+ 	\caption{Entrada, en rojo, y respuesta, en azul, del sistema ante una señal sinusoidal de enviando puntos a 5Hz. Empiezan a producirse bloqueos.}
+  \label{fig:ASempiezamala}
+\end{figure}
+\begin{figure}[H]
+	\centering
+    \includegraphics[scale=0.375]{images/sinlegWR/mejorado/peora5hz.png}
+ 	\caption{Entrada, en rojo, y respuesta, en azul del sistema ante una señal sinusoidal de enviando puntos a 5Hz. Se producen bloqueos que se intentan evitar.}
+  \label{fig:ASpeor}
+\end{figure}
+
+En la Figura \ref{fig:ASrecupera} se ve como llega un punto, tras una serie de sucesivos bloqueos de ambos clientes, se vuelve a recuperar un buen seguimiento de la trayectoria.
+ 
+\begin{figure}[H]
+	\centering
+    \includegraphics[scale=0.375]{images/sinlegWR/mejorado/recupera.png}
+ 	\caption{Entrada, en rojo, y respuesta, en azul, del sistema ante una señal sinusoidal de enviando puntos a 5Hz. Recuperación del seguimiento de la trayectoria.}
+  \label{fig:ASrecupera}
+\end{figure}
+
+Finalmente en la Figura \ref{fig:ASbuena} se puede observar como en algunos momentos el seguimiento de la trayectoria es satisfactorio. Cabe recordar que en estos gráficos obtenidos mediante la herramienta de ROS rqt{\_}plot no se pueden diferenciar si el gráfico no muestra un buen seguimiento debido a la recepción de datos o a que realmente no se está siguiendo bien la trayectoria. Basándose en los resultados de la Sección \ref{compenvio} se puede decir que los bloqueos máximos debidos la recepción son excepcionalmente de más de 2 segundos y por lo tanto menospreciables frente los bloqueos que se muestran en los gráficos.
+ \begin{figure}[H]
+	\centering
+    \includegraphics[scale=0.38]{images/sinlegWR/mejorado/mejor5Hz.png}
+ 	\caption{Entrada,en rojo, y respuesta, en azul, del sistema ante una señal sinusoidal de enviando puntos a 5Hz. Buen seguimiento de la trayectoria.}
+  \label{fig:ASbuena}
+\end{figure}
+
 
 \subsubsection{Demostración}
 Con tal de asegurar el funcionamiento del paquete aibo{\_}server se ha realizado un programa demuestra como se pueden sincronizar dos o varios AIBO compartiendo variables de estado los unos con los otros. 
 En esta demostración en particular se pretende que un AIBO imite los movimientos que realice otro. Es uno de las aplicaciones en que el flujo de datos es realmente grande, dado que las posiciones se modificaran dato a dato, y pondrá realmente a prueba la capacidad del modulo implementado.
-Se ha creado un paquete el que incluye un programa\footnote{El código se puede encontrar en el Anexo \ref{mimiccode}.} con un nodo que esta suscrito a el tópico de lectura de las articulaciones de un nodo aibo{\_}server y los publica sobre el tópico de escritura de otro nodo aibo{\_}server. Para crear estos tres nodos se ha hecho un archivo .launch que crea dos nodos del tipo aibo{\_}server con los nombres \texttt{/ai1} y \texttt{/ai2} y un tercer nodo como el descrito. La estructura resultante és la de la Figura \ref{fig:mimic}.
+Se ha creado un paquete el que incluye un programa\footnote{El código se puede encontrar en el Anexo \ref{mimiccode}.} con un nodo que esta suscrito a el tópico de lectura de las articulaciones de un nodo aibo{\_}server y los publica sobre el tópico de escritura de otro nodo aibo{\_}server. Para crear estos tres nodos se ha hecho un archivo .launch que crea dos nodos del tipo aibo{\_}server con los nombres \texttt{/ai1} y \texttt{/ai2} y un tercer nodo como el descrito. La estructura resultante es la de la Figura \ref{fig:mimic}.
 
 
 \begin{figure}[H]
@@ -1591,8 +1636,23 @@ Se ha creado un paquete el que incluye un programa\footnote{El código se puede 
   \label{fig:mimic}
 \end{figure}
 
-En las siguientes Figuras se puede observar como reacciona las una articulación de ambos AIBOs al mover manualmente el de uno de ellos. 
+En las Figuras \ref{fig:resumimic} y \ref{fig:resumimic2} se puede observar como reacciona las una articulación de ambos AIBOs al mover manualmente uno de ellos. 
 %MASGRAFICOs
+\begin{figure}[H]
+	\centering
+    \includegraphics[scale=0.655]{images/mimic/retmin2.png}
+	 \caption{Posición de la articulación del AIBO movido manualmente, en fucsia, y del AIBO que hace la imitación, en verde.}
+  \label{fig:resumimic}
+\end{figure}
+\begin{figure}[H]
+	\centering
+    \includegraphics[scale=0.41]{images/mimic/malo5hz.png}
+	 \caption{Posición de la articulación del AIBO movido manualmente, en rojo, la enviada al segundo AIBO, en fucsia y la del AIBO que hace la imitación, en azul.}
+  \label{fig:resumimic2}
+\end{figure}
+
+
+Tras aplicar el cambio sobre el callback de ROS se ha evitado el problema del bloqueo pero como se ve en la Figura \ref{fig:resumimic2} los resultados dejan mucho que desear y están lejos de permitir aplicaciones de control remoto o sincronización. 
 
 \subsection{Paquete Aibo{\_}description }
 Este paquete pretende ser el vinculo entre el AIBO y una de las herramientas más usadas de ROS para robots móviles, rviz\footnote{http://wiki.ros.org/rviz}. Rviz es un visualizador 3D para aplicaciones de robótica que permite visualizar un modelo, el entorno sensado o un mapa virtual. 
@@ -1679,13 +1739,54 @@ En la Figura \ref{fig:aibostack} se puede observar como queda la estructura de l
 	 \caption{Estructuras de los nodos de ROS con aibo{\_}server y el modelo visualizado con rviz.}
   \label{fig:aibostack}
 \end{figure}
+\newpage
 
+\section{Presupuesto}
+El coste total del proyecto asciende a 18.200{\euro} de los cuales el 82,42{\%} es en concepto de personal. En ser un proyecto fundamentalmente de software y todo el software usado es con licencia libre, des de el sistema operativo hasta el procesador de textos, los costes asociados al material solo vienen dados por el coste de la plataforma de estudio.
+
+\subsection{Coste material}
+\begin{table}[H]
+\begin{center}
+\begin{tabulary}{\textwidth}{|C|C|C|C|}
+\hline
+\textbf{Concepto}&\textbf{Coste unitario [{\euro}/unid.]} & \textbf{Cantidad} & \textbf{Coste total [\euro]} \\ \hline
+AIBO ERS-7 & 1600& 2& 3200 \\ \hline
+
+\end{tabulary}
+\end{center}
+\caption{Coste material detallado.\label{costmat}}
+\end{table}
+\subsection{Coste personal}
+\begin{table}[H]
+\begin{center}
+\begin{tabulary}{\textwidth}{|C|C|C|C|}
+\hline
+\textbf{Concepto}&\textbf{Coste horario [{\euro}/hora]} & \textbf{Horas} & \textbf{Coste total [\euro]} \\ \hline
+Estudio preliminar & 30& 300& 9000 \\ \hline
+Diseño y depuración & 30& 150& 4500 \\ \hline
+Programación& 15& 100& 15000 \\ \hline
+\textbf{Total}& & 550& 15000 \\ \hline
+\end{tabulary}
+\end{center}
+\caption{Coste personal detallado.\label{costper}}
+\end{table}
+
+\newpage
+
+\section{Impacto ambiental}
+El objetivo de este proyecto conlleva como causa inmediata el incremento de la vida útil de una plataforma ya en desuso. Por tanto no se está perjudicando el medio ambiente en absoluto, sino que por lo contrario se está reciclando un objeto que en otro caso acabaría por desecharse en poco tiempo.
+
+En cuanto al impacto ambiental asociado al uso de la plataforma que en cierta manera se ahorra se puede dividir en chasis, electrónica y batería.
+
+El chasis esta hecho de ABS (Acrilonitrilo Butadieno Estireno, en inglés). Se trata de un termoplástico amorfo dificil de reciclar y en su proceso de fabricación usa acrilonitrilo, que es altamente tóxico.
+
+Tanto la electrónica como las baterias contienen metales pesados altamente contaminantes si no son tratados correctamente.
 \newpage
 \section*{Conclusiones}
 \addcontentsline{toc}{section}{Conclusiones}
 
 
-Cuando se trabaja con sistemas reales uno se da cuenta que no todo funciona de forma ideal y que un algoritmo que debería funcionar conlleva a múltiples errores o respuestas no esperadas. En éste caso concreto se ha visto como las comunicaciones que establecía el lenguaje base elegido no eran tan buenas como se esperaba. De todas formas se ha alcanzado el objetivo siguiendo la metodología establecida en primer momento, se a implementado un modulo de ROS que permite integrar la plataforma AIBO, formado por los paquetes \textbf{aibo{\_}server} y \textbf{aibo{\_}description}. Estos paquetes se pueden encontrar en el repositorio (url del github) y están disponibles para su uso o modificación con tal de complementarlos o mejorar los resultados. Además se pretende colgar, fuera del alcance del proyecto, los paquetes y la documentación necesaria para su uso en la pagina de ROS con tal de contribuir y aportar un grano de arena al desarrollo de software libre.
+Cuando se trabaja con sistemas reales uno se da cuenta que no todo funciona de forma ideal y que un algoritmo que debería funcionar conlleva a múltiples errores o respuestas no esperadas. En éste caso concreto se ha visto como las comunicaciones que establecía el lenguaje base elegido no eran tan buenas como se esperaba. Los resultados dejan mucho que desear y no permiten ni aseguran el buen funcionamiento de posteriores aplicaciones basadas en el módulo implementado. De todas formas se ha alcanzado el objetivo siguiendo la metodología establecida en primer momento, se a implementado un modulo de ROS que permite integrar la plataforma AIBO, formado por los paquetes \textbf{aibo{\_}server} y \textbf{aibo{\_}description}. Estos paquetes se pueden encontrar en el repositorio (url del github) y están disponibles para su uso o modificación con tal de complementarlos o mejorar los resultados. Además se pretende colgar, fuera del alcance del proyecto, los paquetes y la documentación necesaria para su uso en la pagina de ROS con tal de contribuir y aportar un grano de arena al desarrollo de software libre.
 
 Este proyecto deja un camino abierto a las posibles mejoras y complementos. Entre otros la integración del modulo de visión y audio usando URBI como se ha echo. Por otra parte dado que los resultados han demostrado no ser un modulo demasiado robusto cabria la posibilidad de implementar el mismo modulo partiendo OPEN-R, eliminando de esta manera una capa de programación intermedia, URBI, que posiblemente ralentice y empeore la comunicación entre cliente y servidor. En cuanto al modelo y el nodo que permite su integración con rviz podría completarse añadiendo los sensores del AIBO como los acelerómetros, los infrarrojos, los sensores de presión y contacto y la camera.
 
@@ -1698,15 +1799,31 @@ A nivel personal y educativo este proyecto ha servido para poner a prueba la cap
 \clearpage
 \addcontentsline{toc}{section}{Referencias}
 \begin{thebibliography}{99}
-
+\bibitem{aibo}
+	Arevalillo-Herráez, Miguel and Moreno-Picot, Salvador and Millán, Vicente Cavero,
+	\emph{Arquitectura para Utilizar Robots AIBO en la Enseñanza de la Inteligencia Artificial.}
+	2012.
+	\url{http://dblp.uni-trier.de/db/journals/ieee-rita/ieee-rita6.html#Arevalillo-HerraezMM11},
+	
+\bibitem{ros}
+	Quigley, Morgan and Conley, Ken and Gerkey, Brian P. and Faust, Josh and Foote, Tully and Leibs, Jeremy and Wheeler, Rob and Ng, Andrew Y.,
+	\emph{ROS: an open-source Robot Operating System}.
+	2009.
 \bibitem{libroblanco}
 	CEA, Comité Español de Automàtica,
 	\emph{El libro blanco de la robótica en España}.
 	2011.
+	
 \bibitem{OPEN-R PG}
   Sony Corporation,
   \emph{OPEN-R Programmer's Guide}.
   2004.
+
+\bibitem{urbiref}
+	Baillie,
+	\emph{URBI: Towards a Universal Robotic Low-Level Programming Language}.
+	2005.
+	
 \bibitem{xavi}
 	Xavier Perez,
 	\emph{Vision-based Navigation and Reinforcement Learning Path Finding for Social Robots}.
