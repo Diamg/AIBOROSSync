@@ -71,7 +71,7 @@
   extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
   frame=single,                    % adds a frame around the code
   keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
-  keywordstyle=\color{blue},       % keyword style
+  keywordstyle=\color{black},       % keyword style
   language=Octave,                 % the language of the code
   morekeywords={*,...},            % if you want to add more keywords to the set
   numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
@@ -82,7 +82,7 @@
   showstringspaces=false,          % underline spaces within strings only
   showtabs=false,                  % show tabs within strings adding particular underscores
   stepnumber=2,                    % the step between two line-numbers. If it's 1, each line will be numbered
-  stringstyle=\color{mymauve},     % string literal style
+  stringstyle=\color{black},     % string literal style
   tabsize=2,                       % sets default tabsize to 2 spaces
   title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
 }
@@ -416,7 +416,7 @@ URBI es un lenguaje basado en scripts de alto nivel con la ventaja que permite e
   \label{fig:urbiarc}
 \end{figure}
 
-La segunda opción abre varias vías de programación. Por un lado permite comunicarse por telnet y enviar comandos y por otro usar la libreria liburbi que permite trabajar con C++, Java y Matlab
+La segunda opción abre varias vías de programación. Por un lado permite comunicarse por telnet y enviar comandos y por otro usar la librería liburbi que permite trabajar con C++, Java y Matlab
 
 URBI permite y facilita el acceso a cada una de las articulaciones y sensores remotamente sin necesidad de implementar un servidor. Por ejemplo para consultar el valor de la articulación superior de la pierna izquierda se puede enviar el comando \texttt{legLF1.val;} y para asignarle un valor \texttt{legLF1.val=20;}\cite{urbicmd}.
 
@@ -434,7 +434,7 @@ Solo queda usar una arquitectura cliente/servidor de forma que el modulo de ROS 
 Se plantean tres posibilidades de programación: OPEN-R, Tekkotsu y URBI.
 En los tres casos es imprescindible programar el cliente en el correspondiente lenguaje. Pero respeto al servidor URBI ahorraría tener que desarrollarlo puesto que el sistema operativo nos permite interactuar de forma remota. Tekkotsu permite interactuar de forma remota pero no hay ningun comportamiento que permita enviar ordenes a los actuadores y habría qu implementarlo. Por último con OPEN-R habría que implementar el servidor entero tanto el envió como la recepción. 
 De todos modos se ha probado de instalar y establecer los tres marcos de trabajo, Anexo \ref{marcos}, y probado los tres lenguajes para comprobar su dificultad y su funcionamiento. Respeto a OPEN-R se ha encontrado muy poca documentación y el comienzo de su aprendizaje ha sido realmente duro tanto el lenguaje en si como la configuración de todos los archivos. Tekkotsu parece un lenguaje más sencillo y no necesita apenas configurar archivos pero la única documentación encontrada ha sido para la ultima versión que no se ha conseguido compilar dentro de la tarjeta de memoria. En cambio si se ha logrado con una versión más antigua, la nueva parece no ser compatible con el compilador de OPEN-R, y se han podido hacer algunas pruebas aunque sin documentación de la versión y habiendo cambiado bastante las funciones, ha implicado un gran esfuerzo. 
-Por lo que URBI se refiere su uso es realmente sencillo des del terminal , se ha encontrado bastante documentación para el uso en modo script y algo menos para el uso de liburbi. El único problema que hay que tener en cuenta es que la libreria liburbi 1.5, la más reciente que es compatible con  AIBO, no es compatible con un sistema linux de 64 bits. 
+Por lo que URBI se refiere su uso es realmente sencillo des del terminal , se ha encontrado bastante documentación para el uso en modo script y algo menos para el uso de liburbi. El único problema que hay que tener en cuenta es que la librería liburbi 1.5, la más reciente que es compatible con  AIBO, no es compatible con un sistema linux de 64 bits. 
 
 \begin{table}[H]
 \begin{center}
@@ -1923,42 +1923,138 @@ CHANNEL = 3
 \subsection{Requisitos previos}
 Es necesario antes de instalar los paquetes seguir los siguientes pasos.
 \begin{itemize}
-\item Instalar linux de 32bits.
-\item Copiar la Tarjeta de memoria para el AIBO con URBI(url).
-\item Descargar librería liburbi 1.5 para C++(url).
-\item Instalar de ROS(url).
-\item Instalar los paquetes de ROS:
+\item Instalar Ubuntu 12.04 (Precise) de 32 bits.
+\item Copiar la tarjeta de memoria, Figura \ref{fig:aiboMS} para el AIBO con URBI:
+
+\url{https://github.com/Diamg/AiboRosPackages/tree/master/MS_URBI}
+\begin{figure}[H]
+	\centering
+    \includegraphics[scale=0.5]{images/MS.jpg}
+	 \caption{Tarjeta de memoria para AIBO.}
+  \label{fig:aiboMS}
+\end{figure}
+\item Descargar librería liburbi 1.5 para C++:
+
+\url{http://www.gostai.com/downloads/urbi/1.5/}
 \begin{itemize}
-\item rviz
+\item Descomprimir la librería, que ya está compilada, en el directorio \texttt{/usr} del sistema.
+\end{itemize}
+\item Instalar de ROS. 
+
+\begin{itemize}
+\item Preparar el ordenador apara aceptar el software de ROS:
+
+
+\begin{lstlisting}[language=bash]
+  sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu precise main" > /etc/apt/sources.list.d/ros-latest.list'
+\end{lstlisting}
+
+\item Preparación las claves:
+\begin{lstlisting}[language=bash]
+	wget http://packages.ros.org/ros.key -O - | sudo apt-key add -
+\end{lstlisting}
+
+\item Instalación:
+\begin{lstlisting}[language=bash]
+	sudo apt-get install ros-fuerte-desktop-full
+\end{lstlisting}
+
+\item Preparación del entorno:
+\begin{lstlisting}[language=bash]
+	echo "source /opt/ros/fuerte/setup.bash" >> ~/.bashrc
+. ~/.bashrc
+\end{lstlisting}
+
+\item Crear un workspace:
+\begin{lstlisting}[language=bash]
+	rosws init ~/fuerte_workspace /opt/ros/fuerte
+\end{lstlisting}
+\begin{lstlisting}[language=bash]
+	sudo apt-get install python-rosinstall
+\end{lstlisting}
+\item Crear un sandbox donde irán los nuevos paquetes y añadir al ROS{\_}PACKAGE{\_}PATH:
+\begin{lstlisting}[language=bash]
+	mkdir ~/fuerte_workspace/sandbox
+	rosws set ~/fuerte_workspace/sandbox
+	echo "source ~/fuerte_workspace/setup.bash" >> ~/.bashrc
+. ~/.bashrc
+	
+\end{lstlisting}
+\item Confirmación de la correcta instalación del entorno:
+
+Al ejecutar:
+\begin{lstlisting}[language=bash]
+	echo $ROS_PACKAGE_PATH
+\end{lstlisting}
+Se debe obtener algo similar a:
+\begin{lstlisting}[language=bash]
+	/home/your_user_name/fuerte_workspace/sandbox:/opt/ros/fuerte/share:/opt/ros/fuerte/stacks
+\end{lstlisting}
+\end{itemize}
+
+\item Asegurarse que los siguientes paquetes de ROS han sido instalados:
+\begin{itemize}
+\item rviz:
+\begin{lstlisting}[language=bash]
+	rospack find rviz
+\end{lstlisting}
 \item urdf
-\item robot{\_}model
+\begin{lstlisting}[language=bash]
+	rospack find urdf
+\end{lstlisting}
+\item robot{\_}state{\_}publisher
+\begin{lstlisting}[language=bash]
+	rospack find robot_state_publisher
+\end{lstlisting}
 \item tf
+\begin{lstlisting}[language=bash]
+	rospack find tf
+\end{lstlisting}
+
+
+Deben devolver la ubicación del paquete.
 \end{itemize}
-\item Descargar el paquete aibo{\_}server y aibo{\_}description(url).
+
+\item Descargar los paquetes:
+\begin{itemize}
+\item aibo{\_}server:
+
+\url{https://github.com/Diamg/AiboRosPackages/tree/master/aibo_server}
+\item aibo{\_}description
+
+\url{https://github.com/Diamg/AiboRosPackages/tree/master/aibo_description}
 \end{itemize}
+\end{itemize}
+
 \subsection{Instalación}
 \begin{itemize}
 \item Guardar los paquetes en el workspace de ROS.
 \item Ejecutar en un terminal:
-\begin{itemize}
-\item \texttt{rosmake --pre-clean aibo{\_}server} 
-\item \texttt{rosmake --pre-clean aibo{\_}description}
-\end{itemize}
+\begin{lstlisting}[language=bash]
+	rosmake --pre-clean aibo_server
+	rosmake --pre-clean aibo_description
+\end{lstlisting}
+
+
 \end{itemize}
 \subsection{aibo{\_}server}
 Ejecutar en terminal:
-
-\texttt{rosrun aibo{\_}server aibo{\_}server arg[1] arg[2]}
+\begin{lstlisting}[language=bash]
+	rosrun aibo_server aibo_server arg[1] arg[2]
+\end{lstlisting}
 
 Donde:
 \begin{itemize}
 \item arg[1] es la IP del AIBO.
-\item arg[2] es la frecuencia en numero entero a la que se desea que vaya el bucle de ROS (no se recomienda a más de 10Hz).
+\item arg[2] es la frecuencia en numero entero a la que se desea que vaya el bucle de ROS (La frecuencia por defecto y recomendada son 5 Hz).
 \end{itemize}
 
 \subsection{aibo{\_}description}
 Ejecutar en la terminal:
-\texttt{roslaunch aibo{\_}description aibomod.launch}
+\begin{lstlisting}[language=bash]
+	roslaunch aibo_description aibomod.launch
+\end{lstlisting}
+
 
 Con tal de vincular el modelo con un AIBO se debe lanzar también un nodo aibo{\_}server.
 

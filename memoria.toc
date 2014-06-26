@@ -50,13 +50,13 @@
 \contentsline {subsection}{\numberline {A.5}ROS}{61}{subsection.A.5}
 \contentsline {section}{\numberline {B}Manual de usuario}{62}{appendix.B}
 \contentsline {subsection}{\numberline {B.1}Requisitos previos}{62}{subsection.B.1}
-\contentsline {subsection}{\numberline {B.2}Instalaci\IeC {\'o}n}{62}{subsection.B.2}
-\contentsline {subsection}{\numberline {B.3}aibo{\_}server}{62}{subsection.B.3}
-\contentsline {subsection}{\numberline {B.4}aibo{\_}description}{63}{subsection.B.4}
-\contentsline {section}{\numberline {C}Scripts y programas}{64}{appendix.C}
-\contentsline {subsection}{\numberline {C.1}Adquisici\IeC {\'o}n del valor de una articulaci\IeC {\'o}n con liburbi.}{64}{subsection.C.1}
-\contentsline {subsection}{\numberline {C.2}Adquisici\IeC {\'o}n del valor de una articulaci\IeC {\'o}n con Python.}{65}{subsection.C.2}
-\contentsline {subsection}{\numberline {C.3}Envi\IeC {\'o} de trayectoria punto a punto con liburbi.}{66}{subsection.C.3}
-\contentsline {subsection}{\numberline {C.4}Envi\IeC {\'o} de trayectoria punto a punto con Python.}{69}{subsection.C.4}
-\contentsline {subsection}{\numberline {C.5}Envi\IeC {\'o} de trayectoria punto a punto con ROS.}{72}{subsection.C.5}
-\contentsline {subsection}{\numberline {C.6}Modulo de imitaci\IeC {\'o}n entre AIBOs.}{74}{subsection.C.6}
+\contentsline {subsection}{\numberline {B.2}Instalaci\IeC {\'o}n}{64}{subsection.B.2}
+\contentsline {subsection}{\numberline {B.3}aibo{\_}server}{64}{subsection.B.3}
+\contentsline {subsection}{\numberline {B.4}aibo{\_}description}{65}{subsection.B.4}
+\contentsline {section}{\numberline {C}Scripts y programas}{66}{appendix.C}
+\contentsline {subsection}{\numberline {C.1}Adquisici\IeC {\'o}n del valor de una articulaci\IeC {\'o}n con liburbi.}{66}{subsection.C.1}
+\contentsline {subsection}{\numberline {C.2}Adquisici\IeC {\'o}n del valor de una articulaci\IeC {\'o}n con Python.}{67}{subsection.C.2}
+\contentsline {subsection}{\numberline {C.3}Envi\IeC {\'o} de trayectoria punto a punto con liburbi.}{68}{subsection.C.3}
+\contentsline {subsection}{\numberline {C.4}Envi\IeC {\'o} de trayectoria punto a punto con Python.}{71}{subsection.C.4}
+\contentsline {subsection}{\numberline {C.5}Envi\IeC {\'o} de trayectoria punto a punto con ROS.}{74}{subsection.C.5}
+\contentsline {subsection}{\numberline {C.6}Modulo de imitaci\IeC {\'o}n entre AIBOs.}{76}{subsection.C.6}
