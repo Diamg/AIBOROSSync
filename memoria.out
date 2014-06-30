@@ -1,60 +1,40 @@
-\BOOKMARK [1][-]{section*.1}{Resumen}{}
-\BOOKMARK [1][-]{section.1}{Prefacio}{}
-\BOOKMARK [2][-]{subsection.1.1}{Motivaci\363n}{section.1}
-\BOOKMARK [2][-]{subsection.1.2}{Requerimientos previos}{section.1}
-\BOOKMARK [1][-]{section.2}{Introducci\363n}{}
-\BOOKMARK [2][-]{subsection.2.1}{Estado del arte}{section.2}
-\BOOKMARK [3][-]{subsubsection.2.1.1}{Rob\363tica}{subsection.2.1}
-\BOOKMARK [3][-]{subsubsection.2.1.2}{Rob\363tica en la educaci\363n}{subsection.2.1}
-\BOOKMARK [3][-]{subsubsection.2.1.3}{AIBO}{subsection.2.1}
-\BOOKMARK [2][-]{subsection.2.2}{Objetivos}{section.2}
-\BOOKMARK [2][-]{subsection.2.3}{Alcance}{section.2}
-\BOOKMARK [1][-]{section.3}{AIBO ERS-7}{}
-\BOOKMARK [2][-]{subsection.3.1}{Hardware}{section.3}
-\BOOKMARK [2][-]{subsection.3.2}{El software}{section.3}
-\BOOKMARK [3][-]{subsubsection.3.2.1}{OPEN-R}{subsection.3.2}
-\BOOKMARK [3][-]{subsubsection.3.2.2}{Tekkotsu}{subsection.3.2}
-\BOOKMARK [3][-]{subsubsection.3.2.3}{URBI}{subsection.3.2}
-\BOOKMARK [1][-]{section.4}{Comparaci\363n de alternativas para la programaci\363n}{}
-\BOOKMARK [2][-]{subsection.4.1}{Lectura de datos}{section.4}
-\BOOKMARK [3][-]{subsubsection.4.1.1}{M\351todo con liburbi y C++}{subsection.4.1}
-\BOOKMARK [3][-]{subsubsection.4.1.2}{M\351todo con telnet y python}{subsection.4.1}
-\BOOKMARK [3][-]{subsubsection.4.1.3}{Comparaci\363n de los resultados}{subsection.4.1}
-\BOOKMARK [2][-]{subsection.4.2}{Env\355o de datos}{section.4}
-\BOOKMARK [2][-]{subsection.4.3}{Elecci\363n del m\351todo}{section.4}
-\BOOKMARK [1][-]{section.5}{Implementaci\363n del paquete de ROS}{}
-\BOOKMARK [2][-]{subsection.5.1}{ROS}{section.5}
-\BOOKMARK [2][-]{subsection.5.2}{Paquet aibo\137server }{section.5}
-\BOOKMARK [3][-]{subsubsection.5.2.1}{Estructura del programa}{subsection.5.2}
-\BOOKMARK [3][-]{subsubsection.5.2.2}{Resultados}{subsection.5.2}
-\BOOKMARK [3][-]{subsubsection.5.2.3}{Mejoras}{subsection.5.2}
-\BOOKMARK [3][-]{subsubsection.5.2.4}{Demostraci\363n}{subsection.5.2}
-\BOOKMARK [2][-]{subsection.5.3}{Paquete Aibo\137description }{section.5}
-\BOOKMARK [3][-]{subsubsection.5.3.1}{El modelo}{subsection.5.3}
-\BOOKMARK [3][-]{subsubsection.5.3.2}{El nodo state\137publisher}{subsection.5.3}
-\BOOKMARK [3][-]{subsubsection.5.3.3}{Estructura}{subsection.5.3}
-\BOOKMARK [1][-]{section.6}{Presupuesto}{}
-\BOOKMARK [2][-]{subsection.6.1}{Coste material}{section.6}
-\BOOKMARK [2][-]{subsection.6.2}{Coste personal}{section.6}
-\BOOKMARK [1][-]{section.7}{Impacto ambiental}{}
-\BOOKMARK [1][-]{section*.49}{Conclusiones}{}
-\BOOKMARK [1][-]{section*.49}{Referencias}{}
-\BOOKMARK [1][-]{section*.51}{Anexos}{}
-\BOOKMARK [1][-]{appendix.A}{Configuraci\363n de los marcos de trabajo }{}
-\BOOKMARK [2][-]{subsection.A.1}{OPEN-R SDK}{appendix.A}
-\BOOKMARK [2][-]{subsection.A.2}{Configuraci\363n wifi}{appendix.A}
-\BOOKMARK [2][-]{subsection.A.3}{Tekkotsu}{appendix.A}
-\BOOKMARK [2][-]{subsection.A.4}{URBI}{appendix.A}
-\BOOKMARK [2][-]{subsection.A.5}{ROS}{appendix.A}
-\BOOKMARK [1][-]{appendix.B}{Manual de usuario}{}
-\BOOKMARK [2][-]{subsection.B.1}{Requisitos previos}{appendix.B}
-\BOOKMARK [2][-]{subsection.B.2}{Instalaci\363n}{appendix.B}
-\BOOKMARK [2][-]{subsection.B.3}{aibo\137server}{appendix.B}
-\BOOKMARK [2][-]{subsection.B.4}{aibo\137description}{appendix.B}
-\BOOKMARK [1][-]{appendix.C}{Scripts y programas}{}
-\BOOKMARK [2][-]{subsection.C.1}{Adquisici\363n del valor de una articulaci\363n con liburbi.}{appendix.C}
-\BOOKMARK [2][-]{subsection.C.2}{Adquisici\363n del valor de una articulaci\363n con Python.}{appendix.C}
-\BOOKMARK [2][-]{subsection.C.3}{Envi\363 de trayectoria punto a punto con liburbi.}{appendix.C}
-\BOOKMARK [2][-]{subsection.C.4}{Envi\363 de trayectoria punto a punto con Python.}{appendix.C}
-\BOOKMARK [2][-]{subsection.C.5}{Envi\363 de trayectoria punto a punto con ROS.}{appendix.C}
-\BOOKMARK [2][-]{subsection.C.6}{Modulo de imitaci\363n entre AIBOs.}{appendix.C}
+\BOOKMARK [1][-]{section*.2}{Resumen}{}
+\BOOKMARK [1][-]{section.0.1}{Prefacio}{}
+\BOOKMARK [2][-]{subsection.0.1.1}{Motivaci\363n}{section.0.1}
+\BOOKMARK [2][-]{subsection.0.1.2}{Requerimientos previos}{section.0.1}
+\BOOKMARK [1][-]{section.0.2}{Introducci\363n}{}
+\BOOKMARK [2][-]{subsection.0.2.1}{Estado del arte}{section.0.2}
+\BOOKMARK [2][-]{subsection.0.2.2}{Objetivos}{section.0.2}
+\BOOKMARK [2][-]{subsection.0.2.3}{Alcance}{section.0.2}
+\BOOKMARK [2][-]{subsection.0.2.4}{Planificaci\363n}{section.0.2}
+\BOOKMARK [1][-]{section.0.3}{AIBO ERS-7}{}
+\BOOKMARK [2][-]{subsection.0.3.1}{Hardware}{section.0.3}
+\BOOKMARK [2][-]{subsection.0.3.2}{El software}{section.0.3}
+\BOOKMARK [1][-]{section.0.4}{Comparaci\363n de alternativas para la programaci\363n}{}
+\BOOKMARK [2][-]{subsection.0.4.1}{Lectura de datos}{section.0.4}
+\BOOKMARK [2][-]{subsection.0.4.2}{Env\355o de datos}{section.0.4}
+\BOOKMARK [2][-]{subsection.0.4.3}{Elecci\363n del m\351todo}{section.0.4}
+\BOOKMARK [1][-]{section.0.5}{Implementaci\363n del paquete de ROS}{}
+\BOOKMARK [2][-]{subsection.0.5.1}{ROS}{section.0.5}
+\BOOKMARK [2][-]{subsection.0.5.2}{Paquet aibo\137server }{section.0.5}
+\BOOKMARK [2][-]{subsection.0.5.3}{Paquete Aibo\137description }{section.0.5}
+\BOOKMARK [1][-]{section.0.6}{Presupuesto}{}
+\BOOKMARK [2][-]{subsection.0.6.1}{Coste material}{section.0.6}
+\BOOKMARK [2][-]{subsection.0.6.2}{Coste personal}{section.0.6}
+\BOOKMARK [1][-]{section.0.7}{Impacto ambiental}{}
+\BOOKMARK [1][-]{section*.69}{Conclusiones}{}
+\BOOKMARK [1][-]{section*.70}{Agradecimientos}{}
+\BOOKMARK [1][-]{section*.70}{Referencias}{}
+\BOOKMARK [0][-]{section*.72}{Anexos}{}
+\BOOKMARK [1][-]{section..1}{Manual de usuario}{section*.72}
+\BOOKMARK [2][-]{subsection..1.1}{Requisitos previos}{section..1}
+\BOOKMARK [2][-]{subsection..1.2}{Instalaci\363n}{section..1}
+\BOOKMARK [2][-]{subsection..1.3}{aibo\137server}{section..1}
+\BOOKMARK [2][-]{subsection..1.4}{aibo\137description}{section..1}
+\BOOKMARK [1][-]{section..2}{Scripts y programas}{section*.72}
+\BOOKMARK [2][-]{subsection..2.1}{Adquisici\363n del valor de una articulaci\363n con liburbi.}{section..2}
+\BOOKMARK [2][-]{subsection..2.2}{Adquisici\363n del valor de una articulaci\363n con Python.}{section..2}
+\BOOKMARK [2][-]{subsection..2.3}{Envi\363 de trayectoria punto a punto con liburbi.}{section..2}
+\BOOKMARK [2][-]{subsection..2.4}{Envi\363 de trayectoria punto a punto con Python.}{section..2}
+\BOOKMARK [2][-]{subsection..2.5}{Envi\363 de trayectoria punto a punto con ROS.}{section..2}
+\BOOKMARK [2][-]{subsection..2.6}{Modulo de imitaci\363n entre AIBOs.}{section..2}

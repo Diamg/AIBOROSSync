@@ -1,4 +1,4 @@
-\documentclass[12pt,a4paper,final,twoside]{article}
+\documentclass[12pt,a4paper,final,twoside]{book}
 \usepackage[utf8]{inputenc}
 \usepackage[spanish]{babel}
 \usepackage{url}
@@ -38,18 +38,21 @@
 
 \usepackage{wrapfig}
 
+\usepackage{pgfgantt}
+
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhead{}
 \fancyhead[RO,LE]{\thepage}
 \fancyhead[RE,LO]{Integración de la plataforma AIBO con ROS }
 \fancyfoot{}
-\fancyfoot[RO,LE]{\includegraphics[scale=0.23]{images/etseib.pdf}}
-
+\fancyfoot[RO,LE]{\includegraphics[scale=0.18]{images/etseib.pdf}}
 \headheight = 15pt 
-
 \textheight = 690pt 
-\footskip = 60pt
+\footskip = 2 cm
+
+\usepackage{anysize} 
+\marginsize{3cm}{2cm}{2cm}{2cm} 
 
 \usepackage[numbers]{natbib}
 \usepackage{listings}
@@ -58,7 +61,7 @@
 \definecolor{mygreen}{rgb}{0,0.6,0}
 \definecolor{mygray}{rgb}{0.5,0.5,0.5}
 \definecolor{mymauve}{rgb}{0.58,0,0.82}
-
+\definecolor{barblue}{RGB}{0,119,255}
 \lstset{ %
   backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}
   basicstyle=\footnotesize,        % the size of the fonts that are used for the code
@@ -101,8 +104,10 @@
 \cleardoublepage
 
 \setcounter{page}{1}
+\begin{center}
+\section*{Resumen}
+\end{center}
 
-\begin{abstract}
 \addcontentsline{toc}{section}{Resumen}
 El proyecto persigue el objetivo de implementar un driver para integrar la plataforma robótica AIBO con el marco de trabajo ROS. A lo largo de esta memoria se narra el procedimiento seguido para llegar a un resultado que cumpla con los requisitos. 
 Se puede dividir el trabajo realizado y documentado en ésta memoria en tres partes.
@@ -116,10 +121,8 @@ Para concluir se explica como se han implementado los módulos que facilitan la 
 
 
 
-
-\end{abstract}
-
 \newpage
+\thispagestyle{empty}
 \cleardoublepage
 
 \tableofcontents
@@ -220,8 +223,8 @@ Actualmente el AIBO no se usa como se hacia antes, en parte porque ya no es la p
 A medida que ha caído en desuso los softwares que los soportaban ha dejado hacerlo, incluso aquellos que nacieron especialmente para el AIBO. Es el caso de URBI que des de la version 1.5 de su librería, liburbi, no es compatible.
 Además la recerca de éste proyecto se ha visto dificultada por la desaparición de la red de gran parte de la documentación de estos lenguajes.
 
-Ha habido otros intentos de recuperación de la plataforma AIBO es el caso de de un proyecto que trataba de hacer compatible la version 2.3 de liburbi para AIBO.%referencia
-Otro proyecto del que solo se ha conseguido encontrar un articulo que lo mencione y nada de documentación  trataba de realizar la integración mediante EusLisp de a ROS varias plataformas, entre ellas AIBO.%ref de eusLisp y del proyecto
+Ha habido otros intentos de recuperación de la plataforma AIBO es el caso de de un proyecto que trataba de hacer compatible la version 2.3 de liburbi para AIBO \cite{kecsap}.
+Otro proyecto del que solo se ha conseguido encontrar un articulo que lo mencione y nada de documentación  trataba de realizar la integración mediante EusLisp de a ROS varias plataformas, entre ellas AIBO \cite{euslisp}.
 
 
 \subsection{Objetivos}
@@ -236,12 +239,84 @@ Como objetivos concretos se marcan:
 
 \item La creación de los paquetes necesarios para demostrar el buen funcionamiento del paquete anteriormente mencionado.
 
-\item La creacion de un paquete que incluya un modelo del AIBO que pueda ser integrado dentro de los simuladores y visores del marco de trabajo ROS. 
+\item La creación de un paquete que incluya un modelo del AIBO que pueda ser integrado dentro de los simuladores y visores del marco de trabajo ROS. 
 \end{itemize}
 
 \subsection{Alcance}
-El proyecto incluirá la creación de un paquete que permita extraer los valores de los sensores y articulaciones así como la acción sobre las articulaciones, pero no incluirá la adaptación de la camera, micrófonos ni altavoces.
-El modelo incluirá la cinemática y permitirá el uso del modelo con la herramienta rviz y implementación de un nodo que permita su comunicación con la plataforma real. No incluirá la experimentación con física aplicada al simulador ni la creación de algún mapa.  
+El proyecto incluirá:
+\begin{itemize}
+\item Creación de un paquete de ROS que permita extraer los valores de los sensores y articulaciones así como actuar sobre las últimas y poder controlar el AIBO.
+\item Implementación de las pruebas necesarias para fundamentar el resultado de cualquier comparación.
+\item Creación de un modelo 3D del AIBO y su descripción en formato URDF (Unified Robots Description Format).
+\item Implementación del driver que permita interaccionar el modelo visualizado con rviz y el AIBO real.
+\end{itemize} 
+
+No incluirá:
+\begin{itemize}
+\item La adquisición de los datos obtenidos por la camera o los micrófonos del AIBO.
+\item El renderizado del modelo.
+\item La dinámica del modelo.
+\item La definición de los sensores para el modelo.
+\item La descripción del modelo adaptada completamente para el simulador Gazebo\footnote{Es el simulador de licencia libre mas usado en el marco de trabajo de ROS.}
+\item La creación de un mapa físico para el uso del modelo.
+\end{itemize}
+
+
+\subsection{Planificación}
+El proyecto se llevará a cabo en 17 semanas  distribuyendo las tareas programadas como muestra el diagrama de Gantt de la Figura \ref{fig:diagramagantt}.
+\begin{figure}[H]
+\begin{center}
+%\noindent\resizebox{\textwidth}{21cm}{
+\begin{tikzpicture}[x=.5cm, y=0.01cm]
+
+\begin{ganttchart}[
+vgrid={*6{draw=none}, dotted},
+hgrid,
+y unit chart=0.5cm,
+bar/.append style={fill=barblue, rounded corners=3pt},
+x unit=0.7mm,
+bar height=0.35,
+]{0}{125}
+\gantttitle{2014}{126} \\
+\gantttitle{Febrero}{19}
+\gantttitle{Marzo}{31}
+\gantttitle{Abril}{30}
+\gantttitle{Mayo}{31}
+\gantttitle{Junio}{15} \\
+\gantttitle{semanas}{126}\\
+\gantttitlelist{1,...,18}{7}\\
+\ganttgroup{Estudio preliminar}{0}{27} \\
+\ganttbar{Estudio de la plataforma}{0}{13} \\
+\ganttbar{Estudio de los marcos de trabajo}{6}{27} \\
+
+\ganttgroup{Comparación de alternativas}{27}{48} \\
+\ganttbar{Diseño de experimentos}{27}{41} \\
+\ganttbar{Adquisición de datos}{34}{48} \\
+\ganttbar{Análisis de los resultados}{41}{48} \\
+
+\ganttgroup{módulo aibo{\_}server}{48}{97} \\
+
+\ganttbar{Diseño}{48}{62} \\
+\ganttbar{Programación}{55}{90} \\
+\ganttbar{Depuración}{62}{90} \\
+\ganttbar{Programación de tests}{69}{83} \\
+\ganttbar{Pruebas y tests}{76}{97} \\
+
+\ganttgroup{módulo aibo{\_}description}{97}{118} \\
+\ganttbar{Programación del XML}{97}{111} \\
+\ganttbar{Modelado 3D }{104}{111} \\
+\ganttbar{Programación del driver}{111}{118} \\
+
+\end{ganttchart}
+\end{tikzpicture}
+%}
+
+\end{center}
+\caption{Diagrama de Gantt}
+\label{fig:diagramagantt}
+\end{figure}
+
+
 
 \newpage
 \clearpage
@@ -433,7 +508,7 @@ Solo queda usar una arquitectura cliente/servidor de forma que el modulo de ROS 
 
 Se plantean tres posibilidades de programación: OPEN-R, Tekkotsu y URBI.
 En los tres casos es imprescindible programar el cliente en el correspondiente lenguaje. Pero respeto al servidor URBI ahorraría tener que desarrollarlo puesto que el sistema operativo nos permite interactuar de forma remota. Tekkotsu permite interactuar de forma remota pero no hay ningun comportamiento que permita enviar ordenes a los actuadores y habría qu implementarlo. Por último con OPEN-R habría que implementar el servidor entero tanto el envió como la recepción. 
-De todos modos se ha probado de instalar y establecer los tres marcos de trabajo, Anexo \ref{marcos}, y probado los tres lenguajes para comprobar su dificultad y su funcionamiento. Respeto a OPEN-R se ha encontrado muy poca documentación y el comienzo de su aprendizaje ha sido realmente duro tanto el lenguaje en si como la configuración de todos los archivos. Tekkotsu parece un lenguaje más sencillo y no necesita apenas configurar archivos pero la única documentación encontrada ha sido para la ultima versión que no se ha conseguido compilar dentro de la tarjeta de memoria. En cambio si se ha logrado con una versión más antigua, la nueva parece no ser compatible con el compilador de OPEN-R, y se han podido hacer algunas pruebas aunque sin documentación de la versión y habiendo cambiado bastante las funciones, ha implicado un gran esfuerzo. 
+De todos modos se ha probado de instalar y establecer los tres marcos de trabajo y probado los tres lenguajes para comprobar su dificultad y su funcionamiento. Respeto a OPEN-R se ha encontrado muy poca documentación y el comienzo de su aprendizaje ha sido realmente duro tanto el lenguaje en si como la configuración de todos los archivos. Tekkotsu parece un lenguaje más sencillo y no necesita apenas configurar archivos pero la única documentación encontrada ha sido para la ultima versión que no se ha conseguido compilar dentro de la tarjeta de memoria. En cambio si se ha logrado con una versión más antigua, la nueva parece no ser compatible con el compilador de OPEN-R, y se han podido hacer algunas pruebas aunque sin documentación de la versión y habiendo cambiado bastante las funciones, ha implicado un gran esfuerzo. 
 Por lo que URBI se refiere su uso es realmente sencillo des del terminal , se ha encontrado bastante documentación para el uso en modo script y algo menos para el uso de liburbi. El único problema que hay que tener en cuenta es que la librería liburbi 1.5, la más reciente que es compatible con  AIBO, no es compatible con un sistema linux de 64 bits. 
 
 \begin{table}[H]
@@ -1259,7 +1334,7 @@ coordinates {(0,13611) (16,13611)};
 La velocidad de envío es significativamente más alta en ambos casos aunque en el caso de python se muestra mas evidente Figura \ref{fig:compAllOne}. Una explicación es que el conjunto de valores se envíe como un solo paquete, en ese caso se está midiendo la frecuencia a la que las variables están disponibles, que a fin de cuentas es lo que realmente importa dado que se va a trabajar con ellas. Al parecer ante este echo responde mejor la lectura del terminal con python que no la adquisición mediante el callback de liuburbi. De todos modos se ha podido comprobar que la cantidad de variables a enviar no tiene un efecto negativo en las frecuencias medias.
 
 Poniendo la atención en los bloqueos, Figuras \ref{fig:MinAllLeg} y \ref{fig:histAllLeg}, se puede asegurar el mismo comportamiento que en el experimento anterior. 
-
+\newpage
     \begin{figure}[H]
 	\centering
     \begin{tikzpicture}
@@ -1378,7 +1453,7 @@ En los gráficos de las Figuras \ref{fig:sin1H}, \ref{fig:sin2H}, \ref{fig:sin5H
 \end{itemize}
 El caso en el que sólo se usa un solo cliente con liburbi tiene grandes bloqueos en la recepción de y muestra un movimiento más brusco e inconstante.
 Entre los dos otros no se puede determinar cual de los dos tiene un mejor seguimiento. Con el fin de marcar la diferencia se ha evaluado bajo otro criterio.
-Se han hecho las diferencias de entre el tiempo en que se envía la orden de los picos de la sinusoide y el momento en que se recibe que ha llegado a tal posición. Para comprobar si existe una diferencia se realiza una ANOVA sobre los datos de la Figura \ref{fig:retras} y resuelve con un intervalo de confianza del 95\% y un p-valor del 0.043 no se acepta la hipótesis nula y que por tanto el retraso con C++ es significativamente mayor. 
+Se han hecho las diferencias de entre el tiempo en que se envía la orden de los picos de la sinusoide y el momento en que se recibe que ha llegado a tal posición. Para comprobar si existe una diferencia se realiza una ANOVA sobre los datos de la Figura \ref{fig:retras} y resuelve con un intervalo de confianza del 95\% y un p-valor del 0.43  se acepta la hipótesis nula y que por tanto el retraso con C++ no es significativamente mayor. 
  
 \begin{figure}[H]
 	\centering
@@ -1529,7 +1604,24 @@ La estructura del programa que se ha implementado se puede ver en la Figura \ref
 \end{itemize}
 \end{itemize}
 \subsubsection{Resultados}
-Con tal de valorar el trabajo realizado se procede a realizar un paquete de ROS que permita cuantificar los resultados.
+
+Por lo que respecta la adquisición de los valores de sensores y articulaciones se ha conseguido obtenerlos todos ellos trabajando a una frecuencia de 10Hz. Con tal de comprobar que el refresco de los tópicos es correcto se ha accedido a mostrar por el terminal todos los tópicos mostrando su frecuencia de refresco Figura \ref{fig:getT} y por otro lado, al mismo tiempo, se ha graficado el valor de un sensor en la Figura \ref{fig:addacc} El echo de que el gráfico muestre un cierto ruido indica que el valor se esta refrescando correctamente, por lo contrario si el valor de la gráfica es constante indica que no se está refrescando correctamente.
+
+\begin{figure}[H]
+	\centering
+    \includegraphics[scale=0.3]{images/getTopics.png}
+	 \caption{Consulta de la frecuencia de publicación en los diferentes tópicos de aibo{\_}server.}
+  \label{fig:getT}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+    \includegraphics[scale=0.4]{images/addaccel.png}
+	 \caption{Valores de los acelerometros graficados usando la herramienta rqt{\_}plot.}
+  \label{fig:addacc}
+\end{figure}
+
+Con tal de valorar el envío de las posiciones se procede a realizar un paquete de ROS que permita cuantificar los resultados.
 
 El primer test realizado es el mismo que con el que se ha valorado las experimentaciones de la sección \ref{seccomp}. Se trata de aplicar una sinusoide al movimiento de una articulación.
 
@@ -1581,8 +1673,8 @@ Bajo estas ideas se ha reescrito el callback de ROS como muestra el diagrama de 
 
 \begin{figure}[H]
 	\centering
-    \includegraphics[scale=0.75]{images/esquemaCall.pdf}
-	 \caption{Diagrama del callback de ROS. Los flags \textit{anterior}, \textit{C1activo} y \textit{C2activo} se inicializan con valor 1.}
+    \includegraphics[scale=0.77]{images/esquemaCall.pdf}
+	 \caption{Diagrama del callback de ROS. Los flags \textit{anterior}, \textit{C1activo} y \textit{C2activo}  se inicializan con valor 1 y los flags \textit{reiniciando1} y \textit{reiniciando2} se inicializan a 0.}
   \label{fig:Call}
 \end{figure}
 
@@ -1663,7 +1755,7 @@ El paquete consta de dos partes diferenciadas, la creación de el modelo de AIBO
 Para generar un modelo, se debe editar un xml con formato URDF\footnote{http://wiki.ros.org/urdf}(Unified Robots Description Format) donde se especifican las dimensiones del robot, las articulaciones y sus movimientos, la geometría de las extremidades y parámetros físicos como la masa o la inercia.
 Para el modelo del AIBO se han creado 22 partes y 21 articulaciones se han descartado para el modelo la boca y las orejas. En la Figura \ref{fig:aibourdf} Se puede ver un esquema de las articulaciones, las partes y la disposición de los ejes que conforman el modelo implementado en el archivo URDF.
 
-
+\newpage
 \begin{figure}[H]
 	\centering
     \includegraphics[scale=0.39]{images/Aibo.pdf}
@@ -1778,9 +1870,13 @@ El objetivo de este proyecto conlleva como causa inmediata el incremento de la v
 
 En cuanto al impacto ambiental asociado al uso de la plataforma que en cierta manera se ahorra se puede dividir en chasis, electrónica y batería.
 
-El chasis esta hecho de ABS (Acrilonitrilo Butadieno Estireno, en inglés). Se trata de un termoplástico amorfo dificil de reciclar y en su proceso de fabricación usa acrilonitrilo, que es altamente tóxico.
+El chasis esta hecho de ABS (Acrilonitrilo Butadieno Estireno, en inglés). Se trata de un termoplástico amorfo difícil de reciclar y en su proceso de fabricación usa acrilonitrilo, que es altamente tóxico.
 
-Tanto la electrónica como las baterias contienen metales pesados altamente contaminantes si no son tratados correctamente.
+Tanto la electrónica como las baterías contienen metales pesados altamente contaminantes si no son tratados correctamente.
+
+Las baterías son de iones de litio y aunque su impacto ambiental de las cuales no esta muy claro, tienen potencial de contaminar el subministro de agua subterránea debido a que contiene metales como cobalto.
+
+
 \newpage
 \section*{Conclusiones}
 \addcontentsline{toc}{section}{Conclusiones}
@@ -1788,13 +1884,18 @@ Tanto la electrónica como las baterias contienen metales pesados altamente cont
 
 Cuando se trabaja con sistemas reales uno se da cuenta que no todo funciona de forma ideal y que un algoritmo que debería funcionar conlleva a múltiples errores o respuestas no esperadas. En éste caso concreto se ha visto como las comunicaciones que establecía el lenguaje base elegido no eran tan buenas como se esperaba. Los resultados dejan mucho que desear y no permiten ni aseguran el buen funcionamiento de posteriores aplicaciones basadas en el módulo implementado. De todas formas se ha alcanzado el objetivo siguiendo la metodología establecida en primer momento, se a implementado un modulo de ROS que permite integrar la plataforma AIBO, formado por los paquetes \textbf{aibo{\_}server} y \textbf{aibo{\_}description}. Estos paquetes se pueden encontrar en el repositorio (url del github) y están disponibles para su uso o modificación con tal de complementarlos o mejorar los resultados. Además se pretende colgar, fuera del alcance del proyecto, los paquetes y la documentación necesaria para su uso en la pagina de ROS con tal de contribuir y aportar un grano de arena al desarrollo de software libre.
 
-Este proyecto deja un camino abierto a las posibles mejoras y complementos. Entre otros la integración del modulo de visión y audio usando URBI como se ha echo. Por otra parte dado que los resultados han demostrado no ser un modulo demasiado robusto cabria la posibilidad de implementar el mismo modulo partiendo OPEN-R, eliminando de esta manera una capa de programación intermedia, URBI, que posiblemente ralentice y empeore la comunicación entre cliente y servidor. En cuanto al modelo y el nodo que permite su integración con rviz podría completarse añadiendo los sensores del AIBO como los acelerómetros, los infrarrojos, los sensores de presión y contacto y la camera.
+Este proyecto deja un camino abierto a las posibles mejoras y complementos. Entre otros la integración del modulo de visión y audio usando URBI como se ha echo. Por otra parte dado que los resultados han demostrado no ser un modulo demasiado robusto cabria la posibilidad de implementar el mismo modulo partiendo OPEN-R, eliminando de esta manera una capa de programación intermedia, URBI, que posiblemente ralentice y empeore la comunicación entre cliente y servidor. En cuanto al modelo y el nodo que permite su integración con rviz podría completarse añadiendo los sensores del AIBO como los acelerómetros, los infrarrojos, los sensores de presión y contacto y la camera, permitiendo proyectos de odometría.
 
 A nivel personal y educativo este proyecto ha servido para poner a prueba la capacidad de análisis y de resolución de problemas. Ha ayudado a tener un amplio conocimiento de de uno de los frameworks relacionados con la robótica mas usados del momento. Además a ayudado a mejorar las habilidades de desarrollo de software con los lenguajes C++ y python. 
 
+\newpage
+\section*{Agradecimientos}
+\addcontentsline{toc}{section}{Agradecimientos}
+Este proyecto no podría haber sido posible sin el apoyo de la familia y amigos que han sido fuente de motivación y ánimo.
 
+Un especial agradecimiento a los tutores de éste proyecto, Manel Velasco y Cecilio Angulo tanto por su implicación y atención como por facilitar el material y el espacio de trabajo.
 
-
+Por último agradecer al doctor Ricardo Tellez de quien salió la idea de este proyecto y quien le dio su primer impulso, además de su apoyo y consejo durante su realización.
 \newpage
 \clearpage
 \addcontentsline{toc}{section}{Referencias}
@@ -1857,10 +1958,23 @@ A nivel personal y educativo este proyecto ha servido para poner a prueba la cap
 \bibitem{urbi}
 	\emph{URBI},
 	\url{http://www.urbiforge.org/index.php/Main/Robots}
+	
 \bibitem{urbicmd}
 	Jean-Christophe Baillie,
 	\emph{URBI Doc for Aibo ERS2xx ERS7 Devices documentation}.
 	2005.
+
+\bibitem{euslisp}
+	ROS new by kwc,
+	\emph{EusLisp now open source}.
+	2010.
+	\url{http://www.ros.org/news/2010/07/euslisp-now-open-source.html}
+\bibitem{kecsap}
+	Kecsap,
+	\emph{Porting URBI 2.x for AIBO}.
+	2010.
+	\url{http://kecsapblog.blogspot.com.es/2010/12/porting-urbi-2x-for-aibo.html}
+	
 	
 \end{thebibliography}
 
@@ -1872,67 +1986,13 @@ A nivel personal y educativo este proyecto ha servido para poner a prueba la cap
 \clearpage % o \cleardoublepage
 \addappheadtotoc
 \appendixpage
-\section{Configuración de los marcos de trabajo }\label{marcos}
-\subsection{OPEN-R SDK}
-\subsection{Configuración wifi}
-Para configurar la conexión wireless del AIBO hay que acceder al archivo WLANDFLT.txt que se encuentra en el directorio /OPEN-R/SYSTEM/CONF de la tarjeta de memoria del AIBO.
-
-El archivo contiene los siguientes variables:
-\begin{itemize}
-\item HOSTNAME: Especifica el nombre de AIBO que se está usando.
-\item ETHER{\_}IP: La IP que usará el AIBO.
-\item ETHER{\_}NETMASK: La mascara de subred.
-\item IP{\_}GATEWAY: La IP a traves de la que el AIBO accederá a la red.
-\item ESSID: Nombre de la red inalámbrica.
-\item WEPENABLE: con valor 1 si existe contraseña en la red o 0 en caso contrario.
-\item WEPKEY: contraseña de la red.
-\item APMODE: Método de conexión del AIBO.
-\begin{itemize}
-\item 0 para conexión punto a punto.
-\item 1 para conexión con ruter.
-\item 2 para conexión automática en el método que primero se lo permita.
-\end{itemize}
-\item CHANEL: especificar el canal para el modo punto a punto.
-\end{itemize}
-La configuración por defecto es:
-
-HOSTNAME = AIBO
-
-ETHER{\_}IP = 10.0.1.100
-
-ETHER{\_}NETMASK = 255.255.255.0
-
-IP{\_}GATEWAY = 10.0.1.1
-
-ESSID = AIBONET
-
-WEPENABLE = 1
-
-WEPKEY = AIBO2
-
-APMODE = 2
-
-CHANNEL = 3 
-\subsection{Tekkotsu}
-\subsection{URBI}
-\subsection{ROS}
-
-\newpage
 
 \section{Manual de usuario}
 \subsection{Requisitos previos}
 Es necesario antes de instalar los paquetes seguir los siguientes pasos.
 \begin{itemize}
 \item Instalar Ubuntu 12.04 (Precise) de 32 bits.
-\item Copiar la tarjeta de memoria, Figura \ref{fig:aiboMS} para el AIBO con URBI:
 
-\url{https://github.com/Diamg/AiboRosPackages/tree/master/MS_URBI}
-\begin{figure}[H]
-	\centering
-    \includegraphics[scale=0.5]{images/MS.jpg}
-	 \caption{Tarjeta de memoria para AIBO.}
-  \label{fig:aiboMS}
-\end{figure}
 \item Descargar librería liburbi 1.5 para C++:
 
 \url{http://www.gostai.com/downloads/urbi/1.5/}
@@ -2024,6 +2084,56 @@ Deben devolver la ubicación del paquete.
 
 \url{https://github.com/Diamg/AiboRosPackages/tree/master/aibo_description}
 \end{itemize}
+\item Copiar la tarjeta de memoria, Figura \ref{fig:aiboMS} para el AIBO con URBI:
+
+\url{https://github.com/Diamg/AiboRosPackages/tree/master/MS_URBI}
+\begin{figure}[H]
+	\centering
+    \includegraphics[scale=0.5]{images/MS.jpg}
+	 \caption{Tarjeta de memoria para AIBO.}
+  \label{fig:aiboMS}
+\end{figure}
+
+\item Configuración de la conexión wireless con el AIBO.
+
+Editar el archivo WLANDFLT.txt que se encuentra en el directorio /OPEN-R/SYSTEM/CONF de la tarjeta de memoria del AIBO.
+
+El archivo contiene los siguientes variables:
+\begin{itemize}
+\item HOSTNAME: Especifica el nombre de AIBO que se está usando.
+\item ETHER{\_}IP: La IP que usará el AIBO.
+\item ETHER{\_}NETMASK: La mascara de subred.
+\item IP{\_}GATEWAY: La IP a traves de la que el AIBO accederá a la red.
+\item ESSID: Nombre de la red inalámbrica.
+\item WEPENABLE: con valor 1 si existe contraseña en la red o 0 en caso contrario.
+\item WEPKEY: contraseña de la red.
+\item APMODE: Método de conexión del AIBO.
+\begin{itemize}
+\item 0 para conexión punto a punto.
+\item 1 para conexión con ruter.
+\item 2 para conexión automática en el método que primero se lo permita.
+\end{itemize}
+\item CHANEL: especificar el canal para el modo punto a punto.
+\end{itemize}
+La configuración por defecto es:
+
+HOSTNAME = AIBO
+
+ETHER{\_}IP = 10.0.1.100
+
+ETHER{\_}NETMASK = 255.255.255.0
+
+IP{\_}GATEWAY = 10.0.1.1
+
+ESSID = AIBONET
+
+WEPENABLE = 1
+
+WEPKEY = AIBO2
+
+APMODE = 2
+
+CHANNEL = 3 
 \end{itemize}
 
 \subsection{Instalación}
@@ -2043,10 +2153,158 @@ Ejecutar en terminal:
 	rosrun aibo_server aibo_server arg[1] arg[2]
 \end{lstlisting}
 
+
+
 Donde:
 \begin{itemize}
 \item arg[1] es la IP del AIBO.
 \item arg[2] es la frecuencia en numero entero a la que se desea que vaya el bucle de ROS (La frecuencia por defecto y recomendada son 5 Hz).
+\end{itemize}
+
+
+\subsubsection{Tópicos}
+
+El nodo aibo{\_}server permite subscribirse a los siguientes tópicos:
+\begin{itemize}
+\item \texttt{/aibo{\_}server/aibo/infrared}:
+ 
+Da la información de los tres infrarojos del AIBO guardada en forma de mensaje de tipo aibo{\_}server/IRArrays.  
+
+\item \texttt{/aibo{\_}server/aibo/touch}:
+
+D la información de los sensores de presión de la barbilla, la cabeza y los tres de la espalda en un mensaje de tipo aibo{\_}server/TouchArray.
+
+\item \texttt{/aibo{\_}server/aibo/accel}:
+
+Da la información de los acelerometros en un mensaje de tipo aibo{\_}server/Accel.
+
+\item \texttt{/aibo{\_}server/aibo/joints}:
+
+Da la información de las posiciones de las articulaciones en un mensaje de tipo aibo{\_}server/Joints.
+
+\item \texttt{/aibo{\_}server/aibo/paws}:
+
+Da la información de los sensores de contacto de las tres patas en forma de mensaje del tipo aibo{\_}server/BumperArray.
+
+
+\end{itemize}
+Y publicar sobre el tópico:
+\begin{itemize}
+\item \texttt{/aibo{\_}server/aibo/subJoints}:
+
+Permite controlar la posición de las articulaciones en un mensaje de tipo aibo{\_}server/Joints.
+
+\end{itemize}
+
+\subsubsection{Mensajes}
+\begin{itemize}
+\item aibo{\_}server/IRArrays
+
+\begin{lstlisting}[language=bash]
+	Header header
+	sensor_msgs/Range[] IRs
+\end{lstlisting}
+
+El array de mensajes de tipo std{\_}msgs/Range esta ordenado:
+\begin{itemize}
+\item sensor del pecho.
+\item sensor del distancias cortas.
+\item sensor de distancias largas.
+\end{itemize}
+
+\item sensor{\_}msgs/Range
+
+\item aibo{\_}server/TouchArray
+
+\begin{lstlisting}[language=bash]
+	Header header
+	float64[] touch
+\end{lstlisting}
+
+
+Los sensores están ordenados en la array de la siguiente forma:
+
+\begin{itemize}
+\item sensor de la barbilla
+\item sensor de la espalda delantero
+\item sensor de la espalda del medio.
+\item sensor de la espalda trasero.
+\item sensor de la cabeza.
+\end{itemize} 
+
+\item aibo{\_}server/Accel:
+
+\begin{lstlisting}[language=bash]
+	Header header
+	float64 x
+	float64 y
+	float64 z
+\end{lstlisting}
+\begin{itemize}
+\item x: Valor del acelerometro en el eje x.
+\item y: Valor del acelerometro en el eje y.
+\item z: Valor del acelerometro en el eje z.
+\end{itemize}
+
+\item aibo{\_}server/Joints
+\begin{lstlisting}[language=bash]
+	Header header
+	float64 jointLF1
+	float64 jointLF2     
+	float64 jointLF3     
+	float64 jointLH1     
+	float64 jointLH2 
+	float64 jointLH3 
+	float64 jointRF1
+	float64 jointRF2
+	float64 jointRF3
+	float64 jointRH1
+	float64 jointRH2
+	float64 jointRH3
+	float64 tailPan
+	float64 tailTilt
+	float64 headTilt
+	float64 headPan
+	float64 headNeck
+	float64 mouth
+
+\end{lstlisting}
+
+Donde:
+\begin{itemize}
+\item jointLF1: Articulación de rotación del hombro del de la pata izquierda delantera.
+\item jointLF2: Articulación de apertura del hombro de la pata izquierda delantera.
+\item jointLF3: Articulación del codo de la pata izquierda delantera.  
+\item jointLH1: Articulación de rotación del hombro del de la pata izquierda trasera.     
+\item jointLH2: Articulación de apertura del hombro de la pata izquierda trasera.
+\item jointLH3: Articulación del codo de la pata izquierda delantera.
+\item jointRF1: Articulación de rotación del hombro del de la pata derecha delantera.
+\item jointRF2: Articulación de apertura del hombro de la pata derecha delantera.
+\item jointRF3: Articulación del codo de la pata derecha delantera.
+\item jointRH1: Articulación de rotación del hombro del de la pata derecha trasera.
+\item jointRH2: Articulación de apertura del hombro de la pata derecha trasera.
+\item jointRH3: Articulación del codo de la pata derecha trasera.
+\item tailPan: Articulación de la cola para el movimiento lateral.
+\item tailTilt: Articulación de la cola para el movimiento vertical.
+\item headTilt: Articulación de la cabeza para el movimiento vertical.
+\item headPan: Articulación de la cabeza para el movimiento lateral.
+\item headNeck: Articulación del cuello.
+\item mouth: articulación de la boca.
+
+\end{itemize}
+\item aibo{\_}server/BumperArray
+\begin{lstlisting}[language=bash]
+	Header header
+	float64[] paws
+\end{lstlisting}
+
+La array de paws esta ordenada con el siguiente orden:
+\begin{itemize}
+\item Delantero izquierdo.
+\item Trasero izquierdo.
+\item Delantero derecho.
+\item Trasero derecho.
+\end{itemize}
 \end{itemize}
 
 \subsection{aibo{\_}description}
