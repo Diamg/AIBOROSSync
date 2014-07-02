@@ -1,6 +1,7 @@
 \documentclass[12pt,a4paper,final,twoside]{book}
 \usepackage[utf8]{inputenc}
-\usepackage[spanish]{babel}
+\usepackage[spanish, es-tabla]{babel}
+
 \usepackage{url}
 \usepackage{graphicx}
 \usepackage{hyperref}
@@ -8,13 +9,14 @@
 \usepackage{setspace}
 \onehalfspacing
 \usepackage{multirow}
-
+\usepackage{multicol}
 \usepackage{eurosym}
 
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{framed}
-
+%tocstyle
+\usepackage{tocloft}
 %plots
 \usepackage{tikz}
 \usepackage{pgfplots}
@@ -42,10 +44,10 @@
 
 \usepackage{fancyhdr}
 \pagestyle{fancy}
-\fancyhead{}
+
 \fancyhead[RO,LE]{\thepage}
 \fancyhead[RE,LO]{Integración de la plataforma AIBO con ROS }
-\fancyfoot{}
+\fancyfoot[C]{}
 \fancyfoot[RO,LE]{\includegraphics[scale=0.18]{images/etseib.pdf}}
 \headheight = 15pt 
 \textheight = 690pt 
@@ -108,7 +110,7 @@
 \section*{Resumen}
 \end{center}
 
-\addcontentsline{toc}{section}{Resumen}
+\addcontentsline{toc}{chapter}{Resumen}
 El proyecto persigue el objetivo de implementar un driver para integrar la plataforma robótica AIBO con el marco de trabajo ROS. A lo largo de esta memoria se narra el procedimiento seguido para llegar a un resultado que cumpla con los requisitos. 
 Se puede dividir el trabajo realizado y documentado en ésta memoria en tres partes.
 
@@ -123,18 +125,25 @@ Para concluir se explica como se han implementado los módulos que facilitan la 
 
 \newpage
 \thispagestyle{empty}
-\cleardoublepage
-
+%\cleardoublepage
+\tocloftpagestyle{fancy}
 \tableofcontents
+\thispagestyle{fancy}
 \newpage
+\tocloftpagestyle{fancy}
 \listoffigures
+\thispagestyle{fancy}
 \newpage
+\tocloftpagestyle{fancy}
 \listoftables
+\thispagestyle{fancy}
 \newpage
 
 
-\section{Prefacio}
-\subsection{Motivación}
+\chapter{Prefacio}
+\thispagestyle{fancy}
+\section{Motivación}
+ 
 Hace ya ocho años que la empresa SONY dejó de producir la mascota robótica por excelencia, el perro robot AIBO \cite{aibo}. Des de su desaparición del mercado, en 2006, éste ha caído en una espiral de desuso hasta el punto que hoy en día se pueden encontrar gran cantidad de ellos guardados en armarios de todo el mundo.
 
 Este proyecto partió de la idea de volver a aprovechar los AIBO para realizar tareas de cooperación y sincronización partiendo de un nivel de programación elevado. Debido a la incomodidad que proporcionaban los actuales lenguajes de programación para dicha plataforma, dado que ya no están siendo mantenidos y sus curvas de aprendizaje son realmente duras,   se planteó la posibilidad de programar al AIBO mediante ROS\cite{ros}.
@@ -145,20 +154,21 @@ Por estos motivos participar en la integración del AIBO con ROS es un proyecto 
 Además el propio aprendizaje intrínseco del proyecto como es la oportunidad de conocer y entender ROS implementando ciertos paquetes resulta algo realmente interesante y útil para cualquier estudiante apasionado por la robótica.
 
 
-\subsection{Requerimientos previos}
+\section{Requerimientos previos}
 Para la realización de este proyecto es necesario un cierto bagaje y experiencia en programación, concretamente en los lenguajes C++ y python orientados a objetos, además de un conocimiento básico del funcionamiento de ROS y su estructura.
 Son necesarios también conocimientos de estadística y el uso de software de apoyo para la realización de algunos testes estadísticos.
 Por ultimo para la realización del proyecto se ha hecho uso de la herramienta \LaTeX. 
 \newpage
 \clearpage
 
-\section{Introducción}
+\chapter{Introducción}
+\thispagestyle{fancy}
 En este apartado se definirá tanto el punto de partida del proyecto, el punto final al que se pretende llegar y el camino que se pretende realizar. 
  
-\subsection{Estado del arte}\label{estatdelart}
+\section{Estado del arte}\label{estatdelart}
 Se pretende dar una visión general del estado actual de la robótica y el compromiso entre software y hardware que ésta conlleva para seguidamente ir concretando y acotando sobre este gran universo hacia el punto que ocupa éste proyecto. 
 
-\subsubsection{Robótica}
+\subsection{Robótica}
 
 Desde la primera definición de robot o de la idea que exporto Isaac Asimov ha pasado más de medio siglo y aún así se puede decir que la robótica se encuentra dando sus primeros pasos. Si bien no es sencillo ubicar el origen de esta ciencia se puede afirmar con total seguridad que esta rama hizo grandes avances a raíz de la revolución industrial de mano de otras especialidades como la electrónica, la informática o la inteligencia artificial.
 
@@ -180,7 +190,7 @@ Otros sectores, aparte de la industria, han impulsado la robótica dando pie a o
   \label{fig:wildcat}
 \end{figure}
 
-\subsubsection{Robótica en la educación}
+\subsection{Robótica en la educación}
 
 Las plataformas anteriormente descritas forman parte de proyectos millonarios que no forman parte de el grueso de la investigación con robótica.
 Son las plataformas como la usada en este proyecto las que han permitido tanto a universidades como a un público mucho más general investigar y han dado la oportunidad de crear una gran variedad de aplicaciones.
@@ -208,7 +218,7 @@ Cabe destacar dos de ellos:
 
 Por lo que respeta a la implementación de drivers para pasar de un lenguaje propio a ROS Existen varios ejemplos que se pueden encontrar actualmente en la web de ROS este es el caso de ARDrone o Bioloid. 
 
-\subsubsection{AIBO}
+\subsection{AIBO}
 
 Con la plataforma de estudio AIBO Sección \ref{secaibo} se han realizado diversos proyectos de índoles muy diferentes dada su versatilidad. Sobretodo se han llevado a cabo proyectos relacionados con visión \cite{xavi} o comportamientos e inteligencia artificial \cite{riki}.
 Un punto esencial en el desarrollo del AIBO fue que durante el período comprendido entre 1999 y 2008 fue la plataforma elegida para realizar la competición RoboCup Estandard Plataform League, posteriormente sustituido por la plataforma NAO. La RoboCup es una competición internacional destinada a promover la robótica y donde se realizan pruebas como la comentada anteriormente que forma parte de la sección de fútbol con robots autónomos. La prueba de simulacros de rescate fue otra donde el AIBO tubo una gran acogida y fue muy usado \cite{robocup}.
@@ -227,7 +237,7 @@ Ha habido otros intentos de recuperación de la plataforma AIBO es el caso de de
 Otro proyecto del que solo se ha conseguido encontrar un articulo que lo mencione y nada de documentación  trataba de realizar la integración mediante EusLisp de a ROS varias plataformas, entre ellas AIBO \cite{euslisp}.
 
 
-\subsection{Objetivos}
+\section{Objetivos}
 EL objetivo de este proyecto es recuperar al AIBO como plataforma educativa aportándole una capa superior de programación que permita la integración de la plataforma con ROS.
 Con este fin  se compararan diversos caminos con tal conseguir el mejor resultado.
 
@@ -242,7 +252,7 @@ Como objetivos concretos se marcan:
 \item La creación de un paquete que incluya un modelo del AIBO que pueda ser integrado dentro de los simuladores y visores del marco de trabajo ROS. 
 \end{itemize}
 
-\subsection{Alcance}
+\section{Alcance}
 El proyecto incluirá:
 \begin{itemize}
 \item Creación de un paquete de ROS que permita extraer los valores de los sensores y articulaciones así como actuar sobre las últimas y poder controlar el AIBO.
@@ -262,7 +272,7 @@ No incluirá:
 \end{itemize}
 
 
-\subsection{Planificación}
+\section{Planificación}
 El proyecto se llevará a cabo en 17 semanas  distribuyendo las tareas programadas como muestra el diagrama de Gantt de la Figura \ref{fig:diagramagantt}.
 \begin{figure}[H]
 \begin{center}
@@ -321,12 +331,13 @@ bar height=0.35,
 \newpage
 \clearpage
 
-\section{AIBO ERS-7}\label{secaibo}
+\chapter{AIBO ERS-7}\label{secaibo}
+\thispagestyle{fancy}
 En 1999 SONY lanzo al mercado la mascota robótica AIBO (Artificial Intelligence roBOt, amigo en japonés). AIBO es un robot conforma de perro 
 que fue ideado para interaccionar con su dueño como una mascota real, es capaz de percibir estímulos del exterior mediante una serie de sensores. Lleva incorporado de serie un software llamad AIBO MIND dentro de una tarjeta de memoria que le permite comportarse como un perro real, reconocer a su dueño, reconocer objetos, jugar con una pelota y aprender, entre muchas otras cosas.
 
 
-\subsection{Hardware}
+\section{Hardware}
 Sony ha desarrollado varios modelos y versiones del AIBO como del software AIBO MIND, mejorando tanto actuadores y sensores como la inteligencia.
 
 Entre los diferentes modelos existentes se trabajará con el modelo ERS-7, que se caracteriza por tener una camera de mayor resolución y un procesador más potente.
@@ -339,7 +350,7 @@ Entre los diferentes modelos existentes se trabajará con el modelo ERS-7, que s
 \end{figure}	
 
 El AIBO ERS-7 tiene las siguientes características: 
-
+\begin{multicols}{2}
 \begin{itemize}
 \item Audio:
 \begin{itemize}
@@ -395,12 +406,13 @@ El AIBO ERS-7 tiene las siguientes características:
 \item Xifrat: WEP.
 \end{itemize}
 \end{itemize}
+\end{multicols}
 
-\subsection{El software}
+\section{El software}
 APERIOS es el sistema operativo en tiempo real que usan los AIBO. Está destinado y diseñado para poder trabajar con grandes flujos de datos de audio e imagen simultaneamente en tiempo real.
 En un principio AIBO iba a ser comercializado con una finalidad puramente lúdica, pero debido a su atractivo diseño y su robustez atrajo la atención de programadores que vieron el potencial para convertirse en una herramienta de investigación y aprendizaje. Ésto llevo a SONY a desarrollar un software de desarrollo llamado OPEN-R SDK y que usaba un lenguaje propio, OPEN-R. A raíz de este modulo salieron otros lenguajes e interfaces que trabajaban en una capa superior, sobre OPEN-R y APERIOS, como son \textit{URBI}\footnote{\url{www.urbiforge.org}} o \textit{Tekkotsu}\footnote{\url{tekkotsu.org}}.
 
-\subsubsection{OPEN-R}
+\subsection{OPEN-R}
 OPEN-R es un API en C++ que corre sobre el sistema operativo APERIOS \ref{fig:openrarch}. OPEN-R diferencia entre dos niveles, la capa de sistema por donde se accede al hardware del robot y la capa de aplicación que se trata de los programas hechos por el usuario.
 
 \begin{figure}[h!]
@@ -448,10 +460,10 @@ Una de las mayores complicaciones que acarrea trabajar con OPEN-R es que usa una
 \item Makefile: Archivo para la configuración global de la compilación.
 \item OBJECT.cfg: Listado de objetos que se ejecutarán.
 \item CONECT.cfg: Se determinan las conexiones entre objetos que se ejecutarán.
-\item WLANCONFIG.txt\footnote{Éste ultimo archivo es necesario configurarlo para cualquier método de programación, URBI, Tekkotsu o OPEN-R. Ver APENDIX}: Donde se definen las características de la conexión inalámbrica del AIBO.
+\item WLANCONFIG.txt\footnote{Éste ultimo archivo es necesario configurarlo para cualquier método de programación, URBI, Tekkotsu o OPEN-R. Ver Anexo }: Donde se definen las características de la conexión inalámbrica del AIBO.
 \end{itemize}
 
-\subsubsection{Tekkotsu}
+\subsection{Tekkotsu}
 Tekkotsu es un software de desarrollo para robots móviles. Orginalmente fue creado para AIBO, pero actualmente permite programar otros plataformas com el Chiara\footnote{\url{http://chiara-robot.org}}, iRobot Create\footnote{\url{http://chiara-robot.org/Create/}}, HandEye\footnote{\url{http://chiara-robot.org/HandEye/}} o Lynxmotion Arms\footnote{\url{http://www.lynxmotion.com/}}.
 
 
@@ -478,7 +490,7 @@ Los comportamientos, como se llama a todo programa de realizado en Tekkotsu, igu
   \label{fig:tekkarch}
 \end{figure}
 
-\subsubsection{URBI}
+\subsection{URBI}
 \label{urbi}
 URBI es el acrónimo de Universal Real-Time Behavior Interface y se trata de una plataforma de software libre para controlar y programar robots y sistemas automatizados en general. Algunos de los robots móviles que soporta URBI son AIBO, Bioloid, Mindstorm NXT, Pioneer, Wifibot o ARDrone \cite{urbi}.
 
@@ -499,7 +511,8 @@ URBI permite y facilita el acceso a cada una de las articulaciones y sensores re
 
 
 
-\section{Comparación de alternativas para la programación}\label{seccomp}
+\chapter{Comparación de alternativas para la programación}\label{seccomp}
+\thispagestyle{fancy}
 Teniendo en cuenta la pretensión y objetivo final es poder programar AIBO con ROS se ha buscado la forma de atacar el problema desde todos los flancos. 
 Una de ellas y completamente diferente a las demás ha sido buscar un punto de acceso al hardware con la intención de poder instalar alguna distribución de linux, lo que permitiría implementar el modulo de ROS de como un sistema embebido. Pero tras desmontar gran parte de las piezas solo se encontró un puerto que no coincidía con ningún estándar y se abandonó dicho camino.  
 
@@ -563,7 +576,7 @@ Partiendo del lenguaje URBI se plantean dos opciones de desarrollo:
 
 Con tal de encontrar cual es la mejor opción se realizarán una serie de experimentos antes de implementar el paquete. 
 
-\subsection{Lectura de datos}\label{compenvio}
+\section{Lectura de datos}\label{compenvio}
 En el primer experimento se valorará la velocidad de lectura de una sola variable del sistema y se cuantificará su frecuencia de refresco. Se ha usado para este experimento el valor de una articulación.
 
 El procedimiento para adquirir los datos será el mostrado en la Figura \ref{fig:readleg}.
@@ -580,7 +593,7 @@ La escritura de los valores de la articulación y el tiempo se escriben en un ar
 
 El experimento consistirá en realizar la adquisición de datos durante 10 segundos y repetir el experimento 15 veces por método. La velocidad de envío estará limitada por el servidor ya que se le pide que envíe el refresco continuo de la variable.
 
-\subsubsection{Método con liburbi y C++}
+\subsection{Método con liburbi y C++}
 
 La estructura del programa es la que sigue\footnote{El script se puede encontrar en el Anexo \ref{getDataOneLegC++}}. 
 
@@ -597,7 +610,7 @@ La estructura del programa es la que sigue\footnote{El script se puede encontrar
 \item Ejecución del bucle de URBI: Se trata de una función que crea un bucle de comunicación cliente/servidor. 
 \end{itemize}
 
-\subsubsection{Método con telnet y python}
+\subsection{Método con telnet y python}
 La idea de este script\footnote{Se puede consultar el scrript en el Anexo \ref{getDataOneLegPy}} es trabajar con la terminal de URBI, Figura \ref{fig:telnet},  mediante una conexión telnet.
 
 \begin{figure}[h!]
@@ -626,7 +639,7 @@ La estructura del programa será parecida a la anterior:
 \end{itemize} 
 \end{itemize}
 
-\subsubsection{Comparación de los resultados}
+\subsection{Comparación de los resultados}
 %De los datos obtenidos de las 15 replicas de cada método se han hecho las diferencias de tiempos entre un dato y el siguiente y se ha echo el inverso de este intervalo con tal de obtener la frecuencia entre datos, se prefiere trabajar con el inverso debido a la comodidad de la escala.
 De los datos obtenidos de las 15 replicas de cada método se han hecho las diferencias de tiempos entre un dato y el siguiente y se ha echo el inverso de este intervalo con tal de obtener la frecuencia entre datos.
 \begin{figure}[H]
@@ -1392,7 +1405,7 @@ xtick=data,
 \end{figure}
 
 
-\subsection{Envío de datos}\label{secenvdades}
+\section{Envío de datos}\label{secenvdades}
 Vista una de los sentidos de comunicación el siguiente experimento se va a fijar en el otro, el envió de los valores de las articulaciones del cliente al servidor con tal de controlar al AIBO.
 El experimento consiste en enviar una trayectoria punto a punto a una articulación y comprobar que tal responde. La trayectoria será sinusoidal sin importar el periodo. Para valorar los resultados se leerá la respuesta de la articulación usando los módulos de lectura del experimento anterior, que condicionaran el resultado por sus errores y limitaciones. 
 
@@ -1420,28 +1433,32 @@ Tras varias pruebas se ha decidido que el modo más conveniente para la implemen
 El experimento\footnote{Los codigos se puede encontrar en los Anexos \ref{sinC} y \ref{sinP}} se ha realizado varias veces cambiando la frecuencia a la que se envían los puntos de la trayectoria. Se ha realizado a 1, 2, 5 y 10 Hz, no se ha enviado a mas velocidad ya que el movimiento a una frecuencia de mas de 10 Hz era inconstante y poco suave.
 Se han descartado los experimentos en que se ha producido un bloqueo.
  
+
+
 \begin{figure}[H]
 	\centering
-    \includegraphics[scale=0.37]{images/sin1H.pdf}
-	 \caption{En azul está graficado las posiciones enviadas a 1Hz y en rojo las lecturas. En columnas se encuentran las replicas del mismo método y por filas los tres métodos usados, en orden descendente son liburbi con un cliente, liburbi con dos cliente y python.}
+    \includegraphics[scale=1]{plots/h1-f1.pdf}
+ 
+   	 \caption{En azul está graficado las posiciones enviadas a 1Hz y en negro las lecturas. En columnas se encuentran las replicas del mismo método y por filas los tres métodos usados, en orden descendente son liburbi con un cliente, liburbi con dos cliente y python.}
   \label{fig:sin1H}
 \end{figure}
+
 \begin{figure}[H]
 	\centering
-    \includegraphics[scale=0.37]{images/sin2H.pdf}
-	 \caption{En azul está graficado las posiciones enviadas a 2Hz y en rojo las lecturas. En columnas se encuentran las replicas del mismo método y por filas los tres métodos usados, en orden descendente son liburbi con un cliente, liburbi con dos cliente y python.5}
+    \includegraphics[scale=1]{plots/h2.pdf}
+	 \caption{En azul está graficado las posiciones enviadas a 2Hz y en negro las lecturas. En columnas se encuentran las replicas del mismo método y por filas los tres métodos usados, en orden descendente son liburbi con un cliente, liburbi con dos cliente y python.5}
   \label{fig:sin2H}
 \end{figure}
 \begin{figure}[H]
 	\centering
-    \includegraphics[scale=0.37]{images/sin5H.pdf}
-	 \caption{En azul está graficado las posiciones enviadas a 5Hz y en rojo las lecturas. En columnas se encuentran las replicas del mismo método y por filas los tres métodos usados, en orden descendente son liburbi con un cliente, liburbi con dos cliente y python.}
+   \includegraphics[scale=1]{plots/h5.pdf}
+	 \caption{En azul está graficado las posiciones enviadas a 5Hz y en negro las lecturas. En columnas se encuentran las replicas del mismo método y por filas los tres métodos usados, en orden descendente son liburbi con un cliente, liburbi con dos cliente y python.}
   \label{fig:sin5H}
 \end{figure}
 \begin{figure}[H]
 	\centering
-    \includegraphics[scale=0.37]{images/sin10H.pdf}
-	 \caption{En azul está graficado las posiciones enviadas a 10Hz y en rojo las lecturas. En columnas se encuentran las replicas del mismo método y por filas los tres métodos usados, en orden descendente son liburbi con un cliente, liburbi con dos cliente y python.}
+    \includegraphics[scale=1]{plots/h10.pdf}
+	 \caption{En azul está graficado las posiciones enviadas a 10Hz y en negro las lecturas. En columnas se encuentran las replicas del mismo método y por filas los tres métodos usados, en orden descendente son liburbi con un cliente, liburbi con dos cliente y python.}
   \label{fig:sin10H}
 \end{figure}
 
@@ -1477,11 +1494,12 @@ node[above] at (axis cs:9,0.737) {0.737};
 \legend{python, liburbi}
 \end{axis}
 \end{tikzpicture}
+
 	 \caption{Retrasos entre la orden enviada y la acción para los métodos liburbi con dos clientes y python.}
   \label{fig:retras}
 \end{figure}
 
-\subsection{Elección del método}
+\section{Elección del método}
 A partir de los resultados anteriores se procede a elegir el caso que garantizará un mejor funcionamiento del paquete a implementar. En la Tabla \ref{comp} se encuentran resumidos los criterios de evaluación.
 
 
@@ -1507,8 +1525,9 @@ Bloqueos de en el envío & Si & Si & Si \\ \hline
 En cuanto a recepción de datos se refiere es mas rápido el usando liburbi aunque sufra las mismas congelaciones que usando python y a efectos prácticos para la implementación del paquete es lo mismo que transmita a 10KHz que a 20KHz. Y respecto al envió el seguimiento de la trayectoria és parecido en ambos metodos, python y liburbi con dos clientes, pero parece que tenga un retraso superior el segundo. De todos modos no se considera concluyente el experimento echo pues dada la variabilidad de los resultados es posible que se haya trabajado con pocos datos el análisis sobre el retraso. Finalmente se elige usar la librería liburbi dado que se cree más convincente la ventaja en la adquisición de los datos que el retraso en la respuesta. Por otra parte se ha tenido en consideración que el paquete será más complejo que los experimentos y puede ser útil que la velocidad de ejecución de un programa enn C++ sea mayor que en python.
 
 \newpage
-\section{Implementación del paquete de ROS}
-\subsection{ROS}
+\chapter{Implementación del paquete de ROS}
+\thispagestyle{fancy}
+\section{ROS}
 \label{ros}
 ROS es el acrónimo de Robot Operating System que lejos de ser un sistema operativo es más bien un marco de trabajo que proporciona unas herramientas y librerías para ayudar a desarrollar software para aplicaciones en robótica. Proporciona entre otros abstracciones de hardware, controladores para dispositivos, herramientas de visualización, comunicación por mensajes, administración de paquetes y todo bajo licencia de software libre.
 La principal característica sobre la que se basa ROS es el sistema de comunicación que proporciona. A bajo nivel está basada en el paso de mensajes que pueden ser leídos por diversos procesos simultaneamente. Dichos mensajes se escriben sobre unos canales de comunicación llamados \textit{tópicos} a los que se puede acceder mediante métodos de publicación y suscripción. Sobre los tópicos se puede publicar o se puede suscribir desde un terminal o bien cualquier objeto de ROS a los que se les llama \textit{nodos}. Todos los nodos que se pretendan tener comunicados entre si deben estar creados sobre el mismo núcleo o \textit{roscore}.
@@ -1561,7 +1580,7 @@ Para la realización de este paquete de ROS se han tenido en cuenta las siguient
 \item Modificación del CMakeList.txt para incluir los mensajes y los archivos C++ descritos además de la librería liburbi.
 \end{itemize}
 
-\subsubsection{Estructura del programa}
+\subsection{Estructura del programa}
 Basándose en los resultados de la sección anterior, Sección \ref{seccomp}, se ha procedido a la implementación del paquete de ros usando liburbi i dos clientes, uno para la recepción  y otro para el envío.
 
 La estructura del programa que se ha implementado se puede ver en la Figura \ref{fig:aiboserver}.
@@ -1603,7 +1622,7 @@ La estructura del programa que se ha implementado se puede ver en la Figura \ref
 \item Llamada al callback de ROS: Éste envía la orden al servidor URBI mediante el cliente de envío.
 \end{itemize}
 \end{itemize}
-\subsubsection{Resultados}
+\subsection{Resultados}
 
 Por lo que respecta la adquisición de los valores de sensores y articulaciones se ha conseguido obtenerlos todos ellos trabajando a una frecuencia de 10Hz. Con tal de comprobar que el refresco de los tópicos es correcto se ha accedido a mostrar por el terminal todos los tópicos mostrando su frecuencia de refresco Figura \ref{fig:getT} y por otro lado, al mismo tiempo, se ha graficado el valor de un sensor en la Figura \ref{fig:addacc} El echo de que el gráfico muestre un cierto ruido indica que el valor se esta refrescando correctamente, por lo contrario si el valor de la gráfica es constante indica que no se está refrescando correctamente.
 
@@ -1658,7 +1677,7 @@ dicho retraso no es la norma general estando el retraso medio muy por encima de 
 Además el modulo sufre bloqueos que pueden durar minutos, igual que en las secciones anteriores.
 Valorando el modulo se puede concluir que no funciona de la forma deseada ni requerida para varias aplicaciones en las que se requiere una lectura y respuesta rápida del sistema. 
 
-\subsubsection{Mejoras}
+\subsection{Mejoras}
 Los problemas encontrados, tras un proceso de depuración se pueden clasificar de la siguiente forma:
 \begin{itemize}
 \item Cortas congelaciones en la recepción de los valores de los sensores y articulaciones: respeto a ello ya se ha probado que en las experimentaciones anteriores que los resultados no podían mejorar usando liburbi.
@@ -1715,7 +1734,7 @@ Finalmente en la Figura \ref{fig:ASbuena} se puede observar como en algunos mome
 \end{figure}
 
 
-\subsubsection{Demostración}
+\subsection{Demostración}
 Con tal de asegurar el funcionamiento del paquete aibo{\_}server se ha realizado un programa demuestra como se pueden sincronizar dos o varios AIBO compartiendo variables de estado los unos con los otros. 
 En esta demostración en particular se pretende que un AIBO imite los movimientos que realice otro. Es uno de las aplicaciones en que el flujo de datos es realmente grande, dado que las posiciones se modificaran dato a dato, y pondrá realmente a prueba la capacidad del modulo implementado.
 Se ha creado un paquete el que incluye un programa\footnote{El código se puede encontrar en el Anexo \ref{mimiccode}.} con un nodo que esta suscrito a el tópico de lectura de las articulaciones de un nodo aibo{\_}server y los publica sobre el tópico de escritura de otro nodo aibo{\_}server. Para crear estos tres nodos se ha hecho un archivo .launch que crea dos nodos del tipo aibo{\_}server con los nombres \texttt{/ai1} y \texttt{/ai2} y un tercer nodo como el descrito. La estructura resultante es la de la Figura \ref{fig:mimic}.
@@ -1746,12 +1765,12 @@ En las Figuras \ref{fig:resumimic} y \ref{fig:resumimic2} se puede observar como
 
 Tras aplicar el cambio sobre el callback de ROS se ha evitado el problema del bloqueo pero como se ve en la Figura \ref{fig:resumimic2} los resultados dejan mucho que desear y están lejos de permitir aplicaciones de control remoto o sincronización. 
 
-\subsection{Paquete Aibo{\_}description }
+\section{Paquete Aibo{\_}description }
 Este paquete pretende ser el vinculo entre el AIBO y una de las herramientas más usadas de ROS para robots móviles, rviz\footnote{http://wiki.ros.org/rviz}. Rviz es un visualizador 3D para aplicaciones de robótica que permite visualizar un modelo, el entorno sensado o un mapa virtual. 
 
 El paquete consta de dos partes diferenciadas, la creación de el modelo de AIBO para que pueda ser representada la imagen 3D y la implementación de un nodo que haga responder el modelo en tiempo real a lo que sucede en el robot real.
 
-\subsubsection{El modelo}
+\subsection{El modelo}
 Para generar un modelo, se debe editar un xml con formato URDF\footnote{http://wiki.ros.org/urdf}(Unified Robots Description Format) donde se especifican las dimensiones del robot, las articulaciones y sus movimientos, la geometría de las extremidades y parámetros físicos como la masa o la inercia.
 Para el modelo del AIBO se han creado 22 partes y 21 articulaciones se han descartado para el modelo la boca y las orejas. En la Figura \ref{fig:aibourdf} Se puede ver un esquema de las articulaciones, las partes y la disposición de los ejes que conforman el modelo implementado en el archivo URDF.
 
@@ -1771,7 +1790,7 @@ En  cada una de las partes se debe definir la geometría y sus dimensiones. Con 
 	 \caption{Modelo visto des de el framework de rviz.}
   \label{fig:aiborviz}
 \end{figure}
-\subsubsection{El nodo state{\_}publisher}\label{nodoSP}
+\subsection{El nodo state{\_}publisher}\label{nodoSP}
 El nodo state{\_}publisher esta creado por un programa escrito en C++ (state{\_}publisher.cpp) y su principal función es estar suscrito al tópico \texttt{/aibo{\_}server/ aibo/joints}, donde se están publicando las posiciones las articulaciones del robot real, y las publica en un tópico llamado \texttt{joint{\_}states} al que ya se podrá comunicar rviz. Además envía la transformada del modelo cinemático.
 La estructura del programa es la siguiente:
 \begin{itemize}
@@ -1833,10 +1852,12 @@ En la Figura \ref{fig:aibostack} se puede observar como queda la estructura de l
 \end{figure}
 \newpage
 
-\section{Presupuesto}
+\chapter{Presupuesto}
+\thispagestyle{fancy}
 El coste total del proyecto asciende a 18.200{\euro} de los cuales el 82,42{\%} es en concepto de personal. En ser un proyecto fundamentalmente de software y todo el software usado es con licencia libre, des de el sistema operativo hasta el procesador de textos, los costes asociados al material solo vienen dados por el coste de la plataforma de estudio.
 
-\subsection{Coste material}
+\section{Coste material}
+
 \begin{table}[H]
 \begin{center}
 \begin{tabulary}{\textwidth}{|C|C|C|C|}
@@ -1848,7 +1869,7 @@ AIBO ERS-7 & 1600& 2& 3200 \\ \hline
 \end{center}
 \caption{Coste material detallado.\label{costmat}}
 \end{table}
-\subsection{Coste personal}
+\section{Coste personal}
 \begin{table}[H]
 \begin{center}
 \begin{tabulary}{\textwidth}{|C|C|C|C|}
@@ -1865,7 +1886,8 @@ Programación& 15& 100& 15000 \\ \hline
 
 \newpage
 
-\section{Impacto ambiental}
+\chapter{Impacto ambiental}
+\thispagestyle{fancy}
 El objetivo de este proyecto conlleva como causa inmediata el incremento de la vida útil de una plataforma ya en desuso. Por tanto no se está perjudicando el medio ambiente en absoluto, sino que por lo contrario se está reciclando un objeto que en otro caso acabaría por desecharse en poco tiempo.
 
 En cuanto al impacto ambiental asociado al uso de la plataforma que en cierta manera se ahorra se puede dividir en chasis, electrónica y batería.
@@ -1878,8 +1900,9 @@ Las baterías son de iones de litio y aunque su impacto ambiental de las cuales 
 
 
 \newpage
-\section*{Conclusiones}
-\addcontentsline{toc}{section}{Conclusiones}
+\chapter*{Conclusiones}
+\thispagestyle{fancy}
+\addcontentsline{toc}{chapter}{Conclusiones}
 
 
 Cuando se trabaja con sistemas reales uno se da cuenta que no todo funciona de forma ideal y que un algoritmo que debería funcionar conlleva a múltiples errores o respuestas no esperadas. En éste caso concreto se ha visto como las comunicaciones que establecía el lenguaje base elegido no eran tan buenas como se esperaba. Los resultados dejan mucho que desear y no permiten ni aseguran el buen funcionamiento de posteriores aplicaciones basadas en el módulo implementado. De todas formas se ha alcanzado el objetivo siguiendo la metodología establecida en primer momento, se a implementado un modulo de ROS que permite integrar la plataforma AIBO, formado por los paquetes \textbf{aibo{\_}server} y \textbf{aibo{\_}description}. Estos paquetes se pueden encontrar en el repositorio (url del github) y están disponibles para su uso o modificación con tal de complementarlos o mejorar los resultados. Además se pretende colgar, fuera del alcance del proyecto, los paquetes y la documentación necesaria para su uso en la pagina de ROS con tal de contribuir y aportar un grano de arena al desarrollo de software libre.
@@ -1889,8 +1912,9 @@ Este proyecto deja un camino abierto a las posibles mejoras y complementos. Entr
 A nivel personal y educativo este proyecto ha servido para poner a prueba la capacidad de análisis y de resolución de problemas. Ha ayudado a tener un amplio conocimiento de de uno de los frameworks relacionados con la robótica mas usados del momento. Además a ayudado a mejorar las habilidades de desarrollo de software con los lenguajes C++ y python. 
 
 \newpage
-\section*{Agradecimientos}
-\addcontentsline{toc}{section}{Agradecimientos}
+\chapter*{Agradecimientos}
+\thispagestyle{fancy}
+\addcontentsline{toc}{chapter}{Agradecimientos}
 Este proyecto no podría haber sido posible sin el apoyo de la familia y amigos que han sido fuente de motivación y ánimo.
 
 Un especial agradecimiento a los tutores de éste proyecto, Manel Velasco y Cecilio Angulo tanto por su implicación y atención como por facilitar el material y el espacio de trabajo.
@@ -1898,8 +1922,10 @@ Un especial agradecimiento a los tutores de éste proyecto, Manel Velasco y Ceci
 Por último agradecer al doctor Ricardo Tellez de quien salió la idea de este proyecto y quien le dio su primer impulso, además de su apoyo y consejo durante su realización.
 \newpage
 \clearpage
-\addcontentsline{toc}{section}{Referencias}
+\addcontentsline{toc}{chapter}{Referencias}
+\thispagestyle{fancy}
 \begin{thebibliography}{99}
+
 \bibitem{aibo}
 	Arevalillo-Herráez, Miguel and Moreno-Picot, Salvador and Millán, Vicente Cavero,
 	\emph{Arquitectura para Utilizar Robots AIBO en la Enseñanza de la Inteligencia Artificial.}
@@ -1985,10 +2011,11 @@ Por último agradecer al doctor Ricardo Tellez de quien salió la idea de este p
 \appendix
 \clearpage % o \cleardoublepage
 \addappheadtotoc
-\appendixpage
+%\appendixpage
 
-\section{Manual de usuario}
-\subsection{Requisitos previos}
+\chapter{Manual de usuario}
+\thispagestyle{fancy}
+\section{Requisitos previos}
 Es necesario antes de instalar los paquetes seguir los siguientes pasos.
 \begin{itemize}
 \item Instalar Ubuntu 12.04 (Precise) de 32 bits.
@@ -2136,7 +2163,7 @@ APMODE = 2
 CHANNEL = 3 
 \end{itemize}
 
-\subsection{Instalación}
+\section{Instalación}
 \begin{itemize}
 \item Guardar los paquetes en el workspace de ROS.
 \item Ejecutar en un terminal:
@@ -2147,7 +2174,7 @@ CHANNEL = 3
 
 
 \end{itemize}
-\subsection{aibo{\_}server}
+\section{aibo{\_}server}
 Ejecutar en terminal:
 \begin{lstlisting}[language=bash]
 	rosrun aibo_server aibo_server arg[1] arg[2]
@@ -2162,7 +2189,7 @@ Donde:
 \end{itemize}
 
 
-\subsubsection{Tópicos}
+\subsection{Tópicos}
 
 El nodo aibo{\_}server permite subscribirse a los siguientes tópicos:
 \begin{itemize}
@@ -2196,7 +2223,7 @@ Permite controlar la posición de las articulaciones en un mensaje de tipo aibo{
 
 \end{itemize}
 
-\subsubsection{Mensajes}
+\subsection{Mensajes}
 \begin{itemize}
 \item aibo{\_}server/IRArrays
 
@@ -2307,7 +2334,7 @@ La array de paws esta ordenada con el siguiente orden:
 \end{itemize}
 \end{itemize}
 
-\subsection{aibo{\_}description}
+\section{aibo{\_}description}
 Ejecutar en la terminal:
 \begin{lstlisting}[language=bash]
 	roslaunch aibo_description aibomod.launch
@@ -2318,25 +2345,26 @@ Con tal de vincular el modelo con un AIBO se debe lanzar también un nodo aibo{\
 
 \newpage
 
-\section{Scripts y programas}
-\subsection{Adquisición del valor de una articulación con liburbi.}
+\chapter{Scripts y programas}
+\thispagestyle{fancy}
+\section{Adquisición del valor de una articulación con liburbi.}
 \label{getDataOneLegC++}
 \lstinputlisting[language=c++]{src/getDataOneLeg/getDataC++/getData.cpp}
 
-\subsection{Adquisición del valor de una articulación con Python.}
+\section{Adquisición del valor de una articulación con Python.}
 \label{getDataOneLegPy}
 \lstinputlisting[language=Python]{src/getDataOneLeg/getDataPython/getData.py}
 
-\subsection{Envió de trayectoria punto a punto con liburbi.}\label{sinC}
+\section{Envió de trayectoria punto a punto con liburbi.}\label{sinC}
 \lstinputlisting[language=c++]{src/sinLegRead/sinLegC++/2Client/sinLeg.cpp}
 
-\subsection{Envió de trayectoria punto a punto con Python.}\label{sinP}
+\section{Envió de trayectoria punto a punto con Python.}\label{sinP}
 \lstinputlisting[language=Python]{src//sinLegRead/sinLegPython/sinlegLF1.py}
 
-\subsection{Envió de trayectoria punto a punto con ROS.}\label{sinlegROS}
+\section{Envió de trayectoria punto a punto con ROS.}\label{sinlegROS}
 \lstinputlisting[language=c++]{src/ROStests/sinlegROS.cpp}
 
-\subsection{Modulo de imitación entre AIBOs.}\label{mimiccode}
+\section{Modulo de imitación entre AIBOs.}\label{mimiccode}
 \lstinputlisting[language=c++]{src/ROStests/mimic.cpp}
 
 \end{document}

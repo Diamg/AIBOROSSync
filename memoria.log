@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2014.3.21)  30 JUN 2014 13:31
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2014.6.30)  2 JUL 2014 11:31
 entering extended mode
  %&-line parsing enabled.
 **memoria.tex
@@ -499,45 +499,134 @@ Package: `setspace' 6.7 <2000/12/01>
 ) (/usr/share/texmf-texlive/tex/latex/multirow/multirow.sty
 \bigstrutjot=\dimen121
 )
+(/usr/share/texmf-texlive/tex/latex/tools/multicol.sty
+Package: multicol 2008/12/05 v1.6h multicolumn formatting (FMi)
+\c@tracingmulticols=\count111
+\mult@box=\box28
+\multicol@leftmargin=\dimen122
+\c@unbalance=\count112
+\c@collectmore=\count113
+\doublecol@number=\count114
+\multicoltolerance=\count115
+\multicolpretolerance=\count116
+\full@width=\dimen123
+\page@free=\dimen124
+\premulticols=\dimen125
+\postmulticols=\dimen126
+\multicolsep=\skip49
+\multicolbaselineskip=\skip50
+\partial@page=\box29
+\last@line=\box30
+\mult@rightbox=\box31
+\mult@grightbox=\box32
+\mult@gfirstbox=\box33
+\mult@firstbox=\box34
+\@tempa=\box35
+\@tempa=\box36
+\@tempa=\box37
+\@tempa=\box38
+\@tempa=\box39
+\@tempa=\box40
+\@tempa=\box41
+\@tempa=\box42
+\@tempa=\box43
+\@tempa=\box44
+\@tempa=\box45
+\@tempa=\box46
+\@tempa=\box47
+\@tempa=\box48
+\@tempa=\box49
+\@tempa=\box50
+\@tempa=\box51
+\c@columnbadness=\count117
+\c@finalcolumnbadness=\count118
+\last@try=\dimen127
+\multicolovershoot=\dimen128
+\multicolundershoot=\dimen129
+\mult@nat@firstbox=\box52
+\colbreak@box=\box53
+)
 (/usr/share/texmf-texlive/tex/latex/eurosym/eurosym.sty
 Package: eurosym 1998/08/06 v1.1 European currency symbol ``Euro''
-\@eurobox=\box28
+\@eurobox=\box54
 )
 (/usr/share/texmf-texlive/tex/latex/caption/caption.sty
 Package: caption 2009/10/09 v3.1k Customizing captions (AR)
 
 (/usr/share/texmf-texlive/tex/latex/caption/caption3.sty
 Package: caption3 2009/10/09 v3.1k caption3 kernel (AR)
-\captionmargin=\dimen122
-\captionmargin@=\dimen123
-\captionwidth=\dimen124
-\caption@indent=\dimen125
-\caption@parindent=\dimen126
-\caption@hangindent=\dimen127
+\captionmargin=\dimen130
+\captionmargin@=\dimen131
+\captionwidth=\dimen132
+\caption@indent=\dimen133
+\caption@parindent=\dimen134
+\caption@hangindent=\dimen135
 )
-\c@ContinuedFloat=\count111
+\c@ContinuedFloat=\count119
 Package caption Info: hyperref package is loaded.
 )
 (/usr/share/texmf-texlive/tex/latex/caption/subcaption.sty
 Package: subcaption 2008/08/31 v1.0b Adding subcaptions (AR)
-\c@subfigure=\count112
-\c@subtable=\count113
+\c@subfigure=\count120
+\c@subtable=\count121
 )
 (/usr/share/texmf-texlive/tex/latex/ltxmisc/framed.sty
 Package: framed 2007/10/04 v 0.95: framed or shaded text with page breaks
-\fb@frw=\dimen128
-\fb@frh=\dimen129
-\FrameRule=\dimen130
-\FrameSep=\dimen131
+\fb@frw=\dimen136
+\fb@frh=\dimen137
+\FrameRule=\dimen138
+\FrameSep=\dimen139
 )
-(/usr/share/texmf/tex/latex/pgf/frontendlayer/tikz.sty
+(/usr/share/texmf-texlive/tex/latex/tocloft/tocloft.sty
+Package: tocloft 2009/09/04 v2.3d parameterised ToC, etc., typesetting
+
+
+Package tocloft Note: The document has chapter divisions.
+
+\cftparskip=\skip51
+\cftbeforetoctitleskip=\skip52
+\cftaftertoctitleskip=\skip53
+\cftbeforepartskip=\skip54
+\cftpartnumwidth=\skip55
+\cftpartindent=\skip56
+\cftbeforechapskip=\skip57
+\cftchapindent=\skip58
+\cftchapnumwidth=\skip59
+\cftbeforesecskip=\skip60
+\cftsecindent=\skip61
+\cftsecnumwidth=\skip62
+\cftbeforesubsecskip=\skip63
+\cftsubsecindent=\skip64
+\cftsubsecnumwidth=\skip65
+\cftbeforesubsubsecskip=\skip66
+\cftsubsubsecindent=\skip67
+\cftsubsubsecnumwidth=\skip68
+\cftbeforeparaskip=\skip69
+\cftparaindent=\skip70
+\cftparanumwidth=\skip71
+\cftbeforesubparaskip=\skip72
+\cftsubparaindent=\skip73
+\cftsubparanumwidth=\skip74
+\cftbeforeloftitleskip=\skip75
+\cftafterloftitleskip=\skip76
+\cftbeforefigskip=\skip77
+\cftfigindent=\skip78
+\cftfignumwidth=\skip79
+\c@lofdepth=\count122
+\c@lotdepth=\count123
+\cftbeforelottitleskip=\skip80
+\cftafterlottitleskip=\skip81
+\cftbeforetabskip=\skip82
+\cfttabindent=\skip83
+\cfttabnumwidth=\skip84
+) (/usr/share/texmf/tex/latex/pgf/frontendlayer/tikz.sty
 (/usr/share/texmf/tex/latex/pgf/basiclayer/pgf.sty
 (/usr/share/texmf/tex/latex/pgf/utilities/pgfrcs.sty
 (/usr/share/texmf/tex/generic/pgf/utilities/pgfutil-common.tex
 \pgfutil@everybye=\toks31
 )
 (/usr/share/texmf/tex/generic/pgf/utilities/pgfutil-latex.def
-\pgfutil@abb=\box29
+\pgfutil@abb=\box55
 
 (/usr/share/texmf-texlive/tex/latex/ms/everyshi.sty
 Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
@@ -559,20 +648,20 @@ Package: pgfsys 2010/06/30 v2.10 (rcs-revision 1.37)
 (/usr/share/texmf/tex/generic/pgf/utilities/pgfkeysfiltered.code.tex
 \pgfkeys@tmptoks=\toks34
 ))
-\pgf@x=\dimen132
-\pgf@y=\dimen133
-\pgf@xa=\dimen134
-\pgf@ya=\dimen135
-\pgf@xb=\dimen136
-\pgf@yb=\dimen137
-\pgf@xc=\dimen138
-\pgf@yc=\dimen139
+\pgf@x=\dimen140
+\pgf@y=\dimen141
+\pgf@xa=\dimen142
+\pgf@ya=\dimen143
+\pgf@xb=\dimen144
+\pgf@yb=\dimen145
+\pgf@xc=\dimen146
+\pgf@yc=\dimen147
 \w@pgf@writea=\write3
 \r@pgf@reada=\read1
-\c@pgf@counta=\count114
-\c@pgf@countb=\count115
-\c@pgf@countc=\count116
-\c@pgf@countd=\count117
+\c@pgf@counta=\count124
+\c@pgf@countb=\count125
+\c@pgf@countc=\count126
+\c@pgf@countd=\count127
 
 (/usr/share/texmf/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
@@ -587,8 +676,8 @@ File: pgfsys-common-pdf.def 2008/05/19  (rcs-revision 1.10)
 )))
 (/usr/share/texmf/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2008/07/18  (rcs-revision 1.7)
-\pgfsyssoftpath@smallbuffer@items=\count118
-\pgfsyssoftpath@bigbuffer@items=\count119
+\pgfsyssoftpath@smallbuffer@items=\count128
+\pgfsyssoftpath@bigbuffer@items=\count129
 )
 (/usr/share/texmf/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
 File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
@@ -617,9 +706,9 @@ Package: pgfcore 2010/04/11 v2.10 (rcs-revision 1.7)
 (/usr/share/texmf/tex/generic/pgf/math/pgfmathcalc.code.tex
 (/usr/share/texmf/tex/generic/pgf/math/pgfmathutil.code.tex)
 (/usr/share/texmf/tex/generic/pgf/math/pgfmathparser.code.tex
-\pgfmath@dimen=\dimen140
-\pgfmath@count=\count120
-\pgfmath@box=\box30
+\pgfmath@dimen=\dimen148
+\pgfmath@count=\count130
+\pgfmath@box=\box56
 \pgfmath@toks=\toks35
 \pgfmath@stack@operand=\toks36
 \pgfmath@stack@operation=\toks37
@@ -633,51 +722,51 @@ Package: pgfcore 2010/04/11 v2.10 (rcs-revision 1.7)
 (/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.round.code.tex)
 (/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex)))
 (/usr/share/texmf/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count121
+\c@pgfmathroundto@lastzeros=\count131
 ))
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
 File: pgfcorepoints.code.tex 2010/04/09  (rcs-revision 1.20)
-\pgf@picminx=\dimen141
-\pgf@picmaxx=\dimen142
-\pgf@picminy=\dimen143
-\pgf@picmaxy=\dimen144
-\pgf@pathminx=\dimen145
-\pgf@pathmaxx=\dimen146
-\pgf@pathminy=\dimen147
-\pgf@pathmaxy=\dimen148
-\pgf@xx=\dimen149
-\pgf@xy=\dimen150
-\pgf@yx=\dimen151
-\pgf@yy=\dimen152
-\pgf@zx=\dimen153
-\pgf@zy=\dimen154
+\pgf@picminx=\dimen149
+\pgf@picmaxx=\dimen150
+\pgf@picminy=\dimen151
+\pgf@picmaxy=\dimen152
+\pgf@pathminx=\dimen153
+\pgf@pathmaxx=\dimen154
+\pgf@pathminy=\dimen155
+\pgf@pathmaxy=\dimen156
+\pgf@xx=\dimen157
+\pgf@xy=\dimen158
+\pgf@yx=\dimen159
+\pgf@yy=\dimen160
+\pgf@zx=\dimen161
+\pgf@zy=\dimen162
 )
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
 File: pgfcorepathconstruct.code.tex 2010/08/03  (rcs-revision 1.24)
-\pgf@path@lastx=\dimen155
-\pgf@path@lasty=\dimen156
+\pgf@path@lastx=\dimen163
+\pgf@path@lasty=\dimen164
 )
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
 File: pgfcorepathusage.code.tex 2008/04/22  (rcs-revision 1.12)
-\pgf@shorten@end@additional=\dimen157
-\pgf@shorten@start@additional=\dimen158
+\pgf@shorten@end@additional=\dimen165
+\pgf@shorten@start@additional=\dimen166
 )
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
 File: pgfcorescopes.code.tex 2010/09/08  (rcs-revision 1.34)
-\pgfpic=\box31
-\pgf@hbox=\box32
-\pgf@layerbox@main=\box33
-\pgf@picture@serial@count=\count122
+\pgfpic=\box57
+\pgf@hbox=\box58
+\pgf@layerbox@main=\box59
+\pgf@picture@serial@count=\count132
 )
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2008/04/22  (rcs-revision 1.9)
-\pgflinewidth=\dimen159
+\pgflinewidth=\dimen167
 )
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex
 File: pgfcoretransformations.code.tex 2009/06/10  (rcs-revision 1.11)
-\pgf@pt@x=\dimen160
-\pgf@pt@y=\dimen161
-\pgf@pt@temp=\dimen162
+\pgf@pt@x=\dimen168
+\pgf@pt@y=\dimen169
+\pgf@pt@temp=\dimen170
 )
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
 File: pgfcorequick.code.tex 2008/10/09  (rcs-revision 1.3)
@@ -693,15 +782,15 @@ File: pgfcorearrows.code.tex 2008/04/23  (rcs-revision 1.11)
 )
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2008/11/23  (rcs-revision 1.13)
-\pgf@max=\dimen163
-\pgf@sys@shading@range@num=\count123
+\pgf@max=\dimen171
+\pgf@sys@shading@range@num=\count133
 )
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2010/03/25  (rcs-revision 1.16)
 
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
 File: pgfcoreexternal.code.tex 2010/09/01  (rcs-revision 1.17)
-\pgfexternal@startupbox=\box34
+\pgfexternal@startupbox=\box60
 ))
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
 File: pgfcorelayers.code.tex 2010/08/27  (rcs-revision 1.2)
@@ -714,15 +803,15 @@ File: pgfcorepatterns.code.tex 2009/07/02  (rcs-revision 1.3)
 )))
 (/usr/share/texmf/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
 File: pgfmoduleshapes.code.tex 2010/09/09  (rcs-revision 1.13)
-\pgfnodeparttextbox=\box35
+\pgfnodeparttextbox=\box61
 )
 (/usr/share/texmf/tex/generic/pgf/modules/pgfmoduleplot.code.tex
 File: pgfmoduleplot.code.tex 2010/10/22  (rcs-revision 1.8)
 )
 (/usr/share/texmf/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
 Package: pgfcomp-version-0-65 2007/07/03 v2.10 (rcs-revision 1.7)
-\pgf@nodesepstart=\dimen164
-\pgf@nodesepend=\dimen165
+\pgf@nodesepstart=\dimen172
+\pgf@nodesepend=\dimen173
 )
 (/usr/share/texmf/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
 Package: pgfcomp-version-1-18 2007/07/23 v2.10 (rcs-revision 1.1)
@@ -732,8 +821,8 @@ Package: pgfcomp-version-1-18 2007/07/23 v2.10 (rcs-revision 1.1)
 (/usr/share/texmf/tex/generic/pgf/utilities/pgfkeys.code.tex))
 (/usr/share/texmf/tex/generic/pgf/utilities/pgffor.code.tex
 Package: pgffor 2010/03/23 v2.10 (rcs-revision 1.18)
-\pgffor@iter=\dimen166
-\pgffor@skip=\dimen167
+\pgffor@iter=\dimen174
+\pgffor@skip=\dimen175
 \pgffor@stack=\toks38
 \pgffor@toks=\toks39
 ))
@@ -742,29 +831,29 @@ Package: tikz 2010/10/13 v2.10 (rcs-revision 1.76)
 
 (/usr/share/texmf/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2010/05/31 v2.10 (rcs-revision 1.15)
-\pgf@plot@mark@count=\count124
-\pgfplotmarksize=\dimen168
+\pgf@plot@mark@count=\count134
+\pgfplotmarksize=\dimen176
 )
-\tikz@lastx=\dimen169
-\tikz@lasty=\dimen170
-\tikz@lastxsaved=\dimen171
-\tikz@lastysaved=\dimen172
-\tikzleveldistance=\dimen173
-\tikzsiblingdistance=\dimen174
-\tikz@figbox=\box36
-\tikz@tempbox=\box37
-\tikztreelevel=\count125
-\tikznumberofchildren=\count126
-\tikznumberofcurrentchild=\count127
-\tikz@fig@count=\count128
+\tikz@lastx=\dimen177
+\tikz@lasty=\dimen178
+\tikz@lastxsaved=\dimen179
+\tikz@lastysaved=\dimen180
+\tikzleveldistance=\dimen181
+\tikzsiblingdistance=\dimen182
+\tikz@figbox=\box62
+\tikz@tempbox=\box63
+\tikztreelevel=\count135
+\tikznumberofchildren=\count136
+\tikznumberofcurrentchild=\count137
+\tikz@fig@count=\count138
 
 (/usr/share/texmf/tex/generic/pgf/modules/pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2010/08/24  (rcs-revision 1.4)
-\pgfmatrixcurrentrow=\count129
-\pgfmatrixcurrentcolumn=\count130
-\pgf@matrix@numberofcolumns=\count131
+\pgfmatrixcurrentrow=\count139
+\pgfmatrixcurrentcolumn=\count140
+\pgf@matrix@numberofcolumns=\count141
 )
-\tikz@expandcount=\count132
+\tikz@expandcount=\count142
 
 (/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopat
 hs.code.tex
@@ -778,9 +867,9 @@ Package: pgfplots 2014/02/28 v1.10 Data Visualization (1.10-2-gb39fe75)
 \t@pgfplots@toka=\toks40
 \t@pgfplots@tokb=\toks41
 \t@pgfplots@tokc=\toks42
-\pgfplots@tmpa=\dimen175
-\c@pgfplots@coordindex=\count133
-\c@pgfplots@scanlineindex=\count134
+\pgfplots@tmpa=\dimen183
+\c@pgfplots@coordindex=\count143
+\c@pgfplots@scanlineindex=\count144
 
 (/usr/share/texmf-texlive/tex/generic/pgfplots/sys/pgfplotssysgeneric.code.tex)
 ) (/usr/share/texmf-texlive/tex/generic/pgfplots/libs/pgfplotslibrary.code.tex)
@@ -802,23 +891,23 @@ p_pgfkeysfiltered.code.tex
 ))
 (/usr/share/texmf-texlive/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsup
 p_pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count135
+\c@pgfmathroundto@lastzeros=\count145
 )
 (/usr/share/texmf-texlive/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsup
 p_pgflibraryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2012/09/11 v2.10 (rcs-revision 1.17)
-\pgf@plot@mark@count=\count136
-\pgfplotmarksize=\dimen176
+\pgf@plot@mark@count=\count146
+\pgfplotmarksize=\dimen184
 )
 (/usr/share/texmf-texlive/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsup
 p_pgflibraryfpu.code.tex)
 (/usr/share/texmf-texlive/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsup
 p_pgfcorescopes.code.tex
 File: pgfcorescopes.code.tex 2012/11/30  (rcs-revision 1.38)
-\pgfpic=\box38
-\pgf@hbox=\box39
-\pgf@layerbox@main=\box40
-\pgf@picture@serial@count=\count137
+\pgfpic=\box64
+\pgf@hbox=\box65
+\pgf@layerbox@main=\box66
+\pgf@picture@serial@count=\count147
 )
 (/usr/share/texmf-texlive/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsup
 p_pgfcorelayers.code.tex
@@ -838,13 +927,13 @@ ure.code.tex)
 ureext.code.tex)
 (/usr/share/texmf-texlive/tex/generic/pgfplots/liststructure/pgfplotsarray.code
 .tex
-\c@pgfplotsarray@tmp=\count138
+\c@pgfplotsarray@tmp=\count148
 )
 (/usr/share/texmf-texlive/tex/generic/pgfplots/liststructure/pgfplotsmatrix.cod
 e.tex)
 (/usr/share/texmf-texlive/tex/generic/pgfplots/numtable/pgfplotstableshared.cod
 e.tex
-\c@pgfplotstable@counta=\count139
+\c@pgfplotstable@counta=\count149
 \t@pgfplotstable@a=\toks49
 )
 (/usr/share/texmf-texlive/tex/generic/pgfplots/liststructure/pgfplotsdeque.code
@@ -856,7 +945,7 @@ x))
 
 (/usr/share/texmf-texlive/tex/generic/pgfplots/libs/pgflibrarypgfplots.surfshad
 ing.code.tex
-\c@pgfplotslibrarysurf@no=\count140
+\c@pgfplotslibrarysurf@no=\count150
 
 (/usr/share/texmf-texlive/tex/generic/pgfplots/sys/pgflibrarypgfplots.surfshadi
 ng.pgfsys-pdftex.def)))
@@ -874,16 +963,16 @@ ng.pgfsys-pdftex.def)))
 (/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecor
 ations.code.tex
 (/usr/share/texmf/tex/generic/pgf/modules/pgfmoduledecorations.code.tex
-\pgfdecoratedcompleteddistance=\dimen177
-\pgfdecoratedremainingdistance=\dimen178
-\pgfdecoratedinputsegmentcompleteddistance=\dimen179
-\pgfdecoratedinputsegmentremainingdistance=\dimen180
-\pgf@decorate@distancetomove=\dimen181
-\pgf@decorate@repeatstate=\count141
-\pgfdecorationsegmentamplitude=\dimen182
-\pgfdecorationsegmentlength=\dimen183
+\pgfdecoratedcompleteddistance=\dimen185
+\pgfdecoratedremainingdistance=\dimen186
+\pgfdecoratedinputsegmentcompleteddistance=\dimen187
+\pgfdecoratedinputsegmentremainingdistance=\dimen188
+\pgf@decorate@distancetomove=\dimen189
+\pgf@decorate@repeatstate=\count151
+\pgfdecorationsegmentamplitude=\dimen190
+\pgfdecorationsegmentlength=\dimen191
 )
-\tikz@lib@dec@box=\box41
+\tikz@lib@dec@box=\box67
 )
 (/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecor
 ations.pathmorphing.code.tex
@@ -893,13 +982,13 @@ athmorphing.code.tex))
 ations.pathreplacing.code.tex
 (/usr/share/texmf/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.p
 athreplacing.code.tex))
-\pgfplots@numplots=\count142
-\pgfplots@xmin@reg=\dimen184
-\pgfplots@xmax@reg=\dimen185
-\pgfplots@ymin@reg=\dimen186
-\pgfplots@ymax@reg=\dimen187
-\pgfplots@zmin@reg=\dimen188
-\pgfplots@zmax@reg=\dimen189
+\pgfplots@numplots=\count152
+\pgfplots@xmin@reg=\dimen192
+\pgfplots@xmax@reg=\dimen193
+\pgfplots@ymin@reg=\dimen194
+\pgfplots@ymax@reg=\dimen195
+\pgfplots@zmin@reg=\dimen196
+\pgfplots@zmax@reg=\dimen197
 )
 (/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryplotm
 arks.code.tex
@@ -919,67 +1008,67 @@ File: pgflibrarypatterns.code.tex 2008/03/03 v2.10 (rcs-revision 1.13)
 ))
 (/usr/share/texmf-texlive/tex/latex/easylist/easylist.sty
 Package: easylist 2009/01/06 v.1.2 Numbered items with a single command.
-\el@CounterTotal=\count143
-\el@Scratch=\count144
-\el@ControlCounter=\count145
-\el@CounterLevel=\count146
-\c@List1=\count147
-\c@List2=\count148
-\c@List3=\count149
-\c@List4=\count150
-\c@List5=\count151
-\c@List6=\count152
-\c@List7=\count153
-\c@List8=\count154
-\c@List9=\count155
-\c@List10=\count156
-\el@ProgressiveDimension=\dimen190
-\el@CounterBox=\box42
-\el@ControlBox=\box43
-\el@TotalMargin=\dimen191
-\el@LeftMove=\dimen192
+\el@CounterTotal=\count153
+\el@Scratch=\count154
+\el@ControlCounter=\count155
+\el@CounterLevel=\count156
+\c@List1=\count157
+\c@List2=\count158
+\c@List3=\count159
+\c@List4=\count160
+\c@List5=\count161
+\c@List6=\count162
+\c@List7=\count163
+\c@List8=\count164
+\c@List9=\count165
+\c@List10=\count166
+\el@ProgressiveDimension=\dimen198
+\el@CounterBox=\box68
+\el@ControlBox=\box69
+\el@TotalMargin=\dimen199
+\el@LeftMove=\dimen200
 )
 (/usr/share/texmf-texlive/tex/latex/tools/array.sty
 Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
-\col@sep=\dimen193
-\extrarowheight=\dimen194
+\col@sep=\dimen201
+\extrarowheight=\dimen202
 \NC@list=\toks50
-\extratabsurround=\skip49
-\backup@length=\skip50
+\extratabsurround=\skip85
+\backup@length=\skip86
 )
 (/usr/share/texmf-texlive/tex/latex/tabulary/tabulary.sty
 Package: tabulary 2008/12/01 v0.9 tabulary package (DPC)
-\TY@count=\count157
-\TY@linewidth=\dimen195
-\tymin=\dimen196
-\tymax=\dimen197
-\TY@tablewidth=\dimen198
+\TY@count=\count167
+\TY@linewidth=\dimen203
+\tymin=\dimen204
+\tymax=\dimen205
+\TY@tablewidth=\dimen206
 )
 (/usr/share/texmf-texlive/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count158
+\c@float@type=\count168
 \float@exts=\toks51
-\float@box=\box44
+\float@box=\box70
 \@float@everytoks=\toks52
-\@floatcapt=\box45
+\@floatcapt=\box71
 )
 (/usr/share/texmf-texlive/tex/latex/geometry/geometry.sty
 Package: geometry 2008/12/21 v4.2 Page Geometry
-\Gm@cnth=\count159
-\Gm@cntv=\count160
-\c@Gm@tempcnt=\count161
-\Gm@bindingoffset=\dimen199
-\Gm@wd@mp=\dimen200
-\Gm@odd@mp=\dimen201
-\Gm@even@mp=\dimen202
+\Gm@cnth=\count169
+\Gm@cntv=\count170
+\c@Gm@tempcnt=\count171
+\Gm@bindingoffset=\dimen207
+\Gm@wd@mp=\dimen208
+\Gm@odd@mp=\dimen209
+\Gm@even@mp=\dimen210
 \Gm@dimlist=\toks53
 
 (/usr/share/texmf-texlive/tex/xelatex/xetexconfig/geometry.cfg))
 (/usr/share/texmf-texlive/tex/latex/appendix/appendix.sty
 Package: appendix 2009/09/02 v1.2b extra appendix facilities
-\c@@pps=\count162
-\c@@ppsavesec=\count163
-\c@@ppsaveapp=\count164
+\c@@pps=\count172
+\c@@ppsavesec=\count173
+\c@@ppsaveapp=\count174
 )
 \@indexfile=\write4
 \openout4 = `memoria.idx'.
@@ -987,10 +1076,10 @@ Package: appendix 2009/09/02 v1.2b extra appendix facilities
 
 Writing index file memoria.idx
 (/usr/share/texmf-texlive/tex/latex/wrapfig/wrapfig.sty
-\wrapoverhang=\dimen203
-\WF@size=\dimen204
-\c@WF@wrappedlines=\count165
-\WF@box=\box46
+\wrapoverhang=\dimen211
+\WF@size=\dimen212
+\c@WF@wrappedlines=\count175
+\WF@box=\box72
 \WF@everypar=\toks54
 Package: wrapfig 2003/01/31  v 3.6
 )
@@ -1003,13 +1092,13 @@ File: tikzlibraryarrows.code.tex 2008/01/09 v2.10 (rcs-revision 1.1)
 
 (/usr/share/texmf/tex/generic/pgf/libraries/pgflibraryarrows.code.tex
 File: pgflibraryarrows.code.tex 2008/10/27 v2.10 (rcs-revision 1.9)
-\arrowsize=\dimen205
+\arrowsize=\dimen213
 ))
 (/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarybackg
 rounds.code.tex
 File: tikzlibrarybackgrounds.code.tex 2010/02/08 v2.10 (rcs-revision 1.2)
-\pgf@layerbox@background=\box47
-\pgf@layerboxsaved@background=\box48
+\pgf@layerbox@background=\box73
+\pgf@layerboxsaved@background=\box74
 )
 (/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarycalc.
 code.tex
@@ -1029,33 +1118,33 @@ File: pgflibraryshapes.geometric.code.tex 2008/06/26 v2.10 (rcs-revision 1.1)
 )) (/usr/share/texmf/tex/latex/pgf/utilities/pgfcalendar.sty
 (/usr/share/texmf/tex/generic/pgf/utilities/pgfcalendar.code.tex
 File: pgfcalendar.code.tex 2007/07/23 v2.10 (rcs-revision 1.11)
-\pgfcalendarcurrentjulian=\count166
+\pgfcalendarcurrentjulian=\count176
 ))
-\gtt@currentline=\count167
-\gtt@lasttitleline=\count168
-\gtt@currgrid=\count169
-\gtt@chartwidth=\count170
-\gtt@lasttitleslot=\count171
-\gtt@elementid=\count172
-\gtt@today@slot=\count173
-\gtt@startjulian=\count174
-\gtt@endjulian=\count175
-\gtt@calendar@slots=\count176
-\gtt@calendar@weeknumber=\count177
-\gtt@calendar@startofweek=\count178
-\gtt@left@slot=\count179
-\gtt@right@slot=\count180
+\gtt@currentline=\count177
+\gtt@lasttitleline=\count178
+\gtt@currgrid=\count179
+\gtt@chartwidth=\count180
+\gtt@lasttitleslot=\count181
+\gtt@elementid=\count182
+\gtt@today@slot=\count183
+\gtt@startjulian=\count184
+\gtt@endjulian=\count185
+\gtt@calendar@slots=\count186
+\gtt@calendar@weeknumber=\count187
+\gtt@calendar@startofweek=\count188
+\gtt@left@slot=\count189
+\gtt@right@slot=\count190
 )
 (/usr/share/texmf-texlive/tex/latex/fancyhdr/fancyhdr.sty
-\fancy@headwidth=\skip51
-\f@ncyO@elh=\skip52
-\f@ncyO@erh=\skip53
-\f@ncyO@olh=\skip54
-\f@ncyO@orh=\skip55
-\f@ncyO@elf=\skip56
-\f@ncyO@erf=\skip57
-\f@ncyO@olf=\skip58
-\f@ncyO@orf=\skip59
+\fancy@headwidth=\skip87
+\f@ncyO@elh=\skip88
+\f@ncyO@erh=\skip89
+\f@ncyO@olh=\skip90
+\f@ncyO@orh=\skip91
+\f@ncyO@elf=\skip92
+\f@ncyO@erf=\skip93
+\f@ncyO@olf=\skip94
+\f@ncyO@orf=\skip95
 )
 (/usr/share/texmf-texlive/tex/latex/anysize/anysize.sty
 Package: anysize 1994/08/13 setting margin sizes
@@ -1063,36 +1152,36 @@ Package: anysize 1994/08/13 setting margin sizes
 document style option `anysize' loaded
 Michael Salzenberg, Thomas Esser, Dirk Hillbrecht
 Version 1.0, Aug 13, 1994
-\@Leftmargin=\dimen206
-\@Rightmargin=\dimen207
-\@Topmargin=\dimen208
-\@Bottommargin=\dimen209
+\@Leftmargin=\dimen214
+\@Rightmargin=\dimen215
+\@Topmargin=\dimen216
+\@Bottommargin=\dimen217
 ) (/usr/share/texmf-texlive/tex/latex/natbib/natbib.sty
 Package: natbib 2009/07/16 8.31 (PWD, AO)
-\bibhang=\skip60
-\bibsep=\skip61
+\bibhang=\skip96
+\bibsep=\skip97
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count181
+\c@NAT@ctr=\count191
 )
 (/usr/share/texmf-texlive/tex/latex/listings/listings.sty
-\lst@mode=\count182
-\lst@gtempboxa=\box49
+\lst@mode=\count192
+\lst@gtempboxa=\box75
 \lst@token=\toks55
-\lst@length=\count183
-\lst@currlwidth=\dimen210
-\lst@column=\count184
-\lst@pos=\count185
-\lst@lostspace=\dimen211
-\lst@width=\dimen212
-\lst@newlines=\count186
-\lst@lineno=\count187
-\lst@maxwidth=\dimen213
+\lst@length=\count193
+\lst@currlwidth=\dimen218
+\lst@column=\count194
+\lst@pos=\count195
+\lst@lostspace=\dimen219
+\lst@width=\dimen220
+\lst@newlines=\count196
+\lst@lineno=\count197
+\lst@maxwidth=\dimen221
 
 (/usr/share/texmf-texlive/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
-\c@lstnumber=\count188
-\lst@skipnumbers=\count189
-\lst@framebox=\box50
+\c@lstnumber=\count198
+\lst@skipnumbers=\count199
+\lst@framebox=\box76
 )
 (/usr/share/texmf-texlive/tex/latex/listings/listings.cfg
 File: listings.cfg 2007/02/22 1.4 listings configuration
@@ -1104,51 +1193,51 @@ File: lstlang1.sty 2004/09/05 1.3 listings language file
 ) (./memoria.aux)
 \openout1 = `memoria.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
 
 (/usr/share/texmf-texlive/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count190
-\scratchdimen=\dimen214
-\scratchbox=\box51
-\nofMPsegments=\count191
-\nofMParguments=\count192
+\scratchcounter=\count200
+\scratchdimen=\dimen222
+\scratchbox=\box77
+\nofMPsegments=\count201
+\nofMParguments=\count202
 \everyMPshowfont=\toks56
-\MPscratchCnt=\count193
-\MPscratchDim=\dimen215
-\MPnumerator=\count194
+\MPscratchCnt=\count203
+\MPscratchDim=\dimen223
+\MPnumerator=\count204
 \everyMPtoPDFconversion=\toks57
 )
-Package hyperref Info: Link coloring OFF on input line 96.
+Package hyperref Info: Link coloring OFF on input line 98.
  (/usr/share/texmf-texlive/tex/latex/hyperref/nameref.sty
 Package: nameref 2007/05/29 v2.31 Cross-referencing by name of section
 
 (/usr/share/texmf-texlive/tex/latex/oberdiek/refcount.sty
 Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
 )
-\c@section@level=\count195
+\c@section@level=\count205
 )
-LaTeX Info: Redefining \ref on input line 96.
-LaTeX Info: Redefining \pageref on input line 96.
+LaTeX Info: Redefining \ref on input line 98.
+LaTeX Info: Redefining \pageref on input line 98.
  (./memoria.out)
 (./memoria.out)
 \@outlinefile=\write5
 \openout5 = `memoria.out'.
 
-\AtBeginShipoutBox=\box52
+\AtBeginShipoutBox=\box78
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: listings package is loaded.
@@ -1159,7 +1248,7 @@ Package caption Info: End \AtBeginDocument code.
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.10} into 
 your preamble.
- on input line 96.
+ on input line 98.
 
 *geometry auto-detecting driver*
 *geometry detected driver: pdftex*
@@ -1202,12 +1291,12 @@ driver: pdftex
 \@twosidetrue \@mparswitchtrue 
 (1in=72.27pt, 1cm=28.45pt)
 -----------------------
-\c@lstlisting=\count196
-LaTeX Font Info:    Try loading font information for U+msa on input line 99.
+\c@lstlisting=\count206
+LaTeX Font Info:    Try loading font information for U+msa on input line 101.
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 99.
+LaTeX Font Info:    Try loading font information for U+msb on input line 101.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
@@ -1218,52 +1307,63 @@ File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 
 pdfTeX warning: pdflatex (file ./images/etseib.pdf): PDF inclusion: found PDF v
 ersion <1.5>, but at most version <1.4> allowed
-<images/etseib.pdf, id=177, 216.81pt x 283.459pt>
+<images/etseib.pdf, id=245, 216.81pt x 283.459pt>
 File: images/etseib.pdf Graphic file (type pdf)
  <use images/etseib.pdf>pdfTeX warning (ext4): destination with the same identi
 fier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.124 \newpage
+l.126 \newpage
                [1
 
- <./images/etseib.pdf>]pdfTeX warning (ext4): destination with the same identif
+ <./images/etseib.pdf>] (./memoria.toc
+File: images/etseib.pdf Graphic file (type pdf)
+
+<use images/etseib.pdf>pdfTeX warning (ext4): destination with the same identif
 ier (name{page.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.126 \cleardoublepage
-                       [2
-
-] (./memoria.toc [3
-
-])
+l.29 ...on}{\numberline {5.1}ROS}{49}{section.5.1}
+                                                   [2]
+File: images/etseib.pdf Graphic file (type pdf)
+ <use images/etseib.pdf>
+[3])
 \tf@toc=\write6
 \openout6 = `memoria.toc'.
 
 File: images/etseib.pdf Graphic file (type pdf)
- <use images/etseib.pdf> [4]
-(./memoria.lof [5
+ <use images/etseib.pdf> [4] (./memoria.lof
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-]
+File: images/etseib.pdf Graphic file (type pdf)
+
+<use images/etseib.pdf> [5]
 File: images/etseib.pdf Graphic file (type pdf)
  <use images/etseib.pdf> [6])
 \tf@lof=\write7
 \openout7 = `memoria.lof'.
 
 File: images/etseib.pdf Graphic file (type pdf)
- <use images/etseib.pdf>
-[7]
-File: images/etseib.pdf Graphic file (type pdf)
- <use images/etseib.pdf> [8
 
-] (./memoria.lot)
+<use images/etseib.pdf> [7] (./memoria.lot)
 \tf@lot=\write8
 \openout8 = `memoria.lot'.
 
- [9]
 File: images/etseib.pdf Graphic file (type pdf)
- <use images/etseib.pdf>
-[10] <images/kuka.jpg, id=403, 96.36pt x 64.0794pt>
+ <use images/etseib.pdf> [8]
+Cap\'{\i }tulo 1.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+File: images/etseib.pdf Graphic file (type pdf)
+
+<use images/etseib.pdf> [9
+
+]
+File: images/etseib.pdf Graphic file (type pdf)
+ <use images/etseib.pdf> [10]
+Cap\'{\i }tulo 2.
+<images/kuka.jpg, id=485, 96.36pt x 64.0794pt>
 File: images/kuka.jpg Graphic file (type jpg)
  <use images/kuka.jpg>
 
@@ -1272,131 +1372,152 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 File: images/etseib.pdf Graphic file (type pdf)
 <use images/etseib.pdf> [11
 
+
 ]
-<images/Wildcat.jpg, id=425, 642.4pt x 354.32375pt>
+<images/Wildcat.jpg, id=504, 642.4pt x 354.32375pt>
 File: images/Wildcat.jpg Graphic file (type jpg)
  <use images/Wildcat.jpg>
-File: images/etseib.pdf Graphic file (type pdf)
 
-<use images/etseib.pdf> [12 <./images/kuka.jpg> <./images/Wildcat.jpg>]
-File: images/etseib.pdf Graphic file (type pdf)
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<use images/etseib.pdf> [13]
-Overfull \hbox (11.11098pt too wide) in paragraph at lines 231--233
+File: images/etseib.pdf Graphic file (type pdf)
+<use images/etseib.pdf> [12 <./images/kuka.jpg>]
+File: images/etseib.pdf Graphic file (type pdf)
+ <use images/etseib.pdf>
+[13 <./images/Wildcat.jpg>]
+File: images/etseib.pdf Graphic file (type pdf)
+ <use images/etseib.pdf> [14]
+Overfull \hbox (11.11098pt too wide) in paragraph at lines 241--243
 []\OT1/cmr/m/n/12 EL ob-je-ti-vo de es-te pro-yec-to es re-cu-pe-rar al AI-BO c
 o-mo pla-ta-for-ma edu-ca-ti-va aport^^Sando-
  []
 
 File: images/etseib.pdf Graphic file (type pdf)
-<use images/etseib.pdf> [14]
+<use images/etseib.pdf> [15]
 Missing character: There is no , in font nullfont!
-File: images/etseib.pdf Graphic file (type pdf)
- <use images/etseib.pdf> [15]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
 File: images/etseib.pdf Graphic file (type pdf)
 
 <use images/etseib.pdf> [16]
-<images/ers7lrg.jpg, id=487, 909.3975pt x 990.70125pt>
+File: images/etseib.pdf Graphic file (type pdf)
+ <use images/etseib.pdf> [17]
+File: images/etseib.pdf Graphic file (type pdf)
+
+<use images/etseib.pdf> [18
+
+
+]
+Cap\'{\i }tulo 3.
+<images/ers7lrg.jpg, id=574, 909.3975pt x 990.70125pt>
 File: images/ers7lrg.jpg Graphic file (type jpg)
 
 <use images/ers7lrg.jpg>
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 346.
+File: images/etseib.pdf Graphic file (type pdf)
+ <use images/etseib.pdf> [19 <./images/ers7lrg.jpg>]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 357.
 
- (/usr/share/texmf-texlive/tex/latex/base/omscmr.fd
+
+(/usr/share/texmf-texlive/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 346.
-File: images/etseib.pdf Graphic file (type pdf)
-
-<use images/etseib.pdf> [17
-
- <./images/ers7lrg.jpg>]
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 357.
 File: images/etseib.pdf Graphic file (type pdf)
  <use images/etseib.pdf>
-[18]
+[20]
 
 pdfTeX warning: pdflatex (file ./images/openrarch.pdf): PDF inclusion: found PD
 F version <1.5>, but at most version <1.4> allowed
-<images/openrarch.pdf, id=503, 256.07481pt x 142.26378pt>
+<images/openrarch.pdf, id=589, 256.07481pt x 142.26378pt>
 File: images/openrarch.pdf Graphic file (type pdf)
 
 <use images/openrarch.pdf>
-File: images/etseib.pdf Graphic file (type pdf)
- <use images/etseib.pdf> [19 <./images/openrarch.pdf>]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
 
 pdfTeX warning: pdflatex (file ./images/ObjectCom.pdf): PDF inclusion: found PD
 F version <1.5>, but at most version <1.4> allowed
-<images/ObjectCom.pdf, id=526, 789.34903pt x 326.821pt>
+<images/ObjectCom.pdf, id=595, 789.34903pt x 326.821pt>
 File: images/ObjectCom.pdf Graphic file (type pdf)
 
 <use images/ObjectCom.pdf>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
 File: images/etseib.pdf Graphic file (type pdf)
- <use images/etseib.pdf> [20 <./images/ObjectCom.pdf>]
+<use images/etseib.pdf> [21 <./images/openrarch.pdf>]
+File: images/etseib.pdf Graphic file (type pdf)
+ <use images/etseib.pdf>
+[22 <./images/ObjectCom.pdf>]
 
 pdfTeX warning: pdflatex (file ./images/tekk.pdf): PDF inclusion: found PDF ver
 sion <1.5>, but at most version <1.4> allowed
-<images/tekk.pdf, id=544, 256.07481pt x 142.26378pt>
+<images/tekk.pdf, id=629, 256.07481pt x 142.26378pt>
 File: images/tekk.pdf Graphic file (type pdf)
  <use images/tekk.pdf>
 File: images/etseib.pdf Graphic file (type pdf)
 
-<use images/etseib.pdf> [21 <./images/tekk.pdf>]
+<use images/etseib.pdf> [23 <./images/tekk.pdf>]
 
 pdfTeX warning: pdflatex (file ./images/tekkotsuarch.pdf): PDF inclusion: found
  PDF version <1.5>, but at most version <1.4> allowed
-<images/tekkotsuarch.pdf, id=568, 1284.8pt x 963.6pt>
+<images/tekkotsuarch.pdf, id=653, 1284.8pt x 963.6pt>
 File: images/tekkotsuarch.pdf Graphic file (type pdf)
 
 <use images/tekkotsuarch.pdf>
 File: images/etseib.pdf Graphic file (type pdf)
- <use images/etseib.pdf> [22 <./images/tekkotsuarch.pdf>]
+ <use images/etseib.pdf> [24 <./images/tekkotsuarch.pdf>]
 
 pdfTeX warning: pdflatex (file ./images/urbiarc.pdf): PDF inclusion: found PDF 
 version <1.5>, but at most version <1.4> allowed
-<images/urbiarc.pdf, id=584, 256.07481pt x 142.26378pt>
+<images/urbiarc.pdf, id=669, 256.07481pt x 142.26378pt>
 File: images/urbiarc.pdf Graphic file (type pdf)
 
 <use images/urbiarc.pdf>
 File: images/etseib.pdf Graphic file (type pdf)
- <use images/etseib.pdf> [23 <./images/urbiarc.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 550--550
-[]|\OT1/cmr/m/n/12 Windows/
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 550--550
-[]|\OT1/cmr/m/n/12 Windows/
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
+ <use images/etseib.pdf> [25 <./images/urbiarc.pdf>]
 File: images/etseib.pdf Graphic file (type pdf)
 
-<use images/etseib.pdf> [24
+<use images/etseib.pdf> [26
+
 
 ]
+Cap\'{\i }tulo 4.
+File: images/etseib.pdf Graphic file (type pdf)
+<use images/etseib.pdf> [27]
+Underfull \hbox (badness 10000) in paragraph at lines 563--563
+[]|\OT1/cmr/m/n/12 Windows/
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 563--563
+[]|\OT1/cmr/m/n/12 Windows/
+ []
+
+File: images/etseib.pdf Graphic file (type pdf)
+<use images/etseib.pdf> [28]
 
 pdfTeX warning: pdflatex (file ./images/lectdata.pdf): PDF inclusion: found PDF
  version <1.5>, but at most version <1.4> allowed
-<images/lectdata.pdf, id=609, 256.07481pt x 142.26378pt>
+<images/lectdata.pdf, id=701, 256.07481pt x 142.26378pt>
 File: images/lectdata.pdf Graphic file (type pdf)
 
 <use images/lectdata.pdf>
 File: images/etseib.pdf Graphic file (type pdf)
- <use images/etseib.pdf> [25]
-File: images/etseib.pdf Graphic file (type pdf)
- <use images/etseib.pdf>
-[26 <./images/lectdata.pdf>]
+ <use images/etseib.pdf> [29 <./images/lectdata.pdf>]
 
 pdfTeX warning: pdflatex (file ./images/telnet.pdf): PDF inclusion: found PDF v
 ersion <1.5>, but at most version <1.4> allowed
-<images/telnet.pdf, id=634, 578.16pt x 390.25798pt>
+<images/telnet.pdf, id=722, 578.16pt x 390.25798pt>
 File: images/telnet.pdf Graphic file (type pdf)
  <use images/telnet.pdf>
 File: images/etseib.pdf Graphic file (type pdf)
 
-<use images/etseib.pdf> [27 <./images/telnet.pdf>]
+<use images/etseib.pdf> [30 <./images/telnet.pdf>]
 Missing character: There is no c in font nullfont!
 Missing character: There is no o in font nullfont!
 Missing character: There is no o in font nullfont!
@@ -1762,596 +1883,574 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 File: images/etseib.pdf Graphic file (type pdf)
 
-<use images/etseib.pdf> [28]
+<use images/etseib.pdf> [31]
 File: images/etseib.pdf Graphic file (type pdf)
- <use images/etseib.pdf> [29]
-File: images/etseib.pdf Graphic file (type pdf)
-
-<use images/etseib.pdf> [30]
-File: images/etseib.pdf Graphic file (type pdf)
- <use images/etseib.pdf> [31]
-Missing character: There is no c in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no ; in font nullfont!
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
+ <use images/etseib.pdf> [32]
 File: images/etseib.pdf Graphic file (type pdf)
 
-<use images/etseib.pdf> [32]
-PGFPlots: reading {data/mediaPyOne.dat}
-PGFPlots: reading {data/mediaPyAll.dat}
-PGFPlots: reading {data/mediaC++One.dat}
-PGFPlots: reading {data/mediaC++All.dat}
+<use images/etseib.pdf> [33]
 File: images/etseib.pdf Graphic file (type pdf)
- <use images/etseib.pdf> [33]
-File: images/etseib.pdf Graphic file (type pdf)
+ <use images/etseib.pdf> [34]
+Missing character: There is no c in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no ; in font nullfont!
 
-<use images/etseib.pdf> [34]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 File: images/etseib.pdf Graphic file (type pdf)
 
 <use images/etseib.pdf> [35]
+PGFPlots: reading {data/mediaPyOne.dat}
+PGFPlots: reading {data/mediaPyAll.dat}
+PGFPlots: reading {data/mediaC++One.dat}
+PGFPlots: reading {data/mediaC++All.dat}
 File: images/etseib.pdf Graphic file (type pdf)
  <use images/etseib.pdf> [36]
+File: images/etseib.pdf Graphic file (type pdf)
 
-pdfTeX warning: pdflatex (file ./images/sin1H.pdf): PDF inclusion: found PDF ve
-rsion <1.5>, but at most version <1.4> allowed
-<images/sin1H.pdf, id=699, 1284.8pt x 963.6pt>
-File: images/sin1H.pdf Graphic file (type pdf)
- <use images/sin1H.pdf>
-Overfull \hbox (20.12445pt too wide) in paragraph at lines 1425--1426
- [][] 
- []
+<use images/etseib.pdf> [37]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
+File: images/etseib.pdf Graphic file (type pdf)
 
-
-pdfTeX warning: pdflatex (file ./images/sin2H.pdf): PDF inclusion: found PDF ve
-rsion <1.5>, but at most version <1.4> allowed
-<images/sin2H.pdf, id=701, 1284.8pt x 963.6pt>
-File: images/sin2H.pdf Graphic file (type pdf)
- <use images/sin2H.pdf>
-Overfull \hbox (20.12445pt too wide) in paragraph at lines 1431--1432
- [][] 
- []
-
-
+<use images/etseib.pdf> [38]
+File: images/etseib.pdf Graphic file (type pdf)
+ <use images/etseib.pdf> [39]
+<plots/h1-f1.pdf, id=784, 433.62pt x 454.19687pt>
+File: plots/h1-f1.pdf Graphic file (type pdf)
+ <use plots/h1-f1.pdf>
 Underfull \vbox (badness 6825) has occurred while \output is active []
 
 File: images/etseib.pdf Graphic file (type pdf)
 
-<use images/etseib.pdf> [37]
+<use images/etseib.pdf> [40] <plots/h2.pdf, id=790, 436.12938pt x 454.19687pt>
+File: plots/h2.pdf Graphic file (type pdf)
 
-pdfTeX warning: pdflatex (file ./images/sin5H.pdf): PDF inclusion: found PDF ve
-rsion <1.5>, but at most version <1.4> allowed
-<images/sin5H.pdf, id=708, 1284.8pt x 963.6pt>
-File: images/sin5H.pdf Graphic file (type pdf)
- <use images/sin5H.pdf>
-Overfull \hbox (20.12445pt too wide) in paragraph at lines 1437--1438
- [][] 
- []
+<use plots/h2.pdf> <plots/h5.pdf, id=791, 440.64626pt x 454.19687pt>
+File: plots/h5.pdf Graphic file (type pdf)
 
-
+<use plots/h5.pdf>
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 File: images/etseib.pdf Graphic file (type pdf)
 
-<use images/etseib.pdf> [38 <./images/sin1H.pdf>]
-
-pdfTeX warning: pdflatex (file ./images/sin10H.pdf): PDF inclusion: found PDF v
-ersion <1.5>, but at most version <1.4> allowed
-<images/sin10H.pdf, id=1127, 1284.8pt x 963.6pt>
-File: images/sin10H.pdf Graphic file (type pdf)
- <use images/sin10H.pdf>
-Overfull \hbox (20.12445pt too wide) in paragraph at lines 1443--1444
- [][] 
- []
-
-
+<use images/etseib.pdf> [41 <./plots/h1-f1.pdf>]
+<plots/h10.pdf, id=803, 436.12938pt x 454.19687pt>
+File: plots/h10.pdf Graphic file (type pdf)
+ <use plots/h10.pdf>
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 File: images/etseib.pdf Graphic file (type pdf)
 
-<use images/etseib.pdf> [39 <./images/sin2H.pdf>]
+<use images/etseib.pdf> [42 <./plots/h2.pdf>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 File: images/etseib.pdf Graphic file (type pdf)
 
-<use images/etseib.pdf> [40 <./images/sin5H.pdf>]
+<use images/etseib.pdf> [43 <./plots/h5.pdf>]
 File: images/etseib.pdf Graphic file (type pdf)
- <use images/etseib.pdf>
-[41 <./images/sin10H.pdf>]
+ <use images/etseib.pdf> [44 <./plots/h10.pdf>]
 PGFPlots: reading {data/retrasoPy.dat}
 PGFPlots: reading {data/retrasoC++.dat}
-
-Underfull \hbox (badness 10000) in paragraph at lines 1502--1502
+File: images/etseib.pdf Graphic file (type pdf)
+ <use images/etseib.pdf> [45]
+Underfull \hbox (badness 10000) in paragraph at lines 1520--1520
 []|\OT1/cmr/bx/n/12 Python con
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1502--1502
+Underfull \hbox (badness 10000) in paragraph at lines 1520--1520
 []|\OT1/cmr/bx/n/12 C++ con
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1502--1502
+Underfull \hbox (badness 10000) in paragraph at lines 1520--1520
 \OT1/cmr/bx/n/12 li-bur-bi y 1
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1502--1502
+Underfull \hbox (badness 10000) in paragraph at lines 1520--1520
 []|\OT1/cmr/bx/n/12 C++ con
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1502--1502
+Underfull \hbox (badness 10000) in paragraph at lines 1520--1520
 \OT1/cmr/bx/n/12 li-bur-bi y 2
  []
 
 
-Underfull \hbox (badness 1297) in paragraph at lines 1502--1502
+Underfull \hbox (badness 1297) in paragraph at lines 1520--1520
 []|\OT1/cmr/m/n/12 Frecuencia me-dia de
  []
 
 
-Underfull \hbox (badness 3838) in paragraph at lines 1502--1502
+Underfull \hbox (badness 3838) in paragraph at lines 1520--1520
 []|\OT1/cmr/m/n/12 Congelaciones en la
  []
 
 
-Underfull \hbox (badness 3612) in paragraph at lines 1502--1502
+Underfull \hbox (badness 3612) in paragraph at lines 1520--1520
 []|\OT1/cmr/m/n/12 Seguimiento de tra-
  []
 
 
-Underfull \hbox (badness 6078) in paragraph at lines 1502--1502
+Underfull \hbox (badness 6078) in paragraph at lines 1520--1520
 []|\OT1/cmr/m/n/12 Efecto ne-ga-ti-vo del
  []
 
 
-Underfull \hbox (badness 6658) in paragraph at lines 1502--1502
+Underfull \hbox (badness 6658) in paragraph at lines 1520--1520
 []|\OT1/cmr/m/n/12 Bloqueos de en el
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1502--1502
+Underfull \hbox (badness 10000) in paragraph at lines 1520--1520
 []|\OT1/cmr/bx/n/12 Python con
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1502--1502
+Underfull \hbox (badness 10000) in paragraph at lines 1520--1520
 []|\OT1/cmr/bx/n/12 C++ con
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1502--1502
+Underfull \hbox (badness 10000) in paragraph at lines 1520--1520
 \OT1/cmr/bx/n/12 li-bur-bi y 1
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1502--1502
+Underfull \hbox (badness 10000) in paragraph at lines 1520--1520
 []|\OT1/cmr/bx/n/12 C++ con
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1502--1502
+Underfull \hbox (badness 10000) in paragraph at lines 1520--1520
 \OT1/cmr/bx/n/12 li-bur-bi y 2
  []
 
 
-Underfull \hbox (badness 1297) in paragraph at lines 1502--1502
+Underfull \hbox (badness 1297) in paragraph at lines 1520--1520
 []|\OT1/cmr/m/n/12 Frecuencia me-dia de
  []
 
 
-Underfull \hbox (badness 3838) in paragraph at lines 1502--1502
+Underfull \hbox (badness 3838) in paragraph at lines 1520--1520
 []|\OT1/cmr/m/n/12 Congelaciones en la
  []
 
 
-Underfull \hbox (badness 3612) in paragraph at lines 1502--1502
+Underfull \hbox (badness 3612) in paragraph at lines 1520--1520
 []|\OT1/cmr/m/n/12 Seguimiento de tra-
  []
 
 
-Underfull \hbox (badness 6078) in paragraph at lines 1502--1502
+Underfull \hbox (badness 6078) in paragraph at lines 1520--1520
 []|\OT1/cmr/m/n/12 Efecto ne-ga-ti-vo del
  []
 
 
-Underfull \hbox (badness 6658) in paragraph at lines 1502--1502
+Underfull \hbox (badness 6658) in paragraph at lines 1520--1520
 []|\OT1/cmr/m/n/12 Bloqueos de en el
  []
 
 File: images/etseib.pdf Graphic file (type pdf)
-<use images/etseib.pdf> [42]
+<use images/etseib.pdf> [46]
 File: images/etseib.pdf Graphic file (type pdf)
- <use images/etseib.pdf> [43]
+ <use images/etseib.pdf> [47]
 File: images/etseib.pdf Graphic file (type pdf)
 
-<use images/etseib.pdf> [44]
+<use images/etseib.pdf> [48
+
+]
+Cap\'{\i }tulo 5.
+File: images/etseib.pdf Graphic file (type pdf)
+<use images/etseib.pdf> [49]
 
 pdfTeX warning: pdflatex (file ./images/aiboserverNodo.pdf): PDF inclusion: fou
 nd PDF version <1.5>, but at most version <1.4> allowed
-<images/aiboserverNodo.pdf, id=2671, 642.4pt x 481.8pt>
+<images/aiboserverNodo.pdf, id=857, 642.4pt x 481.8pt>
 File: images/aiboserverNodo.pdf Graphic file (type pdf)
 
 <use images/aiboserverNodo.pdf>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
 File: images/etseib.pdf Graphic file (type pdf)
- <use images/etseib.pdf> [45 <./images/aiboserverNodo.pdf>]
+
+<use images/etseib.pdf> [50]
+File: images/etseib.pdf Graphic file (type pdf)
+ <use images/etseib.pdf> [51 <./images/aiboserverNodo.pdf>]
 
 pdfTeX warning: pdflatex (file ./images/Aibo_Server.pdf): PDF inclusion: found 
 PDF version <1.5>, but at most version <1.4> allowed
-<images/Aibo_Server.pdf, id=2682, 1284.8pt x 963.6pt>
+<images/Aibo_Server.pdf, id=872, 1284.8pt x 963.6pt>
 File: images/Aibo_Server.pdf Graphic file (type pdf)
 
 <use images/Aibo_Server.pdf>
-Underfull \vbox (badness 1005) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 File: images/etseib.pdf Graphic file (type pdf)
 
-<use images/etseib.pdf> [46]
+<use images/etseib.pdf> [52]
 File: images/etseib.pdf Graphic file (type pdf)
- <use images/etseib.pdf> [47 <./images/Aibo_Server.pdf>] <images/getTopics.png,
- id=2704, 1371.1225pt x 770.88pt>
+ <use images/etseib.pdf> [53 <./images/Aibo_Server.pdf>] <images/getTopics.png,
+ id=893, 1371.1225pt x 770.88pt>
 File: images/getTopics.png Graphic file (type png)
 
 <use images/getTopics.png>
@@ -2359,12 +2458,12 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 File: images/etseib.pdf Graphic file (type pdf)
 
-<use images/etseib.pdf> [48]
-<images/addaccel.png, id=2710, 1217.7495pt x 542.025pt>
+<use images/etseib.pdf> [54]
+<images/addaccel.png, id=898, 1217.7495pt x 542.025pt>
 File: images/addaccel.png Graphic file (type png)
 
 <use images/addaccel.png>
-Overfull \hbox (31.84706pt too wide) in paragraph at lines 1619--1620
+Overfull \hbox (31.84706pt too wide) in paragraph at lines 1638--1639
  [][] 
  []
 
@@ -2372,82 +2471,82 @@ Overfull \hbox (31.84706pt too wide) in paragraph at lines 1619--1620
 
 pdfTeX warning: pdflatex (file ./images/rosgraphASsin.pdf): PDF inclusion: foun
 d PDF version <1.5>, but at most version <1.4> allowed
-<images/rosgraphASsin.pdf, id=2716, 1111.15125pt x 158.59253pt>
+<images/rosgraphASsin.pdf, id=904, 1111.15125pt x 158.59253pt>
 File: images/rosgraphASsin.pdf Graphic file (type pdf)
 
 <use images/rosgraphASsin.pdf>
 File: images/etseib.pdf Graphic file (type pdf)
- <use images/etseib.pdf> [49 <./images/getTopics.png (PNG copy)> <./images/adda
+ <use images/etseib.pdf> [55 <./images/getTopics.png (PNG copy)> <./images/adda
 ccel.png>]
-<images/sinlegWR/10Ry2S.png, id=2728, 760.2804pt x 398.9304pt>
+<images/sinlegWR/10Ry2S.png, id=915, 760.2804pt x 398.9304pt>
 File: images/sinlegWR/10Ry2S.png Graphic file (type png)
 
 <use images/sinlegWR/10Ry2S.png>
-Overfull \hbox (46.54251pt too wide) in paragraph at lines 1641--1642
+Overfull \hbox (46.54251pt too wide) in paragraph at lines 1660--1661
  [][] 
  []
 
-<images/sinlegWR/10Ry7S.png, id=2729, 760.2804pt x 398.9304pt>
+<images/sinlegWR/10Ry7S.png, id=916, 760.2804pt x 398.9304pt>
 File: images/sinlegWR/10Ry7S.png Graphic file (type png)
 
 <use images/sinlegWR/10Ry7S.png>
-Overfull \hbox (46.54251pt too wide) in paragraph at lines 1647--1648
+Overfull \hbox (46.54251pt too wide) in paragraph at lines 1666--1667
  [][] 
  []
 
-<images/sinlegWR/10Ry10SAll.png, id=2730, 760.2804pt x 398.9304pt>
+<images/sinlegWR/10Ry10SAll.png, id=917, 760.2804pt x 398.9304pt>
 File: images/sinlegWR/10Ry10SAll.png Graphic file (type png)
 
 <use images/sinlegWR/10Ry10SAll.png>
-Overfull \hbox (46.54251pt too wide) in paragraph at lines 1653--1654
+Overfull \hbox (46.54251pt too wide) in paragraph at lines 1672--1673
  [][] 
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 2744) has occurred while \output is active []
 
 File: images/etseib.pdf Graphic file (type pdf)
 
-<use images/etseib.pdf> [50 <./images/rosgraphASsin.pdf> <./images/sinlegWR/10R
+<use images/etseib.pdf> [56 <./images/rosgraphASsin.pdf> <./images/sinlegWR/10R
 y2S.png>]
 File: images/etseib.pdf Graphic file (type pdf)
- <use images/etseib.pdf> [51 <./images/sinlegWR/10Ry7S.png> <./images/sinlegWR/
+ <use images/etseib.pdf> [57 <./images/sinlegWR/10Ry7S.png> <./images/sinlegWR/
 10Ry10SAll.png>]
 
 pdfTeX warning: pdflatex (file ./images/esquemaCall.pdf): PDF inclusion: found 
 PDF version <1.5>, but at most version <1.4> allowed
-<images/esquemaCall.pdf, id=2744, 597.50786pt x 845.04686pt>
+<images/esquemaCall.pdf, id=932, 597.50786pt x 845.04686pt>
 File: images/esquemaCall.pdf Graphic file (type pdf)
 
 <use images/esquemaCall.pdf>
-Overfull \hbox (4.83836pt too wide) in paragraph at lines 1676--1677
+Overfull \hbox (4.83836pt too wide) in paragraph at lines 1695--1696
  [][] 
  []
 
 
-Underfull \vbox (badness 3826) has occurred while \output is active []
+Underfull \vbox (badness 3323) has occurred while \output is active []
 
 File: images/etseib.pdf Graphic file (type pdf)
 
-<use images/etseib.pdf> [52]
+<use images/etseib.pdf> [58]
 Overfull \vbox (50.23154pt too high) has occurred while \output is active []
 
 File: images/etseib.pdf Graphic file (type pdf)
 
-<use images/etseib.pdf> [53 <./images/esquemaCall.pdf>]
-<images/sinlegWR/mejorado/empiezamala.png, id=2766, 1217.7495pt x 542.025pt>
+<use images/etseib.pdf> [59 <./images/esquemaCall.pdf>]
+<images/sinlegWR/mejorado/empiezamala.png, id=953, 1217.7495pt x 542.025pt>
 File: images/sinlegWR/mejorado/empiezamala.png Graphic file (type png)
 
 <use images/sinlegWR/mejorado/empiezamala.png>
-Overfull \hbox (1.41083pt too wide) in paragraph at lines 1689--1690
+Overfull \hbox (1.41083pt too wide) in paragraph at lines 1708--1709
  [][] 
  []
 
-<images/sinlegWR/mejorado/peora5hz.png, id=2767, 1217.7495pt x 542.025pt>
+<images/sinlegWR/mejorado/peora5hz.png, id=954, 1217.7495pt x 542.025pt>
 File: images/sinlegWR/mejorado/peora5hz.png Graphic file (type png)
 
 <use images/sinlegWR/mejorado/peora5hz.png>
-Overfull \hbox (1.41083pt too wide) in paragraph at lines 1695--1696
+Overfull \hbox (1.41083pt too wide) in paragraph at lines 1714--1715
  [][] 
  []
 
@@ -2456,50 +2555,50 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 File: images/etseib.pdf Graphic file (type pdf)
 
-<use images/etseib.pdf> [54 <./images/sinlegWR/mejorado/empiezamala.png>]
-<images/sinlegWR/mejorado/recupera.png, id=2774, 1217.7495pt x 542.025pt>
+<use images/etseib.pdf> [60 <./images/sinlegWR/mejorado/empiezamala.png>]
+<images/sinlegWR/mejorado/recupera.png, id=961, 1217.7495pt x 542.025pt>
 File: images/sinlegWR/mejorado/recupera.png Graphic file (type png)
 
 <use images/sinlegWR/mejorado/recupera.png>
-Overfull \hbox (1.41083pt too wide) in paragraph at lines 1704--1705
+Overfull \hbox (1.41083pt too wide) in paragraph at lines 1723--1724
  [][] 
  []
 
-<images/sinlegWR/mejorado/mejor5Hz.png, id=2777, 1217.7495pt x 542.025pt>
+<images/sinlegWR/mejorado/mejor5Hz.png, id=964, 1217.7495pt x 542.025pt>
 File: images/sinlegWR/mejorado/mejor5Hz.png Graphic file (type png)
 
 <use images/sinlegWR/mejorado/mejor5Hz.png>
-Overfull \hbox (7.50551pt too wide) in paragraph at lines 1712--1713
+Overfull \hbox (7.50551pt too wide) in paragraph at lines 1731--1732
  [][] 
  []
 
 File: images/etseib.pdf Graphic file (type pdf)
-<use images/etseib.pdf> [55 <./images/sinlegWR/mejorado/peora5hz.png> <./images
+<use images/etseib.pdf> [61 <./images/sinlegWR/mejorado/peora5hz.png> <./images
 /sinlegWR/mejorado/recupera.png>]
 
 pdfTeX warning: pdflatex (file ./images/mimic.pdf): PDF inclusion: found PDF ve
 rsion <1.5>, but at most version <1.4> allowed
-<images/mimic.pdf, id=2787, 584.58403pt x 72.27pt>
+<images/mimic.pdf, id=974, 584.58403pt x 72.27pt>
 File: images/mimic.pdf Graphic file (type pdf)
  <use images/mimic.pdf>
-Underfull \vbox (badness 7116) has occurred while \output is active []
+Underfull \vbox (badness 5817) has occurred while \output is active []
 
 File: images/etseib.pdf Graphic file (type pdf)
 
-<use images/etseib.pdf> [56 <./images/sinlegWR/mejorado/mejor5Hz.png>]
-<images/mimic/retmin2.png, id=2798, 760.2804pt x 398.9304pt>
+<use images/etseib.pdf> [62 <./images/sinlegWR/mejorado/mejor5Hz.png>]
+<images/mimic/retmin2.png, id=984, 760.2804pt x 398.9304pt>
 File: images/mimic/retmin2.png Graphic file (type png)
 
 <use images/mimic/retmin2.png>
-Overfull \hbox (42.73741pt too wide) in paragraph at lines 1735--1736
+Overfull \hbox (42.73741pt too wide) in paragraph at lines 1754--1755
  [][] 
  []
 
-<images/mimic/malo5hz.png, id=2799, 1217.7495pt x 542.025pt>
+<images/mimic/malo5hz.png, id=985, 1217.7495pt x 542.025pt>
 File: images/mimic/malo5hz.png Graphic file (type png)
 
 <use images/mimic/malo5hz.png>
-Overfull \hbox (44.03642pt too wide) in paragraph at lines 1741--1742
+Overfull \hbox (44.03642pt too wide) in paragraph at lines 1760--1761
  [][] 
  []
 
@@ -2508,24 +2607,24 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 File: images/etseib.pdf Graphic file (type pdf)
 
-<use images/etseib.pdf> [57 <./images/mimic.pdf> <./images/mimic/retmin2.png>]
+<use images/etseib.pdf> [63 <./images/mimic.pdf> <./images/mimic/retmin2.png>]
 File: images/etseib.pdf Graphic file (type pdf)
 
-<use images/etseib.pdf> [58 <./images/mimic/malo5hz.png>]
+<use images/etseib.pdf> [64 <./images/mimic/malo5hz.png>]
 File: images/etseib.pdf Graphic file (type pdf)
 
-<use images/etseib.pdf> [59]
+<use images/etseib.pdf> [65]
 
 pdfTeX warning: pdflatex (file ./images/Aibo.pdf): PDF inclusion: found PDF ver
 sion <1.5>, but at most version <1.4> allowed
-<images/Aibo.pdf, id=2825, 1208.515pt x 855.195pt>
+<images/Aibo.pdf, id=1010, 1208.515pt x 855.195pt>
 File: images/Aibo.pdf Graphic file (type pdf)
  <use images/Aibo.pdf>
-Overfull \hbox (16.07484pt too wide) in paragraph at lines 1761--1762
+Overfull \hbox (16.07484pt too wide) in paragraph at lines 1780--1781
  [][] 
  []
 
-<images/aiborviz.png, id=2830, 1371.1225pt x 770.88pt>
+<images/aiborviz.png, id=1015, 1371.1225pt x 770.88pt>
 File: images/aiborviz.png Graphic file (type png)
 
 <use images/aiborviz.png>
@@ -2533,110 +2632,131 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 File: images/etseib.pdf Graphic file (type pdf)
 
-<use images/etseib.pdf> [60 <./images/Aibo.pdf>]
-Overfull \hbox (15.27766pt too wide) in paragraph at lines 1775--1777
+<use images/etseib.pdf> [66 <./images/Aibo.pdf>]
+Overfull \hbox (15.27766pt too wide) in paragraph at lines 1794--1796
 []\OT1/cmr/m/n/12 El no-do sta-te[]publisher es-ta crea-do por un pro-gra-ma es
 -cri-to en C++ (sta-te[]publisher.cpp)
  []
 
 File: images/etseib.pdf Graphic file (type pdf)
-<use images/etseib.pdf> [61 <./images/aiborviz.png (PNG copy)>]
+<use images/etseib.pdf> [67 <./images/aiborviz.png (PNG copy)>]
 File: images/etseib.pdf Graphic file (type pdf)
 
-<use images/etseib.pdf> [62]
+<use images/etseib.pdf> [68]
 
 pdfTeX warning: pdflatex (file ./images/graphModel.pdf): PDF inclusion: found P
 DF version <1.5>, but at most version <1.4> allowed
-<images/graphModel.pdf, id=2857, 2162.07652pt x 120.44992pt>
+<images/graphModel.pdf, id=1041, 2162.07652pt x 120.44992pt>
 File: images/graphModel.pdf Graphic file (type pdf)
 
 <use images/graphModel.pdf>
-Overfull \hbox (106.88254pt too wide) in paragraph at lines 1830--1831
+Overfull \hbox (106.88254pt too wide) in paragraph at lines 1849--1850
  [][] 
  []
 
 File: images/etseib.pdf Graphic file (type pdf)
-<use images/etseib.pdf> [63 <./images/graphModel.pdf>]
+<use images/etseib.pdf> [69 <./images/graphModel.pdf>]
 File: images/etseib.pdf Graphic file (type pdf)
  <use images/etseib.pdf>
-[64]
+[70
+
+]
+Cap\'{\i }tulo 6.
 File: images/etseib.pdf Graphic file (type pdf)
- <use images/etseib.pdf> [65]
+<use images/etseib.pdf> [71]
 File: images/etseib.pdf Graphic file (type pdf)
- <use images/etseib.pdf> [66]
+ <use images/etseib.pdf> [72
+
+]
+Cap\'{\i }tulo 7.
+File: images/etseib.pdf Graphic file (type pdf)
+<use images/etseib.pdf> [73]
+File: images/etseib.pdf Graphic file (type pdf)
+ <use images/etseib.pdf> [74
+
+]
 File: images/etseib.pdf Graphic file (type pdf)
 
-<use images/etseib.pdf> [67]
+<use images/etseib.pdf> [75]
 File: images/etseib.pdf Graphic file (type pdf)
- <use images/etseib.pdf> [68
+ <use images/etseib.pdf> [76
 
-
-] [69]
+]
 File: images/etseib.pdf Graphic file (type pdf)
 
-<use images/etseib.pdf> [70] [71
+<use images/etseib.pdf> [77]
+File: images/etseib.pdf Graphic file (type pdf)
+ <use images/etseib.pdf> [78
 
 
-] [72]
+] [79]
+File: images/etseib.pdf Graphic file (type pdf)
+
+<use images/etseib.pdf> [80]
+Ap\'{e}ndice A.
 (/usr/share/texmf-texlive/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2004/09/05 1.3 listings language file
 )
 (/usr/share/texmf-texlive/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2004/09/05 1.3 listings language file
 )
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 2009
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 2036
 .
 
 (/usr/share/texmf-texlive/tex/latex/base/omlcmr.fd
 File: omlcmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 2009.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 2036.
 
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 2014.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 2041.
 
 File: images/etseib.pdf Graphic file (type pdf)
  <use images/etseib.pdf>
-[73]
-Overfull \hbox (31.09555pt too wide) in paragraph at lines 2035--2036
+[81
+
+
+]
+Overfull \hbox (31.09555pt too wide) in paragraph at lines 2062--2063
 []\OT1/cmr/m/n/12 Crear un sand-box don-de ir^^San los nue-vos pa-que-tes y a~n
 adir al ROS[]PACKAGE[]PATH: 
  []
 
 File: images/etseib.pdf Graphic file (type pdf)
-<use images/etseib.pdf> [74]
-Overfull \hbox (26.05548pt too wide) in paragraph at lines 2085--2086
+<use images/etseib.pdf> [82]
+Overfull \hbox (26.05548pt too wide) in paragraph at lines 2112--2113
 [][]$\OT1/cmtt/m/n/12 https : / / github . com / Diamg / AiboRosPackages / tree
  / master / aibo _ description$[] 
  []
 
-<images/MS.jpg, id=2959, 180.675pt x 87.32625pt>
+<images/MS.jpg, id=1145, 180.675pt x 87.32625pt>
 File: images/MS.jpg Graphic file (type jpg)
  <use images/MS.jpg>
-Overfull \hbox (59.80757pt too wide) in paragraph at lines 2099--2100
+Overfull \hbox (59.80757pt too wide) in paragraph at lines 2126--2127
 []\OT1/cmr/m/n/12 Editar el ar-chi-vo WLAND-FLT.txt que se en-cuen-tra en el di
 -rec-to-rio /OPEN-R/SYSTEM/CONF
  []
 
 File: images/etseib.pdf Graphic file (type pdf)
-<use images/etseib.pdf> [75 <./images/MS.jpg>]
+<use images/etseib.pdf> [83 <./images/MS.jpg>]
 File: images/etseib.pdf Graphic file (type pdf)
- <use images/etseib.pdf> [76]
-Overfull \hbox (32.42389pt too wide) in paragraph at lines 2195--2196
+ <use images/etseib.pdf> [84]
+Overfull \hbox (32.42389pt too wide) in paragraph at lines 2222--2223
 []\OT1/cmr/m/n/12 Permite con-tro-lar la po-si-ci^^Son de las ar-ti-cu-la-cio-n
 es en un men-sa-je de ti-po ai-bo[]server/Joints. 
  []
 
 File: images/etseib.pdf Graphic file (type pdf)
-<use images/etseib.pdf> [77]
+<use images/etseib.pdf> [85]
 File: images/etseib.pdf Graphic file (type pdf)
- <use images/etseib.pdf> [78]
+ <use images/etseib.pdf> [86]
 File: images/etseib.pdf Graphic file (type pdf)
 
-<use images/etseib.pdf> [79]
+<use images/etseib.pdf> [87]
 File: images/etseib.pdf Graphic file (type pdf)
- <use images/etseib.pdf> [80]
+ <use images/etseib.pdf> [88]
+Ap\'{e}ndice B.
 (/usr/share/texmf-texlive/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2004/09/05 1.3 listings language file
 )
@@ -2648,67 +2768,69 @@ File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
 )
 (./src/getDataOneLeg/getDataC++/getData.cpp
 File: images/etseib.pdf Graphic file (type pdf)
- <use images/etseib.pdf> [81])
+ <use images/etseib.pdf> [89
+
+])
 (/usr/share/texmf-texlive/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2004/09/05 1.3 listings language file
 )
 (./src/getDataOneLeg/getDataPython/getData.py
 File: images/etseib.pdf Graphic file (type pdf)
- <use images/etseib.pdf> [82])
-(./src/sinLegRead/sinLegC++/2Client/sinLeg.cpp
-File: images/etseib.pdf Graphic file (type pdf)
- <use images/etseib.pdf> [83]
+ <use images/etseib.pdf> [90]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 File: images/etseib.pdf Graphic file (type pdf)
 
-<use images/etseib.pdf> [84]
+<use images/etseib.pdf> [91]) (./src/sinLegRead/sinLegC++/2Client/sinLeg.cpp
+File: images/etseib.pdf Graphic file (type pdf)
+
+<use images/etseib.pdf> [92]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 File: images/etseib.pdf Graphic file (type pdf)
 
-<use images/etseib.pdf> [85])
+<use images/etseib.pdf> [93]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 File: images/etseib.pdf Graphic file (type pdf)
 
-<use images/etseib.pdf> [86] (./src//sinLegRead/sinLegPython/sinlegLF1.py
+<use images/etseib.pdf> [94]) (./src//sinLegRead/sinLegPython/sinlegLF1.py
 File: images/etseib.pdf Graphic file (type pdf)
 
-<use images/etseib.pdf> [87]
+<use images/etseib.pdf> [95]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 File: images/etseib.pdf Graphic file (type pdf)
 
-<use images/etseib.pdf> [88]
+<use images/etseib.pdf> [96]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 File: images/etseib.pdf Graphic file (type pdf)
 
-<use images/etseib.pdf> [89]) (./src/ROStests/sinlegROS.cpp
+<use images/etseib.pdf> [97]) (./src/ROStests/sinlegROS.cpp
 File: images/etseib.pdf Graphic file (type pdf)
 
-<use images/etseib.pdf> [90]) (./src/ROStests/mimic.cpp
-File: images/etseib.pdf Graphic file (type pdf)
-
-<use images/etseib.pdf> [91]
+<use images/etseib.pdf> [98]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 File: images/etseib.pdf Graphic file (type pdf)
 
-<use images/etseib.pdf> [92])
+<use images/etseib.pdf> [99]) (./src/ROStests/mimic.cpp
 File: images/etseib.pdf Graphic file (type pdf)
- <use images/etseib.pdf> [93] (./memoria.aux) ) 
+
+<use images/etseib.pdf> [100])
+File: images/etseib.pdf Graphic file (type pdf)
+ <use images/etseib.pdf> [101] (./memoria.aux) ) 
 Here is how much of TeX's memory you used:
- 30543 strings out of 493848
- 642475 string characters out of 1152823
- 1551062 words of memory out of 3000000
- 32339 multiletter control sequences out of 15000+50000
+ 30909 strings out of 493848
+ 647723 string characters out of 1152823
+ 1469191 words of memory out of 7000000
+ 32692 multiletter control sequences out of 15000+50000
  15232 words of font info for 60 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
  56i,19n,85p,1181b,2267s stack positions out of 5000i,500n,10000p,200000b,50000s
-pdfTeX warning (dest): name{Hfoo
-tnote.30} has been referenced but does not exist, replaced by a fixed one
+pdfTeX warning (dest): name{Hfo
+otnote.30} has been referenced but does not exist, replaced by a fixed one
 
 pdfTeX warning (dest): name{Hfootnote.29} has been referenced but does not exis
 t, replaced by a fixed one
@@ -2810,9 +2932,9 @@ blic/amsfonts/cm/cmti12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfon
 ts/cm/cmtt10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmtt1
 2.pfb></usr/share/texmf-texlive/fonts/type1/public/eurosym/feybr10.pfb></usr/sh
 are/texmf-texlive/fonts/type1/public/eurosym/feymr10.pfb>
-Output written on memoria.pdf (95 pages, 6731069 bytes).
+Output written on memoria.pdf (103 pages, 5275392 bytes).
 PDF statistics:
- 3784 PDF objects out of 4296 (max. 8388607)
- 807 named destinations out of 1000 (max. 500000)
- 516 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1975 PDF objects out of 2073 (max. 8388607)
+ 812 named destinations out of 1000 (max. 500000)
+ 652 words of extra memory for PDF output out of 10000 (max. 10000000)
 
