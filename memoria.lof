@@ -1,0 +1,53 @@
+\select@language {spanish}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Robot manipulador de KUKA.\relax }}{14}{figure.caption.3}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Robot cuadr\IeC {\'u}pedo WildCat.\relax }}{15}{figure.caption.4}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Diagrama de Gantt\relax }}{19}{figure.caption.5}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces AIBO ERS-7.\relax }}{21}{figure.caption.6}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Arquitectura de AIBO con OPEN-R\relax }}{23}{figure.caption.7}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Comunicaci\IeC {\'o}n entre objetos.\relax }}{24}{figure.caption.9}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Arquitectura del AIBO con Tekkotsu.\relax }}{25}{figure.caption.10}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Proceso de ejecuci\IeC {\'o}n de un comportamiento en Tekkotsu.\relax }}{26}{figure.caption.11}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Arquitectura del AIBO con URBI.\relax }}{27}{figure.caption.12}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Estructura de la lectura de una variable.\relax }}{31}{figure.caption.14}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Terminal URBI consultando un dato.\relax }}{32}{figure.caption.15}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces M\IeC {\'\i }nimos de la frecuencia en les 15 repliques de los dos m\IeC {\'e}todos.\relax }}{34}{figure.caption.17}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Histograma de la frecuencia en les 15 repliques de los dos m\IeC {\'e}todos.\relax }}{35}{figure.caption.18}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Diagrama de cajas de la frecuencia de datos para las 15 replicas de cada m\IeC {\'e}todo con todas las articulaciones.\relax }}{36}{figure.caption.19}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Medias de las frecuencias de env\IeC {\'\i }o, comparando una el obtener el valor de una articulaci\IeC {\'o}n con obtener el valor de todas las articulaciones.\relax }}{37}{figure.caption.20}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces M\IeC {\'\i }nimos de la frecuencia en les 15 repliques de los dos m\IeC {\'e}todos.\relax }}{38}{figure.caption.21}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Histograma de la frecuencia en les 15 repliques de los dos m\IeC {\'e}todos.\relax }}{38}{figure.caption.22}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces En azul est\IeC {\'a} graficado las posiciones enviadas a 1Hz y en negro las lecturas. En columnas se encuentran las replicas del mismo m\IeC {\'e}todo y por filas los tres m\IeC {\'e}todos usados, en orden descendente son liburbi con un cliente, liburbi con dos cliente y python.\relax }}{41}{figure.caption.23}
+\contentsline {figure}{\numberline {4.11}{\ignorespaces En azul est\IeC {\'a} graficado las posiciones enviadas a 2Hz y en negro las lecturas. En columnas se encuentran las replicas del mismo m\IeC {\'e}todo y por filas los tres m\IeC {\'e}todos usados, en orden descendente son liburbi con un cliente, liburbi con dos cliente y python.5\relax }}{42}{figure.caption.24}
+\contentsline {figure}{\numberline {4.12}{\ignorespaces En azul est\IeC {\'a} graficado las posiciones enviadas a 5Hz y en negro las lecturas. En columnas se encuentran las replicas del mismo m\IeC {\'e}todo y por filas los tres m\IeC {\'e}todos usados, en orden descendente son liburbi con un cliente, liburbi con dos cliente y python.\relax }}{43}{figure.caption.25}
+\contentsline {figure}{\numberline {4.13}{\ignorespaces En azul est\IeC {\'a} graficado las posiciones enviadas a 10Hz y en negro las lecturas. En columnas se encuentran las replicas del mismo m\IeC {\'e}todo y por filas los tres m\IeC {\'e}todos usados, en orden descendente son liburbi con un cliente, liburbi con dos cliente y python.\relax }}{44}{figure.caption.26}
+\contentsline {figure}{\numberline {4.14}{\ignorespaces Retrasos entre la orden enviada y la acci\IeC {\'o}n para los m\IeC {\'e}todos liburbi con dos clientes y python.\relax }}{45}{figure.caption.27}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Diagrama de cajas de la frecuencia de datos para las 15 replicas de cada m\IeC {\'e}todo.\relax }}{48}{figure.caption.16}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Nodo aibo{\_}server.\relax }}{50}{figure.caption.29}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Estructura b\IeC {\'a}sica del ejecutable aibo{\_}server.\relax }}{52}{figure.caption.30}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Consulta de la frecuencia de publicaci\IeC {\'o}n en los diferentes t\IeC {\'o}picos de aibo{\_}server.\relax }}{54}{figure.caption.31}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Valores de los acelerometros graficados usando la herramienta rqt{\_}plot.\relax }}{54}{figure.caption.32}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Estructura de ROS con los nodos aibo\_server y SinLeg.\relax }}{55}{figure.caption.33}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Entrada y respuesta del sistema ante una se\IeC {\~n}al sinusoidal de enviando puntos a 2Hz.\relax }}{55}{figure.caption.34}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Entrada y respuesta del sistema ante una se\IeC {\~n}al sinusoidal de enviando puntos a 7Hz.\relax }}{56}{figure.caption.35}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Entrada y respuesta del sistema ante una se\IeC {\~n}al sinusoidal de enviando puntos a 10Hz.\relax }}{56}{figure.caption.36}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Diagrama del callback de ROS. Los flags \textit {anterior}, \textit {C1activo} y \textit {C2activo} se inicializan con valor 1 y los flags \textit {reiniciando1} y \textit {reiniciando2} se inicializan a 0.\relax }}{58}{figure.caption.37}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Entrada, en rojo, y respuesta, en azul, del sistema ante una se\IeC {\~n}al sinusoidal de enviando puntos a 5Hz. Empiezan a producirse bloqueos.\relax }}{59}{figure.caption.38}
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Entrada, en rojo, y respuesta, en azul del sistema ante una se\IeC {\~n}al sinusoidal de enviando puntos a 5Hz. Se producen bloqueos que se intentan evitar.\relax }}{60}{figure.caption.39}
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Entrada, en rojo, y respuesta, en azul, del sistema ante una se\IeC {\~n}al sinusoidal de enviando puntos a 5Hz. Recuperaci\IeC {\'o}n del seguimiento de la trayectoria.\relax }}{60}{figure.caption.40}
+\contentsline {figure}{\numberline {5.13}{\ignorespaces Entrada,en rojo, y respuesta, en azul, del sistema ante una se\IeC {\~n}al sinusoidal de enviando puntos a 5Hz. Buen seguimiento de la trayectoria.\relax }}{61}{figure.caption.41}
+\contentsline {figure}{\numberline {5.14}{\ignorespaces Estructura de los nodos de ROS en la demostraci\IeC {\'o}n de sincronizaci\IeC {\'o}n.\relax }}{62}{figure.caption.42}
+\contentsline {figure}{\numberline {5.15}{\ignorespaces Posici\IeC {\'o}n de la articulaci\IeC {\'o}n del AIBO movido manualmente, en fucsia, y del AIBO que hace la imitaci\IeC {\'o}n, en verde.\relax }}{62}{figure.caption.43}
+\contentsline {figure}{\numberline {5.16}{\ignorespaces Posici\IeC {\'o}n de la articulaci\IeC {\'o}n del AIBO movido manualmente, en rojo, la enviada al segundo AIBO, en fucsia y la del AIBO que hace la imitaci\IeC {\'o}n, en azul.\relax }}{63}{figure.caption.44}
+\contentsline {figure}{\numberline {5.17}{\ignorespaces Estructura del modelo URDF.\relax }}{64}{figure.caption.45}
+\contentsline {figure}{\numberline {5.18}{\ignorespaces Modelo visto des de el framework de rviz.\relax }}{65}{figure.caption.46}
+\contentsline {figure}{\numberline {5.19}{\ignorespaces Estructuras de los nodos de ROS con aibo{\_}server y el modelo visualizado con rviz.\relax }}{67}{figure.caption.48}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Tarjeta de memoria para AIBO.\relax }}{81}{figure.caption.55}
+\addvspace {10\p@ }
