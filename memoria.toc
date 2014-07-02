@@ -1,56 +1,56 @@
 \select@language {spanish}
 \contentsline {paragraph}{}{2}{section*.1}
-\contentsline {chapter}{Resumen}{1}{section*.2}
-\contentsline {chapter}{\numberline {1}Prefacio}{9}{chapter.1}
-\contentsline {section}{\numberline {1.1}Motivaci\IeC {\'o}n}{9}{section.1.1}
-\contentsline {section}{\numberline {1.2}Requerimientos previos}{10}{section.1.2}
-\contentsline {chapter}{\numberline {2}Introducci\IeC {\'o}n}{11}{chapter.2}
-\contentsline {section}{\numberline {2.1}Estado del arte}{11}{section.2.1}
-\contentsline {subsection}{\numberline {2.1.1}Rob\IeC {\'o}tica}{11}{subsection.2.1.1}
-\contentsline {subsection}{\numberline {2.1.2}Rob\IeC {\'o}tica en la educaci\IeC {\'o}n}{12}{subsection.2.1.2}
-\contentsline {subsection}{\numberline {2.1.3}AIBO}{14}{subsection.2.1.3}
-\contentsline {section}{\numberline {2.2}Objetivos}{15}{section.2.2}
-\contentsline {section}{\numberline {2.3}Alcance}{15}{section.2.3}
-\contentsline {section}{\numberline {2.4}Planificaci\IeC {\'o}n}{16}{section.2.4}
-\contentsline {chapter}{\numberline {3}AIBO ERS-7}{19}{chapter.3}
-\contentsline {section}{\numberline {3.1}Hardware}{19}{section.3.1}
-\contentsline {section}{\numberline {3.2}El software}{20}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}OPEN-R}{21}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Tekkotsu}{23}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}URBI}{24}{subsection.3.2.3}
-\contentsline {chapter}{\numberline {4}Comparaci\IeC {\'o}n de alternativas para la programaci\IeC {\'o}n}{27}{chapter.4}
-\contentsline {section}{\numberline {4.1}Lectura de datos}{29}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}M\IeC {\'e}todo con liburbi y C++}{29}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}M\IeC {\'e}todo con telnet y python}{30}{subsection.4.1.2}
-\contentsline {subsection}{\numberline {4.1.3}Comparaci\IeC {\'o}n de los resultados}{31}{subsection.4.1.3}
+\contentsline {chapter}{Resumen}{3}{chapter*.2}
+\contentsline {chapter}{\numberline {1}Prefacio}{11}{chapter.1}
+\contentsline {section}{\numberline {1.1}Motivaci\IeC {\'o}n}{11}{section.1.1}
+\contentsline {section}{\numberline {1.2}Requerimientos previos}{12}{section.1.2}
+\contentsline {chapter}{\numberline {2}Introducci\IeC {\'o}n}{13}{chapter.2}
+\contentsline {section}{\numberline {2.1}Estado del arte}{13}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Rob\IeC {\'o}tica}{13}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}Rob\IeC {\'o}tica en la educaci\IeC {\'o}n}{14}{subsection.2.1.2}
+\contentsline {subsection}{\numberline {2.1.3}AIBO}{16}{subsection.2.1.3}
+\contentsline {section}{\numberline {2.2}Objetivos}{17}{section.2.2}
+\contentsline {section}{\numberline {2.3}Alcance}{17}{section.2.3}
+\contentsline {section}{\numberline {2.4}Planificaci\IeC {\'o}n}{18}{section.2.4}
+\contentsline {chapter}{\numberline {3}AIBO ERS-7}{21}{chapter.3}
+\contentsline {section}{\numberline {3.1}Hardware}{21}{section.3.1}
+\contentsline {section}{\numberline {3.2}El software}{22}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}OPEN-R}{23}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Tekkotsu}{25}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}URBI}{26}{subsection.3.2.3}
+\contentsline {chapter}{\numberline {4}Comparaci\IeC {\'o}n de alternativas para la programaci\IeC {\'o}n}{29}{chapter.4}
+\contentsline {section}{\numberline {4.1}Lectura de datos}{31}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}M\IeC {\'e}todo con liburbi y C++}{31}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}M\IeC {\'e}todo con telnet y python}{32}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {4.1.3}Comparaci\IeC {\'o}n de los resultados}{33}{subsection.4.1.3}
 \contentsline {section}{\numberline {4.2}Env\IeC {\'\i }o de datos}{39}{section.4.2}
 \contentsline {section}{\numberline {4.3}Elecci\IeC {\'o}n del m\IeC {\'e}todo}{46}{section.4.3}
 \contentsline {chapter}{\numberline {5}Implementaci\IeC {\'o}n del paquete de ROS}{49}{chapter.5}
 \contentsline {section}{\numberline {5.1}ROS}{49}{section.5.1}
 \contentsline {subsection}{\numberline {5.1.1}Paquet aibo{\_}server }{50}{subsection.5.1.1}
-\contentsline {subsection}{\numberline {5.1.2}Estructura del programa}{52}{subsection.5.1.2}
-\contentsline {subsection}{\numberline {5.1.3}Resultados}{54}{subsection.5.1.3}
-\contentsline {subsection}{\numberline {5.1.4}Mejoras}{58}{subsection.5.1.4}
-\contentsline {subsection}{\numberline {5.1.5}Demostraci\IeC {\'o}n}{62}{subsection.5.1.5}
-\contentsline {section}{\numberline {5.2}Paquete Aibo{\_}description }{64}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}El modelo}{64}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}El nodo state{\_}publisher}{67}{subsection.5.2.2}
-\contentsline {subsubsection}{Estructura}{68}{section*.47}
-\contentsline {chapter}{\numberline {6}Presupuesto}{71}{chapter.6}
-\contentsline {section}{\numberline {6.1}Coste material}{71}{section.6.1}
-\contentsline {section}{\numberline {6.2}Coste personal}{71}{section.6.2}
-\contentsline {chapter}{\numberline {7}Impacto ambiental}{73}{chapter.7}
-\contentsline {chapter}{Conclusiones}{75}{chapter*.51}
-\contentsline {chapter}{Agradecimientos}{77}{chapter*.52}
-\contentsline {chapter}{Referencias}{78}{chapter*.52}
-\contentsline {chapter}{Anexos}{81}{section*.54}
-\contentsline {chapter}{\numberline {A}Manual de usuario}{81}{appendix.A}
-\contentsline {section}{\numberline {A.1}Requisitos previos}{81}{section.A.1}
-\contentsline {section}{\numberline {A.2}Instalaci\IeC {\'o}n}{84}{section.A.2}
-\contentsline {section}{\numberline {A.3}aibo{\_}server}{85}{section.A.3}
-\contentsline {subsection}{\numberline {A.3.1}T\IeC {\'o}picos}{85}{subsection.A.3.1}
-\contentsline {subsection}{\numberline {A.3.2}Mensajes}{86}{subsection.A.3.2}
-\contentsline {section}{\numberline {A.4}aibo{\_}description}{88}{section.A.4}
+\contentsline {subsection}{\numberline {5.1.2}Estructura del programa}{51}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {5.1.3}Resultados}{53}{subsection.5.1.3}
+\contentsline {subsection}{\numberline {5.1.4}Mejoras}{57}{subsection.5.1.4}
+\contentsline {subsection}{\numberline {5.1.5}Demostraci\IeC {\'o}n}{61}{subsection.5.1.5}
+\contentsline {section}{\numberline {5.2}Paquete Aibo{\_}description }{63}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}El modelo}{63}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}El nodo state{\_}publisher}{65}{subsection.5.2.2}
+\contentsline {subsubsection}{Estructura}{66}{section*.47}
+\contentsline {chapter}{\numberline {6}Presupuesto}{69}{chapter.6}
+\contentsline {section}{\numberline {6.1}Coste material}{69}{section.6.1}
+\contentsline {section}{\numberline {6.2}Coste personal}{69}{section.6.2}
+\contentsline {chapter}{\numberline {7}Impacto ambiental}{71}{chapter.7}
+\contentsline {chapter}{Conclusiones}{73}{chapter*.51}
+\contentsline {chapter}{Agradecimientos}{75}{chapter*.52}
+\contentsline {chapter}{Referencias}{76}{chapter*.52}
+\contentsline {chapter}{Anexos}{79}{section*.54}
+\contentsline {chapter}{\numberline {A}Manual de usuario}{79}{appendix.A}
+\contentsline {section}{\numberline {A.1}Requisitos previos}{79}{section.A.1}
+\contentsline {section}{\numberline {A.2}Instalaci\IeC {\'o}n}{82}{section.A.2}
+\contentsline {section}{\numberline {A.3}aibo{\_}server}{83}{section.A.3}
+\contentsline {subsection}{\numberline {A.3.1}T\IeC {\'o}picos}{83}{subsection.A.3.1}
+\contentsline {subsection}{\numberline {A.3.2}Mensajes}{84}{subsection.A.3.2}
+\contentsline {section}{\numberline {A.4}aibo{\_}description}{87}{section.A.4}
 \contentsline {chapter}{\numberline {B}Scripts y programas}{89}{appendix.B}
 \contentsline {section}{\numberline {B.1}Adquisici\IeC {\'o}n del valor de una articulaci\IeC {\'o}n con liburbi.}{89}{section.B.1}
 \contentsline {section}{\numberline {B.2}Adquisici\IeC {\'o}n del valor de una articulaci\IeC {\'o}n con Python.}{90}{section.B.2}

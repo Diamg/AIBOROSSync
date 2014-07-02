@@ -107,12 +107,12 @@
 
 \setcounter{page}{1}
 \begin{center}
-\section*{Resumen}
+\chapter*{Resumen}
 \end{center}
-
+\thispagestyle{fancy}
 \addcontentsline{toc}{chapter}{Resumen}
-El proyecto persigue el objetivo de implementar un driver para integrar la plataforma robótica AIBO con el marco de trabajo ROS. A lo largo de esta memoria se narra el procedimiento seguido para llegar a un resultado que cumpla con los requisitos. 
-Se puede dividir el trabajo realizado y documentado en ésta memoria en tres partes.
+El proyecto persigue el objetivo de implementar un driver para integrar la plataforma robótica AIBO con el marco de trabajo ROS (Robot Operating System). A lo largo de esta memoria se narra el procedimiento seguido para llegar a un resultado que cumpla con los requisitos. 
+Se puede dividir el trabajo realizado y documentado en ésta memoria en tres módulos.
 
 Consta de una primera parte de documentación e investigación de la plataforma objeto en la que se describe tanto el hardware como los posibles softwares con los que trabajar.
 
@@ -120,7 +120,8 @@ Sigue una segunda parte en la que se comparan varios métodos de programación c
 
 Para concluir se explica como se han implementado los módulos que facilitan la integración con ROS. Por un lado el modulo de control al que se le han aplicado unos criterios de valoración y se ha puesto a prueba y por otro el modulo que facilita la integración de un modelo de visualización 3D.
 
-
+Esta memoria incluye también un desarrollo de las conclusiones extraídas tras probar el paquete de ROS implementado, así como unas recomendaciones para los próximos proyectos que se puedan realizar sobre esta vía.
+Con este motivo se ha redactado un manual de usuario con la información necesaria para para preparar el marco de trabajo y para poder usar el modulo implementado.
 
 
 \newpage
@@ -271,18 +272,17 @@ No incluirá:
 \item La creación de un mapa físico para el uso del modelo.
 \end{itemize}
 
-
 \section{Planificación}
 El proyecto se llevará a cabo en 17 semanas  distribuyendo las tareas programadas como muestra el diagrama de Gantt de la Figura \ref{fig:diagramagantt}.
-\begin{figure}[H]
+\begin{figure}[h]
 \begin{center}
 %\noindent\resizebox{\textwidth}{21cm}{
-\begin{tikzpicture}[x=.5cm, y=0.01cm]
+\begin{tikzpicture}[x=.5cm, y=0.015cm]
 
 \begin{ganttchart}[
 vgrid={*6{draw=none}, dotted},
 hgrid,
-y unit chart=0.5cm,
+y unit chart=0.9cm,
 bar/.append style={fill=barblue, rounded corners=3pt},
 x unit=0.7mm,
 bar height=0.35,
@@ -328,8 +328,7 @@ bar height=0.35,
 
 
 
-\newpage
-\clearpage
+
 
 \chapter{AIBO ERS-7}\label{secaibo}
 \thispagestyle{fancy}
@@ -452,7 +451,7 @@ Esto implica que cada objetos tiene varios puntos de entrada   y salida que son 
 \end{figure}
 
 Una de las mayores complicaciones que acarrea trabajar con OPEN-R es que usa una gran variedad de archivos que deben ser modificados para poder configurar el programa de aplicación que se realice. Por ello es importante conocer bien los archivos con los que trabaja, los más importantes están listados a continuación: 
-:
+
 \begin{itemize}
 \item Archivos .h i .cc: Son los archivos de programación de C++.
 \item STUB.config: Son archivos de configuración donde se define como un objeto se comunica con los demás.
@@ -520,7 +519,7 @@ Solo queda usar una arquitectura cliente/servidor de forma que el modulo de ROS 
 
 
 Se plantean tres posibilidades de programación: OPEN-R, Tekkotsu y URBI.
-En los tres casos es imprescindible programar el cliente en el correspondiente lenguaje. Pero respeto al servidor URBI ahorraría tener que desarrollarlo puesto que el sistema operativo nos permite interactuar de forma remota. Tekkotsu permite interactuar de forma remota pero no hay ningun comportamiento que permita enviar ordenes a los actuadores y habría qu implementarlo. Por último con OPEN-R habría que implementar el servidor entero tanto el envió como la recepción. 
+En los tres casos es imprescindible programar el cliente en el correspondiente lenguaje. Pero respeto al servidor URBI ahorraría tener que desarrollarlo puesto que el sistema operativo nos permite interactuar de forma remota. Tekkotsu permite interactuar de forma remota pero no hay ningún comportamiento que permita enviar ordenes a los actuadores y habría que implementarlo. Por último con OPEN-R habría que implementar el servidor entero tanto el envió como la recepción. 
 De todos modos se ha probado de instalar y establecer los tres marcos de trabajo y probado los tres lenguajes para comprobar su dificultad y su funcionamiento. Respeto a OPEN-R se ha encontrado muy poca documentación y el comienzo de su aprendizaje ha sido realmente duro tanto el lenguaje en si como la configuración de todos los archivos. Tekkotsu parece un lenguaje más sencillo y no necesita apenas configurar archivos pero la única documentación encontrada ha sido para la ultima versión que no se ha conseguido compilar dentro de la tarjeta de memoria. En cambio si se ha logrado con una versión más antigua, la nueva parece no ser compatible con el compilador de OPEN-R, y se han podido hacer algunas pruebas aunque sin documentación de la versión y habiendo cambiado bastante las funciones, ha implicado un gran esfuerzo. 
 Por lo que URBI se refiere su uso es realmente sencillo des del terminal , se ha encontrado bastante documentación para el uso en modo script y algo menos para el uso de liburbi. El único problema que hay que tener en cuenta es que la librería liburbi 1.5, la más reciente que es compatible con  AIBO, no es compatible con un sistema linux de 64 bits. 
 
@@ -642,7 +641,7 @@ La estructura del programa será parecida a la anterior:
 \subsection{Comparación de los resultados}
 %De los datos obtenidos de las 15 replicas de cada método se han hecho las diferencias de tiempos entre un dato y el siguiente y se ha echo el inverso de este intervalo con tal de obtener la frecuencia entre datos, se prefiere trabajar con el inverso debido a la comodidad de la escala.
 De los datos obtenidos de las 15 replicas de cada método se han hecho las diferencias de tiempos entre un dato y el siguiente y se ha echo el inverso de este intervalo con tal de obtener la frecuencia entre datos.
-\begin{figure}[H]
+\begin{figure}[h]
 	\centering
 \begin{tikzpicture}
 \pgfplotsset{width=15cm,compat=1.10}
@@ -1352,7 +1351,7 @@ Poniendo la atención en los bloqueos, Figuras \ref{fig:MinAllLeg} y \ref{fig:hi
 	\centering
     \begin{tikzpicture}
 \usetikzlibrary{patterns}
-\pgfplotsset{width=11cm,compat=1.10}
+\pgfplotsset{width=10.5cm,compat=1.10}
 
 \begin{axis}[
 x tick label style={
@@ -1382,7 +1381,7 @@ coordinates {(1,0.77) (2,0.63)
 	\centering
 \begin{tikzpicture}
     \usetikzlibrary{patterns}
-    \pgfplotsset{width=11cm,compat=1.10}
+    \pgfplotsset{width=10.5cm,compat=1.10}
 
 \begin{axis}[
 ybar,
@@ -1549,7 +1548,7 @@ Se pretende implementar una paquete que en lanzarse se conecte al AIBO indicado 
 
 \begin{figure}[H]
 	\centering
-    \includegraphics[scale=0.7]{images/aiboserverNodo.pdf}
+    \includegraphics[scale=0.6]{images/aiboserverNodo.pdf}
 	 \caption{Nodo aibo{\_}server.}
   \label{fig:aiboserv}
 \end{figure}
@@ -1627,7 +1626,7 @@ La estructura del programa que se ha implementado se puede ver en la Figura \ref
 Por lo que respecta la adquisición de los valores de sensores y articulaciones se ha conseguido obtenerlos todos ellos trabajando a una frecuencia de 10Hz. Con tal de comprobar que el refresco de los tópicos es correcto se ha accedido a mostrar por el terminal todos los tópicos mostrando su frecuencia de refresco Figura \ref{fig:getT} y por otro lado, al mismo tiempo, se ha graficado el valor de un sensor en la Figura \ref{fig:addacc} El echo de que el gráfico muestre un cierto ruido indica que el valor se esta refrescando correctamente, por lo contrario si el valor de la gráfica es constante indica que no se está refrescando correctamente.
 
 \begin{figure}[H]
-	\centering
+	%\centering
     \includegraphics[scale=0.3]{images/getTopics.png}
 	 \caption{Consulta de la frecuencia de publicación en los diferentes tópicos de aibo{\_}server.}
   \label{fig:getT}
@@ -1635,7 +1634,7 @@ Por lo que respecta la adquisición de los valores de sensores y articulaciones 
 
 \begin{figure}[H]
 	\centering
-    \includegraphics[scale=0.4]{images/addaccel.png}
+    \includegraphics[scale=0.85]{images/accel.pdf}
 	 \caption{Valores de los acelerometros graficados usando la herramienta rqt{\_}plot.}
   \label{fig:addacc}
 \end{figure}
@@ -1657,19 +1656,19 @@ De lo extraído en varias replicas a diversas frecuencias se puede reportar que 
 dicho retraso no es la norma general estando el retraso medio muy por encima de éste.
 \begin{figure}[H]
 	\centering
-    \includegraphics[scale=0.66]{images/sinlegWR/10Ry2S.png}
+    \includegraphics[scale=0.9]{images/10Ry2S.pdf}
  	\caption{Entrada y respuesta del sistema ante una señal sinusoidal de enviando puntos a 2Hz.}
   \label{fig:ASsin2Hz}
 \end{figure}
 \begin{figure}[H]
 	\centering
-    \includegraphics[scale=0.66]{images/sinlegWR/10Ry7S.png}
+    \includegraphics[scale=0.9]{images/10Ry7S.pdf}
  	\caption{Entrada y respuesta del sistema ante una señal sinusoidal de enviando puntos a 7Hz.}
   \label{fig:ASsin7Hz}
 \end{figure}
    \begin{figure}[H]
 	\centering
-    \includegraphics[scale=0.66]{images/sinlegWR/10Ry10SAll.png}
+    \includegraphics[scale=0.9]{images/10Ry10SAll.pdf}
  	\caption{Entrada y respuesta del sistema ante una señal sinusoidal de enviando puntos a 10Hz.}
   \label{fig:ASsin10Hz}
 \end{figure}
@@ -1692,7 +1691,7 @@ Bajo estas ideas se ha reescrito el callback de ROS como muestra el diagrama de 
 
 \begin{figure}[H]
 	\centering
-    \includegraphics[scale=0.77]{images/esquemaCall.pdf}
+    \includegraphics[scale=0.7]{images/esquemaCall.pdf}
 	 \caption{Diagrama del callback de ROS. Los flags \textit{anterior}, \textit{C1activo} y \textit{C2activo}  se inicializan con valor 1 y los flags \textit{reiniciando1} y \textit{reiniciando2} se inicializan a 0.}
   \label{fig:Call}
 \end{figure}
@@ -1705,13 +1704,13 @@ En la Figura \ref{fig:ASempiezamala} se ve como tras un primer seguimiento de la
 
 \begin{figure}[H]
 	\centering
-    \includegraphics[scale=0.375]{images/sinlegWR/mejorado/empiezamala.png}
+    \includegraphics[scale=0.82]{images/empiezamala.pdf}
  	\caption{Entrada, en rojo, y respuesta, en azul, del sistema ante una señal sinusoidal de enviando puntos a 5Hz. Empiezan a producirse bloqueos.}
   \label{fig:ASempiezamala}
 \end{figure}
 \begin{figure}[H]
 	\centering
-    \includegraphics[scale=0.375]{images/sinlegWR/mejorado/peora5hz.png}
+    \includegraphics[scale=0.82]{images/peora5hz.pdf}
  	\caption{Entrada, en rojo, y respuesta, en azul del sistema ante una señal sinusoidal de enviando puntos a 5Hz. Se producen bloqueos que se intentan evitar.}
   \label{fig:ASpeor}
 \end{figure}
@@ -1720,7 +1719,7 @@ En la Figura \ref{fig:ASrecupera} se ve como llega un punto, tras una serie de s
  
 \begin{figure}[H]
 	\centering
-    \includegraphics[scale=0.375]{images/sinlegWR/mejorado/recupera.png}
+    \includegraphics[scale=0.82]{images/recupera.pdf}
  	\caption{Entrada, en rojo, y respuesta, en azul, del sistema ante una señal sinusoidal de enviando puntos a 5Hz. Recuperación del seguimiento de la trayectoria.}
   \label{fig:ASrecupera}
 \end{figure}
@@ -1728,7 +1727,7 @@ En la Figura \ref{fig:ASrecupera} se ve como llega un punto, tras una serie de s
 Finalmente en la Figura \ref{fig:ASbuena} se puede observar como en algunos momentos el seguimiento de la trayectoria es satisfactorio. Cabe recordar que en estos gráficos obtenidos mediante la herramienta de ROS rqt{\_}plot no se pueden diferenciar si el gráfico no muestra un buen seguimiento debido a la recepción de datos o a que realmente no se está siguiendo bien la trayectoria. Basándose en los resultados de la Sección \ref{compenvio} se puede decir que los bloqueos máximos debidos la recepción son excepcionalmente de más de 2 segundos y por lo tanto menospreciables frente los bloqueos que se muestran en los gráficos.
  \begin{figure}[H]
 	\centering
-    \includegraphics[scale=0.38]{images/sinlegWR/mejorado/mejor5Hz.png}
+    \includegraphics[scale=0.82]{images/mejor5hz.pdf}
  	\caption{Entrada,en rojo, y respuesta, en azul, del sistema ante una señal sinusoidal de enviando puntos a 5Hz. Buen seguimiento de la trayectoria.}
   \label{fig:ASbuena}
 \end{figure}
@@ -1751,13 +1750,13 @@ En las Figuras \ref{fig:resumimic} y \ref{fig:resumimic2} se puede observar como
 %MASGRAFICOs
 \begin{figure}[H]
 	\centering
-    \includegraphics[scale=0.655]{images/mimic/retmin2.png}
+    \includegraphics[scale=0.84]{images/retmin2.pdf}
 	 \caption{Posición de la articulación del AIBO movido manualmente, en fucsia, y del AIBO que hace la imitación, en verde.}
   \label{fig:resumimic}
 \end{figure}
 \begin{figure}[H]
 	\centering
-    \includegraphics[scale=0.41]{images/mimic/malo5hz.png}
+    \includegraphics[scale=0.84]{images/malo5hz.pdf}
 	 \caption{Posición de la articulación del AIBO movido manualmente, en rojo, la enviada al segundo AIBO, en fucsia y la del AIBO que hace la imitación, en azul.}
   \label{fig:resumimic2}
 \end{figure}
@@ -1774,7 +1773,7 @@ El paquete consta de dos partes diferenciadas, la creación de el modelo de AIBO
 Para generar un modelo, se debe editar un xml con formato URDF\footnote{http://wiki.ros.org/urdf}(Unified Robots Description Format) donde se especifican las dimensiones del robot, las articulaciones y sus movimientos, la geometría de las extremidades y parámetros físicos como la masa o la inercia.
 Para el modelo del AIBO se han creado 22 partes y 21 articulaciones se han descartado para el modelo la boca y las orejas. En la Figura \ref{fig:aibourdf} Se puede ver un esquema de las articulaciones, las partes y la disposición de los ejes que conforman el modelo implementado en el archivo URDF.
 
-\newpage
+%\newpage
 \begin{figure}[H]
 	\centering
     \includegraphics[scale=0.39]{images/Aibo.pdf}
@@ -2017,8 +2016,11 @@ Por último agradecer al doctor Ricardo Tellez de quien salió la idea de este p
 \thispagestyle{fancy}
 \section{Requisitos previos}
 Es necesario antes de instalar los paquetes seguir los siguientes pasos.
+
 \begin{itemize}
 \item Instalar Ubuntu 12.04 (Precise) de 32 bits.
+
+\url{http://releases.ubuntu.com/12.04/}
 
 \item Descargar librería liburbi 1.5 para C++:
 
@@ -2240,7 +2242,19 @@ El array de mensajes de tipo std{\_}msgs/Range esta ordenado:
 \end{itemize}
 
 \item sensor{\_}msgs/Range
-
+\begin{lstlisting}[language=bash]
+	Header header         
+	uint8 ULTRASOUND=0
+	uint8 INFRARED=1
+	uint8 radiation_type             
+	float32 field_of_view  
+	float32 min_range      
+	float32 max_range      
+	min_range==max_range
+	float32 range           
+                       
+\end{lstlisting}
+Se trata de un mensaje estándar de ROS\footnote{\url{http://docs.ros.org/api/sensor_msgs/html/msg/Range.html}}
 \item aibo{\_}server/TouchArray
 
 \begin{lstlisting}[language=bash]
