@@ -641,7 +641,9 @@ La estructura del programa será parecida a la anterior:
 \subsection{Comparación de los resultados}
 %De los datos obtenidos de las 15 replicas de cada método se han hecho las diferencias de tiempos entre un dato y el siguiente y se ha echo el inverso de este intervalo con tal de obtener la frecuencia entre datos, se prefiere trabajar con el inverso debido a la comodidad de la escala.
 De los datos obtenidos de las 15 replicas de cada método se han hecho las diferencias de tiempos entre un dato y el siguiente y se ha echo el inverso de este intervalo con tal de obtener la frecuencia entre datos.
-\begin{figure}[h]
+
+\newpage
+\begin{figure}[H]
 	\centering
 \begin{tikzpicture}
 \pgfplotsset{width=15cm,compat=1.10}
@@ -941,7 +943,7 @@ Si bien parece que liburbi tiene una tendencia a tener unos mínimos más bajos 
 	\centering
     \begin{tikzpicture}
     \usetikzlibrary{patterns}
-    \pgfplotsset{width=15cm,compat=1.10}
+    \pgfplotsset{width=12cm,compat=1.10}
 
 \begin{axis}[
 x tick label style={
@@ -949,10 +951,10 @@ x tick label style={
 xlabel=replicas,
 ylabel=Hz,
 enlargelimits=0.08,
-legend style={at={(0.5,-0.15)},
-anchor=north,legend columns=-1},
+%legend style={at={(0.5,-0.15)},
+%anchor=north,legend columns=-1},
 ybar=0.1pt,% configures `bar shift'
-bar width=10pt,
+bar width=6pt,
 ]
 \addplot [draw=black,pattern=horizontal lines dark blue]
 coordinates {(1,0.675) (2,1.561)
@@ -966,27 +968,19 @@ coordinates {(1,0.8) (2,0.074)
 	 \caption{Mínimos de la frecuencia en les 15 repliques de los dos métodos.}
   \label{fig:MinOneLeg}
 \end{figure}
-Por otro lado se ha observado, no la durada de estos pequeños bloqueos sino la cuantos se producen en cada caso. Para ello se ha realizado un gráfico donde se clasifican unos intervalos de frecuencias. 
-\begin{itemize}
-\item Menor que 0.5 Hz: Este intervalos se consideran bloqueos y son los menos deseados.
-\item De 0.5 a 5 Hz: No se consideran bloqueos pero es una frecuencia demasiado baja para trabajar de forma remota con un robot móvil.
-\item De 5 a 10Hz: Se trata de una velocidad aceptable.
-\item Mayor que 10: Se considera la frecuencia de trabajo ideal.
-\end{itemize}
-
 \begin{figure}[H]
 	\centering
     \begin{tikzpicture}
     \usetikzlibrary{patterns}
-    \pgfplotsset{width=15cm,compat=1.10}
+    \pgfplotsset{width=12cm,compat=1.10}
 
 \begin{axis}[
 ybar,
 ylabel=Hz,
 bar width=30pt,
 enlargelimits=0.15,
-legend style={at={(0.5,-0.15)},
-anchor=north,legend columns=-1},
+legend style={at={(0.15,0.97)},
+anchor=north,},
 symbolic x coords={menor que 0.5,entre 0.5 y 5,entre 5 y 10,mayor que 10},
 xtick=data,
 ]
@@ -999,6 +993,15 @@ xtick=data,
 	 \caption{Histograma de la frecuencia en les 15 repliques de los dos métodos.}
   \label{fig:histLeg}
 \end{figure}
+Por otro lado se ha observado, no la durada de estos pequeños bloqueos sino la cuantos se producen en cada caso. Para ello se ha realizado un gráfico donde se clasifican unos intervalos de frecuencias. 
+\begin{itemize}
+\item Menor que 0.5 Hz: Este intervalos se consideran bloqueos y son los menos deseados.
+\item De 0.5 a 5 Hz: No se consideran bloqueos pero es una frecuencia demasiado baja para trabajar de forma remota con un robot móvil.
+\item De 5 a 10Hz: Se trata de una velocidad aceptable.
+\item Mayor que 10: Se considera la frecuencia de trabajo ideal.
+\end{itemize}
+
+
 
 La gran mayoría de los datos, según la Figura \ref{fig:histLeg}, se encuentran en la zona de frecuencias deseadas y ambos métodos tienen un comportamiento muy parecido. En la franja considerada como bloqueos, en las 15 replicas que equivaldrían a unos 150 segundos de funcionamiento, se han dado 4 casos en liburbi y 5 en python.   
 
@@ -1359,8 +1362,8 @@ x tick label style={
 xlabel=replicas,
 ylabel=Hz,
 enlargelimits=0.08,
-legend style={at={(0.5,-0.15)},
-anchor=north,legend columns=-1},
+%legend style={at={(0.5,-0.15)},
+%anchor=north,legend columns=-1},
 ybar=0.1pt,% configures `bar shift'
 bar width=6pt,
 ]
@@ -1388,8 +1391,8 @@ ybar,
 ylabel=Hz,
 bar width=30pt,
 enlargelimits=0.15,
-legend style={at={(0.5,-0.15)},
-anchor=north,legend columns=-1},
+legend style={at={(0.15,0.95)},
+anchor=north,},
 symbolic x coords={menor que 0.5,entre 0.5 y 5,entre 5 y 10,mayor que 10},
 xtick=data,
 ]
@@ -1428,11 +1431,9 @@ Por otro lado se ha investigado y experimentado con los modos de tratamiento  de
 \end{itemize}
 
 Tras varias pruebas se ha decidido que el modo más conveniente para la implementación del modulo es el modo \texttt{cancel}.
-
+\newpage
 El experimento\footnote{Los codigos se puede encontrar en los Anexos \ref{sinC} y \ref{sinP}} se ha realizado varias veces cambiando la frecuencia a la que se envían los puntos de la trayectoria. Se ha realizado a 1, 2, 5 y 10 Hz, no se ha enviado a mas velocidad ya que el movimiento a una frecuencia de mas de 10 Hz era inconstante y poco suave.
 Se han descartado los experimentos en que se ha producido un bloqueo.
- 
-
 
 \begin{figure}[H]
 	\centering
@@ -1474,13 +1475,13 @@ Se han hecho las diferencias de entre el tiempo en que se envía la orden de los
 \begin{figure}[H]
 	\centering
 \begin{tikzpicture}[baseline]
-\pgfplotsset{width=13cm,compat=1.10}
+\pgfplotsset{width=10.5cm,compat=1.10}
 \begin{axis}[
 xlabel={$replicas$},
 ylabel={$tiempo(s)$},
 minor y tick num=1,
-legend style={at={(0.5,-0.25)},
-anchor=north,legend columns=-1},
+%legend style={at={(0.5,-0.25)},
+%anchor=north,legend columns=-1},
 ]
 \addplot[blue, only marks] table {data/retrasoPy.dat};
 \addplot[black, only marks] table {data/retrasoC++.dat};
@@ -1688,7 +1689,7 @@ A raíz del ultimo problema comentado se ha implementado una solución que evita
 En primer lugar en caso de que se produzca un bloqueo en el envío de una posición del cliente al servidor, éste no debe afectar a la recepción de las demás variables. Como solución se propone que el envió y la recepción se produzcan en dos threads distintos e independientes. 
 En segundo lugar se desea evitar los bloqueos en el envío. Esto se pretende hacer inicializando un tercer cliente URBI de manera que cuando el cliente de envío se quede bloquee en alguna orden el nuevo cliente lo reemplazara en el envío mientras éste se reinicializa. i en caso de bloqueo del nuevo cliente se espera que el primero, ya reinicializado tome el relevo.
 Bajo estas ideas se ha reescrito el callback de ROS como muestra el diagrama de la figura \ref{fig:Call}.
-
+\newpage
 \begin{figure}[H]
 	\centering
     \includegraphics[scale=0.7]{images/esquemaCall.pdf}
@@ -1697,9 +1698,7 @@ Bajo estas ideas se ha reescrito el callback de ROS como muestra el diagrama de 
 \end{figure}
 
 Con esta modificación se ha conseguido que el envío de datos, que de forma natural con liburbi es de forma síncrona, puesto que la función de envío espera una respuesta del servidor, se trate de forma asíncrona. Este modo no garantiza la llegada de todos los paquetes de datos pero gana en velocidad de transmisión y evita los bloqueos.
-
 Volviendo de nuevo a comprobar los resultados tras la modificación se vuelve a aplicar un movimiento sinusoidal al movimiento de una articulación.
-
 En la Figura \ref{fig:ASempiezamala} se ve como tras un primer seguimiento de la trayectoria aceptable empieza una zona donde el seguimiento es mucho peor. Esta zona que continua en la Figura \ref{fig:ASpeor} Es un periodo de tiempo en que la comunicación con el AIBO es realmente mala y donde surgían los bloqueos. Tras implementar el nuevo callback el callback la comunicación no se corta, dado que se turnan los dos clientes de envío, pero no sigue bien la trayectoria pues los bloqueos son sucesivos.
 
 \begin{figure}[H]
@@ -1902,11 +1901,11 @@ Las baterías son de iones de litio y aunque su impacto ambiental de las cuales 
 \chapter*{Conclusiones}
 \thispagestyle{fancy}
 \addcontentsline{toc}{chapter}{Conclusiones}
+Se ha alcanzado el objetivo implementando los paquetes \textbf{aibo{\_}server} y \textbf{aibo{\_}description}. Estos paquetes están disponibles para su uso o modificación con tal de complementarlos o mejorar los resultados (\url{https://github.com/Diamg/AiboRosPackages}). 
+El módulo implementado permite adquirir los datos de los sensores y articulaciones del AIBO de forma satisfactoria a velocidades superiores a 10 Hz en forma de tópicos de ROS. Esta parte del módulo por si solo ya facilita enormemente la programación y sobretodo el testeo y la depuración con el uso de las herramientas que facilita ROS. Además en esta linea se ha incluido un modelo para el visualizador rviz con un aspecto visual y funcional complementando el módulo anterior.  
+Por otro lado la parte implementada que se encarga de enviar las ordenes al AIBO permitiendo actuar sobre el no se ha dado muy buenos resultados y no permite el envío de trayectorias punto a punto con este método. De todos modos URBI tiene su propio generador de trayectorias por lo que permite enviar funciones de movimiento más complejas  o posiciones concretas enviadas a un ritmo mas bajo del implementado.
 
-
-Cuando se trabaja con sistemas reales uno se da cuenta que no todo funciona de forma ideal y que un algoritmo que debería funcionar conlleva a múltiples errores o respuestas no esperadas. En éste caso concreto se ha visto como las comunicaciones que establecía el lenguaje base elegido no eran tan buenas como se esperaba. Los resultados dejan mucho que desear y no permiten ni aseguran el buen funcionamiento de posteriores aplicaciones basadas en el módulo implementado. De todas formas se ha alcanzado el objetivo siguiendo la metodología establecida en primer momento, se a implementado un modulo de ROS que permite integrar la plataforma AIBO, formado por los paquetes \textbf{aibo{\_}server} y \textbf{aibo{\_}description}. Estos paquetes se pueden encontrar en el repositorio (url del github) y están disponibles para su uso o modificación con tal de complementarlos o mejorar los resultados. Además se pretende colgar, fuera del alcance del proyecto, los paquetes y la documentación necesaria para su uso en la pagina de ROS con tal de contribuir y aportar un grano de arena al desarrollo de software libre.
-
-Este proyecto deja un camino abierto a las posibles mejoras y complementos. Entre otros la integración del modulo de visión y audio usando URBI como se ha echo. Por otra parte dado que los resultados han demostrado no ser un modulo demasiado robusto cabria la posibilidad de implementar el mismo modulo partiendo OPEN-R, eliminando de esta manera una capa de programación intermedia, URBI, que posiblemente ralentice y empeore la comunicación entre cliente y servidor. En cuanto al modelo y el nodo que permite su integración con rviz podría completarse añadiendo los sensores del AIBO como los acelerómetros, los infrarrojos, los sensores de presión y contacto y la camera, permitiendo proyectos de odometría.
+Este proyecto deja un camino abierto a las posibles mejoras y complementos. Entre otros la integración del modulo de visión y audio usando URBI como se ha echo. Por otra parte cabe la duda de si el comportamiento de envío sería mejor usando OPEN-R, al eliminar una capa de programación intermedia, URBI, que posiblemente ralentice y empeore la comunicación entre cliente y servidor. En cuanto al modelo y el nodo que permite su integración con rviz podría completarse añadiendo los sensores del AIBO como los acelerómetros, los infrarrojos, los sensores de presión y contacto y la camera, permitiendo entre otros proyectos de odometría.
 
 A nivel personal y educativo este proyecto ha servido para poner a prueba la capacidad de análisis y de resolución de problemas. Ha ayudado a tener un amplio conocimiento de de uno de los frameworks relacionados con la robótica mas usados del momento. Además a ayudado a mejorar las habilidades de desarrollo de software con los lenguajes C++ y python. 
 
