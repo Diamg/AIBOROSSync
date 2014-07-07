@@ -120,8 +120,8 @@ Sigue una segunda parte en la que se comparan varios métodos de programación c
 
 Para concluir se explica como se han implementado los módulos que facilitan la integración con ROS. Por un lado el modulo de control al que se le han aplicado unos criterios de valoración y se ha puesto a prueba y por otro el modulo que facilita la integración de un modelo de visualización 3D.
 
-Esta memoria incluye también un desarrollo de las conclusiones extraídas tras probar el paquete de ROS implementado, así como unas recomendaciones para los próximos proyectos que se puedan realizar sobre esta vía.
-Con este motivo se ha redactado un manual de usuario con la información necesaria para para preparar el marco de trabajo y para poder usar el modulo implementado.
+Esta memoria incluye también un desarrollo del presupuesto y el impacto ambiental intrínsecos al proyecto. Por último se puede encontrar las conclusiones extraídas tras probar el paquete de ROS implementado, así como unas recomendaciones para los próximos proyectos que se puedan realizar sobre esta vía.
+Con este motivo se ha redactado un manual de usuario en forma de anexo con la información necesaria para para preparar el marco de trabajo y para poder usar el modulo implementado.
 
 
 \newpage
@@ -158,7 +158,7 @@ Además el propio aprendizaje intrínseco del proyecto como es la oportunidad de
 \section{Requerimientos previos}
 Para la realización de este proyecto es necesario un cierto bagaje y experiencia en programación, concretamente en los lenguajes C++ y python orientados a objetos, además de un conocimiento básico del funcionamiento de ROS y su estructura.
 Son necesarios también conocimientos de estadística y el uso de software de apoyo para la realización de algunos testes estadísticos.
-Por ultimo para la realización del proyecto se ha hecho uso de la herramienta \LaTeX. 
+%Por ultimo para la realización de la m se ha hecho uso de la herramienta \LaTeX. 
 \newpage
 \clearpage
 
@@ -173,7 +173,7 @@ Se pretende dar una visión general del estado actual de la robótica y el compr
 
 Desde la primera definición de robot o de la idea que exporto Isaac Asimov ha pasado más de medio siglo y aún así se puede decir que la robótica se encuentra dando sus primeros pasos. Si bien no es sencillo ubicar el origen de esta ciencia se puede afirmar con total seguridad que esta rama hizo grandes avances a raíz de la revolución industrial de mano de otras especialidades como la electrónica, la informática o la inteligencia artificial.
 
-En un primer momento los robots fueron máquinas automatizadas o teleoperadas con el fin de realizar tareas dentro de la industria que tuvieran un cierto riesgo, requiriesen de alta precisión o una eficiencia tal que la mano de obra humana no pudiera ofrecer. En este contexto actualmente se encuentran gran variedad de brazos manipuladores en la mayoría de las fabricas que a la vez que aumentan su grado automatización, la eficiencia y rentabilidad económica lo hacen con el\cite{libroblanco}. Un ejemplo de este tipo de robots son los de KUKA\footnote{\url{http://www.kuka-robotics.com/en/}} mostrado en la Figura \ref{fig:kuka}.
+En un primer momento los robots fueron máquinas automatizadas o teleoperadas con el fin de realizar tareas dentro de la industria que tuvieran un cierto riesgo, requiriesen de alta precisión o una eficiencia tal que la mano de obra humana no pudiera ofrecer. En este contexto actualmente se encuentran gran variedad de brazos manipuladores en la mayoría de las fabricas que a la vez que aumentan su grado automatización, la eficiencia y rentabilidad económica lo hacen con él\cite{libroblanco}. Un ejemplo de este tipo de robots son los de KUKA\footnote{\url{http://www.kuka-robotics.com/en/}} mostrado en la Figura \ref{fig:kuka}.
  
 \begin{figure}[h!]
 	\centering
@@ -182,9 +182,9 @@ En un primer momento los robots fueron máquinas automatizadas o teleoperadas co
   \label{fig:kuka}
 \end{figure}
 
-Otros sectores, aparte de la industria, han impulsado la robótica dando pie a otro tipo de robots, los robots móviles. Éste es el caso de la exploración espacial que dio sus primeros pasos con el automóvil teleoperado lunokjod\footnote{\url{http://en.wikipedia.org/wiki/Lunokhod_1}} y actualmente tiene su máximo exponente con el robot Curiosityenviado a Marte en la última misión de la NASA\footnote{\url{http://www.nasa.gov/mission_pages/msl/}}. Las plataformas anteriormente descritas tienen la sencillez de moverse sobre ruedas, a diferencia de otro tipo de robots móviles que usan varias extremidades, bípedos, cuadrúpedos, hexápedos y otros con gran cantidad de ellas. Si bien el uso de extremidades dificulta el control dinámico, la estabilidad y los algoritmos de  navegación, ofrecen la posibilidad de andar por gran variedad de terrenos y producen una mayor aceptación social debido a su morfología familiar para el hombre . Un ejemplo es el robot cuadrúpedo de DARPA\footnote{\url{http://www.darpa.mil}} y Boston Dynamics \footnote{\url{http://www.bostondynamics.com/}} Wildcat mostrado a en la Figura \ref{fig:wildcat}.
+Otros sectores, aparte de la industria, han impulsado la robótica dando pie a otro tipo de robots, los robots móviles. Éste es el caso de la exploración espacial que dio sus primeros pasos con el automóvil teleoperado lunokjod\footnote{\url{http://en.wikipedia.org/wiki/Lunokhod_1}} y actualmente tiene su máximo exponente con el robot Curiosity enviado a Marte en la última misión de la NASA\footnote{\url{http://www.nasa.gov/mission_pages/msl/}}. Las plataformas anteriormente descritas tienen la sencillez de moverse sobre ruedas, a diferencia de otro tipo de robots móviles que usan varias extremidades, bípedos, cuadrúpedos, hexápedos y otros con gran cantidad de ellas. Si bien el uso de extremidades dificulta el control dinámico, la estabilidad y los algoritmos de  navegación, ofrecen la posibilidad de andar por gran variedad de terrenos y producen una mayor aceptación social debido a su morfología familiar para el hombre. Un ejemplo es el robot cuadrúpedo de DARPA\footnote{\url{http://www.darpa.mil}} y Boston Dynamics \footnote{\url{http://www.bostondynamics.com/}} Wildcat mostrado a en la Figura \ref{fig:wildcat}.
 
-\begin{figure}[h!]
+\begin{figure}[H]
 	\centering
     \includegraphics[scale=0.6]	{images/Wildcat.jpg}
 	 \caption{Robot cuadrúpedo WildCat.}
@@ -213,7 +213,7 @@ Por otra parte existen ciertos softwares libres que se están estableciendo como
 Cabe destacar dos de ellos:
 
 \begin{itemize}
-\item URBI\cite{urbiref}: Del cual se pude encontrar información en la Sección \ref{urbi}.
+\item URBI  (Universal Real-time Behavior Interface)\cite{urbiref}: Del cual se pude encontrar información en la Sección \ref{urbi}.
 \item ROS: Es el marco de trabajo más extendido actualmente y abasta una gran cantidad de plataformas. En la Sección \ref{ros} se puede encontrar más información.
 \end{itemize} 
 
@@ -221,25 +221,25 @@ Por lo que respeta a la implementación de drivers para pasar de un lenguaje pro
 
 \subsection{AIBO}
 
-Con la plataforma de estudio AIBO Sección \ref{secaibo} se han realizado diversos proyectos de índoles muy diferentes dada su versatilidad. Sobretodo se han llevado a cabo proyectos relacionados con visión \cite{xavi} o comportamientos e inteligencia artificial \cite{riki}.
+Con la plataforma de estudio AIBO se han realizado diversos proyectos de índoles muy diferentes dada su versatilidad. Sobretodo se han llevado a cabo proyectos relacionados con visión \cite{xavi} o comportamientos e inteligencia artificial \cite{riki}.
 Un punto esencial en el desarrollo del AIBO fue que durante el período comprendido entre 1999 y 2008 fue la plataforma elegida para realizar la competición RoboCup Estandard Plataform League, posteriormente sustituido por la plataforma NAO. La RoboCup es una competición internacional destinada a promover la robótica y donde se realizan pruebas como la comentada anteriormente que forma parte de la sección de fútbol con robots autónomos. La prueba de simulacros de rescate fue otra donde el AIBO tubo una gran acogida y fue muy usado \cite{robocup}.
-La RoboCup fue fuente de inspiración para muchos investigaciones que se pueden clasificar en tres grupos según su finalidad:
+La RoboCup fue fuente de inspiración para múltiples investigaciones que se pueden clasificar en tres grupos según su finalidad:
 \begin{itemize}
-\item Visión i reconocimiento de marcas para la posterior ubicación dentro del campo \cite{morales}.
+\item Visión y reconocimiento de marcas para la posterior ubicación dentro del campo \cite{morales}.
 \item Comunicaciones y control sobre los movimientos \cite{jesus}.
 \item Definición de roles dentro del campo \cite{metod}.
 \end{itemize}
 
 Actualmente el AIBO no se usa como se hacia antes, en parte porque ya no es la plataforma estándar de la RoboCup y en parte porque des de que en 2006 SONY dejo de producirlo su lenguaje base OPEN-R\cite{OPEN-R PG} dejó de ser mantenido.
-A medida que ha caído en desuso los softwares que los soportaban ha dejado hacerlo, incluso aquellos que nacieron especialmente para el AIBO. Es el caso de URBI que des de la version 1.5 de su librería, liburbi, no es compatible.
+A medida que ha caído en desuso los softwares que lo soportaban han dejado de hacerlo, incluso aquellos que nacieron especialmente para el AIBO. Es el caso de URBI que des de la version 1.5 de su librería, liburbi, no es compatible.
 Además la recerca de éste proyecto se ha visto dificultada por la desaparición de la red de gran parte de la documentación de estos lenguajes.
 
 Ha habido otros intentos de recuperación de la plataforma AIBO es el caso de de un proyecto que trataba de hacer compatible la version 2.3 de liburbi para AIBO \cite{kecsap}.
-Otro proyecto del que solo se ha conseguido encontrar un articulo que lo mencione y nada de documentación  trataba de realizar la integración mediante EusLisp de a ROS varias plataformas, entre ellas AIBO \cite{euslisp}.
+Otro proyecto del que solo se ha conseguido encontrar un articulo que lo mencione y nada de documentación  trataba de realizar la integración mediante EusLisp a ROS de varias plataformas, entre ellas AIBO \cite{euslisp}.
 
 
 \section{Objetivos}
-EL objetivo de este proyecto es recuperar al AIBO como plataforma educativa aportándole una capa superior de programación que permita la integración de la plataforma con ROS.
+El objetivo de este proyecto es recuperar al AIBO como plataforma educativa aportándole una capa superior de programación que permita la integración de la plataforma con ROS.
 Con este fin  se compararan diversos caminos con tal conseguir el mejor resultado.
 
 Como objetivos concretos se marcan:
@@ -333,7 +333,7 @@ bar height=0.35,
 \chapter{AIBO ERS-7}\label{secaibo}
 \thispagestyle{fancy}
 En 1999 SONY lanzo al mercado la mascota robótica AIBO (Artificial Intelligence roBOt, amigo en japonés). AIBO es un robot conforma de perro 
-que fue ideado para interaccionar con su dueño como una mascota real, es capaz de percibir estímulos del exterior mediante una serie de sensores. Lleva incorporado de serie un software llamad AIBO MIND dentro de una tarjeta de memoria que le permite comportarse como un perro real, reconocer a su dueño, reconocer objetos, jugar con una pelota y aprender, entre muchas otras cosas.
+que fue ideado para interaccionar con su dueño como una mascota real, es capaz de percibir estímulos del exterior mediante una serie de sensores. Lleva incorporado de serie un software llamado AIBO MIND dentro de una tarjeta de memoria que le permite comportarse como un perro real, reconocer a su dueño, reconocer objetos, jugar con una pelota y aprender, entre muchas otras cosas.
 
 
 \section{Hardware}
@@ -347,7 +347,7 @@ Entre los diferentes modelos existentes se trabajará con el modelo ERS-7, que s
 	 \caption{AIBO ERS-7.}
   \label{fig:ers7}
 \end{figure}	
-
+\newpage
 El AIBO ERS-7 tiene las siguientes características: 
 \begin{multicols}{2}
 \begin{itemize}
@@ -409,7 +409,7 @@ El AIBO ERS-7 tiene las siguientes características:
 
 \section{El software}
 APERIOS es el sistema operativo en tiempo real que usan los AIBO. Está destinado y diseñado para poder trabajar con grandes flujos de datos de audio e imagen simultaneamente en tiempo real.
-En un principio AIBO iba a ser comercializado con una finalidad puramente lúdica, pero debido a su atractivo diseño y su robustez atrajo la atención de programadores que vieron el potencial para convertirse en una herramienta de investigación y aprendizaje. Ésto llevo a SONY a desarrollar un software de desarrollo llamado OPEN-R SDK y que usaba un lenguaje propio, OPEN-R. A raíz de este modulo salieron otros lenguajes e interfaces que trabajaban en una capa superior, sobre OPEN-R y APERIOS, como son \textit{URBI}\footnote{\url{www.urbiforge.org}} o \textit{Tekkotsu}\footnote{\url{tekkotsu.org}}.
+En un principio AIBO iba a ser comercializado con una finalidad puramente lúdica, pero debido a su atractivo diseño y su robustez atrajo la atención de programadores que vieron el potencial para convertirse en una herramienta de investigación y aprendizaje. Ésto llevo a SONY a facilitar un software de desarrollo llamado OPEN-R SDK y que usaba un lenguaje propio, OPEN-R. A raíz de este modulo salieron otros lenguajes e interfaces que trabajaban en una capa superior, sobre OPEN-R y APERIOS, como son \textit{URBI}\footnote{\url{www.urbiforge.org}} o \textit{Tekkotsu}\footnote{\url{tekkotsu.org}}.
 
 \subsection{OPEN-R}
 OPEN-R es un API en C++ que corre sobre el sistema operativo APERIOS \ref{fig:openrarch}. OPEN-R diferencia entre dos niveles, la capa de sistema por donde se accede al hardware del robot y la capa de aplicación que se trata de los programas hechos por el usuario.
@@ -421,8 +421,8 @@ OPEN-R es un API en C++ que corre sobre el sistema operativo APERIOS \ref{fig:op
   \label{fig:openrarch}
 \end{figure}
 
-Al tratarse de un lenguaje de bajo nivel su estructura es inherente al sistema operativo que se basa en objetos que interaccionan entre si mediante mensajes o meta-objetos. El concepro de objeto es parecido al utilizado en los sistemas \textit{UNIX}\footnote{\url{www.unix.org}} y \textit{Windows}\footnote{\url{http://windows.microsoft.com/en-us/windows/home}}, con la diferencia de que son monohilo y que la comunicación se realiza mediante mensajes que y incluyen datos y un identificador el método en el que se ejecutará en el objeto destino.
-Esto implica que cada objetos tiene varios puntos de entrada   y salida que son los métodos:  DoInit(), DoStart(), DoStop(), DoDestroy(). En el paso de mensajes uno se de los objetos se define como sujeto (el que envía) y el otro como observador (el que recibe) que inicia su ejecución después de que el mensaje haga saltar el evento del método correspondiente.
+Al tratarse de un lenguaje de bajo nivel su estructura es inherente al sistema operativo que se basa en objetos que interaccionan entre si mediante mensajes o meta-objetos. El concepro de objeto es parecido al utilizado en los sistemas \textit{UNIX}\footnote{\url{www.unix.org}} y \textit{Windows}\footnote{\url{http://windows.microsoft.com/en-us/windows/home}}, con la diferencia de que son monohilo y que la comunicación se realiza mediante mensajes que incluyen datos y un identificador el método en el que se ejecutará en el objeto destino.
+Esto implica que cada objetos tiene varios puntos de entrada   y salida que son los métodos:  DoInit(), DoStart(), DoStop(), DoDestroy(). En el paso de mensajes uno de los objetos se define como sujeto (el que envía) y el otro como observador (el que recibe) que inicia su ejecución después de que el mensaje haga saltar el evento del método correspondiente.
 
 \begin{table}[h]
 \begin{center}
@@ -459,14 +459,14 @@ Una de las mayores complicaciones que acarrea trabajar con OPEN-R es que usa una
 \item Makefile: Archivo para la configuración global de la compilación.
 \item OBJECT.cfg: Listado de objetos que se ejecutarán.
 \item CONECT.cfg: Se determinan las conexiones entre objetos que se ejecutarán.
-\item WLANCONFIG.txt\footnote{Éste ultimo archivo es necesario configurarlo para cualquier método de programación, URBI, Tekkotsu o OPEN-R. Ver Anexo }: Donde se definen las características de la conexión inalámbrica del AIBO.
+\item WLANCONFIG.txt\footnote{Éste ultimo archivo es necesario configurarlo para cualquier método de programación, URBI, Tekkotsu o OPEN-R. Ver Anexo \ref{MU}}: Donde se definen las características de la conexión inalámbrica del AIBO.
 \end{itemize}
 
 \subsection{Tekkotsu}
 Tekkotsu es un software de desarrollo para robots móviles. Orginalmente fue creado para AIBO, pero actualmente permite programar otros plataformas com el Chiara\footnote{\url{http://chiara-robot.org}}, iRobot Create\footnote{\url{http://chiara-robot.org/Create/}}, HandEye\footnote{\url{http://chiara-robot.org/HandEye/}} o Lynxmotion Arms\footnote{\url{http://www.lynxmotion.com/}}.
 
 
-Mantiene la arquitectura semejante a OPEN-R, basada en objetos y paso de eventos y mantiene la herencia de C++. Proporciona una capa de mayor nivel que OPEN-R pero permite llamar a OPEN-R para acceder de forma rápida a sensores, actuadores y sistemas de comunicación, lo que significa que la capacidad de control sobre el robot se encuentre limitada por el propio hardware y no por el Tekkotsu. Por otro lado permite al usuario trabajar en alto nivel con herramientas de procesamiento visual básico, interfaces de monitorización, modelos de cinemática inversa y soporte para la administración de redes inalámbricas.
+Mantiene la arquitectura semejante a OPEN-R, basada en objetos y paso de eventos y mantiene la herencia de C++. Proporciona una capa de mayor nivel que OPEN-R pero permite llamar a OPEN-R para acceder de forma rápida a sensores, actuadores y sistemas de comunicación, lo que significa que la capacidad de control sobre el robot se encuentre limitada por el propio hardware y no por Tekkotsu. Por otro lado permite al usuario trabajar en alto nivel con herramientas de procesamiento visual básico, interfaces de monitorización, modelos de cinemática inversa y soporte para la administración de redes inalámbricas.
  
 \begin{figure}[h!]
 	\centering
@@ -477,7 +477,7 @@ Mantiene la arquitectura semejante a OPEN-R, basada en objetos y paso de eventos
 
 Además Tekkotsu proporciona una interfaz de usuario, ControllerGUI, que permite acceder al AIBO remotamente y ejecutar los comportamientos que estén programados en la targeta de memoria. Estas funciones se pueden realizar mediante la interfaz gráfica basada en Java como por una conexión telnet\footnote{\url{http://es.wikipedia.org/wiki/Telnet}} al puerto 10020 \cite{TekkQuickRef}.
 
-Tekkots se organiza como un conjunto de comportamientos o \textit{behaviors} y clases llamadas MotionComand. Sus funciones se ejecutan en dos procesos, el \textit{Main} y el \textit{Motion}. El primero se encarga de la percepción i toma de decisiones y el segundo hace referencia al control en tiempo real de los actuadores. Existe un tercer proceso que se encarga de la salida de audio \cite{tekkTut}. 
+Tekkotsu se organiza como un conjunto de comportamientos o \textit{behaviors} y clases llamadas MotionComand. Sus funciones se ejecutan en dos procesos, el \textit{Main} y el \textit{Motion}. El primero se encarga de la percepción y toma de decisiones y el segundo hace referencia al control en tiempo real de los actuadores. Existe un tercer proceso que se encarga de la salida de audio \cite{tekkTut}. 
 
 Los comportamientos, como se llama a todo programa de realizado en Tekkotsu, igual que sus análogos en OPEN-R, tienen una estructura basada en unos métodos que hay que respetar: doStart() y doStop(). Éstos simplifican los cuatro métodos de OPEN-R, pero permiten mantener la estructura y hacen más sencilla y rapida la comunicación.
   
@@ -513,15 +513,15 @@ URBI permite y facilita el acceso a cada una de las articulaciones y sensores re
 \chapter{Comparación de alternativas para la programación}\label{seccomp}
 \thispagestyle{fancy}
 Teniendo en cuenta la pretensión y objetivo final es poder programar AIBO con ROS se ha buscado la forma de atacar el problema desde todos los flancos. 
-Una de ellas y completamente diferente a las demás ha sido buscar un punto de acceso al hardware con la intención de poder instalar alguna distribución de linux, lo que permitiría implementar el modulo de ROS de como un sistema embebido. Pero tras desmontar gran parte de las piezas solo se encontró un puerto que no coincidía con ningún estándar y se abandonó dicho camino.  
+Una de ellas y completamente diferente a las demás ha sido buscar un punto de acceso al hardware con la intención de poder instalar alguna distribución de linux, lo que permitiría implementar el modulo de ROS como un sistema embebido. Pero tras desmontar gran parte de las piezas solo se encontró un puerto que no coincidía con ningún estándar y se abandonó dicho camino.  
 
-Solo queda usar una arquitectura cliente/servidor de forma que el modulo de ROS se ejecute en el cliente remoto, pero sea capaz adquirir de forma sencilla y rápida el estado del AIBO y a la vez actuar sobre el.
+Sólo queda usar una arquitectura cliente/servidor de forma que el modulo de ROS se ejecute en el cliente remoto, pero sea capaz adquirir de forma sencilla y rápida el estado del AIBO y a la vez actuar sobre el.
 
 
 Se plantean tres posibilidades de programación: OPEN-R, Tekkotsu y URBI.
-En los tres casos es imprescindible programar el cliente en el correspondiente lenguaje. Pero respeto al servidor URBI ahorraría tener que desarrollarlo puesto que el sistema operativo nos permite interactuar de forma remota. Tekkotsu permite interactuar de forma remota pero no hay ningún comportamiento que permita enviar ordenes a los actuadores y habría que implementarlo. Por último con OPEN-R habría que implementar el servidor entero tanto el envió como la recepción. 
-De todos modos se ha probado de instalar y establecer los tres marcos de trabajo y probado los tres lenguajes para comprobar su dificultad y su funcionamiento. Respeto a OPEN-R se ha encontrado muy poca documentación y el comienzo de su aprendizaje ha sido realmente duro tanto el lenguaje en si como la configuración de todos los archivos. Tekkotsu parece un lenguaje más sencillo y no necesita apenas configurar archivos pero la única documentación encontrada ha sido para la ultima versión que no se ha conseguido compilar dentro de la tarjeta de memoria. En cambio si se ha logrado con una versión más antigua, la nueva parece no ser compatible con el compilador de OPEN-R, y se han podido hacer algunas pruebas aunque sin documentación de la versión y habiendo cambiado bastante las funciones, ha implicado un gran esfuerzo. 
-Por lo que URBI se refiere su uso es realmente sencillo des del terminal , se ha encontrado bastante documentación para el uso en modo script y algo menos para el uso de liburbi. El único problema que hay que tener en cuenta es que la librería liburbi 1.5, la más reciente que es compatible con  AIBO, no es compatible con un sistema linux de 64 bits. 
+En los tres casos es imprescindible programar el cliente en el correspondiente lenguaje. Pero respeto al servidor URBI, ahorraría tener que desarrollarlo puesto que el sistema operativo nos permite interactuar de forma remota. Tekkotsu permite leer de forma remota pero no hay ningún comportamiento que permita enviar ordenes a los actuadores y habría que implementarlo. Por último con OPEN-R habría que implementar el servidor entero tanto el envió como la recepción. 
+De todos modos se ha probado de instalar y establecer los tres marcos de trabajo y probado los tres lenguajes para comprobar su dificultad y su funcionamiento. Respeto a OPEN-R se ha encontrado muy poca documentación y el comienzo de su aprendizaje ha sido realmente duro, tanto el lenguaje en si como la configuración de todos los archivos. Tekkotsu parece un lenguaje más sencillo y no necesita apenas configurar archivos pero la única documentación encontrada ha sido para la última versión, la que no se ha conseguido compilar dentro de la tarjeta de memoria pues parece ser incompatible con el el compilador que usa OPEN-R. En cambio si se ha logrado con una versión más antigua y se han podido hacer algunas pruebas, aunque sin documentación de la versión y habiendo cambiado algunas de las funciones, no se ha podido trabajar correctamente . 
+Por lo que URBI se refiere su uso es realmente sencillo des del terminal y con el uso de la libreria de C++, se ha encontrado bastante documentación. El único problema que hay que tener en cuenta es que la librería liburbi 1.5, la más reciente que es compatible con  AIBO, no es compatible con un sistema linux de 64 bits. 
 
 \begin{table}[H]
 \begin{center}
@@ -556,15 +556,15 @@ Documentación (0-5)
 & 3
 & 1\\ \hline
 Plataforma del PC.
-& Windows/ Linux/ OS
-& Windows/ Linux 32bits/ OS
+& Windows/ Linux/ Mac OS
+& Windows/ Linux 32bits/ Mac OS
 & Linux\\ \hline
 \end{tabulary}
 \end{center}
 \caption{Comparación entre lenguajes usados sobre AIBO\label{complleng}}
 \end{table}
 
-En vista de la Tabla \ref{complleng} y de lo anteriormente comentado se descarta usar Tekkotsu por haber encontrado muy poca documentación de la versión que ha podido ser compilada. Si bien seria OPEN-R sería una buena opción ya que es la capa mas baja de programación que se permite tocar su aprendizaje es realmente duro y posiblemente no habría tiempo de implementar el modulo deseado. Por lo tanto se partirá de URBI como lenguaje dado su fácil uso y que proporciona unas buenas herramientas para alcanzar el objetivo.
+En vista de la Tabla \ref{complleng} y de lo anteriormente comentado se descarta usar Tekkotsu por haber encontrado muy poca documentación de la versión que ha podido ser compilada. Si bien OPEN-R sería una buena opción ya que es la capa mas baja de programación que se permite tocar su aprendizaje es realmente duro y posiblemente no habría tiempo de implementar el modulo deseado. Por lo tanto se partirá de URBI como lenguaje dado su fácil uso y que proporciona unas buenas herramientas para alcanzar el objetivo.
 
 
 Partiendo del lenguaje URBI se plantean dos opciones de desarrollo:
@@ -600,7 +600,7 @@ La estructura del programa es la que sigue\footnote{El script se puede encontrar
 \item Inicialización del cliente URBI.
 \item Inicialización del callback: Éste es llamado cada vez que se reciba un dato con la etiqueta asignada. 
 \begin{itemize}
-\item Se toma el valor de la variable (aunque no se necesaria para este experimento).
+\item Se toma el valor de la variable (aunque no sea necesaria para este experimento).
 \item Se consulta el tiempo en que ha sido recibido el dato.
 \item Se guarda el dato y el tiempo.
 \end{itemize}
@@ -993,7 +993,7 @@ xtick=data,
 	 \caption{Histograma de la frecuencia en les 15 repliques de los dos métodos.}
   \label{fig:histLeg}
 \end{figure}
-Por otro lado se ha observado, no la durada de estos pequeños bloqueos sino la cuantos se producen en cada caso. Para ello se ha realizado un gráfico donde se clasifican unos intervalos de frecuencias. 
+Por otro lado se ha observado, no la durada de estos pequeños bloqueos sino cuantos se producen en cada caso. Para ello se ha realizado un gráfico donde se clasifican unos intervalos de frecuencias. 
 \begin{itemize}
 \item Menor que 0.5 Hz: Este intervalos se consideran bloqueos y son los menos deseados.
 \item De 0.5 a 5 Hz: No se consideran bloqueos pero es una frecuencia demasiado baja para trabajar de forma remota con un robot móvil.
@@ -1408,7 +1408,7 @@ xtick=data,
 
 
 \section{Envío de datos}\label{secenvdades}
-Vista una de los sentidos de comunicación el siguiente experimento se va a fijar en el otro, el envió de los valores de las articulaciones del cliente al servidor con tal de controlar al AIBO.
+Vista uno de los sentidos de comunicación el siguiente experimento se va a fijar en el otro, el envió de los valores de las articulaciones del cliente al servidor con tal de controlar al AIBO.
 El experimento consiste en enviar una trayectoria punto a punto a una articulación y comprobar que tal responde. La trayectoria será sinusoidal sin importar el periodo. Para valorar los resultados se leerá la respuesta de la articulación usando los módulos de lectura del experimento anterior, que condicionaran el resultado por sus errores y limitaciones. 
 
 En este caso se ha contado con 3 opciones a comparar. Dado que por la terminal de URBI usando el cliente telnet no se ha permitió hacer la lectura y la escritura a la vez se ha tenido que hacer con dos clientes telnet. Esto ha planteado la duda si en liburbi tenia algún efecto el hecho de escribir y leer a la vez por el mismo cliente aunque este lo permita. Por este motivo se han planteado los siguientes programas:
@@ -1439,33 +1439,33 @@ Se han descartado los experimentos en que se ha producido un bloqueo.
 	\centering
     \includegraphics[scale=1]{plots/h1-f1.pdf}
  
-   	 \caption{En azul está graficado las posiciones enviadas a 1Hz y en negro las lecturas. En columnas se encuentran las replicas del mismo método y por filas los tres métodos usados, en orden descendente son liburbi con un cliente, liburbi con dos cliente y python.}
+   	 \caption{En azul está graficado las posiciones enviadas a 1Hz y en negro las lecturas.}
   \label{fig:sin1H}
 \end{figure}
 
 \begin{figure}[H]
 	\centering
     \includegraphics[scale=1]{plots/h2.pdf}
-	 \caption{En azul está graficado las posiciones enviadas a 2Hz y en negro las lecturas. En columnas se encuentran las replicas del mismo método y por filas los tres métodos usados, en orden descendente son liburbi con un cliente, liburbi con dos cliente y python.5}
+	 \caption{En azul está graficado las posiciones enviadas a 2Hz y en negro las lecturas.}
   \label{fig:sin2H}
 \end{figure}
 \begin{figure}[H]
 	\centering
    \includegraphics[scale=1]{plots/h5.pdf}
-	 \caption{En azul está graficado las posiciones enviadas a 5Hz y en negro las lecturas. En columnas se encuentran las replicas del mismo método y por filas los tres métodos usados, en orden descendente son liburbi con un cliente, liburbi con dos cliente y python.}
+	 \caption{En azul está graficado las posiciones enviadas a 5Hz y en negro las lecturas. }
   \label{fig:sin5H}
 \end{figure}
 \begin{figure}[H]
 	\centering
     \includegraphics[scale=1]{plots/h10.pdf}
-	 \caption{En azul está graficado las posiciones enviadas a 10Hz y en negro las lecturas. En columnas se encuentran las replicas del mismo método y por filas los tres métodos usados, en orden descendente son liburbi con un cliente, liburbi con dos cliente y python.}
+	 \caption{En azul está graficado las posiciones enviadas a 10Hz y en negro las lecturas. }
   \label{fig:sin10H}
 \end{figure}
 
 En los gráficos de las Figuras \ref{fig:sin1H}, \ref{fig:sin2H}, \ref{fig:sin5H} y \ref{fig:sin10H} se pueden distinguir  dos tipos de errores por los cuales no se sigue bien la trayectoria:
 
 \begin{itemize}
-\item La articulación no se mueve:Queda reflejado como una recta roja horizontal y el modulo responsable es el de escritura.
+\item La articulación no se mueve: Queda reflejado como una recta roja horizontal y el modulo responsable es el de escritura.
 \item No se recibe la posición actual: Queda reflejado como un periodo sin datos. en este caso no se puede saber si la articulación se movía o no\footnote{Por inspección visual se ha comprobado que ambos errores son independientes.}.
 \end{itemize}
 El caso en el que sólo se usa un solo cliente con liburbi tiene grandes bloqueos en la recepción de y muestra un movimiento más brusco e inconstante.
@@ -1495,7 +1495,7 @@ node[above] at (axis cs:9,0.737) {0.737};
 \end{axis}
 \end{tikzpicture}
 
-	 \caption{Retrasos entre la orden enviada y la acción para los métodos liburbi con dos clientes y python.}
+	 \caption{Retrasos entre la orden enviada y la acción.}
   \label{fig:retras}
 \end{figure}
 
@@ -1515,14 +1515,16 @@ Congelaciones en la lectura & Si & Si &Si \\ \hline
 Frecuencia de envío& = & = & = \\ \hline
 Seguimiento de trayectorias & Bueno & Malo & Bueno \\ \hline
 Efecto negativo del envío en la lectura& No & Si & No \\ \hline
-Retraso de la respuesta & Menor & Mayor & \\ \hline
+Retraso de la respuesta & = & = & \\ \hline
 Bloqueos de en el envío & Si & Si & Si \\ \hline
 \end{tabulary}
 \end{center}
 \caption{Comparación de los métodos usados y sus resultados en los experimentos.\label{comp}}
 \end{table}
 
-En cuanto a recepción de datos se refiere es mas rápido el usando liburbi aunque sufra las mismas congelaciones que usando python y a efectos prácticos para la implementación del paquete es lo mismo que transmita a 10KHz que a 20KHz. Y respecto al envió el seguimiento de la trayectoria és parecido en ambos metodos, python y liburbi con dos clientes, pero parece que tenga un retraso superior el segundo. De todos modos no se considera concluyente el experimento echo pues dada la variabilidad de los resultados es posible que se haya trabajado con pocos datos el análisis sobre el retraso. Finalmente se elige usar la librería liburbi dado que se cree más convincente la ventaja en la adquisición de los datos que el retraso en la respuesta. Por otra parte se ha tenido en consideración que el paquete será más complejo que los experimentos y puede ser útil que la velocidad de ejecución de un programa enn C++ sea mayor que en python.
+En cuanto a recepción de datos se refiere es mas rápido usando liburbi aunque sufre las mismas congelaciones que usando python y a efectos prácticos para la implementación del paquete es lo mismo que transmita a 10KHz que a 20KHz. Y respecto al envió el seguimiento de la trayectoria es parecido en ambos metodos, python y liburbi con dos clientes. 
+
+Finalmente se elige usar la librería liburbi dado que el único criterio concluyente es la ventaja en la adquisición de los datos. Por otra parte se ha tenido en consideración que el paquete será más complejo que los experimentos y puede ser útil que la velocidad de ejecución de un programa en C++ sea mayor que en python.
 
 \newpage
 \chapter{Implementación del paquete de ROS}
@@ -1533,18 +1535,18 @@ ROS es el acrónimo de Robot Operating System que lejos de ser un sistema operat
 La principal característica sobre la que se basa ROS es el sistema de comunicación que proporciona. A bajo nivel está basada en el paso de mensajes que pueden ser leídos por diversos procesos simultaneamente. Dichos mensajes se escriben sobre unos canales de comunicación llamados \textit{tópicos} a los que se puede acceder mediante métodos de publicación y suscripción. Sobre los tópicos se puede publicar o se puede suscribir desde un terminal o bien cualquier objeto de ROS a los que se les llama \textit{nodos}. Todos los nodos que se pretendan tener comunicados entre si deben estar creados sobre el mismo núcleo o \textit{roscore}.
 
 
-Todos los programas que se pretendan ejecutar sobre ROS son creados dentro de un paquete i todo paquete de ROS contiene una serie de archivos necesarios para su compilación:
+Todos los programas que se pretendan ejecutar sobre ROS son creados dentro de un paquete y todo paquete de ROS contiene una serie de archivos necesarios para su compilación:
 \begin{itemize}
 \item manifest.xml: Se incluye información sobre el nombre del paquete, el autor, tipo de licencia y paquetes externos necesarios.
 \item CMakelists.txt: Se indica el uso de librerías, el uso de mensajes propios del paquete y se declaran los ejecutables.
 \item mainpage.dox: Permite hacer un resumen explicativo del paquete.
-\item archivos ejecutables: ROS permite usar su API con C++ i python.
+\item archivos ejecutables: ROS permite usar su API con C++ y python.
 \item carpeta msg: Contiene los archivos *.msg donde se definen los mensajes propios del paquete.
 \item carpeta srv: contiene los archivos *.srv donde se definen los servicios propios del paquete.
 \item Carpeta launch: Contiene los archivos *.launch que permiten lanzar varios nodos de diferentes paquetes y tipos con los parámetros convenientes.
 
 \end{itemize}
-\subsection{Paquet aibo{\_}server }
+\subsection{Paquete aibo{\_}server }
 Se pretende implementar una paquete que en lanzarse se conecte al AIBO indicado por la dirección IP. Una vez conectado debe recoger los datos enviados por el servidor URBI del AIBO y publicarlos sobre una serie de tópicos. De forma inversa debe tratar los valores de las articulaciones publicados en un tópico al que esta suscrito y enviarlos al servidor con el fin de actuar sobre la plataforma.
 
 \begin{figure}[H]
@@ -1581,7 +1583,7 @@ Para la realización de este paquete de ROS se han tenido en cuenta las siguient
 \end{itemize}
 
 \subsection{Estructura del programa}
-Basándose en los resultados de la sección anterior, Sección \ref{seccomp}, se ha procedido a la implementación del paquete de ros usando liburbi i dos clientes, uno para la recepción  y otro para el envío.
+Basándose en los resultados de la sección anterior, Sección \ref{seccomp}, se ha procedido a la implementación del paquete de ros usando liburbi y dos clientes, uno para la recepción  y otro para el envío.
 
 La estructura del programa que se ha implementado se puede ver en la Figura \ref{fig:aiboserver}.
 \begin{figure}[H]
@@ -1606,7 +1608,7 @@ La estructura del programa que se ha implementado se puede ver en la Figura \ref
 \item Inicialización de los clientes URBI de lectura y escritura.
 \item Creación de los tópicos e inicialización de los \textit{Publishers} que publicaran en ellos.
 \item Definición del Callback de URBI para cada sensor y articulación.
-\item Demanda del envio de datos desde URBI.
+\item Demanda del envío de datos desde URBI.
 \item Definición del método de tratamiento de ordenes que usará el servidor URBI.
 \end{itemize}
 \end{itemize}
@@ -1642,10 +1644,10 @@ Por lo que respecta la adquisición de los valores de sensores y articulaciones 
 
 Con tal de valorar el envío de las posiciones se procede a realizar un paquete de ROS que permita cuantificar los resultados.
 
-El primer test realizado es el mismo que con el que se ha valorado las experimentaciones de la sección \ref{seccomp}. Se trata de aplicar una sinusoide al movimiento de una articulación.
+El primer test realizado es el mismo que con el que se ha valorado las experimentaciones de la Sección \ref{seccomp}. Se trata de aplicar una sinusoide al movimiento de una articulación.
 
 Para la realización del test se ha implementado un sencillo programa\footnote{El código se puede encontrar en el Anexo \ref{sinlegROS}} que crea un nodo que publica sobre el tópico \textit{/aibo{\_}server/aibo/subjoints/jointRF1} valores que varían de forma sinusoidal. 
-La estructura entre los nodos se muestra en la figura \ref{fig:ASSL}.
+La estructura entre los nodos se muestra en la Figura \ref{fig:ASSL}.
 \begin{figure}[H]
 	\centering
     \includegraphics[scale=0.35]{images/rosgraphASsin.pdf}
@@ -1875,7 +1877,7 @@ AIBO ERS-7 & 1600& 2& 3200 \\ \hline
 \textbf{Concepto}&\textbf{Coste horario [{\euro}/hora]} & \textbf{Horas} & \textbf{Coste total [\euro]} \\ \hline
 Estudio preliminar & 30& 300& 9000 \\ \hline
 Diseño y depuración & 30& 150& 4500 \\ \hline
-Programación& 15& 100& 15000 \\ \hline
+Programación& 15& 100& 1500 \\ \hline
 \textbf{Total}& & 550& 15000 \\ \hline
 \end{tabulary}
 \end{center}
@@ -2011,7 +2013,7 @@ Por último agradecer al doctor Ricardo Tellez de quien salió la idea de este p
 \addappheadtotoc
 %\appendixpage
 
-\chapter{Manual de usuario}
+\chapter{Manual de usuario}\label{MU}
 \thispagestyle{fancy}
 \section{Requisitos previos}
 Es necesario antes de instalar los paquetes seguir los siguientes pasos.
