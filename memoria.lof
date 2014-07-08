@@ -36,13 +36,13 @@
 \contentsline {figure}{\numberline {5.7}{\ignorespaces Entrada y respuesta del sistema ante una se\IeC {\~n}al sinusoidal de enviando puntos a 7Hz.\relax }}{54}{figure.caption.35}
 \contentsline {figure}{\numberline {5.8}{\ignorespaces Entrada y respuesta del sistema ante una se\IeC {\~n}al sinusoidal de enviando puntos a 10Hz.\relax }}{54}{figure.caption.36}
 \contentsline {figure}{\numberline {5.9}{\ignorespaces Diagrama del callback de ROS. Los flags \textit {anterior}, \textit {C1activo} y \textit {C2activo} se inicializan con valor 1 y los flags \textit {reiniciando1} y \textit {reiniciando2} se inicializan a 0.\relax }}{56}{figure.caption.37}
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Entrada, en rojo, y respuesta, en azul, del sistema ante una se\IeC {\~n}al sinusoidal de enviando puntos a 5Hz. Empiezan a producirse bloqueos.\relax }}{57}{figure.caption.38}
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Entrada, en rojo, y respuesta, en azul del sistema ante una se\IeC {\~n}al sinusoidal de enviando puntos a 5Hz. Se producen bloqueos que se intentan evitar.\relax }}{58}{figure.caption.39}
-\contentsline {figure}{\numberline {5.12}{\ignorespaces Entrada, en rojo, y respuesta, en azul, del sistema ante una se\IeC {\~n}al sinusoidal de enviando puntos a 5Hz. Recuperaci\IeC {\'o}n del seguimiento de la trayectoria.\relax }}{58}{figure.caption.40}
-\contentsline {figure}{\numberline {5.13}{\ignorespaces Entrada,en rojo, y respuesta, en azul, del sistema ante una se\IeC {\~n}al sinusoidal de enviando puntos a 5Hz. Buen seguimiento de la trayectoria.\relax }}{59}{figure.caption.41}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Empiezan a producirse bloqueos.\relax }}{57}{figure.caption.38}
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Se producen bloqueos que se intentan evitar.\relax }}{58}{figure.caption.39}
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Recuperaci\IeC {\'o}n del seguimiento de la trayectoria.\relax }}{58}{figure.caption.40}
+\contentsline {figure}{\numberline {5.13}{\ignorespaces Buen seguimiento de la trayectoria.\relax }}{59}{figure.caption.41}
 \contentsline {figure}{\numberline {5.14}{\ignorespaces Estructura de los nodos de ROS en la demostraci\IeC {\'o}n de sincronizaci\IeC {\'o}n.\relax }}{60}{figure.caption.42}
-\contentsline {figure}{\numberline {5.15}{\ignorespaces Posici\IeC {\'o}n de la articulaci\IeC {\'o}n del AIBO movido manualmente, en fucsia, y del AIBO que hace la imitaci\IeC {\'o}n, en verde.\relax }}{60}{figure.caption.43}
-\contentsline {figure}{\numberline {5.16}{\ignorespaces Posici\IeC {\'o}n de la articulaci\IeC {\'o}n del AIBO movido manualmente, en rojo, la enviada al segundo AIBO, en fucsia y la del AIBO que hace la imitaci\IeC {\'o}n, en azul.\relax }}{61}{figure.caption.44}
+\contentsline {figure}{\numberline {5.15}{\ignorespaces Posiciones de las articulaciones de dos AIBO.\relax }}{60}{figure.caption.43}
+\contentsline {figure}{\numberline {5.16}{\ignorespaces Posiciones de las articulaciones de dos AIBO y el t\IeC {\'o}pico de comunicaci\IeC {\'o}n.\relax }}{61}{figure.caption.44}
 \contentsline {figure}{\numberline {5.17}{\ignorespaces Estructura del modelo URDF.\relax }}{62}{figure.caption.45}
 \contentsline {figure}{\numberline {5.18}{\ignorespaces Modelo visto des de el framework de rviz.\relax }}{63}{figure.caption.46}
 \contentsline {figure}{\numberline {5.19}{\ignorespaces Estructuras de los nodos de ROS con aibo{\_}server y el modelo visualizado con rviz.\relax }}{65}{figure.caption.48}

@@ -1,7 +1,7 @@
 \documentclass[12pt,a4paper,final,twoside]{book}
 \usepackage[utf8]{inputenc}
 \usepackage[spanish, es-tabla]{babel}
-
+\usepackage{mathtools}
 \usepackage{url}
 \usepackage{graphicx}
 \usepackage{hyperref}
@@ -92,7 +92,7 @@
   title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
 }
 \bibliographystyle{plainnat} 
-\title{Implementación de }
+\title{Integración de la plataforma AIBO con ROS}
 \author{Diego Muñoz Galan}
 
 \begin{document}
@@ -389,7 +389,7 @@ El AIBO ERS-7 tiene las siguientes características:
 \item Altura: 278 mm.
 \item Largo: 319 mm.
 \item Ancho: 180 mm.
-\item Peso con batería: 1.65 Kg. 
+\item Peso con batería: 1.65 kg. 
 \end{itemize}
 \item CPU:
 \begin{itemize}
@@ -453,9 +453,9 @@ Esto implica que cada objetos tiene varios puntos de entrada   y salida que son 
 Una de las mayores complicaciones que acarrea trabajar con OPEN-R es que usa una gran variedad de archivos que deben ser modificados para poder configurar el programa de aplicación que se realice. Por ello es importante conocer bien los archivos con los que trabaja, los más importantes están listados a continuación: 
 
 \begin{itemize}
-\item Archivos .h i .cc: Son los archivos de programación de C++.
+\item Archivos .h y .cc: Son los archivos de programación de C++.
 \item STUB.config: Son archivos de configuración donde se define como un objeto se comunica con los demás.
-\item Archivos .ocf: Definen el comportamiento en cuanto a tiempos de ejecución, memória y prioridad de ejecución.
+\item Archivos .ocf: Definen el comportamiento en cuanto a tiempos de ejecución, memoria y prioridad de ejecución.
 \item Makefile: Archivo para la configuración global de la compilación.
 \item OBJECT.cfg: Listado de objetos que se ejecutarán.
 \item CONECT.cfg: Se determinan las conexiones entre objetos que se ejecutarán.
@@ -1470,7 +1470,7 @@ En los gráficos de las Figuras \ref{fig:sin1H}, \ref{fig:sin2H}, \ref{fig:sin5H
 \end{itemize}
 El caso en el que sólo se usa un solo cliente con liburbi tiene grandes bloqueos en la recepción de y muestra un movimiento más brusco e inconstante.
 Entre los dos otros no se puede determinar cual de los dos tiene un mejor seguimiento. Con el fin de marcar la diferencia se ha evaluado bajo otro criterio.
-Se han hecho las diferencias de entre el tiempo en que se envía la orden de los picos de la sinusoide y el momento en que se recibe que ha llegado a tal posición. Para comprobar si existe una diferencia se realiza una ANOVA sobre los datos de la Figura \ref{fig:retras} y resuelve con un intervalo de confianza del 95\% y un p-valor del 0.43  se acepta la hipótesis nula y que por tanto el retraso con C++ no es significativamente mayor. 
+Se han hecho las diferencias de entre el tiempo en que se envía la orden de los picos de la sinusoide y el momento en que se recibe que ha llegado a tal posición. Para comprobar si existe una diferencia se realiza una ANOVA sobre los datos de la Figura \ref{fig:retras} y resuelve con un intervalo de confianza del 95\% y un p-valor de 2,1e-7 no se acepta la hipótesis nula y que por tanto el retraso con C++ es significativamente menor. 
  
 \begin{figure}[H]
 	\centering
@@ -1485,12 +1485,12 @@ minor y tick num=1,
 ]
 \addplot[blue, only marks] table {data/retrasoPy.dat};
 \addplot[black, only marks] table {data/retrasoC++.dat};
-\addplot[blue,sharp plot,update limits=false]
-coordinates {(0,0.511) (20,0.511)}
-node[above] at (axis cs:9,0.511) {0.511};
 \addplot[black,sharp plot,update limits=false]
-coordinates {(0,0.737) (20,0.737)}
-node[above] at (axis cs:9,0.737) {0.737};
+coordinates {(0,0.399) (52,0.399)};
+%node[above] at (axis cs:9,0.399) {0.399};
+\addplot[blue,sharp plot,update limits=false]
+coordinates {(0,0.733) (52,0.733)};
+%node[above] at (axis cs:9,0.733) {0.733};
 \legend{python, liburbi}
 \end{axis}
 \end{tikzpicture}
@@ -1515,16 +1515,16 @@ Congelaciones en la lectura & Si & Si &Si \\ \hline
 Frecuencia de envío& = & = & = \\ \hline
 Seguimiento de trayectorias & Bueno & Malo & Bueno \\ \hline
 Efecto negativo del envío en la lectura& No & Si & No \\ \hline
-Retraso de la respuesta & = & = & \\ \hline
+Retraso de la respuesta & Mayor & Menor & \\ \hline
 Bloqueos de en el envío & Si & Si & Si \\ \hline
 \end{tabulary}
 \end{center}
 \caption{Comparación de los métodos usados y sus resultados en los experimentos.\label{comp}}
 \end{table}
 
-En cuanto a recepción de datos se refiere es mas rápido usando liburbi aunque sufre las mismas congelaciones que usando python y a efectos prácticos para la implementación del paquete es lo mismo que transmita a 10KHz que a 20KHz. Y respecto al envió el seguimiento de la trayectoria es parecido en ambos metodos, python y liburbi con dos clientes. 
+En cuanto a recepción de datos se refiere es mas rápido usando liburbi aunque sufre las mismas congelaciones que usando python y a efectos prácticos para la implementación del paquete es lo mismo que transmita a 10kHz que a 20kHz. Y respecto al envió el seguimiento de la trayectoria es parecido en ambos metodos, python y liburbi con dos clientes, y el retraso del seguimiento parece menor con el segundo. 
 
-Finalmente se elige usar la librería liburbi dado que el único criterio concluyente es la ventaja en la adquisición de los datos. Por otra parte se ha tenido en consideración que el paquete será más complejo que los experimentos y puede ser útil que la velocidad de ejecución de un programa en C++ sea mayor que en python.
+Finalmente se elige usar la librería liburbi dado que parece ser superior en los criterios evaluados. Por otra parte se ha tenido en consideración que el paquete será más complejo que los experimentos y puede ser útil que la velocidad de ejecución de un programa en C++ sea mayor que en python.
 
 \newpage
 \chapter{Implementación del paquete de ROS}
@@ -1637,7 +1637,7 @@ Por lo que respecta la adquisición de los valores de sensores y articulaciones 
 
 \begin{figure}[H]
 	\centering
-    \includegraphics[scale=0.2]{images/accel.jpg}
+    \includegraphics[scale=0.28]{images/accel.jpg}
 	 \caption{Valores de los acelerometros graficados usando la herramienta rqt{\_}plot.}
   \label{fig:addacc}
 \end{figure}
@@ -1659,19 +1659,19 @@ De lo extraído en varias replicas a diversas frecuencias se puede reportar que 
 dicho retraso no es la norma general estando el retraso medio muy por encima de éste.
 \begin{figure}[H]
 	\centering
-	    \includegraphics[scale=0.21]{images/10Ry2S.jpg}
+	    \includegraphics[scale=0.28]{images/10Ry2S.jpg}
  	\caption{Entrada y respuesta del sistema ante una señal sinusoidal de enviando puntos a 2Hz.}
   \label{fig:ASsin2Hz}
 \end{figure}
 \begin{figure}[H]
 	\centering
-    \includegraphics[scale=0.21]{images/10Ry7S.jpg}
+    \includegraphics[scale=0.28]{images/10Ry7S.jpg}
  	\caption{Entrada y respuesta del sistema ante una señal sinusoidal de enviando puntos a 7Hz.}
   \label{fig:ASsin7Hz}
 \end{figure}
    \begin{figure}[H]
 	\centering
-    \includegraphics[scale=0.21]{images/10Ry10SAll.jpg}
+    \includegraphics[scale=0.28]{images/10Ry10SAll.jpg}
  	\caption{Entrada y respuesta del sistema ante una señal sinusoidal de enviando puntos a 10Hz.}
   \label{fig:ASsin10Hz}
 \end{figure}
@@ -1705,14 +1705,14 @@ En la Figura \ref{fig:ASempiezamala} se ve como tras un primer seguimiento de la
 
 \begin{figure}[H]
 	\centering
-    \includegraphics[scale=0.2]{images/empiezamala.jpg}
- 	\caption{Entrada, en rojo, y respuesta, en azul, del sistema ante una señal sinusoidal de enviando puntos a 5Hz. Empiezan a producirse bloqueos.}
+    \includegraphics[scale=0.26]{images/empiezamala.jpg}
+ 	\caption{Empiezan a producirse bloqueos.}
   \label{fig:ASempiezamala}
 \end{figure}
 \begin{figure}[H]
 	\centering
-    \includegraphics[scale=0.2]{images/peora5hz.jpg}
- 	\caption{Entrada, en rojo, y respuesta, en azul del sistema ante una señal sinusoidal de enviando puntos a 5Hz. Se producen bloqueos que se intentan evitar.}
+    \includegraphics[scale=0.26]{images/peora5hz.jpg}
+ 	\caption{Se producen bloqueos que se intentan evitar.}
   \label{fig:ASpeor}
 \end{figure}
 
@@ -1720,16 +1720,16 @@ En la Figura \ref{fig:ASrecupera} se ve como llega un punto, tras una serie de s
  
 \begin{figure}[H]
 	\centering
-    \includegraphics[scale=0.2]{images/recupera.jpg}
- 	\caption{Entrada, en rojo, y respuesta, en azul, del sistema ante una señal sinusoidal de enviando puntos a 5Hz. Recuperación del seguimiento de la trayectoria.}
+    \includegraphics[scale=0.26]{images/recupera.jpg}
+ 	\caption{Recuperación del seguimiento de la trayectoria.}
   \label{fig:ASrecupera}
 \end{figure}
 
 Finalmente en la Figura \ref{fig:ASbuena} se puede observar como en algunos momentos el seguimiento de la trayectoria es satisfactorio. Cabe recordar que en estos gráficos obtenidos mediante la herramienta de ROS rqt{\_}plot no se pueden diferenciar si el gráfico no muestra un buen seguimiento debido a la recepción de datos o a que realmente no se está siguiendo bien la trayectoria. Basándose en los resultados de la Sección \ref{compenvio} se puede decir que los bloqueos máximos debidos la recepción son excepcionalmente de más de 2 segundos y por lo tanto menospreciables frente los bloqueos que se muestran en los gráficos.
  \begin{figure}[H]
 	\centering
-    \includegraphics[scale=0.2]{images/mejor5hz.jpg}
- 	\caption{Entrada,en rojo, y respuesta, en azul, del sistema ante una señal sinusoidal de enviando puntos a 5Hz. Buen seguimiento de la trayectoria.}
+    \includegraphics[scale=0.26]{images/mejor5hz.jpg}
+ 	\caption{Buen seguimiento de la trayectoria.}
   \label{fig:ASbuena}
 \end{figure}
 
@@ -1747,18 +1747,18 @@ Se ha creado un paquete el que incluye un programa\footnote{El código se puede 
   \label{fig:mimic}
 \end{figure}
 
-En las Figuras \ref{fig:resumimic} y \ref{fig:resumimic2} se puede observar como reacciona las una articulación de ambos AIBOs al mover manualmente uno de ellos. 
+En las Figuras \ref{fig:resumimic} y \ref{fig:resumimic2} se puede observar como reacciona las articulaciones de ambos AIBOs al mover manualmente uno de ellos. 
 %MASGRAFICOs
 \begin{figure}[H]
 	\centering
-    \includegraphics[scale=0.2]{images/retmin2.jpg}
-	 \caption{Posición de la articulación del AIBO movido manualmente, en fucsia, y del AIBO que hace la imitación, en verde.}
+    \includegraphics[scale=0.26]{images/retmin2.jpg}
+	 \caption{Posiciones de las articulaciones de dos AIBO.}
   \label{fig:resumimic}
 \end{figure}
 \begin{figure}[H]
 	\centering
-    \includegraphics[scale=0.2]{images/malo5hz.jpg}
-	 \caption{Posición de la articulación del AIBO movido manualmente, en rojo, la enviada al segundo AIBO, en fucsia y la del AIBO que hace la imitación, en azul.}
+    \includegraphics[scale=0.26]{images/malo5hz.jpg}
+	 \caption{Posiciones de las articulaciones de dos AIBO y el tópico de comunicación.}
   \label{fig:resumimic2}
 \end{figure}
 
@@ -2236,12 +2236,19 @@ Permite controlar la posición de las articulaciones en un mensaje de tipo aibo{
 \end{lstlisting}
 
 El array de mensajes de tipo std{\_}msgs/Range esta ordenado:
-\begin{itemize}
-\item sensor del pecho.
-\item sensor del distancias cortas.
-\item sensor de distancias largas.
-\end{itemize}
 
+\begin{table}[H]
+\begin{center}
+\begin{tabulary}{\textwidth}{|C|C|C|C|}
+\hline
+\textbf{Sensor}&\textbf{Máximo} & \textbf{Mínimo} & \textbf{Unidades} \\ \hline
+Pecho & 90& 19& [cm] \\ \hline
+Morro de corto alcance & 50& 5.7& [cm] \\ \hline
+Morro de largo alcance & 20& 150& [cm] \\ \hline
+
+\end{tabulary}
+\end{center}
+\end{table}
 \item sensor{\_}msgs/Range
 \begin{lstlisting}[language=bash]
 	Header header         
@@ -2266,13 +2273,20 @@ Se trata de un mensaje estándar de ROS\footnote{\url{http://docs.ros.org/api/se
 
 Los sensores están ordenados en la array de la siguiente forma:
 
-\begin{itemize}
-\item sensor de la barbilla
-\item sensor de la espalda delantero
-\item sensor de la espalda del medio.
-\item sensor de la espalda trasero.
-\item sensor de la cabeza.
-\end{itemize} 
+
+\begin{table}[H]
+\begin{center}
+\begin{tabulary}{\textwidth}{|C|C|C|C|}
+\hline
+\textbf{Sensor}&\textbf{Máximo} & \textbf{Mínimo} & \textbf{Unidades} \\ \hline
+Barbilla & 0& 1& [booleano] \\ \hline
+Espalda delantero & 60& 0& [$\mu$Pa] \\ \hline
+Espalda del medio & 60&0& [$\mu$Pa] \\ \hline
+Espalda trasero & 60& 0& [$\mu$Pa] \\ \hline
+Cabeza & 35& 0& [$\mu$Pa] \\ \hline
+\end{tabulary}
+\end{center}
+\end{table}
 
 \item aibo{\_}server/Accel:
 
@@ -2287,7 +2301,18 @@ Los sensores están ordenados en la array de la siguiente forma:
 \item y: Valor del acelerometro en el eje y.
 \item z: Valor del acelerometro en el eje z.
 \end{itemize}
+\begin{table}[H]
+\begin{center}
+\begin{tabulary}{\textwidth}{|C|C|C|C|}
+\hline
+\textbf{Sensor}&\textbf{Máximo} & \textbf{Mínimo} & \textbf{Unidades} \\ \hline
+ x: Valor del acelerometro en el eje x. & -19,613& 19,613& [$m/s^2$] \\ \hline
+y: Valor del acelerometro en el eje y. & -19,613& 19,613& [$m/s^2$] \\ \hline
+z: Valor del acelerometro en el eje z. & -19,613& 19,613& [$m/s^2$] \\ \hline
 
+\end{tabulary}
+\end{center}
+\end{table}
 \item aibo{\_}server/Joints
 \begin{lstlisting}[language=bash]
 	Header header
@@ -2334,6 +2359,33 @@ Donde:
 \item mouth: articulación de la boca.
 
 \end{itemize}
+\begin{table}[H]
+\begin{center}
+\begin{tabulary}{\textwidth}{|C|C|C|C|}
+\hline
+\textbf{Sensor}&\textbf{Máximo} & \textbf{Mínimo} & \textbf{Unidades} \\ \hline
+jointLF1 & 134&-120&  [º] \\ \hline
+jointLF2 & 91& -9& [º] \\ \hline
+jointLF3 & 119&  -29& [º] \\ \hline
+jointLH1 & 134& -120&  [º] \\ \hline
+jointLH2 & 91&-9&  [º] \\ \hline
+jointLH3 & 119&-29& [º] \\ \hline
+jointRF1 & 120& -134& [º] \\ \hline
+jointRF2 & 91& -9& [º] \\ \hline
+jointRF3 & 119& -29& [º] \\ \hline
+jointRH1 & 120& -134& [º] \\ \hline
+jointRH2 & 91& -9& [º] \\ \hline
+jointRH3 & 119& -29& [º] \\ \hline
+tailPan & 59& -59& [º] \\ \hline
+tailTilt & 63&2& [º] \\ \hline
+headTilt & 44& -16& [º] \\ \hline
+headPan & 91& -91& [º] \\ \hline
+headNeck & 2& -79& [º] \\ \hline
+mouth & -3& -58& [º] \\ \hline
+\end{tabulary}
+\end{center}
+\end{table}
+
 \item aibo{\_}server/BumperArray
 \begin{lstlisting}[language=bash]
 	Header header
@@ -2341,12 +2393,19 @@ Donde:
 \end{lstlisting}
 
 La array de paws esta ordenada con el siguiente orden:
-\begin{itemize}
-\item Delantero izquierdo.
-\item Trasero izquierdo.
-\item Delantero derecho.
-\item Trasero derecho.
-\end{itemize}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabulary}{\textwidth}{|C|C|C|C|}
+\hline
+\textbf{Sensor}&\textbf{Máximo} & \textbf{Mínimo} & \textbf{Unidades} \\ \hline
+Delantero izquierdo & 1&0&  [booleano] \\ \hline
+Trasero izquierdo & 1&0&  [booleano] \\ \hline
+Delantero derecho & 1&0&  [booleano] \\ \hline
+Trasero derecho & 1&0&  [booleano] \\ \hline
+\end{tabulary}
+\end{center}
+\end{table}
 \end{itemize}
 
 \section{aibo{\_}description}

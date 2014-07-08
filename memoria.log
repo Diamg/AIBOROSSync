@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2014.6.30)  7 JUL 2014 20:13
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2014.6.30)  8 JUL 2014 17:59
 entering extended mode
  %&-line parsing enabled.
 **memoria.tex
@@ -266,17 +266,97 @@ Package babel Info: Making . an active character on input line 585.
 Package babel Info: Making < an active character on input line 630.
 Package babel Info: Making > an active character on input line 630.
 ))
-(/usr/share/texmf-texlive/tex/latex/ltxmisc/url.sty
-\Urlmuskip=\muskip10
-Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
-)
-(/usr/share/texmf-texlive/tex/latex/graphics/graphicx.sty
-Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+(/usr/share/texmf-texlive/tex/latex/mh/mathtools.sty
+Package: mathtools 2008/08/01 v1.06 mathematical typesetting tools (MH)
 
 (/usr/share/texmf-texlive/tex/latex/graphics/keyval.sty
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks17
 )
+(/usr/share/texmf-texlive/tex/latex/tools/calc.sty
+Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count91
+\calc@Bcount=\count92
+\calc@Adimen=\dimen104
+\calc@Bdimen=\dimen105
+\calc@Askip=\skip43
+\calc@Bskip=\skip44
+LaTeX Info: Redefining \setlength on input line 76.
+LaTeX Info: Redefining \addtolength on input line 77.
+\calc@Ccount=\count93
+\calc@Cskip=\skip45
+)
+(/usr/share/texmf-texlive/tex/latex/mh/mhsetup.sty
+Package: mhsetup 2007/12/03 v1.2 programming setup (MH)
+)
+(/usr/share/texmf-texlive/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2000/07/18 v2.13 AMS math features
+\@mathmargin=\skip46
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texmf-texlive/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(/usr/share/texmf-texlive/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks18
+\ex@=\dimen106
+))
+(/usr/share/texmf-texlive/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen107
+)
+(/usr/share/texmf-texlive/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count94
+LaTeX Info: Redefining \frac on input line 211.
+\uproot@=\count95
+\leftroot@=\count96
+LaTeX Info: Redefining \overline on input line 307.
+\classnum@=\count97
+\DOTSCASE@=\count98
+LaTeX Info: Redefining \ldots on input line 379.
+LaTeX Info: Redefining \dots on input line 382.
+LaTeX Info: Redefining \cdots on input line 467.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen108
+LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
+\macc@depth=\count99
+\c@MaxMatrixCols=\count100
+\dotsspace@=\muskip10
+\c@parentequation=\count101
+\dspbrk@lvl=\count102
+\tag@help=\toks19
+\row@=\count103
+\column@=\count104
+\maxfields@=\count105
+\andhelp@=\toks20
+\eqnshift@=\dimen109
+\alignsep@=\dimen110
+\tagshift@=\dimen111
+\tagwidth@=\dimen112
+\totwidth@=\dimen113
+\lineht@=\dimen114
+\@envbody=\toks21
+\multlinegap=\skip47
+\multlinetaggap=\skip48
+\mathdisplay@stack=\toks22
+LaTeX Info: Redefining \[ on input line 2666.
+LaTeX Info: Redefining \] on input line 2667.
+)
+\g_MT_multlinerow_int=\count106
+\l_MT_multwidth_dim=\dimen115
+)
+(/usr/share/texmf-texlive/tex/latex/ltxmisc/url.sty
+\Urlmuskip=\muskip11
+Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
+)
+(/usr/share/texmf-texlive/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
 (/usr/share/texmf-texlive/tex/latex/graphics/graphics.sty
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
@@ -290,10 +370,10 @@ Package graphics Info: Driver file: pdftex.def on input line 91.
 
 (/usr/share/texmf-texlive/tex/latex/pdftex-def/pdftex.def
 File: pdftex.def 2010/03/12 v0.04p Graphics/color for pdfTeX
-\Gread@gobject=\count91
+\Gread@gobject=\count107
 ))
-\Gin@req@height=\dimen104
-\Gin@req@width=\dimen105
+\Gin@req@height=\dimen116
+\Gin@req@width=\dimen117
 )
 (/usr/share/texmf-texlive/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2009/10/09 v6.79a Hypertext links for LaTeX
@@ -316,9 +396,9 @@ O)
 (/usr/share/texmf-texlive/tex/latex/oberdiek/xcolor-patch.sty
 Package: xcolor-patch 2009/10/02 xcolor patch
 ))
-\@linkdim=\dimen106
-\Hy@linkcounter=\count92
-\Hy@pagecounter=\count93
+\@linkdim=\dimen118
+\Hy@linkcounter=\count108
+\Hy@pagecounter=\count109
 
 (/usr/share/texmf-texlive/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2009/10/09 v6.79a Hyperref: PDFDocEncoding definition (HO)
@@ -381,10 +461,10 @@ Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 )))
-\Fld@menulength=\count94
-\Field@Width=\dimen107
-\Fld@charsize=\dimen108
-\Field@toks=\toks18
+\Fld@menulength=\count110
+\Field@Width=\dimen119
+\Fld@charsize=\dimen120
+\Field@toks=\toks23
 Package hyperref Info: Hyper figures OFF on input line 4377.
 Package hyperref Info: Link nesting OFF on input line 4382.
 Package hyperref Info: Hyper index ON on input line 4385.
@@ -396,72 +476,14 @@ Package hyperref Info: PDF/A mode OFF on input line 4407.
 (/usr/share/texmf-texlive/tex/generic/oberdiek/atbegshi.sty
 Package: atbegshi 2008/07/31 v1.9 At begin shipout hook (HO)
 )
-\Hy@abspage=\count95
-\c@Item=\count96
-\c@Hfootnote=\count97
+\Hy@abspage=\count111
+\c@Item=\count112
+\c@Hfootnote=\count113
 )
 *hyperref using default driver hpdftex*
 (/usr/share/texmf-texlive/tex/latex/hyperref/hpdftex.def
 File: hpdftex.def 2009/10/09 v6.79a Hyperref driver for pdfTeX
-\Fld@listcount=\count98
-)
-(/usr/share/texmf-texlive/tex/latex/amsmath/amsmath.sty
-Package: amsmath 2000/07/18 v2.13 AMS math features
-\@mathmargin=\skip43
-
-For additional information on amsmath, use the `?' option.
-(/usr/share/texmf-texlive/tex/latex/amsmath/amstext.sty
-Package: amstext 2000/06/29 v2.01
-
-(/usr/share/texmf-texlive/tex/latex/amsmath/amsgen.sty
-File: amsgen.sty 1999/11/30 v2.0
-\@emptytoks=\toks19
-\ex@=\dimen109
-))
-(/usr/share/texmf-texlive/tex/latex/amsmath/amsbsy.sty
-Package: amsbsy 1999/11/29 v1.2d
-\pmbraise@=\dimen110
-)
-(/usr/share/texmf-texlive/tex/latex/amsmath/amsopn.sty
-Package: amsopn 1999/12/14 v2.01 operator names
-)
-\inf@bad=\count99
-LaTeX Info: Redefining \frac on input line 211.
-\uproot@=\count100
-\leftroot@=\count101
-LaTeX Info: Redefining \overline on input line 307.
-\classnum@=\count102
-\DOTSCASE@=\count103
-LaTeX Info: Redefining \ldots on input line 379.
-LaTeX Info: Redefining \dots on input line 382.
-LaTeX Info: Redefining \cdots on input line 467.
-\Mathstrutbox@=\box26
-\strutbox@=\box27
-\big@size=\dimen111
-LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
-\macc@depth=\count104
-\c@MaxMatrixCols=\count105
-\dotsspace@=\muskip11
-\c@parentequation=\count106
-\dspbrk@lvl=\count107
-\tag@help=\toks20
-\row@=\count108
-\column@=\count109
-\maxfields@=\count110
-\andhelp@=\toks21
-\eqnshift@=\dimen112
-\alignsep@=\dimen113
-\tagshift@=\dimen114
-\tagwidth@=\dimen115
-\totwidth@=\dimen116
-\lineht@=\dimen117
-\@envbody=\toks22
-\multlinegap=\skip44
-\multlinetaggap=\skip45
-\mathdisplay@stack=\toks23
-LaTeX Info: Redefining \[ on input line 2666.
-LaTeX Info: Redefining \] on input line 2667.
+\Fld@listcount=\count114
 )
 (/usr/share/texmf-texlive/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2009/06/22 v3.00
@@ -480,41 +502,41 @@ Package: amsthm 2004/08/06 v2.20
 \thm@headfont=\toks26
 \thm@notefont=\toks27
 \thm@headpunct=\toks28
-\thm@preskip=\skip46
-\thm@postskip=\skip47
-\thm@headsep=\skip48
+\thm@preskip=\skip49
+\thm@postskip=\skip50
+\thm@headsep=\skip51
 \dth@everypar=\toks29
 )
 (/usr/share/texmf-texlive/tex/latex/amsmath/amscd.sty
 Package: amscd 1999/11/29 v1.2d
 \athelp@=\toks30
-\minaw@=\dimen118
-\bigaw@=\dimen119
-\minCDarrowwidth=\dimen120
+\minaw@=\dimen121
+\bigaw@=\dimen122
+\minCDarrowwidth=\dimen123
 )
 (/usr/share/texmf-texlive/tex/latex/setspace/setspace.sty
 Package: setspace 2000/12/01 6.7 Contributed and Supported LaTeX2e package
 
 Package: `setspace' 6.7 <2000/12/01>
 ) (/usr/share/texmf-texlive/tex/latex/multirow/multirow.sty
-\bigstrutjot=\dimen121
+\bigstrutjot=\dimen124
 )
 (/usr/share/texmf-texlive/tex/latex/tools/multicol.sty
 Package: multicol 2008/12/05 v1.6h multicolumn formatting (FMi)
-\c@tracingmulticols=\count111
+\c@tracingmulticols=\count115
 \mult@box=\box28
-\multicol@leftmargin=\dimen122
-\c@unbalance=\count112
-\c@collectmore=\count113
-\doublecol@number=\count114
-\multicoltolerance=\count115
-\multicolpretolerance=\count116
-\full@width=\dimen123
-\page@free=\dimen124
-\premulticols=\dimen125
-\postmulticols=\dimen126
-\multicolsep=\skip49
-\multicolbaselineskip=\skip50
+\multicol@leftmargin=\dimen125
+\c@unbalance=\count116
+\c@collectmore=\count117
+\doublecol@number=\count118
+\multicoltolerance=\count119
+\multicolpretolerance=\count120
+\full@width=\dimen126
+\page@free=\dimen127
+\premulticols=\dimen128
+\postmulticols=\dimen129
+\multicolsep=\skip52
+\multicolbaselineskip=\skip53
 \partial@page=\box29
 \last@line=\box30
 \mult@rightbox=\box31
@@ -538,11 +560,11 @@ Package: multicol 2008/12/05 v1.6h multicolumn formatting (FMi)
 \@tempa=\box49
 \@tempa=\box50
 \@tempa=\box51
-\c@columnbadness=\count117
-\c@finalcolumnbadness=\count118
-\last@try=\dimen127
-\multicolovershoot=\dimen128
-\multicolundershoot=\dimen129
+\c@columnbadness=\count121
+\c@finalcolumnbadness=\count122
+\last@try=\dimen130
+\multicolovershoot=\dimen131
+\multicolundershoot=\dimen132
 \mult@nat@firstbox=\box52
 \colbreak@box=\box53
 )
@@ -555,27 +577,27 @@ Package: caption 2009/10/09 v3.1k Customizing captions (AR)
 
 (/usr/share/texmf-texlive/tex/latex/caption/caption3.sty
 Package: caption3 2009/10/09 v3.1k caption3 kernel (AR)
-\captionmargin=\dimen130
-\captionmargin@=\dimen131
-\captionwidth=\dimen132
-\caption@indent=\dimen133
-\caption@parindent=\dimen134
-\caption@hangindent=\dimen135
+\captionmargin=\dimen133
+\captionmargin@=\dimen134
+\captionwidth=\dimen135
+\caption@indent=\dimen136
+\caption@parindent=\dimen137
+\caption@hangindent=\dimen138
 )
-\c@ContinuedFloat=\count119
+\c@ContinuedFloat=\count123
 Package caption Info: hyperref package is loaded.
 )
 (/usr/share/texmf-texlive/tex/latex/caption/subcaption.sty
 Package: subcaption 2008/08/31 v1.0b Adding subcaptions (AR)
-\c@subfigure=\count120
-\c@subtable=\count121
+\c@subfigure=\count124
+\c@subtable=\count125
 )
 (/usr/share/texmf-texlive/tex/latex/ltxmisc/framed.sty
 Package: framed 2007/10/04 v 0.95: framed or shaded text with page breaks
-\fb@frw=\dimen136
-\fb@frh=\dimen137
-\FrameRule=\dimen138
-\FrameSep=\dimen139
+\fb@frw=\dimen139
+\fb@frh=\dimen140
+\FrameRule=\dimen141
+\FrameSep=\dimen142
 )
 (/usr/share/texmf-texlive/tex/latex/tocloft/tocloft.sty
 Package: tocloft 2009/09/04 v2.3d parameterised ToC, etc., typesetting
@@ -583,42 +605,42 @@ Package: tocloft 2009/09/04 v2.3d parameterised ToC, etc., typesetting
 
 Package tocloft Note: The document has chapter divisions.
 
-\cftparskip=\skip51
-\cftbeforetoctitleskip=\skip52
-\cftaftertoctitleskip=\skip53
-\cftbeforepartskip=\skip54
-\cftpartnumwidth=\skip55
-\cftpartindent=\skip56
-\cftbeforechapskip=\skip57
-\cftchapindent=\skip58
-\cftchapnumwidth=\skip59
-\cftbeforesecskip=\skip60
-\cftsecindent=\skip61
-\cftsecnumwidth=\skip62
-\cftbeforesubsecskip=\skip63
-\cftsubsecindent=\skip64
-\cftsubsecnumwidth=\skip65
-\cftbeforesubsubsecskip=\skip66
-\cftsubsubsecindent=\skip67
-\cftsubsubsecnumwidth=\skip68
-\cftbeforeparaskip=\skip69
-\cftparaindent=\skip70
-\cftparanumwidth=\skip71
-\cftbeforesubparaskip=\skip72
-\cftsubparaindent=\skip73
-\cftsubparanumwidth=\skip74
-\cftbeforeloftitleskip=\skip75
-\cftafterloftitleskip=\skip76
-\cftbeforefigskip=\skip77
-\cftfigindent=\skip78
-\cftfignumwidth=\skip79
-\c@lofdepth=\count122
-\c@lotdepth=\count123
-\cftbeforelottitleskip=\skip80
-\cftafterlottitleskip=\skip81
-\cftbeforetabskip=\skip82
-\cfttabindent=\skip83
-\cfttabnumwidth=\skip84
+\cftparskip=\skip54
+\cftbeforetoctitleskip=\skip55
+\cftaftertoctitleskip=\skip56
+\cftbeforepartskip=\skip57
+\cftpartnumwidth=\skip58
+\cftpartindent=\skip59
+\cftbeforechapskip=\skip60
+\cftchapindent=\skip61
+\cftchapnumwidth=\skip62
+\cftbeforesecskip=\skip63
+\cftsecindent=\skip64
+\cftsecnumwidth=\skip65
+\cftbeforesubsecskip=\skip66
+\cftsubsecindent=\skip67
+\cftsubsecnumwidth=\skip68
+\cftbeforesubsubsecskip=\skip69
+\cftsubsubsecindent=\skip70
+\cftsubsubsecnumwidth=\skip71
+\cftbeforeparaskip=\skip72
+\cftparaindent=\skip73
+\cftparanumwidth=\skip74
+\cftbeforesubparaskip=\skip75
+\cftsubparaindent=\skip76
+\cftsubparanumwidth=\skip77
+\cftbeforeloftitleskip=\skip78
+\cftafterloftitleskip=\skip79
+\cftbeforefigskip=\skip80
+\cftfigindent=\skip81
+\cftfignumwidth=\skip82
+\c@lofdepth=\count126
+\c@lotdepth=\count127
+\cftbeforelottitleskip=\skip83
+\cftafterlottitleskip=\skip84
+\cftbeforetabskip=\skip85
+\cfttabindent=\skip86
+\cfttabnumwidth=\skip87
 ) (/usr/share/texmf/tex/latex/pgf/frontendlayer/tikz.sty
 (/usr/share/texmf/tex/latex/pgf/basiclayer/pgf.sty
 (/usr/share/texmf/tex/latex/pgf/utilities/pgfrcs.sty
@@ -648,20 +670,20 @@ Package: pgfsys 2010/06/30 v2.10 (rcs-revision 1.37)
 (/usr/share/texmf/tex/generic/pgf/utilities/pgfkeysfiltered.code.tex
 \pgfkeys@tmptoks=\toks34
 ))
-\pgf@x=\dimen140
-\pgf@y=\dimen141
-\pgf@xa=\dimen142
-\pgf@ya=\dimen143
-\pgf@xb=\dimen144
-\pgf@yb=\dimen145
-\pgf@xc=\dimen146
-\pgf@yc=\dimen147
+\pgf@x=\dimen143
+\pgf@y=\dimen144
+\pgf@xa=\dimen145
+\pgf@ya=\dimen146
+\pgf@xb=\dimen147
+\pgf@yb=\dimen148
+\pgf@xc=\dimen149
+\pgf@yc=\dimen150
 \w@pgf@writea=\write3
 \r@pgf@reada=\read1
-\c@pgf@counta=\count124
-\c@pgf@countb=\count125
-\c@pgf@countc=\count126
-\c@pgf@countd=\count127
+\c@pgf@counta=\count128
+\c@pgf@countb=\count129
+\c@pgf@countc=\count130
+\c@pgf@countd=\count131
 
 (/usr/share/texmf/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
@@ -676,8 +698,8 @@ File: pgfsys-common-pdf.def 2008/05/19  (rcs-revision 1.10)
 )))
 (/usr/share/texmf/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2008/07/18  (rcs-revision 1.7)
-\pgfsyssoftpath@smallbuffer@items=\count128
-\pgfsyssoftpath@bigbuffer@items=\count129
+\pgfsyssoftpath@smallbuffer@items=\count132
+\pgfsyssoftpath@bigbuffer@items=\count133
 )
 (/usr/share/texmf/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
 File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
@@ -706,8 +728,8 @@ Package: pgfcore 2010/04/11 v2.10 (rcs-revision 1.7)
 (/usr/share/texmf/tex/generic/pgf/math/pgfmathcalc.code.tex
 (/usr/share/texmf/tex/generic/pgf/math/pgfmathutil.code.tex)
 (/usr/share/texmf/tex/generic/pgf/math/pgfmathparser.code.tex
-\pgfmath@dimen=\dimen148
-\pgfmath@count=\count130
+\pgfmath@dimen=\dimen151
+\pgfmath@count=\count134
 \pgfmath@box=\box56
 \pgfmath@toks=\toks35
 \pgfmath@stack@operand=\toks36
@@ -722,51 +744,51 @@ Package: pgfcore 2010/04/11 v2.10 (rcs-revision 1.7)
 (/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.round.code.tex)
 (/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex)))
 (/usr/share/texmf/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count131
+\c@pgfmathroundto@lastzeros=\count135
 ))
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
 File: pgfcorepoints.code.tex 2010/04/09  (rcs-revision 1.20)
-\pgf@picminx=\dimen149
-\pgf@picmaxx=\dimen150
-\pgf@picminy=\dimen151
-\pgf@picmaxy=\dimen152
-\pgf@pathminx=\dimen153
-\pgf@pathmaxx=\dimen154
-\pgf@pathminy=\dimen155
-\pgf@pathmaxy=\dimen156
-\pgf@xx=\dimen157
-\pgf@xy=\dimen158
-\pgf@yx=\dimen159
-\pgf@yy=\dimen160
-\pgf@zx=\dimen161
-\pgf@zy=\dimen162
+\pgf@picminx=\dimen152
+\pgf@picmaxx=\dimen153
+\pgf@picminy=\dimen154
+\pgf@picmaxy=\dimen155
+\pgf@pathminx=\dimen156
+\pgf@pathmaxx=\dimen157
+\pgf@pathminy=\dimen158
+\pgf@pathmaxy=\dimen159
+\pgf@xx=\dimen160
+\pgf@xy=\dimen161
+\pgf@yx=\dimen162
+\pgf@yy=\dimen163
+\pgf@zx=\dimen164
+\pgf@zy=\dimen165
 )
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
 File: pgfcorepathconstruct.code.tex 2010/08/03  (rcs-revision 1.24)
-\pgf@path@lastx=\dimen163
-\pgf@path@lasty=\dimen164
+\pgf@path@lastx=\dimen166
+\pgf@path@lasty=\dimen167
 )
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
 File: pgfcorepathusage.code.tex 2008/04/22  (rcs-revision 1.12)
-\pgf@shorten@end@additional=\dimen165
-\pgf@shorten@start@additional=\dimen166
+\pgf@shorten@end@additional=\dimen168
+\pgf@shorten@start@additional=\dimen169
 )
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
 File: pgfcorescopes.code.tex 2010/09/08  (rcs-revision 1.34)
 \pgfpic=\box57
 \pgf@hbox=\box58
 \pgf@layerbox@main=\box59
-\pgf@picture@serial@count=\count132
+\pgf@picture@serial@count=\count136
 )
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2008/04/22  (rcs-revision 1.9)
-\pgflinewidth=\dimen167
+\pgflinewidth=\dimen170
 )
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex
 File: pgfcoretransformations.code.tex 2009/06/10  (rcs-revision 1.11)
-\pgf@pt@x=\dimen168
-\pgf@pt@y=\dimen169
-\pgf@pt@temp=\dimen170
+\pgf@pt@x=\dimen171
+\pgf@pt@y=\dimen172
+\pgf@pt@temp=\dimen173
 )
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
 File: pgfcorequick.code.tex 2008/10/09  (rcs-revision 1.3)
@@ -782,8 +804,8 @@ File: pgfcorearrows.code.tex 2008/04/23  (rcs-revision 1.11)
 )
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2008/11/23  (rcs-revision 1.13)
-\pgf@max=\dimen171
-\pgf@sys@shading@range@num=\count133
+\pgf@max=\dimen174
+\pgf@sys@shading@range@num=\count137
 )
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2010/03/25  (rcs-revision 1.16)
@@ -810,8 +832,8 @@ File: pgfmoduleplot.code.tex 2010/10/22  (rcs-revision 1.8)
 )
 (/usr/share/texmf/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
 Package: pgfcomp-version-0-65 2007/07/03 v2.10 (rcs-revision 1.7)
-\pgf@nodesepstart=\dimen172
-\pgf@nodesepend=\dimen173
+\pgf@nodesepstart=\dimen175
+\pgf@nodesepend=\dimen176
 )
 (/usr/share/texmf/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
 Package: pgfcomp-version-1-18 2007/07/23 v2.10 (rcs-revision 1.1)
@@ -821,8 +843,8 @@ Package: pgfcomp-version-1-18 2007/07/23 v2.10 (rcs-revision 1.1)
 (/usr/share/texmf/tex/generic/pgf/utilities/pgfkeys.code.tex))
 (/usr/share/texmf/tex/generic/pgf/utilities/pgffor.code.tex
 Package: pgffor 2010/03/23 v2.10 (rcs-revision 1.18)
-\pgffor@iter=\dimen174
-\pgffor@skip=\dimen175
+\pgffor@iter=\dimen177
+\pgffor@skip=\dimen178
 \pgffor@stack=\toks38
 \pgffor@toks=\toks39
 ))
@@ -831,29 +853,29 @@ Package: tikz 2010/10/13 v2.10 (rcs-revision 1.76)
 
 (/usr/share/texmf/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2010/05/31 v2.10 (rcs-revision 1.15)
-\pgf@plot@mark@count=\count134
-\pgfplotmarksize=\dimen176
+\pgf@plot@mark@count=\count138
+\pgfplotmarksize=\dimen179
 )
-\tikz@lastx=\dimen177
-\tikz@lasty=\dimen178
-\tikz@lastxsaved=\dimen179
-\tikz@lastysaved=\dimen180
-\tikzleveldistance=\dimen181
-\tikzsiblingdistance=\dimen182
+\tikz@lastx=\dimen180
+\tikz@lasty=\dimen181
+\tikz@lastxsaved=\dimen182
+\tikz@lastysaved=\dimen183
+\tikzleveldistance=\dimen184
+\tikzsiblingdistance=\dimen185
 \tikz@figbox=\box62
 \tikz@tempbox=\box63
-\tikztreelevel=\count135
-\tikznumberofchildren=\count136
-\tikznumberofcurrentchild=\count137
-\tikz@fig@count=\count138
+\tikztreelevel=\count139
+\tikznumberofchildren=\count140
+\tikznumberofcurrentchild=\count141
+\tikz@fig@count=\count142
 
 (/usr/share/texmf/tex/generic/pgf/modules/pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2010/08/24  (rcs-revision 1.4)
-\pgfmatrixcurrentrow=\count139
-\pgfmatrixcurrentcolumn=\count140
-\pgf@matrix@numberofcolumns=\count141
+\pgfmatrixcurrentrow=\count143
+\pgfmatrixcurrentcolumn=\count144
+\pgf@matrix@numberofcolumns=\count145
 )
-\tikz@expandcount=\count142
+\tikz@expandcount=\count146
 
 (/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopat
 hs.code.tex
@@ -867,9 +889,9 @@ Package: pgfplots 2014/02/28 v1.10 Data Visualization (1.10-2-gb39fe75)
 \t@pgfplots@toka=\toks40
 \t@pgfplots@tokb=\toks41
 \t@pgfplots@tokc=\toks42
-\pgfplots@tmpa=\dimen183
-\c@pgfplots@coordindex=\count143
-\c@pgfplots@scanlineindex=\count144
+\pgfplots@tmpa=\dimen186
+\c@pgfplots@coordindex=\count147
+\c@pgfplots@scanlineindex=\count148
 
 (/usr/share/texmf-texlive/tex/generic/pgfplots/sys/pgfplotssysgeneric.code.tex)
 ) (/usr/share/texmf-texlive/tex/generic/pgfplots/libs/pgfplotslibrary.code.tex)
@@ -891,13 +913,13 @@ p_pgfkeysfiltered.code.tex
 ))
 (/usr/share/texmf-texlive/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsup
 p_pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count145
+\c@pgfmathroundto@lastzeros=\count149
 )
 (/usr/share/texmf-texlive/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsup
 p_pgflibraryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2012/09/11 v2.10 (rcs-revision 1.17)
-\pgf@plot@mark@count=\count146
-\pgfplotmarksize=\dimen184
+\pgf@plot@mark@count=\count150
+\pgfplotmarksize=\dimen187
 )
 (/usr/share/texmf-texlive/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsup
 p_pgflibraryfpu.code.tex)
@@ -907,7 +929,7 @@ File: pgfcorescopes.code.tex 2012/11/30  (rcs-revision 1.38)
 \pgfpic=\box64
 \pgf@hbox=\box65
 \pgf@layerbox@main=\box66
-\pgf@picture@serial@count=\count147
+\pgf@picture@serial@count=\count151
 )
 (/usr/share/texmf-texlive/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsup
 p_pgfcorelayers.code.tex
@@ -927,13 +949,13 @@ ure.code.tex)
 ureext.code.tex)
 (/usr/share/texmf-texlive/tex/generic/pgfplots/liststructure/pgfplotsarray.code
 .tex
-\c@pgfplotsarray@tmp=\count148
+\c@pgfplotsarray@tmp=\count152
 )
 (/usr/share/texmf-texlive/tex/generic/pgfplots/liststructure/pgfplotsmatrix.cod
 e.tex)
 (/usr/share/texmf-texlive/tex/generic/pgfplots/numtable/pgfplotstableshared.cod
 e.tex
-\c@pgfplotstable@counta=\count149
+\c@pgfplotstable@counta=\count153
 \t@pgfplotstable@a=\toks49
 )
 (/usr/share/texmf-texlive/tex/generic/pgfplots/liststructure/pgfplotsdeque.code
@@ -945,7 +967,7 @@ x))
 
 (/usr/share/texmf-texlive/tex/generic/pgfplots/libs/pgflibrarypgfplots.surfshad
 ing.code.tex
-\c@pgfplotslibrarysurf@no=\count150
+\c@pgfplotslibrarysurf@no=\count154
 
 (/usr/share/texmf-texlive/tex/generic/pgfplots/sys/pgflibrarypgfplots.surfshadi
 ng.pgfsys-pdftex.def)))
@@ -963,14 +985,14 @@ ng.pgfsys-pdftex.def)))
 (/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecor
 ations.code.tex
 (/usr/share/texmf/tex/generic/pgf/modules/pgfmoduledecorations.code.tex
-\pgfdecoratedcompleteddistance=\dimen185
-\pgfdecoratedremainingdistance=\dimen186
-\pgfdecoratedinputsegmentcompleteddistance=\dimen187
-\pgfdecoratedinputsegmentremainingdistance=\dimen188
-\pgf@decorate@distancetomove=\dimen189
-\pgf@decorate@repeatstate=\count151
-\pgfdecorationsegmentamplitude=\dimen190
-\pgfdecorationsegmentlength=\dimen191
+\pgfdecoratedcompleteddistance=\dimen188
+\pgfdecoratedremainingdistance=\dimen189
+\pgfdecoratedinputsegmentcompleteddistance=\dimen190
+\pgfdecoratedinputsegmentremainingdistance=\dimen191
+\pgf@decorate@distancetomove=\dimen192
+\pgf@decorate@repeatstate=\count155
+\pgfdecorationsegmentamplitude=\dimen193
+\pgfdecorationsegmentlength=\dimen194
 )
 \tikz@lib@dec@box=\box67
 )
@@ -982,13 +1004,13 @@ athmorphing.code.tex))
 ations.pathreplacing.code.tex
 (/usr/share/texmf/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.p
 athreplacing.code.tex))
-\pgfplots@numplots=\count152
-\pgfplots@xmin@reg=\dimen192
-\pgfplots@xmax@reg=\dimen193
-\pgfplots@ymin@reg=\dimen194
-\pgfplots@ymax@reg=\dimen195
-\pgfplots@zmin@reg=\dimen196
-\pgfplots@zmax@reg=\dimen197
+\pgfplots@numplots=\count156
+\pgfplots@xmin@reg=\dimen195
+\pgfplots@xmax@reg=\dimen196
+\pgfplots@ymin@reg=\dimen197
+\pgfplots@ymax@reg=\dimen198
+\pgfplots@zmin@reg=\dimen199
+\pgfplots@zmax@reg=\dimen200
 )
 (/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryplotm
 arks.code.tex
@@ -1008,45 +1030,45 @@ File: pgflibrarypatterns.code.tex 2008/03/03 v2.10 (rcs-revision 1.13)
 ))
 (/usr/share/texmf-texlive/tex/latex/easylist/easylist.sty
 Package: easylist 2009/01/06 v.1.2 Numbered items with a single command.
-\el@CounterTotal=\count153
-\el@Scratch=\count154
-\el@ControlCounter=\count155
-\el@CounterLevel=\count156
-\c@List1=\count157
-\c@List2=\count158
-\c@List3=\count159
-\c@List4=\count160
-\c@List5=\count161
-\c@List6=\count162
-\c@List7=\count163
-\c@List8=\count164
-\c@List9=\count165
-\c@List10=\count166
-\el@ProgressiveDimension=\dimen198
+\el@CounterTotal=\count157
+\el@Scratch=\count158
+\el@ControlCounter=\count159
+\el@CounterLevel=\count160
+\c@List1=\count161
+\c@List2=\count162
+\c@List3=\count163
+\c@List4=\count164
+\c@List5=\count165
+\c@List6=\count166
+\c@List7=\count167
+\c@List8=\count168
+\c@List9=\count169
+\c@List10=\count170
+\el@ProgressiveDimension=\dimen201
 \el@CounterBox=\box68
 \el@ControlBox=\box69
-\el@TotalMargin=\dimen199
-\el@LeftMove=\dimen200
+\el@TotalMargin=\dimen202
+\el@LeftMove=\dimen203
 )
 (/usr/share/texmf-texlive/tex/latex/tools/array.sty
 Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
-\col@sep=\dimen201
-\extrarowheight=\dimen202
+\col@sep=\dimen204
+\extrarowheight=\dimen205
 \NC@list=\toks50
-\extratabsurround=\skip85
-\backup@length=\skip86
+\extratabsurround=\skip88
+\backup@length=\skip89
 )
 (/usr/share/texmf-texlive/tex/latex/tabulary/tabulary.sty
 Package: tabulary 2008/12/01 v0.9 tabulary package (DPC)
-\TY@count=\count167
-\TY@linewidth=\dimen203
-\tymin=\dimen204
-\tymax=\dimen205
-\TY@tablewidth=\dimen206
+\TY@count=\count171
+\TY@linewidth=\dimen206
+\tymin=\dimen207
+\tymax=\dimen208
+\TY@tablewidth=\dimen209
 )
 (/usr/share/texmf-texlive/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count168
+\c@float@type=\count172
 \float@exts=\toks51
 \float@box=\box70
 \@float@everytoks=\toks52
@@ -1054,21 +1076,21 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 )
 (/usr/share/texmf-texlive/tex/latex/geometry/geometry.sty
 Package: geometry 2008/12/21 v4.2 Page Geometry
-\Gm@cnth=\count169
-\Gm@cntv=\count170
-\c@Gm@tempcnt=\count171
-\Gm@bindingoffset=\dimen207
-\Gm@wd@mp=\dimen208
-\Gm@odd@mp=\dimen209
-\Gm@even@mp=\dimen210
+\Gm@cnth=\count173
+\Gm@cntv=\count174
+\c@Gm@tempcnt=\count175
+\Gm@bindingoffset=\dimen210
+\Gm@wd@mp=\dimen211
+\Gm@odd@mp=\dimen212
+\Gm@even@mp=\dimen213
 \Gm@dimlist=\toks53
 
 (/usr/share/texmf-texlive/tex/xelatex/xetexconfig/geometry.cfg))
 (/usr/share/texmf-texlive/tex/latex/appendix/appendix.sty
 Package: appendix 2009/09/02 v1.2b extra appendix facilities
-\c@@pps=\count172
-\c@@ppsavesec=\count173
-\c@@ppsaveapp=\count174
+\c@@pps=\count176
+\c@@ppsavesec=\count177
+\c@@ppsaveapp=\count178
 )
 \@indexfile=\write4
 \openout4 = `memoria.idx'.
@@ -1076,9 +1098,9 @@ Package: appendix 2009/09/02 v1.2b extra appendix facilities
 
 Writing index file memoria.idx
 (/usr/share/texmf-texlive/tex/latex/wrapfig/wrapfig.sty
-\wrapoverhang=\dimen211
-\WF@size=\dimen212
-\c@WF@wrappedlines=\count175
+\wrapoverhang=\dimen214
+\WF@size=\dimen215
+\c@WF@wrappedlines=\count179
 \WF@box=\box72
 \WF@everypar=\toks54
 Package: wrapfig 2003/01/31  v 3.6
@@ -1092,7 +1114,7 @@ File: tikzlibraryarrows.code.tex 2008/01/09 v2.10 (rcs-revision 1.1)
 
 (/usr/share/texmf/tex/generic/pgf/libraries/pgflibraryarrows.code.tex
 File: pgflibraryarrows.code.tex 2008/10/27 v2.10 (rcs-revision 1.9)
-\arrowsize=\dimen213
+\arrowsize=\dimen216
 ))
 (/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarybackg
 rounds.code.tex
@@ -1118,33 +1140,33 @@ File: pgflibraryshapes.geometric.code.tex 2008/06/26 v2.10 (rcs-revision 1.1)
 )) (/usr/share/texmf/tex/latex/pgf/utilities/pgfcalendar.sty
 (/usr/share/texmf/tex/generic/pgf/utilities/pgfcalendar.code.tex
 File: pgfcalendar.code.tex 2007/07/23 v2.10 (rcs-revision 1.11)
-\pgfcalendarcurrentjulian=\count176
+\pgfcalendarcurrentjulian=\count180
 ))
-\gtt@currentline=\count177
-\gtt@lasttitleline=\count178
-\gtt@currgrid=\count179
-\gtt@chartwidth=\count180
-\gtt@lasttitleslot=\count181
-\gtt@elementid=\count182
-\gtt@today@slot=\count183
-\gtt@startjulian=\count184
-\gtt@endjulian=\count185
-\gtt@calendar@slots=\count186
-\gtt@calendar@weeknumber=\count187
-\gtt@calendar@startofweek=\count188
-\gtt@left@slot=\count189
-\gtt@right@slot=\count190
+\gtt@currentline=\count181
+\gtt@lasttitleline=\count182
+\gtt@currgrid=\count183
+\gtt@chartwidth=\count184
+\gtt@lasttitleslot=\count185
+\gtt@elementid=\count186
+\gtt@today@slot=\count187
+\gtt@startjulian=\count188
+\gtt@endjulian=\count189
+\gtt@calendar@slots=\count190
+\gtt@calendar@weeknumber=\count191
+\gtt@calendar@startofweek=\count192
+\gtt@left@slot=\count193
+\gtt@right@slot=\count194
 )
 (/usr/share/texmf-texlive/tex/latex/fancyhdr/fancyhdr.sty
-\fancy@headwidth=\skip87
-\f@ncyO@elh=\skip88
-\f@ncyO@erh=\skip89
-\f@ncyO@olh=\skip90
-\f@ncyO@orh=\skip91
-\f@ncyO@elf=\skip92
-\f@ncyO@erf=\skip93
-\f@ncyO@olf=\skip94
-\f@ncyO@orf=\skip95
+\fancy@headwidth=\skip90
+\f@ncyO@elh=\skip91
+\f@ncyO@erh=\skip92
+\f@ncyO@olh=\skip93
+\f@ncyO@orh=\skip94
+\f@ncyO@elf=\skip95
+\f@ncyO@erf=\skip96
+\f@ncyO@olf=\skip97
+\f@ncyO@orf=\skip98
 )
 (/usr/share/texmf-texlive/tex/latex/anysize/anysize.sty
 Package: anysize 1994/08/13 setting margin sizes
@@ -1152,35 +1174,35 @@ Package: anysize 1994/08/13 setting margin sizes
 document style option `anysize' loaded
 Michael Salzenberg, Thomas Esser, Dirk Hillbrecht
 Version 1.0, Aug 13, 1994
-\@Leftmargin=\dimen214
-\@Rightmargin=\dimen215
-\@Topmargin=\dimen216
-\@Bottommargin=\dimen217
+\@Leftmargin=\dimen217
+\@Rightmargin=\dimen218
+\@Topmargin=\dimen219
+\@Bottommargin=\dimen220
 ) (/usr/share/texmf-texlive/tex/latex/natbib/natbib.sty
 Package: natbib 2009/07/16 8.31 (PWD, AO)
-\bibhang=\skip96
-\bibsep=\skip97
+\bibhang=\skip99
+\bibsep=\skip100
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count191
+\c@NAT@ctr=\count195
 )
 (/usr/share/texmf-texlive/tex/latex/listings/listings.sty
-\lst@mode=\count192
+\lst@mode=\count196
 \lst@gtempboxa=\box75
 \lst@token=\toks55
-\lst@length=\count193
-\lst@currlwidth=\dimen218
-\lst@column=\count194
-\lst@pos=\count195
-\lst@lostspace=\dimen219
-\lst@width=\dimen220
-\lst@newlines=\count196
-\lst@lineno=\count197
-\lst@maxwidth=\dimen221
+\lst@length=\count197
+\lst@currlwidth=\dimen221
+\lst@column=\count198
+\lst@pos=\count199
+\lst@lostspace=\dimen222
+\lst@width=\dimen223
+\lst@newlines=\count200
+\lst@lineno=\count201
+\lst@maxwidth=\dimen224
 
 (/usr/share/texmf-texlive/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
-\c@lstnumber=\count198
-\lst@skipnumbers=\count199
+\c@lstnumber=\count202
+\lst@skipnumbers=\count203
 \lst@framebox=\box76
 )
 (/usr/share/texmf-texlive/tex/latex/listings/listings.cfg
@@ -1210,15 +1232,15 @@ LaTeX Font Info:    ... okay on input line 98.
 
 (/usr/share/texmf-texlive/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count200
-\scratchdimen=\dimen222
+\scratchcounter=\count204
+\scratchdimen=\dimen225
 \scratchbox=\box77
-\nofMPsegments=\count201
-\nofMParguments=\count202
+\nofMPsegments=\count205
+\nofMParguments=\count206
 \everyMPshowfont=\toks56
-\MPscratchCnt=\count203
-\MPscratchDim=\dimen223
-\MPnumerator=\count204
+\MPscratchCnt=\count207
+\MPscratchDim=\dimen226
+\MPnumerator=\count208
 \everyMPtoPDFconversion=\toks57
 )
 Package hyperref Info: Link coloring OFF on input line 98.
@@ -1228,7 +1250,7 @@ Package: nameref 2007/05/29 v2.31 Cross-referencing by name of section
 (/usr/share/texmf-texlive/tex/latex/oberdiek/refcount.sty
 Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
 )
-\c@section@level=\count205
+\c@section@level=\count209
 )
 LaTeX Info: Redefining \ref on input line 98.
 LaTeX Info: Redefining \pageref on input line 98.
@@ -1291,7 +1313,7 @@ driver: pdftex
 \@twosidetrue \@mparswitchtrue 
 (1in=72.27pt, 1cm=28.45pt)
 -----------------------
-\c@lstlisting=\count206
+\c@lstlisting=\count210
 LaTeX Font Info:    Try loading font information for U+msa on input line 101.
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
@@ -1369,7 +1391,7 @@ File: images/etseib.pdf Graphic file (type pdf)
 File: images/etseib.pdf Graphic file (type pdf)
  <use images/etseib.pdf> [12]
 Cap\'{\i }tulo 2.
-<images/kuka.jpg, id=480, 96.36pt x 64.0794pt>
+<images/kuka.jpg, id=473, 96.36pt x 64.0794pt>
 File: images/kuka.jpg Graphic file (type jpg)
  <use images/kuka.jpg>
 
@@ -1380,7 +1402,7 @@ File: images/etseib.pdf Graphic file (type pdf)
 
 
 ]
-<images/Wildcat.jpg, id=499, 642.4pt x 354.32375pt>
+<images/Wildcat.jpg, id=492, 642.4pt x 354.32375pt>
 File: images/Wildcat.jpg Graphic file (type jpg)
  <use images/Wildcat.jpg>
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1415,7 +1437,7 @@ File: images/etseib.pdf Graphic file (type pdf)
 
 ]
 Cap\'{\i }tulo 3.
-<images/ers7lrg.jpg, id=568, 909.3975pt x 990.70125pt>
+<images/ers7lrg.jpg, id=561, 909.3975pt x 990.70125pt>
 File: images/ers7lrg.jpg Graphic file (type jpg)
 
 <use images/ers7lrg.jpg>
@@ -1438,7 +1460,7 @@ File: images/etseib.pdf Graphic file (type pdf)
 
 pdfTeX warning: pdflatex (file ./images/openrarch.pdf): PDF inclusion: found PD
 F version <1.5>, but at most version <1.4> allowed
-<images/openrarch.pdf, id=583, 256.07481pt x 142.26378pt>
+<images/openrarch.pdf, id=576, 256.07481pt x 142.26378pt>
 File: images/openrarch.pdf Graphic file (type pdf)
 
 <use images/openrarch.pdf>
@@ -1447,7 +1469,7 @@ File: images/etseib.pdf Graphic file (type pdf)
 
 pdfTeX warning: pdflatex (file ./images/ObjectCom.pdf): PDF inclusion: found PD
 F version <1.5>, but at most version <1.4> allowed
-<images/ObjectCom.pdf, id=606, 789.34903pt x 326.821pt>
+<images/ObjectCom.pdf, id=599, 789.34903pt x 326.821pt>
 File: images/ObjectCom.pdf Graphic file (type pdf)
 
 <use images/ObjectCom.pdf>
@@ -1456,7 +1478,7 @@ File: images/etseib.pdf Graphic file (type pdf)
 
 pdfTeX warning: pdflatex (file ./images/tekk.pdf): PDF inclusion: found PDF ver
 sion <1.5>, but at most version <1.4> allowed
-<images/tekk.pdf, id=625, 256.07481pt x 142.26378pt>
+<images/tekk.pdf, id=618, 256.07481pt x 142.26378pt>
 File: images/tekk.pdf Graphic file (type pdf)
  <use images/tekk.pdf>
 File: images/etseib.pdf Graphic file (type pdf)
@@ -1465,7 +1487,7 @@ File: images/etseib.pdf Graphic file (type pdf)
 
 pdfTeX warning: pdflatex (file ./images/tekkotsuarch.pdf): PDF inclusion: found
  PDF version <1.5>, but at most version <1.4> allowed
-<images/tekkotsuarch.pdf, id=648, 1284.8pt x 963.6pt>
+<images/tekkotsuarch.pdf, id=641, 1284.8pt x 963.6pt>
 File: images/tekkotsuarch.pdf Graphic file (type pdf)
 
 <use images/tekkotsuarch.pdf>
@@ -1477,7 +1499,7 @@ File: images/etseib.pdf Graphic file (type pdf)
 
 pdfTeX warning: pdflatex (file ./images/urbiarc.pdf): PDF inclusion: found PDF 
 version <1.5>, but at most version <1.4> allowed
-<images/urbiarc.pdf, id=664, 256.07481pt x 142.26378pt>
+<images/urbiarc.pdf, id=657, 256.07481pt x 142.26378pt>
 File: images/urbiarc.pdf Graphic file (type pdf)
 
 <use images/urbiarc.pdf>
@@ -1506,7 +1528,7 @@ File: images/etseib.pdf Graphic file (type pdf)
 
 pdfTeX warning: pdflatex (file ./images/lectdata.pdf): PDF inclusion: found PDF
  version <1.5>, but at most version <1.4> allowed
-<images/lectdata.pdf, id=697, 256.07481pt x 142.26378pt>
+<images/lectdata.pdf, id=690, 256.07481pt x 142.26378pt>
 File: images/lectdata.pdf Graphic file (type pdf)
 
 <use images/lectdata.pdf>
@@ -1515,7 +1537,7 @@ File: images/etseib.pdf Graphic file (type pdf)
 
 pdfTeX warning: pdflatex (file ./images/telnet.pdf): PDF inclusion: found PDF v
 ersion <1.5>, but at most version <1.4> allowed
-<images/telnet.pdf, id=717, 578.16pt x 390.25798pt>
+<images/telnet.pdf, id=710, 578.16pt x 390.25798pt>
 File: images/telnet.pdf Graphic file (type pdf)
  <use images/telnet.pdf>
 File: images/etseib.pdf Graphic file (type pdf)
@@ -2269,13 +2291,13 @@ File: images/etseib.pdf Graphic file (type pdf)
 <use images/etseib.pdf> [39]
 File: images/etseib.pdf Graphic file (type pdf)
  <use images/etseib.pdf> [40]
-<plots/h1-f1.pdf, id=775, 433.62pt x 454.19687pt>
+<plots/h1-f1.pdf, id=768, 433.62pt x 454.19687pt>
 File: plots/h1-f1.pdf Graphic file (type pdf)
  <use plots/h1-f1.pdf>
-<plots/h2.pdf, id=776, 436.12938pt x 454.19687pt>
+<plots/h2.pdf, id=769, 436.12938pt x 454.19687pt>
 File: plots/h2.pdf Graphic file (type pdf)
  <use plots/h2.pdf>
-<plots/h5.pdf, id=777, 440.64626pt x 454.19687pt>
+<plots/h5.pdf, id=770, 440.64626pt x 454.19687pt>
 File: plots/h5.pdf Graphic file (type pdf)
  <use plots/h5.pdf>
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -2283,7 +2305,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 File: images/etseib.pdf Graphic file (type pdf)
 
 <use images/etseib.pdf> [41 <./plots/h1-f1.pdf>]
-<plots/h10.pdf, id=790, 436.12938pt x 454.19687pt>
+<plots/h10.pdf, id=783, 436.12938pt x 454.19687pt>
 File: plots/h10.pdf Graphic file (type pdf)
  <use plots/h10.pdf>
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -2416,7 +2438,7 @@ File: images/etseib.pdf Graphic file (type pdf)
 
 pdfTeX warning: pdflatex (file ./images/aiboserverNodo.pdf): PDF inclusion: fou
 nd PDF version <1.5>, but at most version <1.4> allowed
-<images/aiboserverNodo.pdf, id=836, 642.4pt x 481.8pt>
+<images/aiboserverNodo.pdf, id=829, 642.4pt x 481.8pt>
 File: images/aiboserverNodo.pdf Graphic file (type pdf)
 
 <use images/aiboserverNodo.pdf>
@@ -2425,7 +2447,7 @@ File: images/etseib.pdf Graphic file (type pdf)
 
 pdfTeX warning: pdflatex (file ./images/Aibo_Server.pdf): PDF inclusion: found 
 PDF version <1.5>, but at most version <1.4> allowed
-<images/Aibo_Server.pdf, id=847, 1284.8pt x 963.6pt>
+<images/Aibo_Server.pdf, id=840, 1284.8pt x 963.6pt>
 File: images/Aibo_Server.pdf Graphic file (type pdf)
 
 <use images/Aibo_Server.pdf>
@@ -2434,7 +2456,7 @@ File: images/etseib.pdf Graphic file (type pdf)
 File: images/etseib.pdf Graphic file (type pdf)
 
 <use images/etseib.pdf> [50 <./images/Aibo_Server.pdf>]
-<images/getTopics.png, id=867, 1371.1225pt x 770.88pt>
+<images/getTopics.png, id=860, 1371.1225pt x 770.88pt>
 File: images/getTopics.png Graphic file (type png)
 
 <use images/getTopics.png>
@@ -2443,45 +2465,49 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 File: images/etseib.pdf Graphic file (type pdf)
 
 <use images/etseib.pdf> [51]
-<images/accel.jpg, id=872, 2277.50874pt x 1165.35374pt>
+<images/accel.jpg, id=865, 1708.13156pt x 874.01532pt>
 File: images/accel.jpg Graphic file (type jpg)
  <use images/accel.jpg>
+Overfull \hbox (23.02946pt too wide) in paragraph at lines 1640--1641
+ [][] 
+ []
+
+File: images/etseib.pdf Graphic file (type pdf)
+<use images/etseib.pdf> [52 <./images/getTopics.png (PNG copy)> <./images/accel
+.jpg>]
 
 pdfTeX warning: pdflatex (file ./images/rosgraphASsin.pdf): PDF inclusion: foun
 d PDF version <1.5>, but at most version <1.4> allowed
-<images/rosgraphASsin.pdf, id=877, 1111.15125pt x 158.59253pt>
+<images/rosgraphASsin.pdf, id=874, 1111.15125pt x 158.59253pt>
 File: images/rosgraphASsin.pdf Graphic file (type pdf)
 
 <use images/rosgraphASsin.pdf>
-File: images/etseib.pdf Graphic file (type pdf)
- <use images/etseib.pdf> [52 <./images/getTopics.png (PNG copy)> <./images/acce
-l.jpg>]
-<images/10Ry2S.jpg, id=887, 2277.50874pt x 1165.35374pt>
+<images/10Ry2S.jpg, id=880, 1708.13156pt x 874.01532pt>
 File: images/10Ry2S.jpg Graphic file (type jpg)
 
 <use images/10Ry2S.jpg>
-Overfull \hbox (23.04684pt too wide) in paragraph at lines 1662--1663
+Overfull \hbox (23.02946pt too wide) in paragraph at lines 1662--1663
  [][] 
  []
 
-<images/10Ry7S.jpg, id=888, 2277.50874pt x 1165.35374pt>
+<images/10Ry7S.jpg, id=881, 1708.13156pt x 874.01532pt>
 File: images/10Ry7S.jpg Graphic file (type jpg)
 
 <use images/10Ry7S.jpg>
-Overfull \hbox (23.04684pt too wide) in paragraph at lines 1668--1669
+Overfull \hbox (23.02946pt too wide) in paragraph at lines 1668--1669
  [][] 
  []
 
-<images/10Ry10SAll.jpg, id=889, 2277.50874pt x 1165.35374pt>
+<images/10Ry10SAll.jpg, id=882, 1708.13156pt x 874.01532pt>
 File: images/10Ry10SAll.jpg Graphic file (type jpg)
 
 <use images/10Ry10SAll.jpg>
-Overfull \hbox (23.04684pt too wide) in paragraph at lines 1674--1675
+Overfull \hbox (23.02946pt too wide) in paragraph at lines 1674--1675
  [][] 
  []
 
 
-Underfull \vbox (badness 6944) has occurred while \output is active []
+Underfull \vbox (badness 2393) has occurred while \output is active []
 
 File: images/etseib.pdf Graphic file (type pdf)
 
@@ -2494,7 +2520,7 @@ File: images/etseib.pdf Graphic file (type pdf)
 
 pdfTeX warning: pdflatex (file ./images/esquemaCall.pdf): PDF inclusion: found 
 PDF version <1.5>, but at most version <1.4> allowed
-<images/esquemaCall.pdf, id=906, 597.50786pt x 845.04686pt>
+<images/esquemaCall.pdf, id=899, 597.50786pt x 845.04686pt>
 File: images/esquemaCall.pdf Graphic file (type pdf)
 
 <use images/esquemaCall.pdf>
@@ -2503,11 +2529,11 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 File: images/etseib.pdf Graphic file (type pdf)
 
 <use images/etseib.pdf> [56 <./images/esquemaCall.pdf>]
-<images/empiezamala.jpg, id=922, 2277.50874pt x 1165.35374pt>
+<images/empiezamala.jpg, id=915, 1708.13156pt x 874.01532pt>
 File: images/empiezamala.jpg Graphic file (type jpg)
 
 <use images/empiezamala.jpg>
-<images/peora5hz.jpg, id=923, 2277.50874pt x 1165.35374pt>
+<images/peora5hz.jpg, id=916, 1708.13156pt x 874.01532pt>
 File: images/peora5hz.jpg Graphic file (type jpg)
 
 <use images/peora5hz.jpg>
@@ -2516,33 +2542,32 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 File: images/etseib.pdf Graphic file (type pdf)
 
 <use images/etseib.pdf> [57 <./images/empiezamala.jpg>]
-<images/recupera.jpg, id=929, 2277.50874pt x 1165.35374pt>
+<images/recupera.jpg, id=922, 1708.13156pt x 874.01532pt>
 File: images/recupera.jpg Graphic file (type jpg)
 
 <use images/recupera.jpg>
-<images/mejor5hz.jpg, id=932, 2277.50874pt x 1165.35374pt>
+<images/mejor5hz.jpg, id=925, 1708.13156pt x 874.01532pt>
 File: images/mejor5hz.jpg Graphic file (type jpg)
 
 <use images/mejor5hz.jpg>
-Underfull \vbox (badness 3009) has occurred while \output is active []
-
 File: images/etseib.pdf Graphic file (type pdf)
-
-<use images/etseib.pdf> [58 <./images/peora5hz.jpg> <./images/recupera.jpg>]
-File: images/etseib.pdf Graphic file (type pdf)
-
-<use images/etseib.pdf> [59 <./images/mejor5hz.jpg>]
+ <use images/etseib.pdf> [58 <./images/peora5hz.jpg> <./images/recupera.jpg>]
 
 pdfTeX warning: pdflatex (file ./images/mimic.pdf): PDF inclusion: found PDF ve
 rsion <1.5>, but at most version <1.4> allowed
-<images/mimic.pdf, id=946, 584.58403pt x 72.27pt>
+<images/mimic.pdf, id=933, 584.58403pt x 72.27pt>
 File: images/mimic.pdf Graphic file (type pdf)
  <use images/mimic.pdf>
-<images/retmin2.jpg, id=950, 2277.50874pt x 1165.35374pt>
+Underfull \vbox (badness 1292) has occurred while \output is active []
+
+File: images/etseib.pdf Graphic file (type pdf)
+
+<use images/etseib.pdf> [59 <./images/mejor5hz.jpg>]
+<images/retmin2.jpg, id=943, 1708.13156pt x 874.01532pt>
 File: images/retmin2.jpg Graphic file (type jpg)
 
 <use images/retmin2.jpg>
-<images/malo5hz.jpg, id=951, 2277.50874pt x 1165.35374pt>
+<images/malo5hz.jpg, id=944, 1708.13156pt x 874.01532pt>
 File: images/malo5hz.jpg Graphic file (type jpg)
 
 <use images/malo5hz.jpg>
@@ -2557,19 +2582,22 @@ File: images/etseib.pdf Graphic file (type pdf)
 
 pdfTeX warning: pdflatex (file ./images/Aibo.pdf): PDF inclusion: found PDF ver
 sion <1.5>, but at most version <1.4> allowed
-<images/Aibo.pdf, id=969, 1208.515pt x 855.195pt>
+<images/Aibo.pdf, id=962, 1208.515pt x 855.195pt>
 File: images/Aibo.pdf Graphic file (type pdf)
  <use images/Aibo.pdf>
 Overfull \hbox (16.07484pt too wide) in paragraph at lines 1780--1781
  [][] 
  []
 
-<images/aiborviz.png, id=974, 1371.1225pt x 770.88pt>
+<images/aiborviz.png, id=967, 1371.1225pt x 770.88pt>
 File: images/aiborviz.png Graphic file (type png)
 
 <use images/aiborviz.png>
+Underfull \vbox (badness 4120) has occurred while \output is active []
+
 File: images/etseib.pdf Graphic file (type pdf)
- <use images/etseib.pdf> [62 <./images/Aibo.pdf>]
+
+<use images/etseib.pdf> [62 <./images/Aibo.pdf>]
 Overfull \hbox (15.27766pt too wide) in paragraph at lines 1794--1796
 []\OT1/cmr/m/n/12 El no-do sta-te[]publisher es-ta crea-do por un pro-gra-ma es
 -cri-to en C++ (sta-te[]publisher.cpp)
@@ -2583,7 +2611,7 @@ File: images/etseib.pdf Graphic file (type pdf)
 
 pdfTeX warning: pdflatex (file ./images/graphModel.pdf): PDF inclusion: found P
 DF version <1.5>, but at most version <1.4> allowed
-<images/graphModel.pdf, id=1000, 2162.07652pt x 120.44992pt>
+<images/graphModel.pdf, id=993, 2162.07652pt x 120.44992pt>
 File: images/graphModel.pdf Graphic file (type pdf)
 
 <use images/graphModel.pdf>
@@ -2672,7 +2700,7 @@ Overfull \hbox (26.05548pt too wide) in paragraph at lines 2115--2116
  / master / aibo _ description$[] 
  []
 
-<images/MS.jpg, id=1107, 180.675pt x 87.32625pt>
+<images/MS.jpg, id=1100, 180.675pt x 87.32625pt>
 File: images/MS.jpg Graphic file (type jpg)
  <use images/MS.jpg>
 Overfull \hbox (59.80757pt too wide) in paragraph at lines 2129--2130
@@ -2702,9 +2730,7 @@ File: images/etseib.pdf Graphic file (type pdf)
 
 <use images/etseib.pdf> [85]
 File: images/etseib.pdf Graphic file (type pdf)
- <use images/etseib.pdf> [86
-
-]
+ <use images/etseib.pdf> [86]
 Ap\'{e}ndice B.
 (/usr/share/texmf-texlive/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2004/09/05 1.3 listings language file
@@ -2717,7 +2743,9 @@ File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
 )
 (./src/getDataOneLeg/getDataC++/getData.cpp
 File: images/etseib.pdf Graphic file (type pdf)
- <use images/etseib.pdf> [87])
+ <use images/etseib.pdf> [87
+
+])
 (/usr/share/texmf-texlive/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2004/09/05 1.3 listings language file
 )
@@ -2769,13 +2797,13 @@ File: images/etseib.pdf Graphic file (type pdf)
 File: images/etseib.pdf Graphic file (type pdf)
  <use images/etseib.pdf> [99] (./memoria.aux) ) 
 Here is how much of TeX's memory you used:
- 30928 strings out of 493848
- 647544 string characters out of 1152823
- 1470765 words of memory out of 7000000
- 32705 multiletter control sequences out of 15000+50000
+ 31351 strings out of 493848
+ 654700 string characters out of 1152823
+ 1476829 words of memory out of 7000000
+ 33113 multiletter control sequences out of 15000+50000
  15232 words of font info for 60 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
- 56i,19n,85p,1181b,2267s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 56i,19n,85p,1181b,2275s stack positions out of 5000i,500n,10000p,200000b,50000s
 pdfTeX warning (dest): name{Hfoo
 tnote.31} has been referenced but does not exist, replaced by a fixed one
 
@@ -2882,9 +2910,9 @@ blic/amsfonts/cm/cmti12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfon
 ts/cm/cmtt10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmtt1
 2.pfb></usr/share/texmf-texlive/fonts/type1/public/eurosym/feybr10.pfb></usr/sh
 are/texmf-texlive/fonts/type1/public/eurosym/feymr10.pfb>
-Output written on memoria.pdf (101 pages, 11253991 bytes).
+Output written on memoria.pdf (101 pages, 5751727 bytes).
 PDF statistics:
- 1958 PDF objects out of 2073 (max. 8388607)
- 821 named destinations out of 1000 (max. 500000)
+ 1957 PDF objects out of 2073 (max. 8388607)
+ 826 named destinations out of 1000 (max. 500000)
  652 words of extra memory for PDF output out of 10000 (max. 10000000)
 
