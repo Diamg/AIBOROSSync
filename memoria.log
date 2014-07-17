@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2014.6.30)  8 JUL 2014 17:59
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2014.6.30)  17 JUL 2014 21:12
 entering extended mode
  %&-line parsing enabled.
 **memoria.tex
@@ -1383,7 +1383,7 @@ File: images/etseib.pdf Graphic file (type pdf)
 ]
 Cap\'{\i }tulo 1.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 2359) has occurred while \output is active []
 
 File: images/etseib.pdf Graphic file (type pdf)
 
@@ -1391,7 +1391,7 @@ File: images/etseib.pdf Graphic file (type pdf)
 File: images/etseib.pdf Graphic file (type pdf)
  <use images/etseib.pdf> [12]
 Cap\'{\i }tulo 2.
-<images/kuka.jpg, id=473, 96.36pt x 64.0794pt>
+<images/kuka.jpg, id=467, 96.36pt x 64.0794pt>
 File: images/kuka.jpg Graphic file (type jpg)
  <use images/kuka.jpg>
 
@@ -1402,7 +1402,7 @@ File: images/etseib.pdf Graphic file (type pdf)
 
 
 ]
-<images/Wildcat.jpg, id=492, 642.4pt x 354.32375pt>
+<images/Wildcat.jpg, id=487, 642.4pt x 354.32375pt>
 File: images/Wildcat.jpg Graphic file (type jpg)
  <use images/Wildcat.jpg>
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1415,12 +1415,8 @@ File: images/etseib.pdf Graphic file (type pdf)
 [15 <./images/Wildcat.jpg>]
 File: images/etseib.pdf Graphic file (type pdf)
  <use images/etseib.pdf> [16]
-Overfull \hbox (7.03453pt too wide) in paragraph at lines 242--244
-[]\OT1/cmr/m/n/12 El ob-je-ti-vo de es-te pro-yec-to es re-cu-pe-rar al AI-BO c
-o-mo pla-ta-for-ma edu-ca-ti-va aport^^Sando-
- []
-
 File: images/etseib.pdf Graphic file (type pdf)
+
 <use images/etseib.pdf> [17]
 Missing character: There is no , in font nullfont!
 
@@ -1437,20 +1433,20 @@ File: images/etseib.pdf Graphic file (type pdf)
 
 ]
 Cap\'{\i }tulo 3.
-<images/ers7lrg.jpg, id=561, 909.3975pt x 990.70125pt>
+<images/ers7lrg.jpg, id=555, 909.3975pt x 990.70125pt>
 File: images/ers7lrg.jpg Graphic file (type jpg)
 
 <use images/ers7lrg.jpg>
 File: images/etseib.pdf Graphic file (type pdf)
  <use images/etseib.pdf> [21 <./images/ers7lrg.jpg>]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 356.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 354.
 
 
 (/usr/share/texmf-texlive/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 356.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 354.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -1460,7 +1456,7 @@ File: images/etseib.pdf Graphic file (type pdf)
 
 pdfTeX warning: pdflatex (file ./images/openrarch.pdf): PDF inclusion: found PD
 F version <1.5>, but at most version <1.4> allowed
-<images/openrarch.pdf, id=576, 256.07481pt x 142.26378pt>
+<images/openrarch.pdf, id=570, 256.07481pt x 142.26378pt>
 File: images/openrarch.pdf Graphic file (type pdf)
 
 <use images/openrarch.pdf>
@@ -1469,7 +1465,7 @@ File: images/etseib.pdf Graphic file (type pdf)
 
 pdfTeX warning: pdflatex (file ./images/ObjectCom.pdf): PDF inclusion: found PD
 F version <1.5>, but at most version <1.4> allowed
-<images/ObjectCom.pdf, id=599, 789.34903pt x 326.821pt>
+<images/ObjectCom.pdf, id=593, 789.34903pt x 326.821pt>
 File: images/ObjectCom.pdf Graphic file (type pdf)
 
 <use images/ObjectCom.pdf>
@@ -1478,28 +1474,27 @@ File: images/etseib.pdf Graphic file (type pdf)
 
 pdfTeX warning: pdflatex (file ./images/tekk.pdf): PDF inclusion: found PDF ver
 sion <1.5>, but at most version <1.4> allowed
-<images/tekk.pdf, id=618, 256.07481pt x 142.26378pt>
+<images/tekk.pdf, id=612, 256.07481pt x 142.26378pt>
 File: images/tekk.pdf Graphic file (type pdf)
  <use images/tekk.pdf>
-File: images/etseib.pdf Graphic file (type pdf)
 
-<use images/etseib.pdf> [25 <./images/tekk.pdf>]
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+File: images/etseib.pdf Graphic file (type pdf)
+<use images/etseib.pdf> [25]
 
 pdfTeX warning: pdflatex (file ./images/tekkotsuarch.pdf): PDF inclusion: found
  PDF version <1.5>, but at most version <1.4> allowed
-<images/tekkotsuarch.pdf, id=641, 1284.8pt x 963.6pt>
+<images/tekkotsuarch.pdf, id=630, 1284.8pt x 963.6pt>
 File: images/tekkotsuarch.pdf Graphic file (type pdf)
 
 <use images/tekkotsuarch.pdf>
-Underfull \vbox (badness 5147) has occurred while \output is active []
-
 File: images/etseib.pdf Graphic file (type pdf)
-
-<use images/etseib.pdf> [26 <./images/tekkotsuarch.pdf>]
+ <use images/etseib.pdf> [26 <./images/tekk.pdf> <./images/tekkotsuarch.pdf>]
 
 pdfTeX warning: pdflatex (file ./images/urbiarc.pdf): PDF inclusion: found PDF 
 version <1.5>, but at most version <1.4> allowed
-<images/urbiarc.pdf, id=657, 256.07481pt x 142.26378pt>
+<images/urbiarc.pdf, id=651, 256.07481pt x 142.26378pt>
 File: images/urbiarc.pdf Graphic file (type pdf)
 
 <use images/urbiarc.pdf>
@@ -1514,12 +1509,22 @@ File: images/etseib.pdf Graphic file (type pdf)
 Cap\'{\i }tulo 4.
 File: images/etseib.pdf Graphic file (type pdf)
 <use images/etseib.pdf> [29]
-Underfull \hbox (badness 10000) in paragraph at lines 562--562
+Underfull \hbox (badness 1715) in paragraph at lines 567--567
+[]|\OT1/cmr/m/n/12 Consultar del es-ta-do por
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 567--567
 []|\OT1/cmr/m/n/12 Windows/
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 562--562
+Underfull \hbox (badness 1715) in paragraph at lines 567--567
+[]|\OT1/cmr/m/n/12 Consultar del es-ta-do por
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 567--567
 []|\OT1/cmr/m/n/12 Windows/
  []
 
@@ -1528,7 +1533,7 @@ File: images/etseib.pdf Graphic file (type pdf)
 
 pdfTeX warning: pdflatex (file ./images/lectdata.pdf): PDF inclusion: found PDF
  version <1.5>, but at most version <1.4> allowed
-<images/lectdata.pdf, id=690, 256.07481pt x 142.26378pt>
+<images/lectdata.pdf, id=685, 256.07481pt x 142.26378pt>
 File: images/lectdata.pdf Graphic file (type pdf)
 
 <use images/lectdata.pdf>
@@ -1537,15 +1542,16 @@ File: images/etseib.pdf Graphic file (type pdf)
 
 pdfTeX warning: pdflatex (file ./images/telnet.pdf): PDF inclusion: found PDF v
 ersion <1.5>, but at most version <1.4> allowed
-<images/telnet.pdf, id=710, 578.16pt x 390.25798pt>
+<images/telnet.pdf, id=704, 578.16pt x 390.25798pt>
 File: images/telnet.pdf Graphic file (type pdf)
  <use images/telnet.pdf>
-File: images/etseib.pdf Graphic file (type pdf)
 
-<use images/etseib.pdf> [32 <./images/telnet.pdf>]
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
 File: images/etseib.pdf Graphic file (type pdf)
- <use images/etseib.pdf>
-[33]
+<use images/etseib.pdf> [32]
+File: images/etseib.pdf Graphic file (type pdf)
+ <use images/etseib.pdf> [33 <./images/telnet.pdf>]
 Missing character: There is no c in font nullfont!
 Missing character: There is no o in font nullfont!
 Missing character: There is no o in font nullfont!
@@ -1907,12 +1913,17 @@ Missing character: There is no e in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no ; in font nullfont!
 File: images/etseib.pdf Graphic file (type pdf)
- <use images/etseib.pdf> [34]
+<use images/etseib.pdf> [34]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 File: images/etseib.pdf Graphic file (type pdf)
 
 <use images/etseib.pdf> [35]
+File: images/etseib.pdf Graphic file (type pdf)
+ <use images/etseib.pdf> [36]
+File: images/etseib.pdf Graphic file (type pdf)
+
+<use images/etseib.pdf> [37]
 Missing character: There is no c in font nullfont!
 Missing character: There is no o in font nullfont!
 Missing character: There is no o in font nullfont!
@@ -2274,189 +2285,177 @@ Missing character: There is no e in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no ; in font nullfont!
 File: images/etseib.pdf Graphic file (type pdf)
- <use images/etseib.pdf> [36]
+ <use images/etseib.pdf> [38]
+File: images/etseib.pdf Graphic file (type pdf)
+
+<use images/etseib.pdf> [39]
 PGFPlots: reading {data/mediaPyOne.dat}
 PGFPlots: reading {data/mediaPyAll.dat}
 PGFPlots: reading {data/mediaC++One.dat}
 PGFPlots: reading {data/mediaC++All.dat}
 File: images/etseib.pdf Graphic file (type pdf)
-
-<use images/etseib.pdf> [37]
-File: images/etseib.pdf Graphic file (type pdf)
- <use images/etseib.pdf> [38]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-File: images/etseib.pdf Graphic file (type pdf)
-
-<use images/etseib.pdf> [39]
-File: images/etseib.pdf Graphic file (type pdf)
  <use images/etseib.pdf> [40]
-<plots/h1-f1.pdf, id=768, 433.62pt x 454.19687pt>
+File: images/etseib.pdf Graphic file (type pdf)
+
+<use images/etseib.pdf> [41] <plots/h1-f1.pdf, id=773, 433.62pt x 454.19687pt>
 File: plots/h1-f1.pdf Graphic file (type pdf)
- <use plots/h1-f1.pdf>
-<plots/h2.pdf, id=769, 436.12938pt x 454.19687pt>
+
+<use plots/h1-f1.pdf>
+File: images/etseib.pdf Graphic file (type pdf)
+ <use images/etseib.pdf> [42]
+<plots/h2.pdf, id=779, 436.12938pt x 454.19687pt>
 File: plots/h2.pdf Graphic file (type pdf)
  <use plots/h2.pdf>
-<plots/h5.pdf, id=770, 440.64626pt x 454.19687pt>
+<plots/h5.pdf, id=780, 440.64626pt x 454.19687pt>
 File: plots/h5.pdf Graphic file (type pdf)
  <use plots/h5.pdf>
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 File: images/etseib.pdf Graphic file (type pdf)
 
-<use images/etseib.pdf> [41 <./plots/h1-f1.pdf>]
-<plots/h10.pdf, id=783, 436.12938pt x 454.19687pt>
+<use images/etseib.pdf> [43 <./plots/h1-f1.pdf>]
+<plots/h10.pdf, id=795, 436.12938pt x 454.19687pt>
 File: plots/h10.pdf Graphic file (type pdf)
  <use plots/h10.pdf>
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 File: images/etseib.pdf Graphic file (type pdf)
 
-<use images/etseib.pdf> [42 <./plots/h2.pdf>]
+<use images/etseib.pdf> [44 <./plots/h2.pdf>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 File: images/etseib.pdf Graphic file (type pdf)
 
-<use images/etseib.pdf> [43 <./plots/h5.pdf>]
+<use images/etseib.pdf> [45 <./plots/h5.pdf>]
 File: images/etseib.pdf Graphic file (type pdf)
- <use images/etseib.pdf> [44 <./plots/h10.pdf>]
+ <use images/etseib.pdf> [46 <./plots/h10.pdf>]
 PGFPlots: reading {data/retrasoPy.dat}
 PGFPlots: reading {data/retrasoC++.dat}
 
-Underfull \hbox (badness 10000) in paragraph at lines 1520--1520
+Underfull \hbox (badness 10000) in paragraph at lines 1536--1536
 []|\OT1/cmr/bx/n/12 Python con
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1520--1520
+Underfull \hbox (badness 10000) in paragraph at lines 1536--1536
 []|\OT1/cmr/bx/n/12 C++ con
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1520--1520
+Underfull \hbox (badness 10000) in paragraph at lines 1536--1536
 \OT1/cmr/bx/n/12 li-bur-bi y 1
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1520--1520
+Underfull \hbox (badness 10000) in paragraph at lines 1536--1536
 []|\OT1/cmr/bx/n/12 C++ con
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1520--1520
+Underfull \hbox (badness 10000) in paragraph at lines 1536--1536
 \OT1/cmr/bx/n/12 li-bur-bi y 2
  []
 
 
-Underfull \hbox (badness 1297) in paragraph at lines 1520--1520
+Underfull \hbox (badness 1297) in paragraph at lines 1536--1536
 []|\OT1/cmr/m/n/12 Frecuencia me-dia de
  []
 
 
-Underfull \hbox (badness 3838) in paragraph at lines 1520--1520
+Underfull \hbox (badness 3838) in paragraph at lines 1536--1536
 []|\OT1/cmr/m/n/12 Congelaciones en la
  []
 
 
-Underfull \hbox (badness 3612) in paragraph at lines 1520--1520
+Underfull \hbox (badness 3612) in paragraph at lines 1536--1536
 []|\OT1/cmr/m/n/12 Seguimiento de tra-
  []
 
 
-Underfull \hbox (badness 6078) in paragraph at lines 1520--1520
+Underfull \hbox (badness 6078) in paragraph at lines 1536--1536
 []|\OT1/cmr/m/n/12 Efecto ne-ga-ti-vo del
  []
 
 
-Underfull \hbox (badness 6658) in paragraph at lines 1520--1520
-[]|\OT1/cmr/m/n/12 Bloqueos de en el
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1520--1520
+Underfull \hbox (badness 10000) in paragraph at lines 1536--1536
 []|\OT1/cmr/bx/n/12 Python con
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1520--1520
+Underfull \hbox (badness 10000) in paragraph at lines 1536--1536
 []|\OT1/cmr/bx/n/12 C++ con
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1520--1520
+Underfull \hbox (badness 10000) in paragraph at lines 1536--1536
 \OT1/cmr/bx/n/12 li-bur-bi y 1
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1520--1520
+Underfull \hbox (badness 10000) in paragraph at lines 1536--1536
 []|\OT1/cmr/bx/n/12 C++ con
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1520--1520
+Underfull \hbox (badness 10000) in paragraph at lines 1536--1536
 \OT1/cmr/bx/n/12 li-bur-bi y 2
  []
 
 
-Underfull \hbox (badness 1297) in paragraph at lines 1520--1520
+Underfull \hbox (badness 1297) in paragraph at lines 1536--1536
 []|\OT1/cmr/m/n/12 Frecuencia me-dia de
  []
 
 
-Underfull \hbox (badness 3838) in paragraph at lines 1520--1520
+Underfull \hbox (badness 3838) in paragraph at lines 1536--1536
 []|\OT1/cmr/m/n/12 Congelaciones en la
  []
 
 
-Underfull \hbox (badness 3612) in paragraph at lines 1520--1520
+Underfull \hbox (badness 3612) in paragraph at lines 1536--1536
 []|\OT1/cmr/m/n/12 Seguimiento de tra-
  []
 
 
-Underfull \hbox (badness 6078) in paragraph at lines 1520--1520
+Underfull \hbox (badness 6078) in paragraph at lines 1536--1536
 []|\OT1/cmr/m/n/12 Efecto ne-ga-ti-vo del
  []
 
 
-Underfull \hbox (badness 6658) in paragraph at lines 1520--1520
-[]|\OT1/cmr/m/n/12 Bloqueos de en el
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 4531) has occurred while \output is active []
 
 File: images/etseib.pdf Graphic file (type pdf)
 
-<use images/etseib.pdf> [45]
+<use images/etseib.pdf> [47]
 File: images/etseib.pdf Graphic file (type pdf)
- <use images/etseib.pdf> [46]
+ <use images/etseib.pdf> [48]
 Cap\'{\i }tulo 5.
 File: images/etseib.pdf Graphic file (type pdf)
-<use images/etseib.pdf> [47
+<use images/etseib.pdf> [49
 
 ]
 
 pdfTeX warning: pdflatex (file ./images/aiboserverNodo.pdf): PDF inclusion: fou
 nd PDF version <1.5>, but at most version <1.4> allowed
-<images/aiboserverNodo.pdf, id=829, 642.4pt x 481.8pt>
+<images/aiboserverNodo.pdf, id=843, 642.4pt x 481.8pt>
 File: images/aiboserverNodo.pdf Graphic file (type pdf)
 
 <use images/aiboserverNodo.pdf>
 File: images/etseib.pdf Graphic file (type pdf)
- <use images/etseib.pdf> [48 <./images/aiboserverNodo.pdf>]
+ <use images/etseib.pdf> [50 <./images/aiboserverNodo.pdf>]
 
 pdfTeX warning: pdflatex (file ./images/Aibo_Server.pdf): PDF inclusion: found 
 PDF version <1.5>, but at most version <1.4> allowed
-<images/Aibo_Server.pdf, id=840, 1284.8pt x 963.6pt>
+<images/Aibo_Server.pdf, id=854, 1284.8pt x 963.6pt>
 File: images/Aibo_Server.pdf Graphic file (type pdf)
 
 <use images/Aibo_Server.pdf>
 File: images/etseib.pdf Graphic file (type pdf)
- <use images/etseib.pdf> [49]
+ <use images/etseib.pdf> [51]
 File: images/etseib.pdf Graphic file (type pdf)
 
-<use images/etseib.pdf> [50 <./images/Aibo_Server.pdf>]
-<images/getTopics.png, id=860, 1371.1225pt x 770.88pt>
+<use images/etseib.pdf> [52 <./images/Aibo_Server.pdf>]
+<images/getTopics.png, id=875, 1371.1225pt x 770.88pt>
 File: images/getTopics.png Graphic file (type png)
 
 <use images/getTopics.png>
@@ -2464,63 +2463,64 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 File: images/etseib.pdf Graphic file (type pdf)
 
-<use images/etseib.pdf> [51]
-<images/accel.jpg, id=865, 1708.13156pt x 874.01532pt>
+<use images/etseib.pdf> [53]
+<images/accel.jpg, id=881, 1708.13156pt x 874.01532pt>
 File: images/accel.jpg Graphic file (type jpg)
  <use images/accel.jpg>
-Overfull \hbox (23.02946pt too wide) in paragraph at lines 1640--1641
+Overfull \hbox (23.02946pt too wide) in paragraph at lines 1657--1658
  [][] 
  []
 
-File: images/etseib.pdf Graphic file (type pdf)
-<use images/etseib.pdf> [52 <./images/getTopics.png (PNG copy)> <./images/accel
-.jpg>]
+
 
 pdfTeX warning: pdflatex (file ./images/rosgraphASsin.pdf): PDF inclusion: foun
 d PDF version <1.5>, but at most version <1.4> allowed
-<images/rosgraphASsin.pdf, id=874, 1111.15125pt x 158.59253pt>
+<images/rosgraphASsin.pdf, id=886, 1111.15125pt x 158.59253pt>
 File: images/rosgraphASsin.pdf Graphic file (type pdf)
 
 <use images/rosgraphASsin.pdf>
-<images/10Ry2S.jpg, id=880, 1708.13156pt x 874.01532pt>
+File: images/etseib.pdf Graphic file (type pdf)
+ <use images/etseib.pdf> [54 <./images/getTopics.png (PNG copy)> <./images/acce
+l.jpg>]
+<images/10Ry2S.jpg, id=896, 1708.13156pt x 874.01532pt>
 File: images/10Ry2S.jpg Graphic file (type jpg)
 
 <use images/10Ry2S.jpg>
-Overfull \hbox (23.02946pt too wide) in paragraph at lines 1662--1663
+Overfull \hbox (23.02946pt too wide) in paragraph at lines 1678--1679
  [][] 
  []
 
-<images/10Ry7S.jpg, id=881, 1708.13156pt x 874.01532pt>
+<images/10Ry7S.jpg, id=897, 1708.13156pt x 874.01532pt>
 File: images/10Ry7S.jpg Graphic file (type jpg)
 
 <use images/10Ry7S.jpg>
-Overfull \hbox (23.02946pt too wide) in paragraph at lines 1668--1669
+Overfull \hbox (23.02946pt too wide) in paragraph at lines 1684--1685
  [][] 
  []
 
-<images/10Ry10SAll.jpg, id=882, 1708.13156pt x 874.01532pt>
+<images/10Ry10SAll.jpg, id=898, 1708.13156pt x 874.01532pt>
 File: images/10Ry10SAll.jpg Graphic file (type jpg)
 
 <use images/10Ry10SAll.jpg>
-Overfull \hbox (23.02946pt too wide) in paragraph at lines 1674--1675
+Overfull \hbox (23.02946pt too wide) in paragraph at lines 1690--1691
  [][] 
  []
 
 
-Underfull \vbox (badness 2393) has occurred while \output is active []
+Underfull \vbox (badness 2837) has occurred while \output is active []
 
 File: images/etseib.pdf Graphic file (type pdf)
 
-<use images/etseib.pdf> [53 <./images/rosgraphASsin.pdf> <./images/10Ry2S.jpg>]
+<use images/etseib.pdf> [55 <./images/rosgraphASsin.pdf> <./images/10Ry2S.jpg>]
 File: images/etseib.pdf Graphic file (type pdf)
-<use images/etseib.pdf> [54 <./images/10Ry7S.jpg> <./images/10Ry10SAll.jpg>]
+<use images/etseib.pdf> [56 <./images/10Ry7S.jpg> <./images/10Ry10SAll.jpg>]
 File: images/etseib.pdf Graphic file (type pdf)
 
-<use images/etseib.pdf> [55]
+<use images/etseib.pdf> [57]
 
 pdfTeX warning: pdflatex (file ./images/esquemaCall.pdf): PDF inclusion: found 
 PDF version <1.5>, but at most version <1.4> allowed
-<images/esquemaCall.pdf, id=899, 597.50786pt x 845.04686pt>
+<images/esquemaCall.pdf, id=915, 597.50786pt x 845.04686pt>
 File: images/esquemaCall.pdf Graphic file (type pdf)
 
 <use images/esquemaCall.pdf>
@@ -2528,12 +2528,12 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 File: images/etseib.pdf Graphic file (type pdf)
 
-<use images/etseib.pdf> [56 <./images/esquemaCall.pdf>]
-<images/empiezamala.jpg, id=915, 1708.13156pt x 874.01532pt>
+<use images/etseib.pdf> [58 <./images/esquemaCall.pdf>]
+<images/empiezamala.jpg, id=931, 1708.13156pt x 874.01532pt>
 File: images/empiezamala.jpg Graphic file (type jpg)
 
 <use images/empiezamala.jpg>
-<images/peora5hz.jpg, id=916, 1708.13156pt x 874.01532pt>
+<images/peora5hz.jpg, id=932, 1708.13156pt x 874.01532pt>
 File: images/peora5hz.jpg Graphic file (type jpg)
 
 <use images/peora5hz.jpg>
@@ -2541,81 +2541,51 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 File: images/etseib.pdf Graphic file (type pdf)
 
-<use images/etseib.pdf> [57 <./images/empiezamala.jpg>]
-<images/recupera.jpg, id=922, 1708.13156pt x 874.01532pt>
+<use images/etseib.pdf> [59 <./images/empiezamala.jpg>]
+<images/recupera.jpg, id=939, 1708.13156pt x 874.01532pt>
 File: images/recupera.jpg Graphic file (type jpg)
 
 <use images/recupera.jpg>
-<images/mejor5hz.jpg, id=925, 1708.13156pt x 874.01532pt>
+<images/mejor5hz.jpg, id=941, 1708.13156pt x 874.01532pt>
 File: images/mejor5hz.jpg Graphic file (type jpg)
 
 <use images/mejor5hz.jpg>
 File: images/etseib.pdf Graphic file (type pdf)
- <use images/etseib.pdf> [58 <./images/peora5hz.jpg> <./images/recupera.jpg>]
-
-pdfTeX warning: pdflatex (file ./images/mimic.pdf): PDF inclusion: found PDF ve
-rsion <1.5>, but at most version <1.4> allowed
-<images/mimic.pdf, id=933, 584.58403pt x 72.27pt>
-File: images/mimic.pdf Graphic file (type pdf)
- <use images/mimic.pdf>
-Underfull \vbox (badness 1292) has occurred while \output is active []
-
+ <use images/etseib.pdf> [60 <./images/peora5hz.jpg> <./images/recupera.jpg>]
 File: images/etseib.pdf Graphic file (type pdf)
+ <use images/etseib.pdf> [61 <./images/mejor5hz.jpg>]
 
-<use images/etseib.pdf> [59 <./images/mejor5hz.jpg>]
-<images/retmin2.jpg, id=943, 1708.13156pt x 874.01532pt>
-File: images/retmin2.jpg Graphic file (type jpg)
+pdfTeX warning: pdflatex (file ./images/Aibo.pdf): PDF inclusion: found PDF ver
+sion <1.5>, but at most version <1.4> allowed
+<images/Aibo.pdf, id=955, 1208.515pt x 855.195pt>
+File: images/Aibo.pdf Graphic file (type pdf)
+ <use images/Aibo.pdf>
+Overfull \hbox (16.07484pt too wide) in paragraph at lines 1768--1769
+ [][] 
+ []
 
-<use images/retmin2.jpg>
-<images/malo5hz.jpg, id=944, 1708.13156pt x 874.01532pt>
-File: images/malo5hz.jpg Graphic file (type jpg)
+<images/aiborviz.png, id=960, 1371.1225pt x 770.88pt>
+File: images/aiborviz.png Graphic file (type png)
 
-<use images/malo5hz.jpg>
+<use images/aiborviz.png>
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 File: images/etseib.pdf Graphic file (type pdf)
 
-<use images/etseib.pdf> [60 <./images/mimic.pdf> <./images/retmin2.jpg>]
-File: images/etseib.pdf Graphic file (type pdf)
-
-<use images/etseib.pdf> [61 <./images/malo5hz.jpg>]
-
-pdfTeX warning: pdflatex (file ./images/Aibo.pdf): PDF inclusion: found PDF ver
-sion <1.5>, but at most version <1.4> allowed
-<images/Aibo.pdf, id=962, 1208.515pt x 855.195pt>
-File: images/Aibo.pdf Graphic file (type pdf)
- <use images/Aibo.pdf>
-Overfull \hbox (16.07484pt too wide) in paragraph at lines 1780--1781
- [][] 
- []
-
-<images/aiborviz.png, id=967, 1371.1225pt x 770.88pt>
-File: images/aiborviz.png Graphic file (type png)
-
-<use images/aiborviz.png>
-Underfull \vbox (badness 4120) has occurred while \output is active []
-
-File: images/etseib.pdf Graphic file (type pdf)
-
 <use images/etseib.pdf> [62 <./images/Aibo.pdf>]
-Overfull \hbox (15.27766pt too wide) in paragraph at lines 1794--1796
-[]\OT1/cmr/m/n/12 El no-do sta-te[]publisher es-ta crea-do por un pro-gra-ma es
--cri-to en C++ (sta-te[]publisher.cpp)
- []
-
 File: images/etseib.pdf Graphic file (type pdf)
-<use images/etseib.pdf> [63 <./images/aiborviz.png (PNG copy)>]
+ <use images/etseib.pdf>
+[63 <./images/aiborviz.png (PNG copy)>]
 File: images/etseib.pdf Graphic file (type pdf)
-
-<use images/etseib.pdf> [64]
+ <use images/etseib.pdf> [64]
 
 pdfTeX warning: pdflatex (file ./images/graphModel.pdf): PDF inclusion: found P
 DF version <1.5>, but at most version <1.4> allowed
-<images/graphModel.pdf, id=993, 2162.07652pt x 120.44992pt>
+<images/graphModel.pdf, id=985, 2162.07652pt x 120.44992pt>
 File: images/graphModel.pdf Graphic file (type pdf)
 
 <use images/graphModel.pdf>
-Overfull \hbox (106.88254pt too wide) in paragraph at lines 1849--1850
+Overfull \hbox (106.88254pt too wide) in paragraph at lines 1837--1838
  [][] 
  []
 
@@ -2640,7 +2610,7 @@ File: images/etseib.pdf Graphic file (type pdf)
  <use images/etseib.pdf> [70
 
 ]
-Overfull \hbox (19.70113pt too wide) in paragraph at lines 1906--1909
+Overfull \hbox (19.70113pt too wide) in paragraph at lines 1894--1897
 []\OT1/cmr/m/n/12 Se ha al-can-za-do el ob-je-ti-vo im-ple-men-tan-do los pa-qu
 e-tes \OT1/cmr/bx/n/12 ai-bo[]server \OT1/cmr/m/n/12 y \OT1/cmr/bx/n/12 ai-bo[]
 description\OT1/cmr/m/n/12 .
@@ -2670,17 +2640,17 @@ File: lstlang1.sty 2004/09/05 1.3 listings language file
 (/usr/share/texmf-texlive/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2004/09/05 1.3 listings language file
 )
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 2039
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 2027
 .
 
 (/usr/share/texmf-texlive/tex/latex/base/omlcmr.fd
 File: omlcmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 2039.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 2027.
 
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 2044.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 2032.
 
 File: images/etseib.pdf Graphic file (type pdf)
  <use images/etseib.pdf>
@@ -2688,22 +2658,22 @@ File: images/etseib.pdf Graphic file (type pdf)
 
 
 ]
-Overfull \hbox (31.09555pt too wide) in paragraph at lines 2065--2066
+Overfull \hbox (31.09555pt too wide) in paragraph at lines 2053--2054
 []\OT1/cmr/m/n/12 Crear un sand-box don-de ir^^San los nue-vos pa-que-tes y a~n
 adir al ROS[]PACKAGE[]PATH: 
  []
 
 File: images/etseib.pdf Graphic file (type pdf)
 <use images/etseib.pdf> [78]
-Overfull \hbox (26.05548pt too wide) in paragraph at lines 2115--2116
+Overfull \hbox (26.05548pt too wide) in paragraph at lines 2103--2104
 [][]$\OT1/cmtt/m/n/12 https : / / github . com / Diamg / AiboRosPackages / tree
  / master / aibo _ description$[] 
  []
 
-<images/MS.jpg, id=1100, 180.675pt x 87.32625pt>
+<images/MS.jpg, id=1092, 180.675pt x 87.32625pt>
 File: images/MS.jpg Graphic file (type jpg)
  <use images/MS.jpg>
-Overfull \hbox (59.80757pt too wide) in paragraph at lines 2129--2130
+Overfull \hbox (59.80757pt too wide) in paragraph at lines 2117--2118
 []\OT1/cmr/m/n/12 Editar el ar-chi-vo WLAND-FLT.txt que se en-cuen-tra en el di
 -rec-to-rio /OPEN-R/SYSTEM/CONF
  []
@@ -2712,7 +2682,7 @@ File: images/etseib.pdf Graphic file (type pdf)
 <use images/etseib.pdf> [79 <./images/MS.jpg>]
 File: images/etseib.pdf Graphic file (type pdf)
  <use images/etseib.pdf> [80]
-Overfull \hbox (32.42389pt too wide) in paragraph at lines 2225--2226
+Overfull \hbox (32.42389pt too wide) in paragraph at lines 2213--2214
 []\OT1/cmr/m/n/12 Permite con-tro-lar la po-si-ci^^Son de las ar-ti-cu-la-cio-n
 es en un men-sa-je de ti-po ai-bo[]server/Joints. 
  []
@@ -2795,20 +2765,21 @@ File: images/etseib.pdf Graphic file (type pdf)
 
 <use images/etseib.pdf> [98])
 File: images/etseib.pdf Graphic file (type pdf)
- <use images/etseib.pdf> [99] (./memoria.aux) ) 
+ <use images/etseib.pdf> [99] (./memoria.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
- 31351 strings out of 493848
- 654700 string characters out of 1152823
- 1476829 words of memory out of 7000000
- 33113 multiletter control sequences out of 15000+50000
+ 31338 strings out of 493848
+ 654442 string characters out of 1152823
+ 1471917 words of memory out of 7000000
+ 33107 multiletter control sequences out of 15000+50000
  15232 words of font info for 60 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
- 56i,19n,85p,1181b,2275s stack positions out of 5000i,500n,10000p,200000b,50000s
-pdfTeX warning (dest): name{Hfoo
-tnote.31} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.30} has been referenced but does not exis
-t, replaced by a fixed one
+ 56i,20n,85p,1118b,2275s stack positions out of 5000i,500n,10000p,200000b,50000s
+pdfTeX warning (dest): name{Hfootnote.30} has been referenced but does not ex
+ist, replaced by a fixed one
 
 pdfTeX warning (dest): name{Hfootnote.29} has been referenced but does not exis
 t, replaced by a fixed one
@@ -2900,19 +2871,21 @@ pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist
 </usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share
 /texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texl
 ive/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-texlive/fonts/t
-ype1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/public/
-amsfonts/cm/cmr12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/
-cmr17.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr6.pfb></u
-sr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texm
-f-texlive/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-texlive/fon
-ts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/pu
-blic/amsfonts/cm/cmti12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfon
-ts/cm/cmtt10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmtt1
-2.pfb></usr/share/texmf-texlive/fonts/type1/public/eurosym/feybr10.pfb></usr/sh
-are/texmf-texlive/fonts/type1/public/eurosym/feymr10.pfb>
-Output written on memoria.pdf (101 pages, 5751727 bytes).
+ype1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-texlive/fonts/type1/public/
+amsfonts/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/
+cmr12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr17.pfb></
+usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/tex
+mf-texlive/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-texlive/fo
+nts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-texlive/fonts/type1/pub
+lic/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfont
+s/cm/cmsy8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti12.
+pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/s
+hare/texmf-texlive/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texmf-
+texlive/fonts/type1/public/eurosym/feybr10.pfb></usr/share/texmf-texlive/fonts/
+type1/public/eurosym/feymr10.pfb>
+Output written on memoria.pdf (101 pages, 5507578 bytes).
 PDF statistics:
- 1957 PDF objects out of 2073 (max. 8388607)
- 826 named destinations out of 1000 (max. 500000)
- 652 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1952 PDF objects out of 2073 (max. 8388607)
+ 821 named destinations out of 1000 (max. 500000)
+ 637 words of extra memory for PDF output out of 10000 (max. 10000000)
 

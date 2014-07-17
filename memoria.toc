@@ -10,7 +10,7 @@
 \contentsline {subsection}{\numberline {2.1.2}Rob\IeC {\'o}tica en la educaci\IeC {\'o}n}{15}{subsection.2.1.2}
 \contentsline {subsection}{\numberline {2.1.3}AIBO}{16}{subsection.2.1.3}
 \contentsline {section}{\numberline {2.2}Objetivos}{17}{section.2.2}
-\contentsline {section}{\numberline {2.3}Alcance}{18}{section.2.3}
+\contentsline {section}{\numberline {2.3}Alcance}{17}{section.2.3}
 \contentsline {section}{\numberline {2.4}Planificaci\IeC {\'o}n}{18}{section.2.4}
 \contentsline {chapter}{\numberline {3}AIBO ERS-7}{21}{chapter.3}
 \contentsline {section}{\numberline {3.1}Hardware}{21}{section.3.1}
@@ -20,30 +20,29 @@
 \contentsline {subsection}{\numberline {3.2.3}URBI}{27}{subsection.3.2.3}
 \contentsline {chapter}{\numberline {4}Comparaci\IeC {\'o}n de alternativas para la programaci\IeC {\'o}n}{29}{chapter.4}
 \contentsline {section}{\numberline {4.1}Lectura de datos}{31}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}M\IeC {\'e}todo con liburbi y C++}{31}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.1}M\IeC {\'e}todo con liburbi y C++}{32}{subsection.4.1.1}
 \contentsline {subsection}{\numberline {4.1.2}M\IeC {\'e}todo con telnet y python}{32}{subsection.4.1.2}
 \contentsline {subsection}{\numberline {4.1.3}Comparaci\IeC {\'o}n de los resultados}{33}{subsection.4.1.3}
-\contentsline {section}{\numberline {4.2}Env\IeC {\'\i }o de datos}{40}{section.4.2}
-\contentsline {section}{\numberline {4.3}Elecci\IeC {\'o}n del m\IeC {\'e}todo}{45}{section.4.3}
-\contentsline {chapter}{\numberline {5}Implementaci\IeC {\'o}n del paquete de ROS}{47}{chapter.5}
-\contentsline {section}{\numberline {5.1}ROS}{47}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}Paquete aibo{\_}server }{48}{subsection.5.1.1}
-\contentsline {subsection}{\numberline {5.1.2}Estructura del programa}{49}{subsection.5.1.2}
-\contentsline {subsection}{\numberline {5.1.3}Resultados}{51}{subsection.5.1.3}
-\contentsline {subsection}{\numberline {5.1.4}Mejoras}{55}{subsection.5.1.4}
-\contentsline {subsection}{\numberline {5.1.5}Demostraci\IeC {\'o}n}{59}{subsection.5.1.5}
+\contentsline {section}{\numberline {4.2}Env\IeC {\'\i }o de datos}{41}{section.4.2}
+\contentsline {section}{\numberline {4.3}Elecci\IeC {\'o}n del m\IeC {\'e}todo}{47}{section.4.3}
+\contentsline {chapter}{\numberline {5}Implementaci\IeC {\'o}n del paquete de ROS}{49}{chapter.5}
+\contentsline {section}{\numberline {5.1}ROS}{49}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Paquete aibo{\_}server }{50}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Estructura del programa}{51}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {5.1.3}Resultados del aibo{\_}server}{53}{subsection.5.1.3}
+\contentsline {subsection}{\numberline {5.1.4}Mejoras del aibo{\_}server}{57}{subsection.5.1.4}
 \contentsline {section}{\numberline {5.2}Paquete Aibo{\_}description }{61}{section.5.2}
 \contentsline {subsection}{\numberline {5.2.1}El modelo}{61}{subsection.5.2.1}
 \contentsline {subsection}{\numberline {5.2.2}El nodo state{\_}publisher}{63}{subsection.5.2.2}
-\contentsline {subsubsection}{Estructura}{64}{section*.47}
+\contentsline {subsection}{\numberline {5.2.3}Estructura de paquete}{64}{subsection.5.2.3}
 \contentsline {chapter}{\numberline {6}Presupuesto}{67}{chapter.6}
 \contentsline {section}{\numberline {6.1}Coste material}{67}{section.6.1}
 \contentsline {section}{\numberline {6.2}Coste personal}{67}{section.6.2}
 \contentsline {chapter}{\numberline {7}Impacto ambiental}{69}{chapter.7}
-\contentsline {chapter}{Conclusiones}{71}{chapter*.51}
-\contentsline {chapter}{Agradecimientos}{73}{chapter*.52}
-\contentsline {chapter}{Referencias}{74}{chapter*.52}
-\contentsline {chapter}{Anexos}{77}{section*.54}
+\contentsline {chapter}{Conclusiones}{71}{chapter*.47}
+\contentsline {chapter}{Agradecimientos}{73}{chapter*.48}
+\contentsline {chapter}{Referencias}{74}{chapter*.48}
+\contentsline {chapter}{Anexos}{77}{section*.50}
 \contentsline {chapter}{\numberline {A}Manual de usuario}{77}{appendix.A}
 \contentsline {section}{\numberline {A.1}Requisitos previos}{77}{section.A.1}
 \contentsline {section}{\numberline {A.2}Instalaci\IeC {\'o}n}{80}{section.A.2}

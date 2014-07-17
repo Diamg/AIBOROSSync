@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2014.6.30)  1 JUL 2014 18:17
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2014.6.30)  17 JUL 2014 21:02
 entering extended mode
  %&-line parsing enabled.
 **1h.tex
@@ -745,10 +745,10 @@ PGFPlots: reading {data/p1hOut2.dat}
 Here is how much of TeX's memory you used:
  16989 strings out of 493849
  430256 string characters out of 1152846
- 6584546 words of memory out of 7000000
+ 6562535 words of memory out of 7000000
  19922 multiletter control sequences out of 15000+50000
  3640 words of font info for 14 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
  63i,7n,84p,698b,1779s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on h1-f1.dvi (1 page, 5504388 bytes).
+Output written on h1-f1.dvi (1 page, 5504456 bytes).
